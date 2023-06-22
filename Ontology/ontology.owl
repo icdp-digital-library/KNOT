@@ -1,0 +1,2269 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/pcdai#"
+     xml:base="http://example.org/pcdai"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://example.org/pcdai">
+        <terms:abstract xml:lang="en">The PCDAI Data Model Ontology brings together existing and complementary ontological entities from three primary standards for the purpose of describing academic research projects and their outputs as examples of the digital cultural heritage of Italian universities. The resulting descriptive metadata is used in the PCDAI pilot project to catalogue academic research and integrate it into the national Digital Library initiative led by the Istituto Centrale per la Digitalizzazione del Patrimonio Culturale within the Ministero della Cultura. Both the ontology and the data model are freely available for universities, and other interested parties, to use to model their own data for independent use or to allow its inclusion within the pilot project.</terms:abstract>
+        <terms:created>2023-06-01</terms:created>
+        <terms:creator>Laurent Fintoni, Francesca Tomasi, Marilena Daquino</terms:creator>
+        <terms:description xml:lang="en">The PCDAI Data Model Ontology connects complementary ontological entities from existing standards to provide descriptive metadata for use within the PCDAI pilot project (link TBC). The Data Model is divided into three segments, each attached to an existing standard within the ontology: public data (DCAT, including EU and IT Application Profiles); academic provenance (PROV-O), and cultural heritage information (CIDOC CRM and extensions). Together these segments allow to describe various aspects of academic research projects and their outputs within the context of the PCDAI pilot including: - Research project activity: who created what, how, where, and when. - This can be modeled as provenance using PROV-O elements centered on the prov:Activity class and/or as a form of cultural heritage activity using CIDOC CRM elements centered on the D7 Digital Machine Event class (from the CRMdig extension) - Further specificity as to what kinds of sub-activities took place within the research project can be expressed using subclasses of D7, such as for example digitization processes (D2 Digitization Process) or the use of software on digital objects (D10 Software Execution). - Research project outputs, the digital objects created by research project activities, can be represented regardless of their form as public datasets (DCAT), digital objects (CRMdig), or entities used in activities (PROV-O). - The ontology is intended to be flexible enough to enable the description of various possible outputs such as software, websites, documentation, web services, and data collections. - In addition to being conceptualized as activity, research projects are also conceptualized as a type of output within the DCAT segment of the model in order to act as a container for other research outputs. This conceptualization is intended to represent research projects websites, where outputs and documentation are often collected together in one place. - The agents responsible for creating and publishing research projects and outputs, from the individual to the organization via organizational units (such as departments or laboratories) and their locations. - Relationships between different research projects and their outputs, within an existing organization or across different organizations. - This includes concepts such as influence and inspiration as well as the reuse of outputs to create new projects and/or outputs. - The spatial and temporal information recorded in research project outputs, such as for example the places mentioned in a text or the time period covered by the data. - Themes such as the type of research activity, the type of outputs, the technologies used, the academic disciplines involved, and the primary and secondary subjects of research. These themes are described using a selection of specific controlled vocabularies and authorities. &lt;https://laurentfintoni.com/pcdai/data_model_core.jpg&gt;</terms:description>
+        <terms:publisher xml:lang="en">/DH.ARC - Digital Humanities Advanced Research Centre</terms:publisher>
+        <terms:publisher xml:lang="it">Dipartimento di Filologia Classica e Italianistica - FICLIT</terms:publisher>
+        <terms:title xml:lang="en">PCDAI Data Model Ontology</terms:title>
+        <vann:preferredNamespacePrefix>pcdai</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="http://example.org/pcdai#"/>
+        <rdfs:comment xml:lang="en">The PCDAI Data Model Ontology connects complementary ontological entities from existing standards to provide descriptive metadata for use within the PCDAI pilot project (link TBC). The Data Model is divided into three segments, each attached to an existing standard within the ontology: public data (DCAT, including EU and IT Application Profiles); academic provenance (PROV-O), and cultural heritage information (CIDOC CRM and extensions). Together these segments allow to describe various aspects of academic research projects and their outputs within the context of the PCDAI pilot including: - Research project activity: who created what, how, where, and when. - This can be modeled as provenance using PROV-O elements centered on the prov:Activity class and/or as a form of cultural heritage activity using CIDOC CRM elements centered on the D7 Digital Machine Event class (from the CRMdig extension) - Further specificity as to what kinds of sub-activities took place within the research project can be expressed using subclasses of D7, such as for example digitization processes (D2 Digitization Process) or the use of software on digital objects (D10 Software Execution). - Research project outputs, the digital objects created by research project activities, can be represented regardless of their form as public datasets (DCAT), digital objects (CRMdig), or entities used in activities (PROV-O). - The ontology is intended to be flexible enough to enable the description of various possible outputs such as software, websites, documentation, web services, and data collections. - In addition to being conceptualized as activity, research projects are also conceptualized as a type of output within the DCAT segment of the model in order to act as a container for other research outputs. This conceptualization is intended to represent research projects websites, where outputs and documentation are often collected together in one place. - The agents responsible for creating and publishing research projects and outputs, from the individual to the organization via organizational units (such as departments or laboratories) and their locations. - Relationships between different research projects and their outputs, within an existing organization or across different organizations. - This includes concepts such as influence and inspiration as well as the reuse of outputs to create new projects and/or outputs. - The spatial and temporal information recorded in research project outputs, such as for example the places mentioned in a text or the time period covered by the data. - Themes such as the type of research activity, the type of outputs, the technologies used, the academic disciplines involved, and the primary and secondary subjects of research. These themes are described using a selection of specific controlled vocabularies and authorities. &lt;https://laurentfintoni.com/pcdai/data_model_core.jpg&gt;</rdfs:comment>
+        <rdfs:label xml:lang="en">PCDAI Data Model Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/contributor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/date">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionIRI -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionIRI">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2002/07/owl#versionIRI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core#scopeNote"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/TR/xmlschema-2/#date"/>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/P106_is_composed_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/P106_is_composed_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object"/>
+        <rdfs:range rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">This property associates an instance of E90 Symbolic Object with a part of it that is by itself an instance of E90 Symbolic Object, such as fragments of texts or clippings from an image. Usage Note: should be used to denote structural links between digital objects (instances of D1, a subclass of E90) that are outputs of research projects (D7 Digital Machine Event) such as a website that contains a dataset.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/P106_is_composed_of"/>
+        <rdfs:label xml:lang="en">is composed of</rdfs:label>
+        <skos:definition xml:lang="en">This property associates an instance of E90 Symbolic Object with a part of it that is by itself an instance of E90 Symbolic Object, such as fragments of texts or clippings from an image.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should be used to denote structural links between digital objects (instances of D1, a subclass of E90) that are outputs of research projects (D7 Digital Machine Event) such as a website that contains a dataset.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/P129_is_about -->
+
+
+    <owl:ObjectProperty rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/P129_is_about">
+        <rdfs:domain rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F3"/>
+        <rdfs:range rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity"/>
+        <rdfs:comment xml:lang="en">This property documents that an instance of E89 Propositional Object has as subject an instance of E1 CRM Entity. Usage Note: should be used to connect instances of F3 Manifestation (subclass of E89) to their subject, and is intended to help connect research activity and outputs to the cultural heritage entities they use.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/P129_is_about"/>
+        <rdfs:label xml:lang="en">is about</rdfs:label>
+        <skos:definition xml:lang="en">This property documents that an instance of E89 Propositional Object has as subject an instance of E1 CRM Entity.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should be used to connect instances of F3 Manifestation (subclass of E89) to their subject, and is intended to help connect research activity and outputs to the cultural heritage entities they use.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/P14_carried_out_by -->
+
+
+    <owl:ObjectProperty rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/P14_carried_out_by">
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:range rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E39_Actor"/>
+        <rdfs:comment xml:lang="en">This property describes the active participation of an instance of E39 Actor in an instance of E7 Activity. It implies causal or legal responsibility. Usage Note: This property enables similar descriptions as dct:creator/publisher and prov:wasAssociatedWith within the cultural heritage segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/P14_carried_out_by"/>
+        <rdfs:label xml:lang="en">carried out by</rdfs:label>
+        <skos:definition xml:lang="en">This property describes the active participation of an instance of E39 Actor in an instance of E7 Activity. It implies causal or legal responsibility. </skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as dct:creator/publisher and prov:wasAssociatedWith within the cultural heritage segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object -->
+
+
+    <owl:ObjectProperty rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">
+        <rdfs:domain rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E7_Activity"/>
+        <rdfs:range rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E70_Thing"/>
+        <rdfs:comment xml:lang="en">This property describes the use of material or immaterial things in a way essential to the performance or the outcome of an instance of E7 Activity. It is included as the super property of L10 had input.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"/>
+        <rdfs:label xml:lang="en">used specific object</rdfs:label>
+        <skos:definition xml:lang="en">This property describes the use of material or immaterial things in a way essential to the performance or the outcome of an instance of E7 Activity. This property typically applies to tools, instruments, moulds, raw materials and items embedded in a product. It implies that the presence of the object in question was a necessary condition for the action. For example, the activity of writing this text required the use of a computer. An immaterial thing can be used if at least one of its carriers is present. For example, the software tools on a computer.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property is included as the super property of L10 had input.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/P7_took_place_at -->
+
+
+    <owl:ObjectProperty rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/P7_took_place_at">
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:range rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E53_Place"/>
+        <rdfs:comment xml:lang="en">This property describes the spatial location of an instance of E4 Period. The related instance of E53 Place should be seen as a wider approximation of the geometric area within which the phenomena that characterise the period in question occurred. Usage Note: This property enables similar descriptions as prov:atLocation within the cultural heritage segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/P7_took_place_at"/>
+        <rdfs:label xml:lang="en">took place at</rdfs:label>
+        <skos:definition xml:lang="en">This property describes the spatial location of an instance of E4 Period. The related instance of E53 Place should be seen as a wider approximation of the geometric area within which the phenomena that characterise the period in question occurred.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as prov:atLocation within the cultural heritage segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://iflastandards.info/ns/fr/frbr/frbroo/R7 -->
+
+
+    <owl:ObjectProperty rdf:about="http://iflastandards.info/ns/fr/frbr/frbroo/R7">
+        <rdfs:domain rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F5"/>
+        <rdfs:range rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F3"/>
+        <rdfs:comment xml:lang="en">This property associates an instance of F3 Manifestation with an instance of F5 Item that is one of its exemplars or its only exemplar. Usage Note: Usage and definition of this property are based on the LRMoo v0.9 specifications.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/R7"/>
+        <rdfs:label xml:lang="en">is materialization of</rdfs:label>
+        <skos:definition xml:lang="en">This property associates an instance of F3 Manifestation with an instance of F5 Item that is one of its exemplars or its only exemplar.</skos:definition>
+        <skos:scopeNote xml:lang="en">Usage and definition of this property are based on the LRMoo v0.9 specifications.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/accessRights -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/accessRights">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/rights"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/RightsStatement"/>
+        <rdfs:comment xml:lang="en">This property refers to information that indicates whether the Dataset is open data, has access restrictions or is not public. Usage Note: Use one of the following values (:public, :restricted, :non-public) from the EU Access Right authority table (DCAT AP documentation). </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/accessRights"/>
+        <rdfs:label xml:lang="en">access rights</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to information that indicates whether the Dataset is open data, has access restrictions or is not public (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Use one of the following values (:public, :restricted, :non-public) from http://publications.europa.eu/resource/authority/access-right.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/accrualPeriodicity -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/accrualPeriodicity">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/Frequency"/>
+        <rdfs:comment xml:lang="en">This property refers to the frequency at which the Dataset is updated. Usage Note: Uses values from the EU Frequency authority table (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/accrualPeriodicity"/>
+        <rdfs:label xml:lang="en">accrual periodicity</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to the frequency at which the Dataset is updated. (DCAT AP documentation)</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from http://publications.europa.eu/resource/authority/frequency.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/conformsTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/conformsTo">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#CatalogRecord"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/Standard"/>
+        <rdfs:comment xml:lang="en">This property refers to an Application Profile, implementing rule or other specification, or established schema that the subject class conforms to (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/conformsTo"/>
+        <rdfs:label xml:lang="en">conforms to</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to an Application Profile, implementing rule or other specification, or established schema that the subject class conforms to (DCAT AP documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/format -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/format">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
+        <rdfs:comment xml:lang="en">This property refers to the file format of the Distribution, most likely the format of the downloadable form of a dataset. Usage Note: Uses values from the EU File Type authority table where possible (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/format"/>
+        <rdfs:label xml:lang="en">format</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to the file format of the Distribution. (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from http://publications.europa.eu/resource/authority/file-type where possible.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasPart -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/hasPart">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/hasVersion">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment xml:lang="en">This property refers to a related Dataset that is a version, edition, or adaptation of the described Dataset (DCAT AP documentation). Usage Note: Can be used to indicate versioning of a dataset / research output within the same research project or to refer to datasets / research outputs created by other research projects that adapt it. For any other relations between datasets / outputs use dct:relation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/hasVersion"/>
+        <rdfs:label xml:lang="en">has version</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a related Dataset that is a version, edition, or adaptation of the described Dataset (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Can be used to indicate versioning of a dataset / research output within the same research project or to refer to datasets / research outputs created by other research projects that adapt it. For any other relations between datasets / outputs use dct:relation.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/isReferencedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isReferencedBy">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/isVersionOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isVersionOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment xml:lang="en">This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation (DCAT AP documentation). Usage Note: Can be used similarly to dct:hasVersion in an inverse manner.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/isVersionOf"/>
+        <rdfs:label xml:lang="en">is version of</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Can be used similarly to dct:hasVersion in an inverse manner.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/language">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#CatalogRecord"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/LinguisticSystem"/>
+        <rdfs:comment xml:lang="en">A language of the item. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a cataloged resource (i.e. dataset or service) or the textual values of a dataset distribution (W3C DCAT documentation). Usage Note: Uses values from the EU Language authority table (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/language"/>
+        <rdfs:label xml:lang="en">language</rdfs:label>
+        <skos:definition xml:lang="en">A language of the item. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a cataloged resource (i.e. dataset or service) or the textual values of a dataset distribution (W3C DCAT documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from the http://publications.europa.eu/resource/authority/language authority table.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/license">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/rights"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/license"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/dc/terms/LicenseDocument"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">This property refers to the licence under which the subject class is made available and can be used or reused (DCAT AP documentation). Usage Note: In the case of multiple licenses applying to one research project - for example one license for the website and its content and another for a dataset (or distribution, or service) - refer to the class definitions to ascertain which license should be attached to which class. A practical example: a research project features three licenses, one for the text on its website (dcat:Catalog), one for a dataset distributed as a .csv (dcat:Dataset, dcat:Distribution), and one for a service on its website that allows manipulation of the dataset (dcat:DataService). Uses values from the Licenze controlled vocabulary (DCAT AP IT documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/license"/>
+        <rdfs:label xml:lang="en">license</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to the licence under which the subject class is made available can be used or reused (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">In the case of multiple licenses applying to one research project - for example one license for the website and its content and another for a dataset (or distribution, or service) - refer to the class definitions to ascertain which license should be attached to which class. A practical example: a research project features three licenses, one for the text on its website (dcat:Catalog), one for a dataset distributed as a .csv (dcat:Dataset, dcat:Distribution), and one for a service on its website that allows manipulation of the dataset (dcat:DataService). Uses values from the https://schema.gov.it/lodview/controlled-vocabulary/licences controlled vocabulary (DCAT AP IT documentation).</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/publisher">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/relation -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/relation">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/rights -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/rights">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#CatalogRecord"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/RightsStatement"/>
+        <rdfs:comment xml:lang="en">A statement that concerns all rights not addressed with dct:license or dct:accessRights, such as copyright statements (W3C DCAT documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/rights"/>
+        <rdfs:label xml:lang="en">rights</rdfs:label>
+        <skos:definition xml:lang="en">A statement that concerns all rights not addressed with dct:license or dct:accessRights, such as copyright statements (W3C DCAT documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/spatial -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/spatial">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/Location"/>
+        <rdfs:comment xml:lang="en">This property refers to a geographic region that is covered by the Dataset (DCAT AP documentation). Usage Note: Uses values from Geonames and Wikidata.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/spatial"/>
+        <rdfs:label xml:lang="en">spatial</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a geographic region that is covered by the Dataset (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from Geonames and Wikidata.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/subject">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/temporal -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/temporal">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/type -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/type">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">The nature or genre of the Dataset or Data Service (W3C DCAT documentation). Usage Note: Uses values from the PCDAI controlled vocabularies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/type"/>
+        <rdfs:label xml:lang="en">type</rdfs:label>
+        <skos:scopeNote xml:lang="en">The nature or genre of the Dataset or Data Service (W3C DCAT documentation).</skos:scopeNote>
+        <skos:scopeNote>Uses values from the PCDAI controlled vocabularies.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/adms#identifier -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/adms#identifier">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
+        <rdfs:comment xml:lang="en">This property refers to a secondary identifier of the Dataset, such as MAST/ADS , DataCite , DOI , EZID  or W3ID (DCAT AP documentation). Usage Note: This property should be used for external identifiers.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/adms#identifier"/>
+        <rdfs:label xml:lang="en">other identifier</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a secondary identifier of the Dataset, such as MAST/ADS , DataCite , DOI , EZID  or W3ID (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should be used for external identifiers.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/adms#status -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/adms#status">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">The status of the distribution in the context of maturity lifecycle. It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn from the ADMS vocabulary (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/adms#status"/>
+        <rdfs:label xml:lang="en">status</rdfs:label>
+        <skos:definition xml:lang="en">The status of the distribution in the context of maturity lifecycle. It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn from the ADMS vocabulary (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from http://purl.org/adms/status/1.0</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#accessService -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#accessService">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+        <rdfs:comment xml:lang="en">This property refers to a data service that gives access to the distribution of the dataset.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#accessService"/>
+        <rdfs:label xml:lang="en">access service</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a data service that gives access to the distribution of the dataset.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#accessURL -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#accessURL">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#compressFormat -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#compressFormat">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/MediaType"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#compressFormat"/>
+        <rdfs:label xml:lang="en">compress format</rdfs:label>
+        <skos:scopeNote xml:lang="en">This property refers to the format of the file in which the data is contained in a compressed form (DCAT AP documentation).</skos:scopeNote>
+        <skos:scopeNote xml:lang="en">This property refers to the format of the file in which the data is contained in a compressed form. Uses values from the EU File Type authority table (DCAT AP documentation).</skos:scopeNote>
+        <skos:scopeNote xml:lang="en">Uses values from the http://publications.europa.eu/resource/authority/file-type authority table.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#dataset -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#dataset">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment xml:lang="en">This property links the Catalogue with a Dataset that is part of the Catalogue (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#dataset"/>
+        <rdfs:label xml:lang="en">dataset</rdfs:label>
+        <skos:definition xml:lang="en">This property links the Catalogue with a Dataset that is part of the Catalogue (DCAT AP documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#distribution -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#distribution">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:comment xml:lang="en">This property links the Dataset to an available Distribution (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#distribution"/>
+        <rdfs:label xml:lang="en">distribution</rdfs:label>
+        <skos:definition xml:lang="en">This property links the Dataset to an available Distribution (DCAT AP documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#endpointDescription -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#endpointDescription">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#endpointURL -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#endpointURL">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#landingPage -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#landingPage">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/page"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment xml:lang="en">This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator (DCAT AP documentation). Usage Note: This property should be prioritised over foaf:page with the latter only used if the page it points to provides meaningful additional information not included in the page used for dcat:landingPage (such as how the Dataset was notated, sourced etc.).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#landingPage"/>
+        <rdfs:label xml:lang="en">landing page</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should be prioritised over foaf:page with the latter only used if the page it points to provides meaningful additional information not included in the page used for dcat:landingPage (such as how the Dataset was notated, sourced etc.).</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#record -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#record">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#CatalogRecord"/>
+        <rdfs:comment xml:lang="en">This property refers to a Catalogue Record that is part of the Catalogue (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#record"/>
+        <rdfs:label xml:lang="en">record</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a Catalogue Record that is part of the Catalogue (DCAT AP documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#servesDataset -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#servesDataset">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment xml:lang="en">This property refers to a collection of data that this data service can distribute.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#servesdataset"/>
+        <rdfs:label xml:lang="en">serves dataset</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a collection of data that this data service can distribute.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#service -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#service">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+        <rdfs:comment xml:lang="en">This property refers to a site or end-point (Data Service) that is listed in the Catalogue (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#service"/>
+        <rdfs:label xml:lang="en">service</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a site or end-point (Data Service) that is listed in the Catalogue (DCAT AP documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#theme -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#theme">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">A main category of the resource. A resource can have multiple themes (W3C DCAT documentation). Usage Note: For Catalog class use values from the Ambiti Disciplinari controlled vocabulary to note the academic discipline(s) the research project falls under and values from a relevant authority for the research project&apos;s primary subject (VIAF, Wikidata etc.), such as for example a historical figure; for the DataService class it uses values from the Tadirah research activity taxonomy and the PCDAI controlled vocabularies (if applicable); for the Dataset class it uses values from the EU Data Theme authority table and the Tadirah taxonomy.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#theme"/>
+        <rdfs:label xml:lang="en">theme</rdfs:label>
+        <skos:definition xml:lang="en">A main category of the resource. A resource can have multiple themes (W3C DCAT documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">For Catalog class it uses values from https://github.com/italia/daf-ontologie-vocabolari-controllati/tree/master/VocabolariControllati/classifications-for-culture/subject-disciplines to note for the academic discipline(s) the research project falls under and values from a relevant authority for its primary subject (VIAF, Wikidata etc.), such as for example a historical figure; for the DataService class it uses values from the Tadirah research activity taxonomy and the PCDAI controlled vocabularies (if applicable); for the Dataset class it uses values from the https://op.europa.eu/s/yLXU authority table and the Tadirah taxonomy.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#themeTaxonomy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#themeTaxonomy">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:comment xml:lang="en">This property refers to a knowledge organization system used to classify the Catalogue&apos;s Datasets (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#theme"/>
+        <rdfs:label xml:lang="en">theme taxonomy</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a knowledge organization system used to classify the Catalogue&apos;s Datasets (DCAT AP documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/org#hasUnit -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/org#hasUnit">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/org#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/org#OrganizationalUnit"/>
+        <rdfs:comment xml:lang="en">Indicates a unit which is part of this Organization, e.g. a Department within a larger Organization. Usage Note: should be used to link departments and reserch labs to their holding organizations, such as universities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/org#hasUnit"/>
+        <rdfs:label xml:lang="en">has unit</rdfs:label>
+        <skos:definition xml:lang="en">Indicates a unit which is part of this Organization, e.g. a Department within a larger Organization. </skos:definition>
+        <skos:scopeNote xml:lang="en">Should be used to link departments and reserch labs to their holding organizations, such as universities.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#actedOnBehalfOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#actedOnBehalfOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:comment xml:lang="en">An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#actedOnBehalfOf"/>
+        <rdfs:label xml:lang="en">acted on behalf of</rdfs:label>
+        <skos:definition xml:lang="en">An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity.</skos:definition>
+        <skos:scopeNote xml:lang="en">Can be used to provide further details on relationships between agents within a research project, such as for example departments or laboratories acting on behalf of a university.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#atLocation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#atLocation">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Location"/>
+        <rdfs:comment xml:lang="en">A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth. Usage Note: This property enables similar descriptions as crm:P7_took_place_at within the activity provenance segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#atLocation"/>
+        <rdfs:label xml:lang="en">at location</rdfs:label>
+        <skos:definition xml:lang="en">A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as crm:P7_took_place_at within the activity provenance segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#entity -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#entity">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Derivation"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Influence"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">References an prov:Entity which influenced a resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#entity"/>
+        <rdfs:label xml:lang="en">entity</rdfs:label>
+        <skos:definition xml:lang="en">References an prov:Entity which influenced a resource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#generated -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#generated">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation. Usage Note: This property enables similar descriptions as crmdig:L11_had_output within the academic provenance segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#generated"/>
+        <rdfs:label xml:lang="en">generated</rdfs:label>
+        <skos:definition xml:lang="en">Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as crmdig:L11_had_output within the academic provenance segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#qualifiedDerivation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#qualifiedDerivation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#qualifiedInfluence"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Derivation"/>
+        <rdfs:comment xml:lang="en">Used to qualify prov:wasDerivedFrom.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#qualifiedDerivation"/>
+        <rdfs:label xml:lang="en">qualified derivation</rdfs:label>
+        <skos:definition xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#qualifiedInfluence -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#qualifiedInfluence">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Agent"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Influence"/>
+        <rdfs:comment xml:lang="en">Used to qualify prov:wasInfluencedBy.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#qualifiedInfluence"/>
+        <rdfs:label xml:lang="en">qualified influence</rdfs:label>
+        <skos:definition xml:lang="en">Influence is the capacity of an entity, activity, or agent to have an effect on the character, development, or behavior of another by means of usage, start, end, generation, invalidation, communication, derivation, attribution, association, or delegation.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#used -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#used">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">Usage is the beginning of utilizing an entity by an activity. Before usage, the activity had not begun to utilize this entity and could not have been affected by the entity. Usage Note: This property enables similar descriptions as crmdig:L10_had_input within the academic provenance segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#used"/>
+        <rdfs:label xml:lang="en">used</rdfs:label>
+        <skos:definition xml:lang="en">Usage is the beginning of utilizing an entity by an activity. Before usage, the activity had not begun to utilize this entity and could not have been affected by the entity.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as crmdig:L10_had_input within the academic provenance segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#value -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#value">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:comment xml:lang="en">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity. Usage Note: This property enables similar descriptions as dct:creator/publisher and crm:P14_carried_out_by within the academic provenance segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+        <rdfs:label xml:lang="en">was associated with</rdfs:label>
+        <skos:definition xml:lang="en">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as dct:creator/publisher and crm:P14_carried_out_by within the academic provenance segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity. Usage Note: Can be used for a more detailed description of how two entities produced or used by a research project are related through the concept of derivation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <rdfs:label xml:lang="en">was derived from</rdfs:label>
+        <skos:definition xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.</skos:definition>
+        <skos:scopeNote xml:lang="en">Can be used for a more detailed description of how two entities produced or used by a research project are related through the concept of derivation.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasGeneratedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment xml:lang="en">This property refers to an activity that generated, or provides the business context for, the creation of the dataset (DCAT AP documentation, see prov:generated for PROV-O definition). Usage Note: This property is used to connect the public data segment of the PCDAI Data Model to the provenance segment, where the activities that generated the data can be further detailed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+        <rdfs:label xml:lang="en">was generated by</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to an activity that generated, or provides the business context for, the creation of the dataset (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This property is used to connect the public data segment of the PCDAI Data Model to the provenance segment, where the activities that generated the data can be further detailed.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInfluencedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasInfluencedBy">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Agent"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Agent"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Influence is the capacity of an entity, activity, or agent to have an effect on the character, development, or behavior of another by means of usage, start, end, generation, invalidation, communication, derivation, attribution, association, or delegation. Usage Note: Can be used for a more detailed description of how two entities and/or activities are related through the concept of influence, if derivation or informed is not applicable. For example, academic research projects may be inspired by the works of an author or by activities of another research group which could be described as a form of influence.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:label xml:lang="en">was influenced by</rdfs:label>
+        <skos:definition xml:lang="en">Influence is the capacity of an entity, activity, or agent to have an effect on the character, development, or behavior of another by means of usage, start, end, generation, invalidation, communication, derivation, attribution, association, or delegation.</skos:definition>
+        <skos:scopeNote xml:lang="en">Can be used for a more detailed description of how two entities and/or activities are related through the concept of influence, if derivation is not applicable. For example, academic research projects may be inspired by the works of an author or by activities of another research group which could be described as a form of influence</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInformedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasInformedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity"/>
+                    <rdf:Description rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Communication is the exchange of an entity by two activities, one activity using the entity generated by the other. Usage Note: Can be used for a more detailed description of how two activities are related through the concept of information. Usage Note: The range of this property has been extended to include instances of D7 from the CRM DIG model to enable the description of relationships between the research project as an overall activity (prov:Activity) and specific activities (or tasks) that happen within it, such as for example the digitization of physical objects, and which are described using the CRM DIG model.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#wasInformedBy"/>
+        <rdfs:label xml:lang="en">was informed by</rdfs:label>
+        <skos:definition xml:lang="en">Communication is the exchange of an entity by two activities, one activity using the entity generated by the other.</skos:definition>
+        <skos:scopeNote xml:lang="en">Can be used for a more detailed description of how two activities are related through the concept of information. The range of this property has been extended to include instances of D7 from the CRM DIG model to enable the description of relationships between the research project as an overall activity (prov:Activity) and specific activities (or tasks) that happen within it, such as for example the digitization of physical objects, and which are described using the CRM DIG model.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment xml:lang="en">This property refers to a web page that acts as the main page for the Catalogue (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
+        <rdfs:label xml:lang="en">homepage</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a web page that acts as the main page for the Catalogue (DCAT AP documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/page">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment xml:lang="en">This property refers to a page or document about the subject class. (DCAT AP documentation). Usage Note: For the dcat:Dataset class dcat:landingpage is preferred and foaf:page should be reserved when a page provides additional, meaningful information about the Dataset (such as how the Dataset was notated, sourced etc.). For the dcat:Distribution class a similar logic applies where dcat:accessURL is preferred and foaf:page should only be used if some meaningful information is available, especially as it relates to the distribution (for example how to access/use the contents of the downloaded file).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/page"/>
+        <rdfs:label xml:lang="en">page</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a page or document about the subject class. (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">For the dcat:Dataset class dcat:landingpage is preferred and foaf:page should be reserved when a page provides additional, meaningful information about the Dataset (such as how the Dataset was notated, sourced etc.). For the dcat:Distribution class a similar logic applies where dcat:accessURL is preferred and foaf:page should only be used if some meaningful information is available, especially as it relates to the distribution (for example how to access/use the contents of the downloaded file).</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
+
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/primaryTopic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#CatalogRecord"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/primaryTopic"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/primaryTopic"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/primaryTopic"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">The resource described in the record. Each catalog record can have at most one primary topic i.e. describes one dataset or service (W3C DCAT documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/page"/>
+        <rdfs:label xml:lang="en">primary topic</rdfs:label>
+        <skos:definition xml:lang="en">The resource described in the record. Each catalog record can have at most one primary topic i.e. describes one dataset or service (W3C DCAT documentation).</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L10_had_input -->
+
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L10_had_input">
+        <rdfs:subPropertyOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"/>
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:range rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object which is the input used to specify the machine action. Usage Note: This property enables similar descriptions as prov:used within the cultural heritage segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L10_had_input"/>
+        <rdfs:label xml:lang="en">had input</rdfs:label>
+        <skos:definition xml:lang="en">This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object which is the input used to specify the machine action.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as prov:used within the cultural heritage segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L11_had_output -->
+
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L11_had_output">
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:range rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object which is the output of the activity. Usage Note: This property enables similar descriptions as prov:generated within the cultural heritage segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L10_had_output"/>
+        <rdfs:label xml:lang="en">had output</rdfs:label>
+        <skos:definition xml:lang="en">This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object which is the output of the activity.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as prov:generated within the cultural heritage segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L1_digitized -->
+
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L1_digitized">
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D2_Digitization_Process"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/E18_Physical_Thing"/>
+                    <rdf:Description rdf:about="http://iflastandards.info/ns/fr/frbr/frbroo/F5"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">This property associates an instance of D2 Digitization Process with an instance of E18 Physical Thing which is a material thing. Usage Note: This property should be used to describe digitization processes within a research process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L1_digitized"/>
+        <rdfs:label xml:lang="en">digitized</rdfs:label>
+        <skos:definition xml:lang="en">This property associates an instance of D2 Digitization Process with an instance of E18 Physical Thing which is a material thing.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should be used to describe the digitization process of a material object within a research process.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L20_has_created -->
+
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L20_has_created">
+        <rdfs:subPropertyOf rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L11_had_output"/>
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:range rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D9_Data_Object"/>
+        <rdfs:comment xml:lang="en">This property identifies a Data Object that came into existence as a result of a D11 Digital Measurement Event. Usage Note: This property uses the superclass of D11 in the context of the PCDAI Data Model (based on CIDOC CRM&apos;s inheritance system) to describe the result of a digitization process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L20_has_created"/>
+        <rdfs:label xml:lang="en">has created</rdfs:label>
+        <skos:definition xml:lang="en">This property identifies a Data Object that came into existence as a result of a D11 Digital Measurement Event.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property uses the superclass of D11 in the context of the PCDAI Data Model (based on CIDOC CRM&apos;s inheritance system) to describe the result of a digitization process.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L23_used_software_or_firmware -->
+
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L23_used_software_or_firmware">
+        <rdfs:subPropertyOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"/>
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:range rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D14_Software"/>
+        <rdfs:comment xml:lang="en">This property associates an instance of D7 Digital Machine Event with the instance of D14 Software that it used. Usage Note: Can be used to describe the IT infrastructure of a research project activity in combination with values from the PCDAI Technology Thesaurus.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L23_used_software_or_firmware"/>
+        <rdfs:label xml:lang="en">used software or firmware</rdfs:label>
+        <skos:definition xml:lang="en">This property associates an instance of D7 Digital Machine Event with the instance of D14 Software that it used.</skos:definition>
+        <skos:scopeNote xml:lang="en">Can be used to describe the IT infrastructure of a research project activity in combination with values from the PCDAI Technology Thesaurus.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L2_used_as_source -->
+
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L2_used_as_source">
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D10_Software_Execution"/>
+        <rdfs:range rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">This property associates an instance of D10 Software Execution with an instance of D1 Digital Object which is used as a source, software essential for the performance. Usage Note: This property should be used to describe software driven processes or activities within a research project.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L2_used_as_source"/>
+        <rdfs:label xml:lang="en">used as source</rdfs:label>
+        <skos:definition xml:lang="en">This property associates an instance of D10 Software Execution with an instance of D1 Digital Object which is used as a source, software essential for the performance.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should be used to describe software driven processes or activities within a research project.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L60_documents -->
+
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L60_documents">
+        <rdfs:domain rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D2_Digitization_Process"/>
+        <rdfs:range rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity"/>
+        <rdfs:comment xml:lang="en">This property describes the CRM Entities documented by instances of Digitization Processes. Usage Note: Can be used to attach relevant entities to a research project activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L60_documents"/>
+        <rdfs:label xml:lang="en">documents</rdfs:label>
+        <skos:definition xml:lang="en">This property describes the CRM Entities documented by instances of Digitization Processes.</skos:definition>
+        <skos:scopeNote xml:lang="en">Can be used to attach relevant entities to a research project activity.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/abstract">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/description"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasPart -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/hasPart">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/identifier"/>
+        <rdfs:label xml:lang="en">identifier</rdfs:label>
+        <skos:definition xml:lang="en">This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue (DCAT AP documentation).</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/isReferencedBy -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/isReferencedBy">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#CatalogRecord"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="en">This property contains the date on which the subject class was published or included in the Catalogue. (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/issued"/>
+        <rdfs:label xml:lang="en">issued</rdfs:label>
+        <skos:definition xml:lang="en">This property contains the date on which the subject class was published or included in the Catalogue. (DCAT AP documentation).</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/modified">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#CatalogRecord"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="en">This property contains the date on which the subject class was changed or modified. (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/modified"/>
+        <rdfs:label xml:lang="en">modified</rdfs:label>
+        <skos:definition xml:lang="en">This property contains the date on which the subject class was changed or modified. (DCAT AP documentation).</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/relation -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/relation">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/subject">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/temporal -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/temporal"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#CatalogRecord"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/org#Organization"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/org#OrganizationalUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+        <rdfs:label xml:lang="en">prefLabel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#accessURL -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#accessURL">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#byteSize -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#byteSize">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">This property contains the size of a Distribution in bytes (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#byteSize"/>
+        <rdfs:label xml:lang="en">byte size</rdfs:label>
+        <skos:definition xml:lang="en">This property contains the size of a Distribution in bytes (DCAT AP documentation).</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#downloadURL -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#downloadURL">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment xml:lang="en">This property contains a URL that is a direct link to a downloadable file in a given format (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#downloadURL"/>
+        <rdfs:label xml:lang="en">download URL</rdfs:label>
+        <skos:definition xml:lang="en">This property contains a URL that is a direct link to a downloadable file in a given format (DCAT AP documentation).</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#endpointDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#endpointDescription">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#endpointURL -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#endpointURL">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#keyword -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#keyword">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+                    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">A keyword or tag describing the resource (W3C DCAT documentation). Usage Note: This property should be used after dcat:theme and dct:type to attach anything that isn&apos;t covered by those properties and is relevant to the description of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#keyword"/>
+        <rdfs:label xml:lang="en">keyword</rdfs:label>
+        <skos:definition xml:lang="en">A keyword or tag describing the resource (W3C DCAT documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should be used after dcat:theme and dct:type to attach anything that isn&apos;t covered by those properties and is relevant to the description of the resource.</skos:scopeNote>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#endedAtTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#endedAtTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">The time at which an activity ended. Usage Note: This should generally reference the year (and month and/or date) that work on a research project ended.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+        <rdfs:label xml:lang="en">ended at</rdfs:label>
+        <skos:definition xml:lang="en">The time at which an activity ended.</skos:definition>
+        <skos:scopeNote xml:lang="en">This should generally reference the year (and month and/or date) that work on a research project ended.</skos:scopeNote>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#startedAtTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#startedAtTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">The time at which an activity started. Usage Note: This should generally reference the year (and month and/or date) that work on a research project began.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+        <rdfs:label xml:lang="en">started at</rdfs:label>
+        <skos:definition xml:lang="en">The time at which an activity started.</skos:definition>
+        <skos:scopeNote xml:lang="en">This should generally reference the year (and month and/or date) that work on a research project began.</skos:scopeNote>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#value -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#value"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/E18_Physical_Thing -->
+
+
+    <owl:Class rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/E18_Physical_Thing">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E70_Thing"/>
+        <rdfs:comment xml:lang="en">This class comprises all persistent physical items with a relatively stable form, human-made or natural. Usage Note: Should be used for objects used in the digitization process and acts as the superclass for the F5 Item class in LRMoo/FRBRoo.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E18_Physical_Thing"/>
+        <rdfs:label>E18 Physical Thing</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises all persistent physical items with a relatively stable form, human-made or natural.</skos:definition>
+        <skos:scopeNote xml:lang="en">Should be used for objects used in the digitization process and acts as the superclass for the F5 Item class in LRMoo/FRBRoo.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity -->
+
+
+    <owl:Class rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity">
+        <rdfs:comment xml:lang="en">This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. Usage Note: This class is included to allow for flexibility when describing entities related to instances of F3 Manifestation and D2 Digitization Process via the appropriate properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity"/>
+        <rdfs:label>E1 CRM Entity</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is included to allow for flexibility when describing entities related to instances of F3 Manifestation and D2 Digitization Process via the appropriate properties.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/E39_Actor -->
+
+
+    <owl:Class rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/E39_Actor">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity"/>
+        <rdfs:comment xml:lang="en">This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible. Usage Note: The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E39_Actor"/>
+        <rdfs:label>E39 Actor</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.</skos:definition>
+        <skos:scopeNote xml:lang="en">The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of people or entities involved in research projects, the PROV-O definition underlines the responsibility of an agent towards an activity or entity whereas the FOAF definition focuses on the aspect of doing and the CIDOC CRM definition focuses on the potential of actors to do things. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/E53_Place -->
+
+
+    <owl:Class rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/E53_Place">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity"/>
+        <rdfs:comment xml:lang="en">This class comprises extents in the natural space we live in, in particular on the surface of the Earth, in the pure sense of physics: independent from temporal phenomena and matter. Usage Note: The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E53_Place"/>
+        <rdfs:label>E53 Place</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises extents in the natural space we live in, in particular on the surface of the Earth, in the pure sense of physics: independent from temporal phenomena and matter. </skos:definition>
+        <skos:scopeNote xml:lang="en">The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of places related to a research project, the data model also makes use of dct:Location, which bears close conceptual resemblance to E53_Place in a simplified way, and prov:Location, which conceptualizes location as both geographical and non-geographical. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/E70_Thing -->
+
+
+    <owl:Class rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/E70_Thing">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity"/>
+        <rdfs:comment xml:lang="en">This general class comprises discrete, identifiable, instances of E77 Persistent Item that are documented as single units, that either consist of matter or depend on being carried by matter and are characterized by relative stability. They may be intellectual products or physical things. They may for instance have a solid physical form, an electronic encoding, or they may be a logical concept or structure. Usage Note: This class is included as the superclass for D1 Digital Object and range for P106 property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E70_Thing"/>
+        <rdfs:label>E70 Thing</rdfs:label>
+        <skos:definition xml:lang="en">This general class comprises discrete, identifiable, instances of E77 Persistent Item that are documented as single units, that either consist of matter or depend on being carried by matter and are characterized by relative stability. They may be intellectual products or physical things. They may for instance have a solid physical form, an electronic encoding, or they may be a logical concept or structure.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is included as the superclass for D1 Digital Object and range for P106 property.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://cidoc-crm.org/cidoc-crm/7.1.2/E7_Activity -->
+
+
+    <owl:Class rdf:about="http://cidoc-crm.org/cidoc-crm/7.1.2/E7_Activity">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity"/>
+        <rdfs:comment xml:lang="en">This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented. Usage Note: This class is included as the superclass for D7 Digital Machine Event. The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E7_Activity"/>
+        <rdfs:label>E7 Activity</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is included as the superclass for D7 Digital Machine Event. The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of activity, the data model conceptualizes research projects as examples of activities using E7 (in the cultural heritage context) and prov:Activity (in the provenance context), which conceptualizes activity as related to time as well as acting upon entities. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://iflastandards.info/ns/fr/frbr/frbroo/F3 -->
+
+
+    <owl:Class rdf:about="http://iflastandards.info/ns/fr/frbr/frbroo/F3">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity"/>
+        <rdfs:comment xml:lang="en">This class comprises products rendering one or more Expressions. A Manifestation is defined by both the overall content and the form of its presentation. The substance of F3 Manifestation is not only signs, but also the manner in which they are presented to be consumed by users, including the kind of media adopted. Usage Note: This class is defined based on the LRMoo v0.9 documentation. It is included to represent the manifestations that are materialized in instances of F5 Item and which can be about an E1 CRM Entity, and which are tied to digitization processes and digital machine events such as for example the transformation of a text into a linguistic corpus.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F3"/>
+        <rdfs:label>F3 Manifestatiion</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises products rendering one or more Expressions. A Manifestation is defined by both the overall content and the form of its presentation. The substance of F3 Manifestation is not only signs, but also the manner in which they are presented to be consumed by users, including the kind of media adopted.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is defined based on the LRMoo v0.9 documentation. It is included to represent the manifestations that are materialized in instances of F5 Item and which can be about an E1 CRM Entity, and which are tied to digitization processes and digital machine events such as for example the transformation of a text into a linguistic corpus.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://iflastandards.info/ns/fr/frbr/frbroo/F5 -->
+
+
+    <owl:Class rdf:about="http://iflastandards.info/ns/fr/frbr/frbroo/F5">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E18_Physical_Thing"/>
+        <rdfs:comment xml:lang="en">This class comprises physical objects (printed books, scores, CDs, DVDs, CD-ROMS, etc.) that were produced by (P186i) an industrial process involving a given instance of F3 Manifestation. As a result, all the instances of F5 Item associated with a given instance of F3 Manifestation are expected to carry the content defined in that instance of F3 Manifestation, although some or even all of them may happen to carry a content that significantly differs from it, due to either an accident in the course of industrial production, or subsequent physical modification or degradation. Usage Note: This class is defined from the LRMoo v0.9 documentation. It is included to represent the items that materialize instances of F3 Manifestation, and which are tied to digitization processes and digital machine events such as for example the transformation of a text into a linguistic corpus.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F5"/>
+        <rdfs:label>F5 Item</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises physical objects (printed books, scores, CDs, DVDs, CD-ROMS, etc.) that were produced by (P186i) an industrial process involving a given instance of F3 Manifestation. As a result, all the instances of F5 Item associated with a given instance of F3 Manifestation are expected to carry the content defined in that instance of F3 Manifestation, although some or even all of them may happen to carry a content that significantly differs from it, due to either an accident in the course of industrial production, or subsequent physical modification or degradation.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is defined from the LRMoo v0.9 documentation. It is included to represent the items that materialize instances of F3 Manifestation, and which are tied to digitization processes and digital machine events such as for example the transformation of a text into a linguistic corpus.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/Frequency -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Frequency">
+        <rdfs:comment xml:lang="en">A rate at which something recurs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/Frequency"/>
+        <rdfs:label>Frequency</rdfs:label>
+        <skos:definition xml:lang="en">A rate at which something recurs.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is included as the range for the accrual periodicity property.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/LicenseDocument -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/LicenseDocument">
+        <rdfs:comment xml:lang="en">A legal document giving official permission to do something with a resource. Usage Note: Uses values from the Licenze controlled vocabulary (DCAT AP IT documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/LicenseDocument"/>
+        <rdfs:label xml:lang="en">License Document</rdfs:label>
+        <skos:definition xml:lang="en">A legal document giving official permission to do something with a resource.</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from the Licenze controlled vocabulary (DCAT AP IT documentation).</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/LinguisticSystem -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/LinguisticSystem">
+        <rdfs:comment xml:lang="en">A system of signs, symbols, sounds, gestures, or rules used in communication. Usage Note: Uses values from the EU Language authority table (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/LinguisticSystem"/>
+        <rdfs:label xml:lang="en">Linguistic System</rdfs:label>
+        <skos:definition xml:lang="en">A system of signs, symbols, sounds, gestures, or rules used in communication.</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from the EU Language authority table (DCAT AP documentation).</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/Location -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Location">
+        <rdfs:comment xml:lang="en">A spatial region or named place. Usage Note: Uses values from Geonames and Wikidata.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/Location"/>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+        <skos:definition xml:lang="en">A spatial region or named place.</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from Geonames and Wikidata.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/MediaType -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/MediaType">
+        <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
+        <rdfs:comment xml:lang="en">A file format or physical medium. Usage Note: Uses values from the EU File Type authority table (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/MediaType"/>
+        <rdfs:label xml:lang="en">Media Type</rdfs:label>
+        <skos:definition xml:lang="en">A file format or physical medium.</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from the EU File Type authority table (DCAT AP documentation).</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/MediaTypeOrExtent -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/MediaTypeOrExtent">
+        <rdfs:comment xml:lang="en">Usage Note: Uses values from the EU File Type authority table (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
+        <rdfs:label xml:lang="en">Media Type Or Extent.</rdfs:label>
+        <skos:scopeNote xml:lang="en">Uses values from the EU File Type authority table (DCAT AP documentation).</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/PeriodOfTime -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+        <rdfs:comment xml:lang="en">An interval of time that is named or defined by its start and end dates. Usage Note: Uses values from Wikidata.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+        <rdfs:label>Period of Time</rdfs:label>
+        <skos:definition xml:lang="en">An interval of time that is named or defined by its start and end dates.</skos:definition>
+        <skos:scopeNote xml:lang="en">Uses values from Wikidata.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/RightsStatement -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/RightsStatement">
+        <rdfs:comment xml:lang="en">A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights. Usage Note: This class is primarily intended to cover rights outside the scope of the Licenze controlled vocabulary, such as copyright statements.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/RightsStatement"/>
+        <rdfs:label xml:lang="en">Rights Statement</rdfs:label>
+        <skos:definition xml:lang="en">A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is primarily intended to cover rights outside the scope of the Licenze controlled vocabulary, such as copyright statements.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/Standard -->
+
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Standard">
+        <rdfs:comment xml:lang="en">A reference point against which other things can be evaluated or compared.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/Standard"/>
+        <rdfs:label xml:lang="en">Standard</rdfs:label>
+        <skos:definition xml:lang="en">A reference point against which other things can be evaluated or compared.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#anyURI -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
+        <skos:scopeNote xml:lang="en">This class is included as the range for the dcat:theme and dct:type properties as well as various other properties within DCAT related to formats, rights, and standards.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:label xml:lang="en">Concept Scheme</rdfs:label>
+        <skos:scopeNote xml:lang="en">This class is included as the range for the dcat:themeTaxonomy property.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/adms#Identifier -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/adms#Identifier">
+        <rdfs:comment xml:lang="en">An identifier in a particular context, consisting of the content string that is the identifier; an optional identifier for the identifier scheme; an optional identifier for the version of the identifier scheme; an optional identifier for the agency that manages the identifier scheme.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
+        <rdfs:label xml:lang="en">Identifier</rdfs:label>
+        <skos:definition xml:lang="en">An identifier in a particular context, consisting of the content string that is the identifier; an optional identifier for the identifier scheme; an optional identifier for the version of the identifier scheme; an optional identifier for the agency that manages the identifier scheme.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Catalog -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Catalog">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment xml:lang="en">A catalogue or repository that hosts the Datasets or Data Services being described (DCAT AP documentation). Usage Note: This class is intended to represent research projects as containers (rather than activities) for outputs, which are themselves conceptualized using the DCAT dataset and data service classes. The most common example of such containers would be websites where the project and its outputs are documented, shared, and, sometimes, made available for interaction. While the PCDAI Data Model refers to the DCAT AP definition, the W3C definition of the catalogue class, as &quot;a curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog)&quot;, is also useful as is the usage note that web-base data catalogs are typically represented as a single instance of the class. Furthermore, the W3C version of DCAT explicitly makes dcat:Catalog a subclass of dcat:Dataset, allowing to conceptualize the research project as container as another form of output from the research project as activity. See the PCDAI Data Model documentation on our website for practical examples.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:label xml:lang="en">Catalogue</rdfs:label>
+        <skos:definition xml:lang="en">A catalogue or repository that hosts the Datasets or Data Services being described (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is intended to represent research projects as containers (rather than activities) for outputs, which are themselves conceptualized using the DCAT dataset and data service classes. The most common example of such containers would be websites where the project and its outputs are documented, shared, and, sometimes, made available for interaction. While the PCDAI Data Model refers to the DCAT AP definition, the W3C definition of the catalogue class, as &quot;a curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog)&quot;, is also useful as is the usage note that web-base data catalogs are typically represented as a single instance of the class. Furthermore, the W3C version of DCAT explicitly makes dcat:Catalog a subclass of dcat:Dataset, allowing to conceptualize the research project as container as another form of output from the research project as activity. See the PCDAI Data Model documentation on our website for practical examples.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#CatalogRecord -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#CatalogRecord">
+        <rdfs:comment xml:lang="en">A description of a Dataset’s entry in the Catalogue (DCAT AP documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#CatalogRecord"/>
+        <rdfs:label xml:lang="en">Catalogue Record</rdfs:label>
+        <skos:definition xml:lang="en">A description of a Dataset’s entry in the Catalogue (DCAT AP documentation).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#DataService -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#DataService">
+        <rdfs:comment xml:lang="en">A collection of operations that provides access to one or more datasets or data processing functions (DCAT AP documentation). Usage Note: This class is intended to represent web services that give access to datasets and/or data processing functions. In many cases these web services may well be part of the same website that is also conceptualized as an individual of the dcat:Catalog class, therefore a research project&apos;s website may fulfill the conceptual function of both a container for the project&apos;s outputs by collecting the relevant (meta)data in one place and a web service that gives access to the underlying data(sets) and data processing functions to interact with the data(sets) such as search functionalities (to use one of the most common examples). The PCDAI Data Model also refers to the usage guide note about distinctions between data service and distribution included in the DCAT AP 2.1.1 release that makes the following points: &quot;a data service is an entity in its own right&quot; that &quot;provides access to datasets or data processing functions&quot;; a distribution is &quot;not required to be the result of the data service operations&quot;; &quot;anything that has not the intend to provide a downloadable representation of a dataset is a data service, [they] offer smarter, more interactive ways to the data&quot;. See the PCDAI Data Model documentation on our website for practical examples.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+        <rdfs:label xml:lang="en">Data Service</rdfs:label>
+        <skos:definition xml:lang="en">A collection of operations that provides access to one or more datasets or data processing functions (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is intended to represent web services that give access to datasets and/or data processing functions. In many cases these web services may well be part of the same website that is also conceptualized as an individual of the dcat:Catalog class, therefore a research project&apos;s website may fulfill the conceptual function of both a container for the project&apos;s outputs by collecting the relevant (meta)data in one place and a web service that gives access to the underlying data(sets) and data processing functions to interact with the data(sets) such as search functionalities (to use one of the most common examples). The PCDAI Data Model also refers to the usage guide note about distinctions between data service and distribution included in the DCAT AP 2.1.1 release that makes the following points: &quot;a data service is an entity in its own right&quot; that &quot;provides access to datasets or data processing functions&quot;; a distribution is &quot;not required to be the result of the data service operations&quot;; &quot;anything that has not the intend to provide a downloadable representation of a dataset is a data service, [they] offer smarter, more interactive ways to the data&quot;. See the PCDAI Data Model documentation on our website for practical examples.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Dataset -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset">
+        <rdfs:comment xml:lang="en">A collection of data, published or curated by a single agent, and available for access or download in one or more representations (W3C DCAT documentation). Usage Note: This class is intended to represent digital outputs of research projects, whatever their &apos;form&apos;. As such an annotated textual corpus, a piece of software written in Java, and a relational database storing information about physical items can all be conceptualized as a dataset, with the research project that led to their creation conceptualized within the DCAT segment of the PCDAI Data Model as the catalogue that holds their (meta)data and the website that makes it possible to interact with them conceptualized as the data service (the research project as activity is conceptualized with classes from PROV-O and CIDOC CRM). See the PCDAI Data Model documentation on our website for practical examples.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:label xml:lang="en">Dataset</rdfs:label>
+        <skos:definition xml:lang="en">A collection of data, published or curated by a single agent, and available for access or download in one or more representations (W3C DCAT documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is intended to represent digital outputs of research projects, whatever their &apos;form&apos;, and is conceptually related to prov:Entity and crmdig:D1_Digital_Object within the PCDAI Data Model&apos;s three segments. As such an annotated textual corpus, a piece of software written in Java, and a relational database storing information about physical items can all be conceptualized as a dataset, with the research project that led to their creation conceptualized within the DCAT segment of the PCDAI Data Model as the catalogue that holds their (meta)data and the website that makes it possible to interact with them conceptualized as the data service (the research project as activity is conceptualized with classes from PROV-O and CIDOC CRM). See the PCDAI Data Model documentation on our website for practical examples.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Distribution -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Distribution">
+        <rdfs:comment xml:lang="en">An accessible form of a dataset such as a downloadable file (W3C DCAT documentation). Usage Note: This class is intended to represent the downloadable forms that a dataset can take. While both the W3C and DCAT AP definitions could be interpreted as covering non-downloable forms (one can access a dataset via a web interface and never actually have access to the underlying data itself on a local machine), within the context of the PCDAI Data Model the distribution class explicitly refers only to downloadable forms. As with the data service class, we make close reference to the DCAT AP 2.1.1 usage guide note on distinctions between distribution and data service, which makes it clear that while datasets and data services are entities in their own right a distribution cannot exist without its dataset. It further states: &quot;distributions are specific representations of a dataset, described with the intend to facilitate the delivery of the data as file to a reuser. The access URL (preferably download URL) will provide a simple way to obtain (download) the content of the dataset in the representation specified by the distribution. The obtained (downloaded) content is fully determined by the publisher of the distribution. Only after obtaining the data the (re)user can change the data according to its needs. &quot;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:label xml:lang="en">Distribution</rdfs:label>
+        <skos:definition xml:lang="en">An accessible form of a dataset such as a downloadable file (W3C DCAT documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is intended to represent the downloadable forms that a dataset can take. While both the W3C and DCAT AP definitions could be interpreted as covering non-downloable forms (one can access a dataset via a web interface and never actually have access to the underlying data itself on a local machine), within the context of the PCDAI Data Model the distribution class explicitly refers only to downloadable forms. As with the data service class, we make close reference to the DCAT AP 2.1.1 usage guide note on distinctions between distribution and data service, which makes it clear that while datasets and data services are entities in their own right a distribution cannot exist without its dataset. It further states: &quot;distributions are specific representations of a dataset, described with the intend to facilitate the delivery of the data as file to a reuser. The access URL (preferably download URL) will provide a simple way to obtain (download) the content of the dataset in the representation specified by the distribution. The obtained (downloaded) content is fully determined by the publisher of the distribution. Only after obtaining the data the (re)user can change the data according to its needs. &quot;.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/org#Organization -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/org#Organization">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment xml:lang="en">Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures. Usage Note: This class should be used to help represent the organizational structure of the entities responsible for research projects, such as departments and/or laboratories that are part of universities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/org#Organization"/>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+        <skos:definition xml:lang="en">Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class should be used to help represent the organizational structure of the entities responsible for research projects, such as departments and/or laboratories that are part of universities.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/org#OrganizationalUnit -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/org#OrganizationalUnit">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+        <rdfs:comment xml:lang="en">An Organization such as a department or support unit which is part of some larger Organization and only has full recognition within the context of that Organization. In particular the unit would not be regarded as a legal entity in its own right. Usage Note: This class should be used to represent entities such as departments or laboratories which are often responsible for creating research projects and their outputs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.w3.org/TR/vocab-org/#org:OrganizationalUnit"/>
+        <rdfs:label xml:lang="en">Organizational Unit</rdfs:label>
+        <skos:definition xml:lang="en">An Organization such as a department or support unit which is part of some larger Organization and only has full recognition within the context of that Organization. In particular the unit would not be regarded as a legal entity in its own right.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class should be used to represent entities such as departments or laboratories which are often responsible for creating research projects and their outputs.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Activity">
+        <rdfs:comment xml:lang="en">An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities. Usage Note: The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of activity, the data model conceptualizes research projects as examples of activities using E7_Activity (in the cultural heritage context) and prov:Activity (in the provenance context), which conceptualizes activity as related to time as well as acting upon entities. The DCAT model includes a clear connection between the dataset class and the activity class via the prov:wasGeneratedBy property which is a starting point for the PCDAI Data Model&apos;s dual conceptualization of research projects as both activity and datasets that contain other datasets (dcat:Catalog). In this sense, a research project is an activity that generates a container that holds all of the output of the activity. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+        <skos:definition xml:lang="en">An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</skos:definition>
+        <skos:note xml:lang="en">The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of activity, the data model conceptualizes research projects as examples of activities using E7_Activity (in the cultural heritage context) and prov:Activity (in the provenance context), which conceptualizes activity as related to time as well as acting upon entities. The DCAT model includes a clear connection between the dataset class and the activity class via the prov:wasGeneratedBy property which is a starting point for the PCDAI Data Model&apos;s dual conceptualization of research projects as both activity and datasets that contain other datasets (dcat:Catalog). In this sense, a research project is an activity that generates a container that holds all of the output of the activity. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent">
+        <rdfs:comment xml:lang="en">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity. Usage Note: The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:label xml:lang="en">Agent (PROV-O)</rdfs:label>
+        <skos:definition xml:lang="en">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity.</skos:definition>
+        <skos:scopeNote xml:lang="en">The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of people or entities involved in research projects, the PROV-O definition underlines the responsibility of an agent towards an activity or entity whereas the FOAF definition focuses on the aspect of doing and the CIDOC CRM definition focuses on the potential of actors to do things. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Derivation -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Derivation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Influence"/>
+        <rdfs:comment xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity. Usage Note: This class should be used when needed for additional description of the potential relationships between research project outputs where an output is a derivation of a physical object (digitization) or of a digital object, including another research project&apos;s output.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#Derivation"/>
+        <rdfs:label xml:lang="en">Derivation</rdfs:label>
+        <skos:definition xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class should be used when needed for additional description of the potential relationships between research project outputs where an output is a derivation of a physical object (digitization) or of a digital object, including another research project&apos;s output.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity">
+        <rdfs:comment xml:lang="en">An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. Usage Note: The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the academic provenance segment of the data model, an entity is primarily intended to represent research outputs (which can also be conceptualized as instances of crmdig:D1_Digital_Object and dcat:Dataset in the other segments of the data model) or things that have a relationship to the research project such as objects that are digitized or primary subjects of research. For example, a dataset produced by a research project would be an instance of dcat:Dataset, crmdig:D1_Digital_Object (produced by a D7 class activity) and prov:Entity (generated by a prov:Activity) while a historical figure that is the subject of the research may be an instance of prov:Entity and crm:E1_Entity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <skos:definition xml:lang="en">An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary.</skos:definition>
+        <skos:scopeNote xml:lang="en">The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the academic provenance segment of the data model, an entity is primarily intended to represent research outputs (which can also be conceptualized as instances of crmdig:D1_Digital_Object and dcat:Dataset in the other segments of the data model) or things that have a relationship to the research project such as objects that are digitized or primary subjects of research. For example, a dataset produced by a research project would be an instance of dcat:Dataset, crmdig:D1_Digital_Object (produced by a D7 class activity) and prov:Entity (generated by a prov:Activity) while a historical figure that is the subject of the research may be an instance of prov:Entity and crm:E1_Entity.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Influence -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Influence">
+        <rdfs:comment xml:lang="en">Influence is the capacity of an entity, activity, or agent to have an effect on the character, development, or behavior of another by means of usage, start, end, generation, invalidation, communication, derivation, attribution, association, or delegation. Usage Note: This class should be used for additional description of the potential relationships between research project, agents, and outputs and other instances of agent, activity, or entity that have an effect on them. In the context of the PCDAI Data Model influence is taken in its traditional literal sense such as a historical figure or moment (entity) having an influence on the research project (activity) because it is its primary subject.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#Influence"/>
+        <rdfs:label xml:lang="en">Influence</rdfs:label>
+        <skos:definition xml:lang="en">Influence is the capacity of an entity, activity, or agent to have an effect on the character, development, or behavior of another by means of usage, start, end, generation, invalidation, communication, derivation, attribution, association, or delegation.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class should be used for additional description of the potential relationships between research project, agents, and outputs and other instances of agent, activity, or entity that have an effect on them. In the context of the PCDAI Data Model influence is taken in its traditional literal sense such as a historical figure or moment (entity) having an influence on the research project (activity) because it is its primary subject.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Location -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Location">
+        <rdfs:comment xml:lang="en">A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth. Usage Note: The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#Location"/>
+        <rdfs:label xml:lang="en">Location (PROV-O)</rdfs:label>
+        <skos:definition xml:lang="en">A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.</skos:definition>
+        <skos:scopeNote xml:lang="en">The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of places related to a research project, the data model also makes use of dct:Location and crm:E53_Place, which refer specifically to geographical places. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdfs:comment xml:lang="en">An agent (eg. person, group, software or physical artifact) [...] that does stuff. Usage Note: Two classes from the Org Ontology are also included to help further clarify the organizational structure behind foaf:Agent, such as when a department is responsible for a research project but it itself is part of the wider organization that is its university. The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+        <skos:definition xml:lang="en">An agent (eg. person, group, software or physical artifact) [...] that does stuff.</skos:definition>
+        <skos:scopeNote xml:lang="en">Two classes from the Org Ontology are also included to help further clarify the organizational structure behind foaf:Agent, such as when a department is responsible for a research project but it itself is part of the wider organization that is its university. The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of people or entities involved in research projects, the PROV-O definition underlines the responsibility of an agent towards an activity or entity whereas the FOAF definition focuses on the aspect of doing and the CIDOC CRM definition focuses on the potential of actors to do things. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Document">
+        <rdfs:comment xml:lang="en">Represents those things which are, broadly conceived, &apos;documents&apos;. Usage Note: With regards to the usage note in the FOAF documentation that states it does not make a distinction between physical and electronic documents within this class, the PCDAI Data Model primarily uses this class for electronic documents.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:label xml:lang="en">Document</rdfs:label>
+        <skos:definition xml:lang="en">Represents those things which are, broadly conceived, &apos;documents&apos;.</skos:definition>
+        <skos:scopeNote xml:lang="en">With regards to the usage note in the FOAF documentation that states it does not make a distinction between physical and electronic documents within this class, the PCDAI Data Model primarily uses this class for electronic documents.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D10_Software_Execution -->
+
+
+    <owl:Class rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D10_Software_Execution">
+        <rdfs:subClassOf rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:comment xml:lang="en">This class comprises events by which a digital device runs a software program or a series of computing operations on a digital object as a single task, which is completely determined by its digital input, the software and the generic properties of the device. Usage Note: This class is intended as the primary representation of a sub-activity within a research project that involves using software or computational operations on a digital object, such as for example creating data visualizations or statistical operations on a text corpus. The specific details of the software execution are outside the scope of the PCDAI Data Model.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D10_Software_Execution"/>
+        <rdfs:label xml:lang="en">D10 Software Execution</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises events by which a digital device runs a software program or a series of computing operations on a digital object as a single task, which is completely determined by its digital input, the software and the generic properties of the device.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class is intended as the primary representation of a sub-activity within a research project that involves using software or computational operations on a digital object, such as for example creating data visualizations or statistical operations on a text corpus. The specific details of the software execution are outside the scope of the PCDAI Data Model.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D14_Software -->
+
+
+    <owl:Class rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D14_Software">
+        <rdfs:subClassOf rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">This class comprises software codes,computer programs,procedures, and functions that are used to operate a system of digital objects. Usage Note: This class should be used to represent conceptual versions of software: software as an example of the output of a research project; and software used in a research project activity (instance of D7_Digital_Machine_Event) and further qualified by using the PCDAI Technology Thesaurus.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D14_Software"/>
+        <rdfs:label xml:lang="en">D14 Software</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises software codes,computer programs,procedures, and functions that are used to operate a system of digital objects.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class should be used to represent conceptual versions of software: software as an example of the output of a research project; and software used in a research project activity (instance of D7_Digital_Machine_Event) and further qualified by using the PCDAI Technology Thesaurus.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object -->
+
+
+    <owl:Class rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E70_Thing"/>
+        <rdfs:comment xml:lang="en">This class comprises identifiable immaterial items that can be represented as sets of bit sequences, such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. Any aggregation of instances of D1 Digital Object into a whole treated as single unit is also regarded as an instance of D1 Digital Object. Usage Note: The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. This class should be used to represent outputs of research project activity, with a focus on their quality as examples of digital cultural heritage produced and maintained by Italian universities, within the cultural heritage segment of the PCDAI Data Model.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object"/>
+        <rdfs:label xml:lang="en">D1 Digital Object</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises identifiable immaterial items that can be represented as sets of bit sequences, such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. Any aggregation of instances of D1 Digital Object into a whole treated as single unit is also regarded as an instance of D1 Digital Object.</skos:definition>
+        <skos:scopeNote xml:lang="en">The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. This class should be used to represent outputs of research project activity, with a focus on their quality as examples of digital cultural heritage produced and maintained by Italian universities, within the cultural heritage segment of the PCDAI Data Model. Research project outputs may also be conceptualized as instances of prov:Entity and dcat:Dataset.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D2_Digitization_Process -->
+
+
+    <owl:Class rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D2_Digitization_Process">
+        <rdfs:subClassOf rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:comment xml:lang="en">This class comprises events that result in the creation of instances of D9 Data Object that represent the appearance and/or form of an instance of E18 Physical Thing such as paper documents, statues, buildings, paintings, etc. A particular case is the analogue-to-digital conversion of audiovisual material. This class represents the transition from a material thing to an immaterial representation of it. Usage Note: This class is intended as the primary representation of a sub-activity within a research project that involves digitizing physical objects to create digital copies. Such copies may then form part of the research project&apos;s output, whether or not they go through further processes. The details of the digitization process, such as whether or not a digital object is further changed before arriving at the final form included in an official output, while able to be described by the CRM DIG model are outside the scope of the PCDAI Data Model.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D2_Digitization_Process"/>
+        <rdfs:label xml:lang="en">D2 Digitization Process</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises events that result in the creation of instances of D9 Data Object that represent the appearance and/or form of an instance of E18 Physical Thing such as paper documents, statues, buildings, paintings, etc. A particular case is the analogue-to-digital conversion of audiovisual material. This class represents the transition from a material thing to an immaterial representation of it. </skos:definition>
+        <skos:scopeNote xml:lang="en">This class is intended as the primary representation of a sub-activity within a research project that involves digitizing physical objects to create digital copies. Such copies may then form part of the research project&apos;s output, whether or not they go through further processes. The details of the digitization process, such as whether or not a digital object is further changed before arriving at the final form included in an official output, while able to be described by the CRM DIG model are outside the scope of the PCDAI Data Model.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event -->
+
+
+    <owl:Class rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/7.1.2/E7_Activity"/>
+        <rdfs:comment xml:lang="en">This class comprises events that happen on physical digital devices following a human activity that intentionally caused its immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. Some D7 Digital Machine Events may form part of a wider E65 Creation event. In this case, all machine output of the partial events is regarded as creation of the overall activity. Usage Note: The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. This class should be used to represent a research project as an example of activity within the cultural heritage segment of the data model. As such this class indicates the cultural heritage dimension of the research project activity, by focusing on how research projects make use of existing cultural heritage entities to produce new digital objects. By contrast, the research project activity under the PROV-O model does not have this cultural heritage association and is meant to represent its academic provenance.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D7_Digital_Machine_Event"/>
+        <rdfs:label xml:lang="en">D7 Digital Machine Event</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises events that happen on physical digital devices following a human activity that intentionally caused its immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. Some D7 Digital Machine Events may form part of a wider E65 Creation event. In this case, all machine output of the partial events is regarded as creation of the overall activity. </skos:definition>
+        <skos:scopeNote xml:lang="en">The PCDAI Data Model brings together three different &apos;segments&apos; - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. This class should be used to represent a research project as an example of activity within the cultural heritage segment of the data model. As such this class indicates the cultural heritage dimension of the research project activity, by focusing on how research projects make use of existing cultural heritage entities to produce new digital objects. By contrast, the research project activity under the PROV-O model does not have this cultural heritage association and is meant to represent its academic provenance.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D9_Data_Object -->
+
+
+    <owl:Class rdf:about="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D9_Data_Object">
+        <rdfs:subClassOf rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">This class comprises instances of D1 Digital Object that are the direct result of a digital measurement or a formal derivative of it, containing quantitative properties of some physical things or other constellations of matter. Usage Note: This class should be used to represent the outputs of D2 Digitization Process and which, as noted in the scope note for the D2 class, may represent the outputs of a research project activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D9_Data_Object"/>
+        <rdfs:label xml:lang="en">D9 Data Object</rdfs:label>
+        <skos:definition xml:lang="en">This class comprises instances of D1 Digital Object that are the direct result of a digital measurement or a formal derivative of it, containing quantitative properties of some physical things or other constellations of matter.</skos:definition>
+        <skos:scopeNote xml:lang="en">This class should be used to represent the outputs of D2 Digitization Process and which, as noted in the scope note for the D2 class, may represent the outputs of a research project activity.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.org/pcdai -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/pcdai">
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-06-30</terms:issued>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://creativecommons.org/licenses/by-sa/4.0/ -->
+
+
+    <owl:NamedIndividual rdf:about="https://creativecommons.org/licenses/by-sa/4.0/">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/LicenseDocument"/>
+        <rdfs:label>CC BY SA 4.0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://purl.org/dc/terms/abstract">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/abstract"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/created"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:comment xml:lang="en">This property refers to entities responsible for the creation of the subject class (DCAT AP documentation). Usage Note: This property enables similar descriptions as crm:P14_carried_out_by and prov:wasAssociatedWith within the public data segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/creator"/>
+        <rdfs:label xml:lang="en">creator</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to entities responsible for the creation of the subject class (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">This property enables similar descriptions as crm:P14_carried_out_by and prov:wasAssociatedWith within the public data segment of the PCDAI Data Model. Please see the Data Model documentation for full details of how PCDAI makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/description"/>
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/hasPart">
+        <rdfs:comment xml:lang="en">This is the most general predicate for membership of a catalog. Use of a more specific sub-property is recommended (dcat:dataset, dcat:service) when available (W3C DCAT documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+        <skos:scopeNote xml:lang="en">Use of a more specific sub-property is recommended (dcat:dataset, dcat:service) when available.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/isReferencedBy">
+        <rdfs:comment xml:lang="en">This property is about a related resource, such as a publication, that references, cites, or otherwise points to the dataset (DCAT AP documentation). Usage Note: Should be used to connect a dataset to relevant academic publications. In the case that there are multiple publications a link to a page that collects details of all existing publication about a project is appropriate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/isReferencedBy"/>
+        <rdfs:label xml:lang="en">is referenced by</rdfs:label>
+        <skos:definition xml:lang="en">This property is about a related resource, such as a publication, that references, cites, or otherwise points to the dataset (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Should be used to connect a dataset to relevant academic publications. In the case that there are multiple publications a link to a page that collects details of all existing publication about a project is appropriate.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+        <rdfs:comment xml:lang="en">This property refers to the entity responsible for making the subject class available (W3C DCAT documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/publisher"/>
+        <rdfs:label xml:lang="en">publisher</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to the entity responsible for making the subject class available (W3C DCAT documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">Its use is based on the W3C DCAT specification and is therefore not limited to a single publisher as per the DCAT AP and AP IT documentations.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/relation">
+        <rdfs:comment xml:lang="en">This property refers to a related resource (DCAT AP documentation). </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/relation"/>
+        <rdfs:label xml:lang="en">relation</rdfs:label>
+        <skos:definition xml:lang="en">This property refers to a related resource (DCAT AP documentation). </skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/subject"/>
+        <rdfs:label xml:lang="en">subject</rdfs:label>
+        <skos:scopeNote xml:lang="en">Included as the superproperty for dcat:theme.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/temporal">
+        <rdfs:comment xml:lang="en">The temporal period that the dataset covers (W3C DCAT documentation).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/temporal"/>
+        <rdfs:label xml:lang="en">temporal</rdfs:label>
+        <skos:definition xml:lang="en">The temporal period that the dataset covers (W3C DCAT documentation).</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/title"/>
+        <rdfs:label xml:lang="en">title</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2002/07/owl#versionInfo"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#accessURL">
+        <rdfs:comment xml:lang="en">This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain information about how to get the Dataset. Usage Note: For direct downloads use dcat:downloadURL.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#accessService"/>
+        <rdfs:label xml:lang="en">access URL</rdfs:label>
+        <skos:definition xml:lang="en">This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain information about how to get the Dataset.</skos:definition>
+        <skos:scopeNote xml:lang="en">For direct downloads use dcat:downloadURL.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#endpointDescription">
+        <rdfs:comment xml:lang="en">This property contains a description of the services available via the end-points, including their operations, parameters etc. The property gives specific details of the actual endpoint instances, while dct:conformsTo is used to indicate the general standard or specification that the endpoints implement (DCAT AP documentation). Usage Note: This should point to a web page where relevant documentation about the service is available.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#endpointDescription"/>
+        <rdfs:label xml:lang="en">endpoint description</rdfs:label>
+        <skos:definition xml:lang="en">This property contains a  description of the services available via the end-points, including their operations, parameters etc. The property gives specific details of the actual endpoint instances, while dct:conformsTo is used to indicate the general standard or specification that the endpoints implement (DCAT AP documentation). </skos:definition>
+        <skos:scopeNote xml:lang="en">This should point to a web page where relevant documentation about the service is available.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/dcat#endpointURL">
+        <rdfs:comment xml:lang="en">The root location or primary endpoint of the service (an IRI) (DCAT AP documentation). Usage Note: In the context of the PCDAI Data Model, primary endpoints may often refer to specific pages within a website where data processing services can accessed and used via a dedicate web interface, as opposed to a more traditional API endpoint for example.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#endpointURL"/>
+        <rdfs:label xml:lang="en">endpoint URL</rdfs:label>
+        <skos:definition xml:lang="en">The root location or primary endpoint of the service (an IRI) (DCAT AP documentation).</skos:definition>
+        <skos:scopeNote xml:lang="en">In the context of the PCDAI Data Model, primary endpoints may often refer to specific pages within a website where data processing services can accessed and used via a dedicate web interface, as opposed to a more traditional API endpoint for example.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#value">
+        <rdfs:comment xml:lang="en">Provides a value that is a direct representation of an entity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#value"/>
+        <rdfs:label xml:lang="en">value</rdfs:label>
+        <skos:definition xml:lang="en">Provides a value that is a direct representation of an entity.</skos:definition>
+        <skos:scopeNote xml:lang="en">Range classes specified according to some of the possibilities enumerated in the PROV Data Model.</skos:scopeNote>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
