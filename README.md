@@ -1,2 +1,2 @@
-# PCDAI
-Patrimonio Culturale Digitale degli Ateni Italiani - Progetto Pilota
+# KNOT
+Patrimoni culturali digitali degli Atenei - Progetto Pilota
