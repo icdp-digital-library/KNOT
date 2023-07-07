@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head> 
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The conceptual data model for the KNOT pilot project is used to describe the pilot’s data and enable a network of semantic links to help facilitate the discovery of latent knowledge and valorize academic research as digital cultural heritage.">
+  <meta name="author" content="Digital Humanities Advanced Research Center">
+  <meta name="keywords" content="Cultural Heritage, Digital Humanities, ICDP, Italy">
+  <title>KNOT - The Data Model</title>
+  
+  <!-- bootstrap css-->
+  <link href="../website/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- custom css-->
+  <link href="../website/assets/main.css" rel="stylesheet">
+  
+</head>
+<body>
+  
+  
+  <nav class="navbar sticky-top bg-body-tertiary" aria-label="offcanvas navbar">
+    <div class="container-xxl px-5">
+      <a href="/" class="d-flex text-body-emphasis text-decoration-none">
+        <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pilot.html">KNOT Pilot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_model.html">KNOT Data Model</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="website/ontology/index-en.html" target="_blank">KNOT Ontology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-xxl px-5"> 
+    <main>
+      
+      
+      <h1 class="text-body-emphasis">The KNOT Data Model - KNOT-DM</h1>
+      <p class="fs-5 col-md-8">The conceptual data model for the KNOT pilot project, used to describe the pilot’s data and enable a network of semantic links to help facilitate the discovery of latent knowledge and valorize academic research as digital cultural heritage.</p>
+      
+      <p>KNOT-DM was developed to respond to the project's central research question: how can academic research projects and their outputs be described and valorized as examples of digital cultural heritage? To this end KNOT-DM is focused on the intersection of three domains that represent specific aspects of this argument — academia, public data, and digital cultural heritage — in order to facilitate both the description of academic research as cultural heritage as well as foster interconnection with existing systems that already document academic research activity and outputs, such as repositories (both institutional and public) and dedicated websites, to avoid the duplication of existing data and information. The data model is organized into three interconnected segments, each reflecting one of the domains, that deal with entities, activities, agents, themes, relationships, and spatio-temporal information. Metadata created with KNOT-DM forms the basis of the KNOT Knowledge Graph. </p>
+      
+      <p>The KNOT-DM is intended to be flexible and reusable, to accommodate its potential integration into the Digital Library infrastructure as well as connection to existing systems. As such it is composed of complementary concepts from existing, internationally recognized standards. It is freely available for universities, and other interested parties, to use to model their own data for independent usage or to allow its inclusion within the KNOT pilot project.</p> 
+      
+      <p>The KNOT-DM allows the following information to be recorded: </p>
+      <div class="row g-5">
+        <div class="col-md-6">
+          <ul>
+            <li>Research project activity — who, what, where, when, and how.</li>
+            <li>Research project outputs — the digital objects created by research project activities.</li>
+            <ul>
+              <li>The data model is intended to be flexible enough to enable the description of various possible outputs such as software, websites, documentation, web services, and data collections. </li>
+            </ul>
+            <li>Research project inputs — the entities that feed a research project such as physical items, people, places, and themes articulated as research questions.</li>
+            <li>Agents — responsible for creating and publishing research projects and outputs, from the individual to the organization via organizational units (such as departments or laboratories) and their locations. </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li>Relationships — between activities and agents but also, in particular, between research outputs and inputs as well as between outputs across different research projects. </li>
+            <li>Spatial and temporal information — including that of the projects but also that recorded in research project outputs, such as for example the places mentioned in a text or the time period covered by the data.</li>
+            <li>Themes — such as the type of research activity, the type of outputs, the technologies used, the academic disciplines involved, and the primary and secondary subjects of research. These themes are described using a selection of specific controlled vocabularies and authorities.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="mb-5">
+      
+      <div class="row g-5">
+        <div class="col-md-3">
+          <h2 class="text-body-emphasis">Structure</h2>
+          <p><a href="data_model_structure.html">Learn more</a> about the different segments that make up the KNOT-DM.</p>
+        </div>
+        
+        <div class="col-md-3">
+          <h2 class="text-body-emphasis">Modules</h2>
+          <p><a href="data_model_modules.html">Learn more</a> about how to use the different modules within KNOT-DM.</p>
+        </div>
+        
+        <div class="col-md-3">
+          <h2 class="text-body-emphasis">Ontology</h2>
+          <p><a href="ontology/index-en.html" target="_blank">Learn more</a> about the KNOT Ontology, which expresses the data model in RDF.</p>
+        </div>
+
+        <div class="col-md-3">
+          <h2 class="text-body-emphasis">Controlled Vocabularies</h2>
+          <p><a href="data_model_cvs.html">Learn more</a> about the Controlled Vocabularies used in KNOT-DM, including those created specifically for the project.</p>
+        </div>
+        
+      </div>
+    </main>
+    <footer class="pt-5 my-5 text-body-secondary border-top">
+      Digital Humanities Advanced Research Center &middot; 2023 | This website and its content are available for reuse under a Creative Commons BY-NC 4.0 License <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+    </footer>
+  </div>
+  <!-- bootstrap js-->
+  <script src="../website/assets/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>

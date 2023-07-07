@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head> 
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KNOT is a three-year pilot project to create a use case for the Central Institute for the Digitization of Cultural Heritage (ICDP) - Digital Library of the Italian Ministry of Culture that adopts its infrastructural approach to showcase the digital cultural heritage of Italian universities.">
+  <meta name="author" content="Digital Humanities Advanced Research Center">
+  <meta name="keywords" content="Cultural Heritage, Digital Humanities, ICDP, Italy">
+  <title>KNOT - Pilot</title>
+  
+  <!-- bootstrap css-->
+  <link href="../website/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- custom css-->
+  <link href="../website/assets/main.css" rel="stylesheet">
+  
+</head>
+<body>
+  <nav class="navbar sticky-top bg-body-tertiary" aria-label="offcanvas navbar">
+    <div class="container-xxl px-5">
+      <a href="/" class="d-flex text-body-emphasis text-decoration-none">
+        <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pilot.html">KNOT Pilot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_model.html">KNOT Data Model</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="website/ontology/index-en.html" target="_blank">KNOT Ontology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-xxl px-5">
+    <main>
+      <h1 class="text-body-emphasis">The KNOT Pilot</h1>
+      <p class="fs-5 col-md-8">Over the course of three years, the KNOT pilot will develop a web application and guidelines for the collection, management, enrichment, and use of academic research projects and their outputs as digital cultural heritage of Italian universities. </p>
+      <p>Following an early phase of research and discussion with the ICDP, the KNOT pilot began in early 2023 with a small census of existing research projects from Italian universities which is to be used as a source of heterogenous data for the development of a data model and knowledge graph. These will, in turn, be the basis for exploring the development of services inspired by these aggregated resources for the benefit of cultural heritage, to make data and systems for accessing that data, or tools for enhancing it, dialogue in a shared environment. </p>
+      <p>The KNOT project is divided into three annual phases, each following a specific line of research that draws from theories and practices from the field of Digital Humanities and the Semantic Web: </p>
+      <ul>
+        <li>The identification and collection of heterogenous data used to create a transversal data model and the creation of a knowledge graph.</li>
+        <li>The design of a web application to allow the exploration and use of the knowledge graph and collected data. </li>
+        <li>The definition and development of a suite of services to allow the acquisition of new knowledge from the hybridization of data. </li>
+      </ul>
+      <p>Below is a more detailed overview of the activities and outputs expected within each phase of the project. </p>
+      <div class="row g-5">
+        <div class="col-md-12">
+          <h2 class="text-body-emphasis">Year 1</h2>
+          <p>The first year is focused on data, with the following goals: </p>
+          <ul>
+            <li>Collection, classification, and categorization of data to be included in the pilot. Data should be heterogeneous and representative of the central theme. </li>
+            <li>Elaboration of a conceptual and metadata model to describe the selected data and reflect the central theme of the pilot. This model should be informed by relevant existing approaches and project requirements and enable a network of semantic links, including through reconciliation with authority records and controlled vocabularies.</li>
+            <li>Definition of research and competency questions against which the conceptual model can be tested to ensure its ability to enable a network of semantic links that represent relationships and facilitate the discovery of latent knowledge. </li>
+            <li>Creation of a first knowledge graph representing academic research projects as examples of the digital cultural heritage of Italian universities. A workflow for the collection, normalization, cleaning, and transformation of data into RDF will underpin the creation of the knowledge graph, which will be made available via a SPARQL endpoint. </li>
+          </ul>
+          
+          <p>Additionally the first year also includes the following objectives which will continue in subsequent phases:</p>
+          <ul>
+            <li>Research into techniques for the extraction of new knowledge from heterogenous data. This research will be conducted alongside the DISI department and as part of a working group with CINECA, aligned with the goals and needs of the Digital Library infrastructure. </li>
+            <li>Interviews with Italian academics and associations to explore the challenges they face as well as the potential needs of the pilot’s users. This research will act as a base for the user personas required for the second phase of the project.</li>
+            <li>Creation of a first guidelines working document for the description and valorization of academic research projects as digital cultural heritage. </li>
+          </ul>          
+          <p>The following outputs are excepted by the end of the first year:</p> 
+          <ul>
+            <li>A small census of sources and heterogenous data representing the pilot’s central theme, which will be used to create the data model and knowledge graph. </li>
+            <li>A data model to describe the selected data, including any necessary tools such as ontologies and controlled vocabularies.</li>
+            <li>A small-scale catalogue and knowledge graph based on the data model and selected data that can act as a first version of the final web application.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row g-5">
+        <div class="col-md-6">
+          <h2 class="text-body-emphasis">Year 2</h2>
+          <p>The second year is focused on the application, with the following goals:</p>
+          <ul>
+            <li>Creation of user personas.</li>
+            <li>Development of a web application powered by the knowledge graph.</li>
+            <ul>
+              <li>Design of the front and back end user interfaces</li>
+              <li>Development of services for use of the knowledge graph to extract new knowledge from the data, starting from the analysis of existing services in the Digital Library infrastructure as well as national and international best practices</li>
+            </ul>
+          </ul> 
+        </div>
+        
+        <div class="col-md-6">
+          <h2 class="text-body-emphasis">Year 3</h2>
+          <p>The third year is focused on services, with the following goals:</p>
+          <ul>
+            <li>Definition of a suite of user services available through the pilot application, diverse in their offerings and potential and focused on the acquisition of new knowledge.</li>
+            <ul>
+              <li>These services should be based on a system of APIs for accessing data and/or tools included in the pilot as well as hosted externally.</li>
+              <li>Customization of services based on user preferences.</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <hr class="mb-5">
+      
+      <div class="row g-5 justify-content-center">        
+        <div class="col-md-4">
+          <h2 class="text-body-emphasis">The Data Model</h2>
+          <p><a href="data_model.html">Learn more</a> about the conceptual base of the pilot, its structure and components.</p>
+        </div>
+        
+        <div class="col-md-4">
+          <h2 class="text-body-emphasis">The Ontology</h2>
+          <p><a href="ontology/index-en.html" target="_blank">Learn more</a> about the KNOT Ontology, which expresses the data model in RDF.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="pt-5 my-5 text-body-secondary border-top">
+      Digital Humanities Advanced Research Center &middot; 2023 | This website and its content are available for reuse under a Creative Commons BY-NC 4.0 License <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+    </footer>
+  </div>
+  <!-- bootstrap js-->
+  <script src="../website/assets/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
