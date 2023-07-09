@@ -475,7 +475,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"
-         title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 used specific object</a>
+         title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 P16 used specific object</a>
    </li>
    <li>
       <a href="#http://www.w3.org/ns/prov#value" title="http://www.w3.org/ns/prov#value">
@@ -559,7 +559,7 @@ This ontology has the following classes and properties.</span>
    
    <p style="text-align: center;"><object data="https://laurentfintoni.com/pcdai/data_model_summary.jpg" type="image/png"></object></p>
    <p style="text-align: center;"><object data="https://laurentfintoni.com/pcdai/data_model_core.jpg" type="image/png"></object></p>
-   <p>KNOT-DM allows the following information to be described (please see the KNOT-DM documentation as well as the KNOT-O definitions for further details on components and usage):</p>
+   <p>KNOT-DM allows the following information to be described (please see <a href="https://icdp-digital-library.github.io/KNOT/website/data_model.html" target="_blank">the KNOT-DM documentation</a> as well as the KNOT-O definitions below for further details on components and usage):</p>
    <ul>
       <li>Research project activity — who, what, where, when, and how.</li>
        <ul>
@@ -571,6 +571,7 @@ This ontology has the following classes and properties.</span>
           <li>The ontology is intended to be flexible enough to enable the description of various possible outputs such as software, websites, documentation, web services, and data collections. The specificity of each output can be detailed using thematic properties such as dcat:theme and dct:type which take values from controlled vocabularies.</li>
           <li>In addition to being conceptualized as a form of activity, research projects are also conceptualized as a type of output within the DCAT segment of the model in order to act as a container for other research outputs (see FIG TK). This conceptualization is intended to primarily represent research projects websites, where outputs and documentation are often collected together in one place and therefore act as a type of data catalog under the DCAT definition.</li>
        </ul>
+       <li>Research project inputs — the entities that feed a research project such as physical items, people, places, and themes articulated as research questions.</li>
        <li>The agents responsible for creating and publishing research projects and outputs, from the individual to the organization via organizational units (such as departments or laboratories) and their locations. </li>
        <li>Relationships between research outputs and external entities as well as between outputs across different research projects.</li>
        <ul><li>This can be modeled using PROV-O classes such prov:Influence and prov:Derivation, which enable connections between activities and/or entities, the dct:HasVersion / isVersionOf property within DCAT, to connect versions or derivations of datasets, and the crmdig:L10_had_input / L11_had_output property within CRMdig, to note how digital objects can be used to create further objects.</li></ul>
@@ -1441,7 +1442,7 @@ This section provides details for each class and property defined by PCDAI Data 
       <p>
          <strong>IRI:</strong> http://cidoc-crm.org/cidoc-crm/7.1.2/E39_Actor</p>
       <div class="comment">
-         <span class="markdown"><p>This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.</p> <p><span class="usage-note">Usage Note</span> The PCDAI Data Model brings together three different 'segments' - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</p></span>
+         <span class="markdown"><p>This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.</p> <p><span class="usage-note">Usage Note</span> The PCDAI Data Model brings together three different 'segments' - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of people or entities involved in research projects, the PROV-O definition underlines the responsibility of an agent towards an activity or entity whereas the FOAF definition focuses on the aspect of doing and the CIDOC CRM definition focuses on the potential of actors to do things. Please see the Data Model documentation for full details of how KNOT-DM makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</p></span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -1472,7 +1473,7 @@ This section provides details for each class and property defined by PCDAI Data 
       <p>
          <strong>IRI:</strong> http://cidoc-crm.org/cidoc-crm/7.1.2/E53_Place</p>
       <div class="comment">
-         <span class="markdown"><p>This class comprises extents in the natural space we live in, in particular on the surface of the Earth, in the pure sense of physics: independent from temporal phenomena and matter.</p> <p><span class="usage-note">Usage Note</span> The PCDAI Data Model brings together three different 'segments' - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</p></span>
+         <span class="markdown"><p>This class comprises extents in the natural space we live in, in particular on the surface of the Earth, in the pure sense of physics: independent from temporal phenomena and matter.</p> <p><span class="usage-note">Usage Note</span> The PCDAI Data Model brings together three different 'segments' - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of places related to a research project, the data model also makes use of dct:Location, which bears close conceptual resemblance to E53_Place in a simplified way, and prov:Location, which conceptualizes location as both geographical and non-geographical. Please see the Data Model documentation for full details of how KNOT-DM makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</p></span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -1503,7 +1504,7 @@ This section provides details for each class and property defined by PCDAI Data 
       <p>
          <strong>IRI:</strong> http://cidoc-crm.org/cidoc-crm/7.1.2/E7_Activity</p>
       <div class="comment">
-         <span class="markdown"><p>This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented.</p> <p><span class="usage-note">Usage Note</span> This class is included as the superclass for D7 Digital Machine Event. The PCDAI Data Model brings together three different 'segments' - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</p></span>
+         <span class="markdown"><p>This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented.</p> <p><span class="usage-note">Usage Note</span> This class is included as the superclass for D7 Digital Machine Event. The PCDAI Data Model brings together three different 'segments' - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of activity, the data model conceptualizes research projects as examples of activities using E7 (in the cultural heritage context) and prov:Activity (in the provenance context), which conceptualizes activity as related to time as well as acting upon entities. Please see the Data Model documentation for full details of how KNOT-DM makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</p></span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -1527,7 +1528,7 @@ This section provides details for each class and property defined by PCDAI Data 
          <dt>is in domain of</dt>
          <dd>
             <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"
-               title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 used specific object</a>
+               title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 P16 used specific object</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1566,7 +1567,7 @@ This section provides details for each class and property defined by PCDAI Data 
          <dt>is in range of</dt>
          <dd>
             <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"
-               title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 used specific object</a>
+               title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 P16 used specific object</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1806,7 +1807,7 @@ This section provides details for each class and property defined by PCDAI Data 
       <p>
          <strong>IRI:</strong> http://purl.org/dc/terms/Location</p>
       <div class="comment">
-         <span class="markdown"><p>A spatial region or named place. </p><p><span class="usage-note">Usage Note</span> Uses values from Geonames and Wikidata.</p></span>
+         <span class="markdown"><p>A spatial region or named place. </p><p><span class="usage-note">Usage Note</span> Uses values from Geonames and Wikidata. The KNOT-DM brings together three different 'segments' - public data, cultural heritage information, academic provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of places related to a research project, the data model also makes use of dct:Location and crm:E53_Place, which refer specifically to geographical places. Please see the Data Model documentation for full details of how KNOT-DM makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</p></span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -1830,7 +1831,7 @@ This section provides details for each class and property defined by PCDAI Data 
       <p>
          <strong>IRI:</strong> http://www.w3.org/ns/prov#Location</p>
       <div class="comment">
-         <span class="markdown"><p>A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.</p> <p><span class="usage-note">Usage Note</span> The PCDAI Data Model brings together three different 'segments' - public data, cultural heritage, provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues.</p></span>
+         <span class="markdown"><p>A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.</p> <p><span class="usage-note">Usage Note</span> The KNOT-DM brings together three different 'segments' - public data, cultural heritage information, academic provenance - each based around a standard that includes classes which refer to similar concepts but which are respectively defined with enough difference that individuals should be assigned each class (as appropriate) to avoid issues. In the case of places related to a research project, the data model also makes use of dct:Location and crm:E53_Place, which refer specifically to geographical places. Please see the Data Model documentation for full details of how KNOT-DM makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</p></span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -2256,7 +2257,7 @@ This section provides details for each class and property defined by PCDAI Data 
       </li>
       <li>
          <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"
-            title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 used specific object</a>
+            title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 P16 used specific object</a>
       </li>
       <li>
          <a href="#http://www.w3.org/ns/prov#value" title="http://www.w3.org/ns/prov#value">
@@ -2971,7 +2972,7 @@ This section provides details for each class and property defined by PCDAI Data 
             <dt>has super-properties</dt>
             <dd>
                <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"
-                  title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">used specific object</a>
+                  title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 used specific object</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -4272,7 +4273,7 @@ This section provides details for each class and property defined by PCDAI Data 
             <dt>has super-properties</dt>
             <dd>
                <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object"
-                  title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">used specific object</a>
+                  title="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">P16 used specific object</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -4291,7 +4292,7 @@ This section provides details for each class and property defined by PCDAI Data 
       </div>
    </div>
    <div class="entity" id="http://cidoc-crm.org/cidoc-crm/7.1.2/P16_used_specific_object">
-      <h3>used specific object<sup class="type-op" title="object property">op</sup>
+      <h3>P16 used specific object<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
