@@ -71,11 +71,11 @@
       </ul>
       <p>Figures 1 and 2 summarise the core of the KNOT-DM by highlighting key classes (yellow boxes) and properties (arrows) from each standard and their interconnection as well as relationship to the entities (pink dots) central to the project. Further details on the full extent of each segment is provided in the next section.</p>
       <figure class="figure">
-        <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/data_model_summary.jpg">
+        <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/data_model_summary.svg">
         <figcaption class="figure-caption">FIG 1. A summary of the different segments that make up KNOT-DM.</figcaption>
       </figure>
       <figure class="figure">
-        <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/data_model_core.jpg">
+        <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/data_model_core.svg">
         <figcaption class="figure-caption">FIG 2. A summary of the core classes and properties that make up KNOT-DM.</figcaption>
       </figure>
 
@@ -110,14 +110,14 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
         <p>Figures 3 to 5 give a complete overview of the public data segment of the KNOT-DM, which is the largest in terms of classes and properties available for use. Each figure details the properties and classes connected to one of four central DCAT concepts: Catalog, Dataset, Data Service, and Distribution. </p>
         <figure class="figure">
-          <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_mapping_catalog.jpg">
+          <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_mapping_catalog.svg">
           <figcaption class="figure-caption">FIG 3. DCAT Catalog with all connectable properties and classes.</figcaption>
         </figure>
         <p>Figure 3 details the first part of the segment, centered on the Catalog class. This class is defined within KNOT-DM as a “catalogue or repository that hosts the datasets or data services being described” [<a href="#bib-6">6</a>] based on the DCAT Application Profile. It also takes into consideration the W3C DCAT definition, “a curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog),” [<a href="#bib-1">1</a>] and a usage note that web-based data catalogs represent a single instance of this class. </p>
         <p>These definitions are the starting point for the conceptualization of the Catalog class as a representation of academic research projects as containers, rather than activities, for outputs (which are modeled using the DCAT dataset and data service classes, see below). The most common and practical example of this conceptualization is a website where the research project activity and outputs are documented and made available to the public, whether via direct download or through interaction with specific user interfaces. </p>
         <p>Furthermore, the W3C DCAT specification explicitly makes Catalog a sub-class of Dataset which adds another layer to this conceptualization by allowing KNOT-DM to treat the academic research project as container as another form of output from the research project as activity.</p>
         <figure class="figure">
-          <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_mapping_dataset.jpg">
+          <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_mapping_dataset.svg">
           <figcaption class="figure-caption">FIG 4. DCAT Dataset with all connectable properties and classes.</figcaption>
         </figure>
         <p>Figure 4 details the second part of the segment, centered on the Dataset class. It is defined within KNOT-DM as “a collection of data published or curated by a single agent, and available for access or download in one or more representations” based on the W3C specification and an additional note that states “data comes in many forms including numbers, words, pixels, imagery, sound and other multi-media, and potentially other types, any of which might be collected into a dataset.” [<a href="#bib-1">1</a>] </p>
@@ -125,7 +125,7 @@
         <p>As mentioned above, within KNOT-DM Dataset is the super-class of Catalog, meaning that the activity which created the dataset (the research project) also exists as an instance of a dataset that contains other datasets representing all the outputs of the activity, alongside their possible distributions and interactive services.</p>
         <p>The Dataset class also offers a direct connection to the Academic Provenance segment of the KNOT-DM via the prov:wasGeneratedBy property, which DCAT includes in order to allow users to further “describe the activity that generated a dataset.” [<a href="#bib-1">1</a>] DCAT specification notes that in order to use this property the context resource should also be classified as a prov:Entity, which is the approach KNOT-DM takes. This means that within KNOT-DM, instances of a DCAT Dataset should also be instances of a PROV Entity. This approach to multiple classifications of individuals is detailed in the section about Conceptually Similar Classes.</p>
         <figure class="figure">
-          <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_mapping_distro_service.jpg">
+          <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_mapping_distro_service.svg">
           <figcaption class="figure-caption">FIG 5. DCAT Data Service and Distribution with all connectable properties and classes.</figcaption>
         </figure>
         <p>Figure 5 details the third and final part of the public data segment, centered on the Distribution and Data Service classes. These two are grouped together as they are closely connected by virtue of giving access to the data included in the catalogue, however they have some key differences. </p>
@@ -144,7 +144,7 @@
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
           <p>Figure 6 gives a complete overview of the academic provenance segment of the KNOT-DM, which is centered around two PROV-O classes: Activity and Entity. </p>
           <figure class="figure">
-            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/provo_mapping_full.jpg">
+            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/provo_mapping_full.svg">
             <figcaption class="figure-caption">FIG 6. The PROV-O classes and properties used by KNOT-DM to describe academic provenance.</figcaption>
           </figure>
           <p>A PROV-O Activity is defined as “something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.” [<a href="#bib-2">2</a>] Within KNOT-DM this is conceptualized as the representation of academic research projects as activities that use and generate entities. Therefore within KNOT-DM an academic research project is classified as both an instance of DCAT Catalog, to represent its role as a container for outputs, and as an instance of PROV-O Activity, to represent its activity aspects, with the prov:wasGeneratedBy property connecting them and making explicit that the activity generated all the outputs, including the container.</p>
@@ -157,7 +157,7 @@
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
           <p>Figure 7 gives a complete overview of the Cultural Heritage Information Segment of the KNOT-DM, which is centered on key classes from the CIDOC CRM extensions CRMdig — D7 Digital Machine Event and D1 Digital Object —and LRMoo (FKA FRBRoo) — F5 Item and F3 Manifestation.</p>
           <figure class="figure">
-            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/crm_mapping_full.jpg">
+            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/crm_mapping_full.svg">
             <figcaption class="figure-caption">FIG 7. The CIDOC CRM classes and properties used by KNOT-DM to describe cultural heritage information.</figcaption>
           </figure>
           <p>A CRMdig D7 Digital Machine Event is defined as comprising “events that happen on physical digital devices following a human activity that intentionally caused its immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor,” [<a href="#bib-4">4</a>] while a D1 Digital Object is defined as comprising “identifiable immaterial items that can be represented as sets of bit sequences, such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units.” [<a href="#bib-4">4</a>] Within KNOT-DM instances of D7 and its subclasses (which cover more specific types of activities that can take place on a digital device) are conceptualized as representing specific activities within the larger research project activity (a prov:Activity) and are connected to it by the prov:wasInformedBy property as described in the previous section. Instances of D1 and its subclasses (which cover more specific types of digital objects) meanwhile are yet another conceptualization of research project ouputs and inputs but specifically limited to the digital realm (in the case of outputs) and within the context of cultural heritage, a dimension that is not explicit in either DCAT or PROV-O. </p>
