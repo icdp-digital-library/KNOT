@@ -143,3 +143,12 @@ dt {
 figure {
     margin: 0 0 1rem ;
 }
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
