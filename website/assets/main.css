@@ -24,6 +24,10 @@ nav {
     font-weight: 300;
 }
 
+nav .nav-link {
+    color: #000 !important;
+}
+
 a {
     color: #337ab7;
     text-decoration: none;
