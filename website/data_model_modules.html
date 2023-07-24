@@ -20,9 +20,15 @@
   
   <nav class="navbar sticky-top bg-body-tertiary" aria-label="offcanvas navbar">
     <div class="container-xxl px-5">
-      <a href="../" class="d-flex text-body-emphasis text-decoration-none">
-        <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
-      </a>
+      <div class="d-flex">
+        <a href="../" class="d-flex text-body-emphasis text-decoration-none">
+          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+        </a>
+        <div class="btn-group px-3" role="group" aria-label="Language buttons">
+          <a href="" role="button" class="btn lang disabled" aria-disabled="true">ENG</a>
+          <a href="website/IT/index_it.html" role="button" class="btn lang">IT</a>
+        </div>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,16 +79,16 @@
       <p>The modules makes use of the <a href="https://dh.fbk.eu/2013/06/alcide-analysis-of-language-and-content-in-a-digital-environment/" target="_blank">ALCIDE analysis platform</a>, by the DH@FBK laboratory, as an example project.</p>
       <ul class="nav nav-pills mb-3 mt-3 justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Activity pt.1</button>
+          <button class="nav-link active" id="pills-activity1-tab" data-bs-toggle="pill" data-bs-target="#pills-activity1" type="button" role="tab" aria-controls="pills-activity1" aria-selected="true">Activity <br> (Provenance)</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" >Activity pt.2</button>
+          <button class="nav-link" id="pills-activity2-tab" data-bs-toggle="pill" data-bs-target="#pills-activity2" type="button" role="tab" aria-controls="pills-activity2" aria-selected="false" >Activity <br> (Cultural Heritage)</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" disabled>Outputs & Inputs</button>
+          <button class="nav-link" id="pills-outputs-tab" data-bs-toggle="pill" data-bs-target="#pills-outputs" type="button" role="tab" aria-controls="pills-outputs" aria-selected="false" >Outputs <br> (Public Data)</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false" disabled>Agents</button>
+          <button class="nav-link" id="pills-access-tab" data-bs-toggle="pill" data-bs-target="#pills-access" type="button" role="tab" aria-controls="pills-access" aria-selected="false" >Outputs <br> (Access)</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Relationships</button>
@@ -92,7 +98,7 @@
         </li>
       </ul>
       <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="pills-activity1" role="tabpanel" aria-labelledby="pills-activity1-tab" tabindex="0">
           <h2>Academic Activity as Provenance</h2>
           <p>Within KNOT-DM academic research projects are conceptualized as a form of activity that uses and generates entities. This activity is described using elements from PROV-O within the Academic Provenance Segment of the data model, with connections to the other two segments via PROV-O properties <code class="object-prop">prov:wasGeneratedBy</code> (connecting to the Public Data Segment) and <code class="object-prop">prov:wasInformedBy</code> (connecting to the Cultural Heritage Information segment). </p>
           <p>KNOT-DM does not attempt to record all possible information about the research project as activity but rather a basic level that is almost always publicly available in a project’s documentation such as where and when the project took place, who was involved, and what ‘things’ were used and or generated. </p> 
@@ -100,7 +106,7 @@
           <p>The description of academic activity in KNOT-DM is centered around four PROV-O classes — Activity, Entity, Location, and Agent — and should provide answers to who, what, where, and when. It’s recommended to begin by describing the individual representing the activity itself before moving to the other classes in any order. </p> 
           <h3>The Academic Activity</h3>
           <p><code class="grafoo-class">prov:Activity</code> represents the overall research project, and the following basic information about it should be recorded: its title (<code class="data-prop">dct:title</code>) and the dates at which it began and ended (<code class="data-prop">prov:startedAtTime</code>, <code class="data-prop">prov:endedAtTime</code>). </p>
-          <p>For the title, it is recommended to use the one that is most clearly evident in the project’s public documentation with the understanding that it may differ from how the project is referred to elsewhere. In our example, the project is referred to as ALCIDE (ANALYSIS OF LANGUAGE AND CONTENT IN A DIGITAL ENVIRONMENT) on its official page within the research lab’s website while the website itself, which gives access to some of the project’s outputs and documentation, is titled Alcide with the subtitle “Un viaggio negli scritti di De Gasperi.” However the website clearly references the ALCIDE acronym and therefore this should be taken as the title of the project.</p> 
+          <p>For the title, it is recommended to use the one that is most clearly evident in the project’s public documentation with the understanding that it may differ from how the project is referred to elsewhere. In our example, the project is referred to as ALCIDE (ANALYSIS OF LANGUAGE AND CONTENT IN A DIGITAL ENVIRONMENT) on its official page within the research lab’s website while the website itself, which gives access to some of the project’s outputs and documentation, is titled Alcide with the subtitle “Un viaggio negli scritti di De Gasperi." However the website clearly references the ALCIDE acronym and therefore this should be taken as the title of the project.</p> 
           <p>For the start and end date, the format is YYYY/MM/DD (represented as xsd:date). As this can sometimes be difficult to ascertain at the least a year should be recorded for the beginning and/or end of the project, with 01/01 for the month and date. At most the correct or approximate beginning and end dates should be recorded (again using 01/01 if either month or date is unknown). In our example, the documentation page published by the research lab clearly states the beginning and end dates however the website does not.</p> 
           <p>Figure 1 represents this first step, with the RDF equivalent in Turtle format.</p>
           <div class="row">
@@ -124,7 +130,7 @@
           <p><code class="grafoo-class">prov:Entity</code> represents both the outputs of a research project activity, that is the objects it created, and the inputs, or the things it may have used to do this which can include physical or digital objects as well as themes (representing concepts or historical figures and periods). As the KNOT project is focused on digital cultural heritage, the scope of the model is to record information about outputs of research activity as digital objects only. The following information about entities should be recorded: a title (<code class="data-prop">dct:title</code> if they have an official title or <code class="data-prop">rdfs:label</code> for the title in the context of the record), a value (<code class="data-prop">prov:value</code>), and its relationship to the activity o another entity (<code class="object-prop">prov:generated</code>, <code class="object-prop">prov:used</code>, <code class="object-prop">prov:wasInfluencedBy</code>, <code class="object-prop">prov:wasDerivedFrom</code>).</p>
           <p>Going back to our example, ALCIDE’s goal was to create an online platform to allow analysis of political discourse, using the writings of Italian politician Alcide de Gasperi. Therefore the primary output of the research project activity is a website, which gives users access to a platform where various automated analytical tools can be used to explore de Gasperi’s writings. In addition, we also know that the project created a corpus of texts, used to power the platform, based on a four-volume published edition of the writings of de Gasperi by the publisher Il Mulino. This corpus is not explicitly linked in the documentation available on the project website, however it is publicly available on the GitHub of the DH@FBK lab and should therefore be included in the description, in line with one of the goals of the KNOT project which is to help bring together the products of academic research that are often dispersed online and separated from each other.</p>
           <p>Instances of the corpus and the website are therefore members of the <code class="grafoo-class">prov:Entity</code> class. In addition, they are also members of classes from DCAT (see the Outputs module for more details on these classes), which is the primary standard used in the Public Data Segment of KNOT-DM. This is because KNOT-DM uses the <code class="object-prop">prov:generated</code> (and its inverse) property to connect these two segments so that entities generated by an activity can also be described as examples of public data. As such, KNOT-DM represents individuals using multiple classes based on the requirements of each segment and the specificities of each project (see <a href="data_model_structure.html">the Conceptually Similar Classes section</a> for more details). In this particular case, the corpus is also a <code class="grafoo-class">dcat:Dataset</code>, being a collection of data available online. The website is also a <code class="grafoo-class">dcat:Catalog</code>, which is the representation of the research project as a container for its outputs including data(sets) and data services. And finally the part of the website that gives users access to the analytical tools is also a <code class="grafoo-class">dcat:DataService</code>, which is the representation of interactive access to the data. All three individuals are connected to the <code class="grafoo-class">prov:Activity</code> via the <code class="data-prop">prov:generated</code> property. Lastly, the corpus was created using the digital version of an edited collection of de Gasperi’s writings, which can therefore also be recorded as a <code class="grafoo-class">prov:Entity</code>. However it is connected to the activity via the <code class="data-prop">prov:used</code> property .</p> 
-          <p>The title for each <code class="grafoo-class">prov:Entity</code> should be taken from its corresponding object however when a title isn’t clearly available, such as in the case of the website and data service, a descriptive title can be assigned for use in the context of the record being created. In our example, both the corpus and edition have official titles while the website and data service share the same title as the activity, so we can label their respective individuals “ALCIDE website” and “ALCIDE platform” to make it clear what they are a representation of (we could also use the Alcide - Un viaggio negli scritti di De Gasperi title for the website and platform, though that is quite long and perhaps impractical for later management of the metadata).</p>
+          <p>The title for each <code class="grafoo-class">prov:Entity</code> should be taken from its corresponding object however when a title isn’t clearly available, such as in the case of the website and data service, a descriptive title can be assigned for use in the context of the record being created. In our example, both the corpus and edition have official titles while the website and data service share the same title as the activity, so we can label their respective individuals “ALCIDE website" and “ALCIDE platform" to make it clear what they are a representation of (we could also use the Alcide - Un viaggio negli scritti di De Gasperi title for the website and platform, though that is quite long and perhaps impractical for later management of the metadata).</p>
           <p>The value property should always point to a URI that is an accessible representation of the entity. In this sense <code class="data-prop">prov:value</code> acts in a similar way as <code>owl:sameAs</code>.</p> 
           <p>See the Relationships module for how the Academic Provenance Segment of KNOT-DM can be used to provide further details on the connections that can be described between entities that are used and entities that are generated within an activity such as for example derivation or influence. </p>
           <p>Figure 2 details the description of the corpus while its equivalent in RDF shows descriptions for all four entities used and generated by the project.</p>
@@ -324,12 +330,12 @@
             prov:value &lt;https://alcidedigitale.fbk.eu/platform> .
           </pre>
         </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+        <div class="tab-pane fade" id="pills-activity2" role="tabpanel" aria-labelledby="pills-activity2-tab" tabindex="0">
           <h2>Academic Activity as Cultural Heritage Activity</h2>
           <p>KNOT-DM allows for the further description of academic research activity within its Cultural Heritage Information Segment, which is intended to provide cultural heritage-specific information about the research project activity and the entities it used and/or generated. This segment uses the CIDOC CRM standard, and in particular two of its extensions: CRMdig and LRMoo (FKA FRBRoo). </p>
           <p>The description of research activity as cultural heritage is centered around <code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code> and <code class="grafoo-class">crmdig:D1_Digital_Object</code> (along with some of their subclasses), which are taken from CRMdig. These classes provide answers to who and where in a way that is similar to PROV-O while giving more detail about the how of what happened. It’s recommended to begin by describing the activity using PROV-O before moving to CIDOC, with the understanding that sometimes specific information about what happened during a research project may not be available and therefore the use of this particular segment may be limited. On the other hand, one of the reasons for basing this segment on CIDOC CRM is that it opens up the possibility to expand some of the descriptions of entities used and generated into the wider cultural heritage domain though this is outside the scope of this documentation.</p>
           <h3>Tasks / sub-activities - What happened during the activity?</h3>
-          <p>The D7 class represents sub-activities, or tasks, within a larger <code class="grafoo-class">prov:Activity</code>. This is done via the <code class="object-prop">prov:wasInformedBy</code> property which connects two instances of <code class="grafoo-class">prov:Activity</code> and which within KNOT-DM has been extended to include D7 in its range. This connection provides “dependency information” by suggesting “that the informed Activity used an Entity that was generated by the informing Activity” without explicitly detailing the entity [<a href="#bib-2" id="back-2">2</a>]. Within KNOT-DM this chain of provenance is used to enable the description of sub-activities (or tasks) such as for example the digitalisation of a physical object into a digital one or the creation of a digital object from other digital objects. </p>
+          <p>The D7 class represents sub-activities, or tasks, within a larger <code class="grafoo-class">prov:Activity</code>. This is done via the <code class="object-prop">prov:wasInformedBy</code> property which connects two instances of <code class="grafoo-class">prov:Activity</code> and which within KNOT-DM has been extended to include D7 in its range. This connection provides “dependency information" by suggesting “that the informed Activity used an Entity that was generated by the informing Activity" without explicitly detailing the entity [<a href="#bib-2" id="back-2">2</a>]. Within KNOT-DM this chain of provenance is used to enable the description of sub-activities (or tasks) such as for example the digitalisation of a physical object into a digital one or the creation of a digital object from other digital objects. </p>
           <p>D7 is intended as a generic class for sub-activities with the implication that they were conducted by a human agent, in a specific place, on a device such as a computer, and used a digital object and/or software to create a new digital object. The following basic information about these activities should be recorded: a title (<code class="data-prop">rdfs:label</code>), which digital objects they used and/or created (<code class="object-prop">crmdig:L10_had_input</code>, <code class="object-prop">crmdig:L11_had_output</code>, <code class="object-prop">crmdig:L23_used_software</code>), where they took place (<code class="object-prop">crm:P7_took_place_at</code>), and who they were carried out by (<code class="object-prop">P14_carried_out_by</code>).</p> 
           <p>Depending on the level of information available additional information can also be recorded using D7 subclasses. In the case of a physical object being digitized, <code class="grafoo-class">crmdig:D2_Digitization_Process</code> can also record the physical object it used, represented by <code class="grafoo-class">crm:E18_Physical_Thing</code> and the one it created, represented by <code class="grafoo-class">crmdig:D9_Data_Object</code> (a subclass of D1). The physical object can be further described with LRMoo by using the Item (<code class="grafoo-class">frbroo:F5_Item</code>, a subclass of E18) and Manifestation (<code class="grafoo-class">frbroo:F3_Manifestation</code>) entities of the WEMI model of FRBR, which in turn allows the connection of the manifestation to the entity it is about. Meanwhile <code class="grafoo-class">crmdig:D10_Software_Execution</code> can be used to describe activities where a computer used software or computing operations on a digital object, such as for example creating data visualizations or a dataset, recording both the source digital object and the software it used if that information is available. </p>
           <p>Returning once more to ALCIDE, we know that the project used a digital version of a four-volume edition of de Gasperi's writings to create a corpus before incorporating it into an analysis platform. We can therefore detail each of these steps as a sub-activity that informed the overall <code class="grafoo-class">prov:Activity</code> individual we described in part 1. The digitization of the editions (an instance of D2) was done by the publisher, il Mulino, while the creation of the corpus (an instance of D10) and the creation of the platform incorporating the corpus (an instance of D7) were both done by the agents already described in part 1. D2 took place in Bologna (home of the publisher) while D10 and D7 took place in Trento, which was also already described. We can add classes from CIDOC to existing instances and create the ones we're missing.</p>
@@ -523,16 +529,292 @@
             owl:sameAs &lt;https://www.wikidata.org/wiki/Q1674874> .
           </pre>
         </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
-        <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="pills-outputs" role="tabpanel" aria-labelledby="pills-outputs-tab" tabindex="0">
+          <h2>Research Outputs as Public Data</h2>
+          <p>Research outputs within KNOT-DM are conceptualized as entities that can be represented by classes from all three of the segments, with each class adding a certain contextual layer to the entity. This module deals with the outputs’ qualities as public data information, see the activity module for details of how to describe outputs in the context of academic provenance and cultural heritage. </p>
+          <p>The description of outputs as public data makes use of the majority of the DCAT model to record information such as their technical and conceptual characteristics, their relationship to the research project that created them, the spatio/temporal information they contain or refer to, and how they can be accessed and/or reused. It is connected to the Academic Provenance segment via the <code class="object-prop">prov:wasGeneratedBy</code> property and can be connected to the Cultural Heritage Information Segment via the <code class="object-prop">dct:relation</code> property if need be.</p> 
+          <p>The description of outputs as public data is centered on two DCAT classes — Catalog and Dataset — with another two classes — Distribution and Data Service — being used to describe how to access the data. Each class can have a varying level of mandatory, recommended, and optional information about it based on the DCAT AP guidelines with some KNOT-specific updates.</p> 
+          <p>Together these classes provide answers to who, what, where, when, and how as it relates to data (rather than activity). It’s recommended to begin by describing the individual representing the catalogue before moving to the dataset(s) and then onto the distribution and data service (detailed in the access module).</p>
+          <h3>The Research Outputs Container</h3>
+          <aside class="px-2 mx-1">*In the rare case where a research project does not have a website, this class can represent any digital item that records information about it and/or may give access to its datasets and/or data service such as an entry in a repository.</aside>
+          <p><code class="grafoo-class">dcat:Catalog</code> represents a container for all research outputs and documentation. It must be a real digital object that either contains metadata information about the project and its outputs or hosts the data and services it describes. Most often its real world representation will be the research project’s official website.*</p>
+          <p>The following information must be recorded about it: a description (<code class="data-prop">dct:description</code>), its title (<code class="data-prop">dct:title</code>), its publisher(s) (<code class="object-prop">dct:publisher</code>), the dataset(s) it includes (<code class="object-prop">dcat:dataset</code>), the knowledge organization systems used to classify its dataset(s) (<code class="object-prop">dcat:themeTaxonomy</code>), and the concepts used to classify the catalogue itself (<code class="object-prop">dcat:theme</code>).</p> 
+          <p>Recommended information that should be recorded, if available, includes: the data service(s) it includes, its homepage, the language used in the metadata of the dataset(s), the license under which the catalogue can be (re)used, its release date and/or last modified date, its creator(s), and the geographical area covered by the catalogue. Optional information that can be recorded, if available, includes: keywords, whether or not the catalogue includes another, whether or not it includes a metadata record related to its registration within a system, and a rights statement. </p>
+          <p>Most, if not all, of this information should be available from the existing public documentation of the research project, starting with any official website (which as mentioned above would be the catalogue being documented). When something is not clear, efforts should be taken to use the most consistent and logical information available. Dates are formatted as YYYY/MM/DD (<code>xsd:date</code>). </p>
+          <p>Using our example project, ALCIDE, its public website would be the catalogue we want to record as it hosts the dataset and data service alongside information about the project itself that can be used for the needs of the data model. As will often be the case, some information is missing. In this case the license, rights, and release and modification dates, though the latter can be inferred via additional documentation on the publisher’s website. </p> 
+          <p>Figure 1 represents the description of the catalog (some of the information has been simplified to keep the diagram legible), with the RDF equivalent in Turtle format. This description reuses some of the individuals (and where relevant some of the information) already created in the activity module.</p>
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_catalog.svg">
+            <figcaption class="figure-caption">FIG 1. Description of the catalogue container for research outputs of the ALCIDE project.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> . 
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            
+            #Begin by describing the container for all research outputs as a DCAT Catalog
+            
+            :alcide_website a dcat:Catalog, prov:Entity ;
+            dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
+            dct:publisher :dh_fbk ; 
+            dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+            dcat:dataset :alcide_corpus ;
+            dcat:service :alcide_platform ;
+            foaf:homepage &lt;https://alcidedigitale.fbk.eu/> ;
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ;
+            dct:issued "2018-12-31"^^xsd:date ;
+            dct:spatial :italia;
+            dcat:themeTaxonomy &lt;http://publications.europa.eu/resource/dataset/data-theme>, &lt;https://vocabs.dariah.eu/tadirah/en/>, &lt;http://purl.org/knot/taxonomy#>;
+            dcat:theme &lt;https://w3id.org/italia/controlled-vocabulary/classifications-for-culture/subject-disciplines/002>, &lt;http://viaf.org/viaf/32011324> ;
+            dct:creator :dh_fbk, :isig .
+            
+            :alcide_corpus a dcat:Dataset, prov:Entity .
+            :alcide_platform a dcat:DataService, prov:Entity .
+            :dh_fbk a foaf:Agent, prov:Agent .
+            :isig a foaf:Agent, prov:Agent .
+            :italia a dct:Location .
+          </pre>
+          <h3>The Research Outputs as Datasets</h3>
+          <p><code class="grafoo-class">dcat:Dataset</code> represents the digital objects created by a research project, acting similarly to the PROV-O and CRMdig classes detailed in the activity module but focused on their qualities as public data. </p>
+          <p>Based on the DCAT definitions (see <a href="data_model_structure.html">the KNOT-DM structure overview</a>), this class is intended to be flexible enough to cover most types of digital object a project may create regardless of their form. As such, while the word dataset may imply a certain limitation within KNOT-DM it would cover everything from a pdf of a paper to an annotated training set or a piece of software (which in effect is a collection of code, data, and documentation). </p>
+          <p>Importantly, within the W3C DCAT specification, <code class="grafoo-class">dcat:Dataset</code> is the superclass of <code class="grafoo-class">dcat:Catalog</code>. Therefore, in the likely case that the official website of a project is the catalogue, it would also be a dataset that the project created though this does not need to be explicitly stated as it is inferred. </p> 
+          <p>The following information must be recorded about a dataset: a description, its title, its type (<code class="object-prop">dct:type</code>), and the concepts used to classify it.</p> 
+          <p>Recommended information that should be recorded, if available, includes: an available distribution (<code class="object-prop">dcat:distribution</code>), its publisher(s), its creator(s), the spatial and temporal (<code class="object-prop">dct:temporal</code>) information it covers, its license (<code class="object-prop">dct:license</code>), an identifier within the context of the catalogue, and the activity that generated it (<code class="object-prop">prov:wasGeneratedBy</code>).</p>
+          <p>Optional information that can be recorded, if available, includes: keywords, access right details, specification(s) it conforms to, documentation, updating frequency, whether or not it is a version of or is versioned by another dataset, external entities that reference it (such as papers), the language(s) it includes, external identifiers, and its release date and/or last modified date. </p>
+          <p>In the case of ALCIDE, we know from the published papers about the project that it created one dataset: a corpus of de Gasperi’s writings. As mentioned in the activity module, this corpus is not directly linked from the project’s official websites but is publicly available from the research laboratory’s GitHub. Between those two sources we have access to most of the information we require, aside from the license.</p>
+          <p>Figure 2 represents the description of the dataset (some of the information has been simplified to keep the diagram legible), followed by the RDF description of both catalogue and dataset together.</p>
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_dataset.svg">
+            <figcaption class="figure-caption">FIG 2. Description of the ALCIDE project's corpus as a dataset.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix owl: &lt;http://www.w3.org/2002/07/owl#> .
+            @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
+            @prefix tadirah: &lt;http://tadirah.dariah.eu/vocab/> .
+            
+            #Begin by describing the container for all research outputs as a DCAT Catalog
+            
+            :alcide_website a dcat:Catalog, prov:Entity ;
+            dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
+            dct:publisher :dh_fbk ; 
+            dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+            dcat:dataset :alcide_corpus ;
+            dcat:service :alcide_platform ;
+            foaf:homepage &lt;https://alcidedigitale.fbk.eu/> ;
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ;
+            dct:issued "2018-12-31"^^xsd:date ;
+            dct:spatial :italia;
+            dcat:themeTaxonomy &lt;http://publications.europa.eu/resource/dataset/data-theme>, &lt;https://vocabs.dariah.eu/tadirah/en/>, &lt;http://purl.org/knot/taxonomy#> ;
+            dcat:theme &lt;https://w3id.org/italia/controlled-vocabulary/classifications-for-culture/subject-disciplines/002>, &lt;http://viaf.org/viaf/32011324> ;
+            dct:creator :dh_fbk, :isig .
+            
+            :alcide_corpus a dcat:Dataset, prov:Entity ;
+            dct:description "A collection of Alcide De Gasperi's public documents with gold and silver annotation The corpus of Alcide De Gasperi's public documents is a collection of 2,762 documents issued between 1901 and 1954, which had been previously published in four volumes by Il Mulino but were not machine-readable. Our repository contains all documents in three formats: txt, XML and tab-separated. Raw txt files contain only the body of the documents, and may be straightforwardly used to extract embeddings or topics. XML files include metadata that cover not only the title, the date and the place of publication, but also key-concepts automatically extracted from each text (with the corresponding relevance score) and genre labels manually assigned by domain experts. Furthermore, the release includes silver annotation for lemma, part of speech, person names and place names with associated coordinates in a CoNLL-like format. The corpus is released under CC BY-NC-SA license. An online platform to explore the corpus without downloading it can be accessed at http://alcidedigitale.fbk.eu"@en ;
+            dct:title "De Gasperi's Corpus"@en ;
+            dcat:distribution :corpus_distribution ;
+            dct:publisher :dh_fbk ; 
+            dct:spatial :italia ;
+            dct:temporal &lt;https://www.wikidata.org/entity/Q6927> ; 
+            dcat:theme tadirah:capturing, tadirah:analyzing, &lt;http://publications.europa.eu/resource/authority/data-theme/SOCI>, &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+            dct:accessRights &lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+            dct:creator :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli  ;
+            dct:conformsTo &lt;http://data.europa.eu/r5r/> ;
+            dcat:landingPage &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            dct:hasVersion :kind ;
+            dct:identifier "Alcide Digitale Corpus" ;
+            dct:isReferencedBy &lt;https://api.semanticscholar.org/CorpusID:204921128> ;
+            dcat:landingPage &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ;
+            dct:issued "2019-07-16"^^xsd:date ;
+            dct:type &lt;http://purl.org/knot/taxonomy#corpus> ;
+            prov:wasGeneratedBy :alcide .
+            
+            :alcide_platform a dcat:DataService, prov:Entity .
+            :corpus_distribution a dcat:Distribution .
+            :dh_fbk a foaf:Agent, prov:Agent .
+            :isig a foaf:Agent, prov:Agent .
+            :italia a dct:Location .
+            :alcide a prov:Activity .
+            :sara_tonelli a foaf:Agent, prov:Agent .
+            :giovanni_moretti a foaf:Agent, prov:Agent .
+            :rachele_sprugnoli a foaf:Agent, prov:Agent .
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="pills-access" role="tabpanel" aria-labelledby="pills-access-tab" tabindex="0">
+          <h2>Accessing Outputs as Public Data</h2>
+          <p>Following from the description of research outputs as Public Data, the other two principal DCAT classes used by KNOT-DM — Distribution and Data Service — cover the concept of the data’s accessibility. </p>
+          <p>While these two classes share some conceptual similarities in what they describe, they also have some fundamental differences, which are covered in detail in the KNOT-DM structure overview. A simple summary is that a distribution can only ever represent a downloadable form of a dataset, and therefore cannot exist without the dataset, while a data service represents all other forms of access to the dataset, and exists as its own conceptual entity (like a catalogue or dataset).</p>
+          <h3>The Data Service — Enhanced Access to Data</h3>
+          <p><code class="grafoo-class">dcat:DataService</code> represents access to a dataset via a collection of operations that entail data processing and/or interaction, best summarised as “offering smarter, more interactive ways to the data.” [<a href="bib-3" id="bib-3">3</a>] The most common real world representation would be a search interface, which enables a user to access and potentially interact with the data, or an API, which offers more advanced ways to access and (re)use the data. </p>
+          <p>One important thing to note is that within KNOT-DM, a data service may also represent another type of output from a project even though it is not a dataset because it is often created as part of a research project in order to allow users enhanced access to the data.</p>  
+          <p>The following information must be recorded about a data service: a title, its location as a URL (<code class="object-prop">dcat:endpointURL</code>), its type and/or the concepts used to classify it, and the dataset it serves (dcat:servesDataset).</p> 
+          <p>The recommended information that should be recorded, if available, is a resource that describes the services available at the endpoint (<code class="object-prop">dcat:endpointDescription</code>), such as for example a documentation page on the website. Optional information that can be recorded, if available, includes: access right details, a description of the data service (which may reuse the description of the catalogue if the service is also part of the website that acts as catalogue), usage license, keywords, and its release and/or last modified date. </p>
+          <p>Continuing with ALCIDE, our example project, the data service is represented by the part of the official website located at /platform which gives a user access to a suite of analytical tools with which to explore the textual corpus. This service therefore also represents one of the outputs of the project, as described in the activity modules, making it a member of the prov:Entity class in addition. All the information needed for its description is available from the website as well as previously described elements of the project. </p>
+          <p>Figure 1 represents the description of the data service, with its RDF equivalent in Turtle format.</p>
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_dataservice.svg">
+            <figcaption class="figure-caption">FIG 1. Description of the ALCIDE project data service.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix tadirah: &lt;http://tadirah.dariah.eu/vocab/> .
+            
+            :alcide_platform a dcat:DataService, prov:Entity ;
+            dcat:endpointURL &lt;https://alcidedigitale.fbk.eu/platform/> ;
+            dct:title "ALCIDE platform"@en ;
+            dcat:endpointDescription &lt;https://alcidedigitale.fbk.eu/> ;
+            dcat:servesDataset :alcide_corpus ;
+            dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ; 
+            dcat:theme tadirah:analyzing, &lt;http://purl.org/knot/thesaurus#apachetomcat>, &lt;http://purl.org/knot/thesaurus#mysql>, &lt;http://purl.org/knot/thesaurus#react>, &lt;http://purl.org/knot/thesaurus#ner>, &lt;http://purl.org/knot/thesaurus#nlp>, &lt;http://purl.org/knot/thesaurus#data_viz> ;
+            dct:type &lt;http://purl.org/knot/taxonomy#digital_platform> ;
+            dct:issued "2018-12-31"^^xsd:date .
+          </pre>
+          <h3>Distribution — Downloading the Dataset</h3>
+          <p><code class="grafoo-class">dcat:Distribution</code> represents a downloadable form of a dataset and, as mentioned above, therefore cannot exist without it. Furthermore, a data service is not required to make a distribution available. This class is therefore optional.</p>
+          <p>The main thing to note about using this class is that every downloadable instance of a dataset requires its own instance of <code class="grafoo-class">dcat:Distribution</code>, as every download may in fact offer different digital representations of a dataset, whether that be parts of it or different encodings.</p> 
+          <p>The following information must be recorded about it: an access URL (<code class="object-prop">dcat:accessURL</code>) and its format (<code class="object-prop">dct:format</code>). Recommended information that should be recorded, if available, includes: a description and a release license. Optional information that can be recorded, if available, includes: a data service that gives access to the distribution, its byte size (using <code>xsd:decimal</code>), its compression format, a page documenting it, a direct download URL, a language used in the distribution, a standard to which it conforms, its title, its release and/or last modified date, a related rights statement, and its status. </p>         
+          <p>In the case of our example, we know that the ALCIDE dataset has three distributions available via the GitHub repository that details the corpus. Each distribution represents a different format under which the corpus is available, with all the necessary information available via the repository. The main features of these distributions is that they do not have a connected data service, because the ALCIDE platform does not give access to them, that they are all compressed using ZIP, and that they are all released under a CC license, which is the only license/rights information about the project that is publicly stated.</p>
+          <p>Figure 2 details the description of one of the available distributions (some of the information has been simplified to keep the diagram legible), followed by the RDF description of the catalogue, dataset, data service, and all distributions together.</p>
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/dcat_distribution.svg">
+            <figcaption class="figure-caption">FIG 2. Description of a distribution of the ALCIDE corpus.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> . 
+            @prefix tadirah: &lt;http://tadirah.dariah.eu/vocab/> .
+            @prefix adms: &lt;http://www.w3.org/ns/adms#> .
+            
+            #Begin by describing the container for all research outputs as a DCAT Catalog
+            
+            :alcide_website a dcat:Catalog, prov:Entity ;
+            dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
+            dct:publisher :dh_fbk ; 
+            dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+            dcat:dataset :alcide_corpus ;
+            dcat:service :alcide_platform ;
+            foaf:homepage &lt;https://alcidedigitale.fbk.eu/> ;
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ;
+            dct:issued "2018-12-31"^^xsd:date ;
+            dct:spatial :italia;
+            dcat:themeTaxonomy &lt;http://publications.europa.eu/resource/dataset/data-theme>, &lt;https://vocabs.dariah.eu/tadirah/en/>, &lt;http://purl.org/knot/taxonomy#> ;
+            dcat:theme &lt;https://w3id.org/italia/controlled-vocabulary/classifications-for-culture/subject-disciplines/002>, &lt;http://viaf.org/viaf/32011324> ;
+            dct:creator :dh_fbk, :isig .
+            
+            #next describe the dataset(s), the data service, and if available the distribution(s) of the dataset 
+            
+            :alcide_corpus a dcat:Dataset, prov:Entity ;
+            dct:description "A collection of Alcide De Gasperi's public documents with gold and silver annotation The corpus of Alcide De Gasperi's public documents is a collection of 2,762 documents issued between 1901 and 1954, which had been previously published in four volumes by Il Mulino but were not machine-readable. Our repository contains all documents in three formats: txt, XML and tab-separated. Raw txt files contain only the body of the documents, and may be straightforwardly used to extract embeddings or topics. XML files include metadata that cover not only the title, the date and the place of publication, but also key-concepts automatically extracted from each text (with the corresponding relevance score) and genre labels manually assigned by domain experts. Furthermore, the release includes silver annotation for lemma, part of speech, person names and place names with associated coordinates in a CoNLL-like format. The corpus is released under CC BY-NC-SA license. An online platform to explore the corpus without downloading it can be accessed at http://alcidedigitale.fbk.eu"@en ;
+            dct:title "De Gasperi's Corpus"@en ;
+            dcat:distribution :corpus_distro_text, :corpus_distro_tsv, :corpus_distro_xml ;
+            dct:publisher :dh_fbk ; 
+            dct:spatial :italia ;
+            dct:temporal &lt;https://www.wikidata.org/entity/Q6927> ; 
+            dcat:theme tadirah:capturing, tadirah:analyzing, &lt;http://publications.europa.eu/resource/authority/data-theme/SOCI>, &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+            dct:accessRights &lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+            dct:creator :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli  ;
+            dct:conformsTo &lt;http://data.europa.eu/r5r/> ;
+            dcat:landingPage &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            dct:hasVersion :kind ;
+            dct:identifier "Alcide Digitale Corpus" ;
+            dct:isReferencedBy &lt;https://api.semanticscholar.org/CorpusID:204921128> ;
+            dcat:landingPage &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ;
+            dct:issued "2019-07-16"^^xsd:date ;
+            dct:type &lt;http://purl.org/knot/taxonomy#corpus> ;
+            prov:wasGeneratedBy :alcide .
+            
+            :alcide_platform a dcat:DataService, prov:Entity ;
+            dcat:endpointURL &lt;https://alcidedigitale.fbk.eu/platform/> ;
+            dct:title "ALCIDE platform"@en ;
+            dcat:endpointDescription &lt;https://alcidedigitale.fbk.eu/> ;
+            dcat:servesDataset :alcide_corpus ;
+            dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ; 
+            dcat:theme tadirah:analyzing, &lt;http://purl.org/knot/thesaurus#apachetomcat>, &lt;http://purl.org/knot/thesaurus#mysql>, &lt;http://purl.org/knot/thesaurus#react>, &lt;http://purl.org/knot/thesaurus#ner>, &lt;http://purl.org/knot/thesaurus#nlp>, &lt;http://purl.org/knot/thesaurus#data_viz> ;
+            dct:type &lt;http://purl.org/knot/taxonomy#digital_platform> ;
+            dct:issued "2018-12-31"^^xsd:date .
+            
+            :corpus_distro_txt a dcat:Distribution ;
+            dcat:accessURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+            dct:description "Raw txt files contain only the body of the documents, and may be straightforwardly used to extract embeddings or topics."@en ;
+            dcat:compressFormat &lt;http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+            dct:format &lt;http://publications.europa.eu/resource/authority/file-type/TXT> ;
+            dct:license &lt;https://creativecommons.org/licenses/by/4.0/> ;
+            dcat:byteSize "9420000.0"^^xsd:decimal ;
+            foaf:page &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            dcat:downloadURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/txt-files.zip> ; 
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ; 
+            dct:conformsTo &lt;http://publications.europa.eu/resource/authority/file-type> ;
+            dct:issued "2019-07-16"^^xsd:date ;
+            adms:status &lt;http://purl.org/adms/status/Completed> ;
+            dct:title "De Gasperi's Corpus - Raw Text Files "@en .
+            
+            :corpus_distro_xml a dcat:Distribution ;
+            dcat:accessURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+            dct:description "XML files include metadata that cover not only the title, the date and the place of publication, but also key-concepts automatically extracted from each text (with the corresponding relevance score) and genre labels manually assigned by domain experts."@en ;
+            dcat:compressFormat &lt;http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+            dct:format &lt;http://publications.europa.eu/resource/authority/file-type/XML> ;
+            dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+            dcat:byteSize "10500000.0"^^xsd:decimal ;
+            foaf:page &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            dcat:downloadURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/xml-files.zip> ; 
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ; 
+            dct:conformsTo  &lt;http://publications.europa.eu/resource/authority/file-type> ;
+            dct:issued "2019-07-16"^^xsd:date ;
+            adms:status &lt;http://purl.org/adms/status/Completed> ;
+            dct:title "De Gasperi's Corpus - XML Files "@en .
+            
+            :orpus_distro_tsv a dcat:Distribution ;
+            dcat:accessURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+            dct:description "The release includes silver annotation for lemma, part of speech, person names and place names with associated coordinates in a CoNLL-like format."@en ;
+            dcat:compressFormat &lt;http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+            dct:format &lt;http://publications.europa.eu/resource/authority/file-type/TSV> ;
+            dct:license &lt;https://creativecommons.org/licenses/by/4.0/> ;
+            dcat:byteSize "17200000.0"^^xsd:decimal ;
+            foaf:page &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            dcat:downloadURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/conll-files.zip> ; 
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ; 
+            dct:conformsTo  &lt;http://publications.europa.eu/resource/authority/file-type> ;
+            dct:issued "2019-07-16"^^xsd:date ;
+            adms:status &lt;http://purl.org/adms/status/Completed> ;
+            dct:title "De Gasperi's Corpus - TSV Files "@en .
+            
+            #see the RDF graph in the activity module for details of these individuals 
+            
+            :dh_fbk a foaf:Agent, prov:Agent .
+            :isig a foaf:Agent, prov:Agent .
+            :italia a dct:Location .
+            :alcide a prov:Activity .
+            :sara_tonelli a foaf:Agent, prov:Agent .
+            :giovanni_moretti a foaf:Agent, prov:Agent .
+            :rachele_sprugnoli a foaf:Agent, prov:Agent .
+          </pre>
+        </div>
         <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
         <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
       </div>
-      
       <hr class="mb-5">
       <h3>References</h3>
-      <span id="bib-1">[<a href="#back-1">1</a>]</span> Peroni, Silvio. “Graffoo - Graphical Framework for OWL Ontologies.” n.d. Essepuntato.It. Accessed July 13, 2023. <a href="https://essepuntato.it/graffoo/" target="_blank">https://essepuntato.it/graffoo/</a>.<br>
-      <span id="bib-2">[<a href="#back-2">2</a>]</span> “PROV-O: The PROV Ontology.” n.d. Www.w3.org. Accessed July 11, 2023. <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>.<br>
+      <span id="bib-1">[<a href="#back-1">1</a>]</span> Peroni, Silvio. “Graffoo - Graphical Framework for OWL Ontologies." n.d. Essepuntato.It. Accessed July 13, 2023. <a href="https://essepuntato.it/graffoo/" target="_blank">https://essepuntato.it/graffoo/</a>.<br>
+      <span id="bib-2">[<a href="#back-2">2</a>]</span> “PROV-O: The PROV Ontology." n.d. Www.w3.org. Accessed July 11, 2023. <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>.<br>
+      <span id="bib-3">[<a href="#back-3">3</a>]</span> Van Nuffelen, Bert. “Usage guide on Datasets, Distributions and Data Services.” Github.com. Accessed July 11, 2023. <a href="https://github.com/SEMICeu/DCAT-AP/blob/master/releases/2.1.1/usageguide-dataset-distribution-dataservice.md" target="_blank">https://github.com/SEMICeu/DCAT-AP/blob/master/releases/2.1.1/usageguide-dataset-distribution-dataservice.md</a>.<br>
       
       <hr class="mb-5">
       

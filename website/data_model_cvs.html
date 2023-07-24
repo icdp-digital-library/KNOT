@@ -19,9 +19,15 @@
   
   <nav class="navbar sticky-top bg-body-tertiary" aria-label="offcanvas navbar">
     <div class="container-xxl px-5">
-      <a href="../" class="d-flex text-body-emphasis text-decoration-none">
-        <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
-      </a>
+      <div class="d-flex">
+        <a href="../" class="d-flex text-body-emphasis text-decoration-none">
+          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+        </a>
+        <div class="btn-group px-3" role="group" aria-label="Language buttons">
+          <a href="" role="button" class="btn lang disabled" aria-disabled="true">ENG</a>
+          <a href="website/IT/index_it.html" role="button" class="btn lang">IT</a>
+        </div>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,22 +67,22 @@
       
       <p>The authority records and controlled vocabularies used by KNOT-DM are drawn from the requirements of DCAT and the project as a whole and primarily attached to classes within the Public Data Segment of the KNOT-DM. It is also possible to attach them in the other two segments, in particular within the Cultural Heritage Information Segment using <code class="object-prop">crm:P2_has_type</code>.</p>  
       
-      <p><code class="object-prop">dcat:theme</code> and <code class="object-prop">dct:type</code> are the primary properties for this purpose within DCAT. They can be used on the catalog, dataset, and data service classes and should point to the vocabularies and records listed below. An additional property, <code class="object-prop">dcat:keyword</code>, is optional and points to literal values. Figure 8 details these connections with the addition of <code class="object-prop">dcat:themeTaxonomy</code> which is used to connect an instance of Catalog to the vocabularies used within it (as opposed to specific concepts).</p> 
+      <p><code class="object-prop">dcat:theme</code> and <code class="object-prop">dct:type</code> are the primary properties for this purpose within DCAT. They can be used on the catalog, dataset, and data service classes and should point to the vocabularies and records listed below. An additional property, <code class="object-prop">dcat:keyword</code>, is optional and points to literal values. Figure 1 details these connections with the addition of <code class="object-prop">dcat:themeTaxonomy</code> which is used to connect an instance of Catalog to the vocabularies used within it (as opposed to specific concepts).</p> 
       
       <figure class="figure">
         <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/data_model_themes.svg">
-        <figcaption class="figure-caption">FIG 8. Overview of how concepts from controlled vocabularies are attached to the central DCAT classes.</figcaption>
+        <figcaption class="figure-caption">FIG 1. Overview of how concepts from controlled vocabularies are attached to the central DCAT classes.</figcaption>
       </figure>
 
       <p>The following list details all the external authority records and controlled vocabularies used by KNOT-DM (see <a href="data_model_modules.html">the Modules section</a> for details on their application):</p>
       <ul>
-        <li>The <a href="https://schema.gov.it/lodview/controlled-vocabulary/licences" target="_blank">Licenze controlled vocabulary from AgID</a> is used to specify the licenses attached to data catalogs, datasets, distributions and data services (see the <a href="data_model_cvs.html">Modules</a> and <a href="website/ontology/index-en.html" target="_blank">Ontology</a> sections for more details on how to choose which license to attach to which class).</li>
+        <li>The <a href="https://schema.gov.it/lodview/controlled-vocabulary/licences" target="_blank">Licenze controlled vocabulary from AgID</a> is used to specify the licenses attached to data catalogs, datasets, distributions and data services.</li>
         <li>The <a href="https://github.com/italia/daf-ontologie-vocabolari-controllati/tree/master/VocabolariControllati/classifications-for-culture/subject-disciplines" target="_blank">Ambiti Disciplinari controlled vocabulary from the OntoPia network</a> is used to specify the academic discipline the research project falls under.</li>
         <li><a href="https://www.geonames.org/" target="_blank">Geonames</a> is used to specify geographical locations.</li>
         <li><a href="https://www.wikidata.org/" target="_blank">Wikidata</a> is used to specify geographical locations, temporal periods, and people (lowest level of priority if another vocabulary or authority record in the list can specify the necessary information).</li>
         <li><a href="https://viaf.org/" target="_blank">VIAF</a> is used to specify people (takes precedence over Wikidata).</li>
         <li><a href="https://vocabs.dariah.eu/tadirah/en/" target="_blank">TaDiRAH</a>, the Taxonomy of Digital Research Activities in the Humanities, is used to specify the types of research activities (focused on the first two levels of the taxonomy).</li>
-        <li>The Data Theme, File Type, Access Right, Language, and Frequency <a href="https://op.europa.eu/en/web/eu-vocabularies/authority-tables" target="_blank">authority tables from the EU</a> are used to specify various technical aspects of research project outputs (see the <a href="data_model_cvs.html">Modules</a> and <a href="website/ontology/index-en.html" target="_blank">Ontology</a>sections for more details on each).</li>
+        <li>The Data Theme, File Type, Access Right, Language, and Frequency <a href="https://op.europa.eu/en/web/eu-vocabularies/authority-tables" target="_blank">authority tables from the EU</a> are used to specify various technical aspects of research project outputs.</li>
         <li>The <a href="http://purl.org/adms/status/1.0" target="_blank">ADMS Status vocabulary</a> is used to specify the state of a dataset’s distribution.</li>
       </ul>
       
@@ -88,10 +94,10 @@
       <p>Taxonomy was chosen as a type of controlled vocabulary to answer the needs for an “orderly classification” of the KNOT project’s domain with a simple hierarchical structure through which to arrange the different types of research project outputs and detail their relationships [<a href="#bib-2" id="back-2">2</a>]. The thesaurus meanwhile was chosen to document the technologies used in academic research projects as it is a more complex type of controlled vocabulary that reflects a “semantic network of unique concepts” with a multiplicity of relationships and the necessary controls “recommended for use as authorities in databases relating to art and cultural heritage.” [<a href="#bib-2">2</a>]</p>
           <figure>
             <img class="figure-img img-fluid rounded mx-auto d-block" src="assets/imgs/skos_usage.svg">
-            <figcaption class="figure-caption">FIG 9. Overview of the SKOS structure used for the controlled vocabularies.</figcaption>
+            <figcaption class="figure-caption">FIG 2. Overview of the SKOS structure used for the controlled vocabularies.</figcaption>
           </figure>
-      <p>Figure 9 details the SKOS structures used for both vocabularies. The taxonomy only employs the <code class="grafoo-class">skos:ConceptScheme</code> and <code class="grafoo-class">skos:Concept</code> classes, in keeping with its simpler hierarchical structure, while the Thesaurus also makes use of <code class="grafoo-class">skos:Collection</code> to enable a deeper structure. <code class="object-prop">skos:related</code> is used to create non hierarchical connections between concepts within the same vocabulary while <code class="data-prop">skos:closeMatch</code> and <code class="data-prop">skos:relatedMatch</code> are used to connect the concepts to others in external vocabularies, primarily the <a href="https://www.getty.edu/research/tools/vocabularies/aat/" target="_blank">Getty Art & Architecture Thesaurus</a>, the <a href="https://id.loc.gov/authorities/subjects.html" target="_blank">Library of Congress Subject Headings</a>, the DHA Taxonomy, and the PARTHENOS Vocabularies.</p>
-      <p>Both the KNOT Technology Thesaurus and Taxonomy are intended to be “living, growing tools”[<a href="#bib-2">2</a>] that will be updated throughout the duration of the KNOT project. During their development a list of editorial guidelines was created (see below), following suggestions laid out in Chapter 7 of the <em>Introduction to Controlled Vocabularies</em>. These rules are the first point of reference for any update to either vocabularies. </p>
+      <p>Figure 2 details the SKOS structures used for both vocabularies. The taxonomy only employs <code class="grafoo-class">skos:ConceptScheme</code> and <code class="grafoo-class">skos:Concept</code>, in keeping with its simpler hierarchical structure, while the Thesaurus also makes use of <code class="grafoo-class">skos:Collection</code> to enable a deeper structure. <code class="object-prop">skos:related</code> is used to create non hierarchical connections between concepts within the same vocabulary while <code class="data-prop">skos:closeMatch</code> and <code class="data-prop">skos:relatedMatch</code> are used to connect the concepts to others in external vocabularies, primarily the <a href="https://www.getty.edu/research/tools/vocabularies/aat/" target="_blank">Getty Art & Architecture Thesaurus</a>, the <a href="https://id.loc.gov/authorities/subjects.html" target="_blank">Library of Congress Subject Headings</a>, the DHA Taxonomy, and the PARTHENOS Vocabularies.</p>
+      <p>Both the KNOT Technology Thesaurus and Taxonomy are intended to be “living, growing tools” [<a href="#bib-2">2</a>] that will be updated throughout the duration of the KNOT project. During their development a list of editorial guidelines was created (see below), following suggestions laid out in Chapter 7 of the <em>Introduction to Controlled Vocabularies</em>. These rules are the first point of reference for any update to either vocabularies. </p>
       <ul class="nav nav-pills mb-3 mt-3 justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">KNOT Taxonomy</button>
@@ -110,10 +116,10 @@
           <p>This taxonomy is not intended as a complete or accurate picture of the landscape of academic research project outputs at Italian universities but rather as a starting point from which to begin addressing this complex topic with a view to incorporate the learnings into the guidelines that the KNOT project will produce. </p>
           <p>The concepts for the taxonomy were chosen and defined based on both existing literature and institutional definitions as well as the point of view of the research projects themselves, in order to account for both practical usage as well as ideal usage. As such a concept like Database reflects both its technical definition as well as its use by many research projects to describe a collection of resources and their metadata while a concept like Digital Archive is in practice almost always used to reflect a collection of items from different entities unified thematically which stands in contrast to the traditional definition of a collection of records originating from one person or organization and created in the course of their activity. </p>
           <p>As the KNOT project progresses the intention is to further refine the Taxonomy to include relevant concepts as well as find ways to reconcile practical and ideal uses. </p>
-          <p>Figure 10 details the KNOT Taxonomy structure and concepts.</p>
+          <p>Figure 3 details the KNOT Taxonomy structure and concepts.</p>
           <figure class="figure">
             <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/KTX_Diagram.jpg">
-            <figcaption class="figure-caption">FIG 10. KNOT Taxonomy structure and concepts.</figcaption>
+            <figcaption class="figure-caption">FIG 3. KNOT Taxonomy structure and concepts.</figcaption>
           </figure>
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
@@ -121,10 +127,10 @@
           <p>Concepts for the KNOT Technology Thesaurus were drawn from the technologies found in the aforementioned census, with particular attention to concepts related to the technology stack of many web applications. This was due to existing thesauri often lacking in concepts relating to this particular point of interest. Concepts were then further expanded to also include research tasks, services, and tools and to therefore have the thesaurus be a more encompassing reference point for various relevant technological aspects of the KNOT project. </p>
           <p>From this the decision was taken to use <code class="grafoo-class">skos:Collection</code> to help create a deeper hierarchy as well as groupings for concepts that share something in common with the decision to begin with five collections: Computer & Information Sciences (representing research tasks and techniques), Data Storage, Formal Languages (representing programming and other technological languages), Information Technology Architecture (representing the IT stack), and Services & Tools (representing things that research projects both create or make available). As with the Taxonomy, these collections are not intended to be perfect or exact but rather reflect the needs of the project in its first year and act as a starting point from which to think about the specific issues of detailing the technologies that go into the digital cultural heritage created by academic research projects, which relates directly to the wider issue of obsolescence faced by many older projects.</p>
           <p>As of publication date for the first version, the Technology Thesaurus includes all the meaningful concepts that have been found in the census. Unlike the taxonomy, definitions for concepts in the thesaurus were kept as simple and factual as possible and wherever possible taken from trusted sources such as the Springer Handbook series or existing vocabularies such as the Getty AAT and LoC Subject Headings. </p>
-          <p>Figure 11 details the KNOT Technological Thesaurus structure and concepts.</p>
+          <p>Figure 4 details the KNOT Technological Thesaurus structure and concepts.</p>
           <figure class="figure">
             <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/KTH_Diagram.jpg">
-            <figcaption class="figure-caption">FIG 11. KNOT Technology Thesaurus structure and concepts.</figcaption>
+            <figcaption class="figure-caption">FIG 4. KNOT Technology Thesaurus structure and concepts.</figcaption>
           </figure>
         </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
@@ -142,7 +148,7 @@
             </ul>
             <li>In the thesaurus concepts are described as simply as possible referencing the type of technology (e.g. software), relevant adjectives (e.g. open source), relevant used technology (e.g programming languages) and well-known use cases (e.g. a LAMP stack). <code class="object-prop">skos:related</code> can be used to create relevant internal links such as between a piece of software and the programming language used to create it. </li>
             <li>In the taxonomy <code class="object-prop">skos:related</code> is used to create internal links between concepts that could also be understood as <code class="object-prop">skos:narrower</code> in the real world. This is because it is preferred for concepts in the taxonomy to be <code class="object-prop">skos:topConceptOf</code> unless it is absolutely clear that it is a more specific version of an existing concept. For example, a Semantic Digital Edition is a narrower type of Digital Edition but a Knowledge Base is related to a Database, rather than being in a hierarchical relationship with it. </li>
-            <li>The <code class="data-prop">skos:closeMatch</code> property is used when an external vocabulary includes a near-identical concept (based on both the title of the concept and its definition, for example an existing concept for Javascript), while <code class="data-prop">skos:relatedMatch</code> is used for related concepts (for example the concept of Semantic Web is related to the concept of Linked Data). </li>
+            <li><code class="data-prop">skos:closeMatch</code> is used when an external vocabulary includes a near-identical concept (based on both the title of the concept and its definition, for example an existing concept for Javascript), while <code class="data-prop">skos:relatedMatch</code> is used for related concepts (for example the concept of Semantic Web is related to the concept of Linked Data). </li>
             <li>Terms are singular.</li>
             <li>English and Italian are the primary languages for both vocabularies. </li>
           </ul>

@@ -178,13 +178,12 @@
       <path fill="none" d="M657.2795 408.0946 C659.4887 408.0946 661.2795 409.8854 661.2795 412.0946 C661.2795 414.3037 659.4887 416.0946 657.2795 416.0946 C655.0704 416.0946 653.2795 414.3037 653.2795 412.0946 C653.2795 409.8854 655.0704 408.0946 657.2795 408.0946 Z" clip-path="url(#clipPath2)"/>
       <path fill="white" d="M657.2795 545.9916 L663.2795 529.9916 L651.2795 529.9916 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M657.2795 545.9916 L663.2795 529.9916 L651.2795 529.9916 Z" clip-path="url(#clipPath2)"/>
-      <rect x="611.6829" y="434.6393" clip-path="url(#clipPath2)" fill="white" width="91.1934" height="88.7969" stroke="none"/>
-      <text x="620.4299" xml:space="preserve" y="448.2409" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:modified</text>
-      <text x="627.593" xml:space="preserve" y="462.3737" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:issued</text>
-      <text x="634.9875" xml:space="preserve" y="476.5065" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:title</text>
-      <text x="613.6829" xml:space="preserve" y="490.6393" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:description</text>
-      <text x="618.7278" xml:space="preserve" y="504.7721" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dcat:byteSize</text>
-      <text x="618.4495" xml:space="preserve" y="518.9049" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dcat:keyword</text>
+      <rect x="611.6829" y="441.7057" clip-path="url(#clipPath2)" fill="white" width="91.1934" height="74.6641" stroke="none"/>
+      <text x="620.4299" xml:space="preserve" y="455.3073" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:modified</text>
+      <text x="627.593" xml:space="preserve" y="469.4401" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:issued</text>
+      <text x="634.9875" xml:space="preserve" y="483.5729" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:title</text>
+      <text x="613.6829" xml:space="preserve" y="497.7057" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:description</text>
+      <text x="618.7278" xml:space="preserve" y="511.8385" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dcat:byteSize</text>
       <path fill="none" d="M697.4222 680.8864 L697.4222 604.0076" clip-path="url(#clipPath2)"/>
     </g>
     <g stroke-linecap="butt" transform="matrix(1,0,0,1,-80,62)" fill-opacity="0" fill="rgb(0,0,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="rgb(0,0,0)" stroke-opacity="0" stroke-miterlimit="1.45">

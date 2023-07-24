@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="it">
+<head> 
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il KNOT Data Model è incentrato sull'intersezione di tre domini che riflettono aspetti specifici del tema centrale e aiutano a descrivere la ricerca accademica come esempi di patrimonio culturale digitale.">
+  <meta name="author" content="Digital Humanities Advanced Research Center">
+  <meta name="keywords" content="Patrimonio Culturale, Digital Humanities, ICDP, Digital Library">
+  <title>KNOT - Struttura del Data Model</title>
+
+  <!-- bootstrap css-->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- custom css-->
+  <link href="../assets/main.css" rel="stylesheet">
+  
+</head>
+<body>
+  <nav class="navbar sticky-top bg-body-tertiary" aria-label="offcanvas navbar">
+    <div class="container-xxl px-5">
+      <div class="d-flex">
+        <a href="./" class="d-flex text-body-emphasis text-decoration-none">
+          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+        </a>
+        <div class="btn-group px-3" role="group" aria-label="Language buttons">
+          <a href="../../index.html" role="button" class="btn lang">ENG</a>
+          <a href="" role="button" class="btn lang disabled" aria-disabled="true" >IT</a>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="index_it.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pilot_it.html">KNOT Pilota</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_model_structure_it.html">KNOT Data Model</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../ontology/index-it.html" target="_blank">KNOT Ontologia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-xxl px-5">
+    <main>
+      
+      
+      <h1 class="text-body-emphasis">The KNOT Data Model - Overview</h1>
+      <p>KNOT-DM è incentrato sull'intersezione di tre domini che riflettono aspetti specifici del tema centrale del progetto:</p>
+      <ul>
+        <li>Il mondo accademico - che rappresenta gli Atenei e i loro agenti (accademici, ricercatori, dipartimenti, laboratori, studenti), nonché l'attività di ricerca e gli oggetti digitali da essa creati.</li>
+        <li>I dati pubblici - che rappresentano i prodotti digitali della ricerca disponibili al pubblico per facilitare e promuovere ulteriori ricerche (versioni, distribuzioni). </li>
+        <li>Il patrimonio culturale digitale - i soggetti della ricerca (opere, persone, oggetti) e i prodotti della ricerca (dataset, software, imagine) come esempi di patrimonio culturale.</li>
+      </ul> 
+      <p>Questa intersezione fornisce lo schema strutturale del KNOT-DM, che è organizzato in tre segmenti che riflettono le specificità di ciascun dominio e fanno uso di concetti di uno standard riconosciuto a livello internazionale per descrivere entità, attività, agenti, temi, relazioni e informazioni spazio-temporali. I segmenti e i relativi standard sono:</p>
+      <ul>
+        <li>
+          Segmento dati pubblici - modellato con il Data Catalog Vocabulary (DCAT), un vocabolario RDF del W3C "progettato per facilitare l'interoperabilità tra i cataloghi di dati" pubblicato online [<a href="#bib-1" id="back-1">1</a>]. È utilizzato per rappresentare i risultati della ricerca accademica come dati pubblici, sotto forma di entità concettuali come dataset o data service. KNOT-DM combina entità ontologiche e il loro utilizzo dalla specifica W3C DCAT e dai profili applicativi europei e italiani (<a href="https://github.com/SEMICeu/DCAT-AP/tree/2.1.0-draft/releases" target="_blank">DCAT AP</a> e <a href="https://www.dati.gov.it/content/dcat-ap-it-v10-profilo-italiano-dcat-ap-0" target="_blank">DCAT AP IT</a>).
+        </li>
+        <li>Segmento di provenienza accademica - modellato con l'ontologia PROV (PROV-O), un linguaggio ontologico Web OWL2 del W3C progettato per "rappresentare le informazioni di provenienza generate in diversi sistemi e in diversi contesti" [<a href="#bib-2" id="back-2">2</a>]. È utilizzata per rappresentare le specificità delle attività e le fasi di ricerca.  PROV è già integrata in DCAT.</li>
+        <li>Segmento sul  patrimonio culturale - modellato con il Modello Concettuale di Riferimento CIDOC (CIDOC CRM), uno "standard vivente" che offre "uno strumento teorico e pratico per l'integrazione delle informazioni nel campo del patrimonio culturale" [<a href="#bib-3" id="back-3">3</a>]. Viene utilizzato per rappresentare attività specifiche all'interno di un progetto di ricerca, nonché i risultati stessi, con particolare attenzione alle informazioni sul patrimonio culturale a cui si riferiscono. KNOT-DM utilizza principalmente le estensioni CRMdig e LRMoo di CIDOC CRM. La prima modella "le fasi e i metodi di produzione ("provenienza") dei prodotti di digitalizzazione e delle rappresentazioni digitali sintetiche" [<a href="#bib-4" id="back-4">4</a>] e come tale offre vari concetti che si allineano alle pratiche standard dei progetti di ricerca, mentre la seconda è "intesa a catturare e rappresentare la semantica sottostante alle informazioni bibliografiche e a facilitare l'integrazione, la mediazione e l'interscambio di informazioni bibliografiche e museali" [<a href="#bib-5" id="back-5">5</a>] ed è utilizzata principalmente per consentire relazioni con il concetto WEMI (Work, Expression, Manifestation, Item) del modello Functional Requirements for Bibliographic Records (FRBR) [<a href="#bib-6" id="back-6">6</a>].</li>
+      </ul>
+      <p>Le figure 1 e 2 riassumono il nucleo di KNOT-DM evidenziando le classi chiave (caselle gialle), le proprietà (frecce) di ogni standard e la loro interconnessione, nonché la relazione con le entità (punti rosa) centrali del progetto. Ulteriori dettagli sull'estensione di ciascun segmento sono forniti nella sezione successiva.</p>
+      <figure class="figure">
+        <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/data_model_summary.svg">
+        <figcaption class="figure-caption">FIG 1. Una sintesi dei diversi segmenti che compongono KNOT-DM.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/data_model_core.svg">
+        <figcaption class="figure-caption">FIG 2. Un riepilogo delle classi principali e delle proprietà che compongono KNOT-DM.</figcaption>
+      </figure>
+
+      <p>L'uso di standard riconosciuti e complementari a livello internazionale deriva da una decisione iniziale di design secondo la quale KNOT-DM dovrebbe essere incentrato sulla riutilizzabilità piuttosto che sulla creazione di nuovi componenti ontologici, al fine di consentire la flessibilità e garantire la compatibilità finale con l'infrastruttura della Digital Library. Inoltre, questa flessibilità dovrebbe consentire al progetto KNOT di integrare le informazioni e i dati già esistenti della ricerca accademica, per ridurre al minimo le duplicazioni e favorire l'interconnessione. Una prima area di interesse in questo senso è l'esplorazione di come KNOT possa integrarsi con <a href="https://www.cineca.it/sistemi-informativi-universita/ricerca/iris-la-gestione-della-ricerca" target="_blank">il sistema di gestione della ricerca IRIS</a> offerto agli Atenei dal CINECA.</p>
+
+      <p>Tutti i termini e i concetti di KNOT-DM sono raccolti ed espressi in RDF attraverso <a href="../ontology/index-it.html" target="_blank">l'Ontologia KNOT (KNOT-O)</a>, mentre alcuni dei requisiti tematici e di indicizzazione sono espressi in RDF attraverso la Tassonomia KNOT e il Thesaurus tecnologico KNOT, due vocabolari controllati basati sul modello di dati SKOS. L'uso di standard esistenti basati su, o adattati a, RDF consente al progetto KNOT di pubblicare i suoi metadati come Linked Open Data (LOD) per garantire la leggibilità automatica e massimizzare l'interoperabilità con altri dati aperti disponibili online. Questo è esemplificato dall'uso di DCAT, che è lo standard utilizzato dal Dipartimento per la trasformazione digitale ed è una delle ontologie raccomandate dalla <a href="https://github.com/icdp-digital-library/daf-ontologie-vocabolari-controllati" target="_blank">rete nazionale OntoPia</a> di ontologie e vocabolari controllati promossa dal Ministero della Cultura e dalla Digital Library.</p>
+
+      <p><a href="https://essepuntato.it/samod/" target="_blank">La metodologia SAMOD</a> è stata utilizzata come punto di riferimento nello sviluppo del KNOT-DM per creare un flusso di lavoro iterativo: una volta scelto il tema centrale, il dominio è stato progettato ricercando e valutando gli standard esistenti rispetto a una prima serie di requisiti ricavati in parte dalle informazioni acquisite durante il censimento dei progetti di ricerca esistenti; ogni standard è stato poi assemblato in un segmento e valutato rispetto a una prima serie di domande di competenza (chi, cosa, dove, quando, come) modellando un piccolo sottoinsieme di dati del censimento (12 voci); in seguito sono stati apportati ulteriori perfezionamenti agli elementi degli standard che il modello doveva utilizzare e al modo in cui dovevano essere collegati e usati; le intuizioni di questa fase hanno portato anche alla creazione dei vocabolari controllati; infine, è stata creata la prima versione dell'ontologia e della documentazione del data model, attingendo alle intuizioni acquisite in ogni fase precedente.</p>
+
+      <p>Dopo la pubblicazione della prima versione del data model nell'estate del 2023, la valutazione continuerà utilizzando la metodologia SAMOD, con particolare attenzione ai diversi moduli e alla loro capacità di rispondere alle domande sulle competenze.</p>
+
+      <p>Tutti gli elementi del KNOT-DM, compresi KNOT-O e i vocabolari controllati KNOT Taxonomy e KNOT Technological Thesaurus, sono pubblicati in inglese e in italiano e sono disponibili su <a href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a> con licenza CC BY-NC 4.0.</p>
+      
+      <hr class="mb-5">
+      <h2 class="text-body-emphasis">Il KNOT Data Model - Segmenti</h2>
+      <p>Le tab sottostanti forniscono maggiori dettagli su ciascun segmento, con particolare attenzione alle classi chiave e al loro utilizzo. Si veda la <a href="data_model_modules_it.html">sezione Moduli</a> per gli esempi pratici e <a href="../ontology/index-it.html" target="_blank">la sezione Ontologia</a> per i dettagli completi di tutte le proprietà e le classi.</p>
+      <p>La seguente legenda si applica a tutte le rappresentazioni grafiche e le evidenziazioni testuali basate sul "Graphical Framework for OWL Ontologies" [<a href="#bib-7" id="back-7">7</a>]: <code class="grafoo-class">una casella gialla indica una classe</code>, <code class="object-prop">una freccia blu indica una object property</code>, <code class="data-prop">una freccia verde indica una data property</code>, <code>una freccia nera indica un predicato tra due entità</code> e <code class="instance">un punto rosa indica un'istanza di una classe</code> (anche chiamato individuo).</p>
+      <ul class="nav nav-pills mb-3 mt-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Dati pubblici</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Provenienza accademica</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Patrimonio Culturale</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Classi concettualmente simili</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+          <h3>Il progetto di ricerca come dati pubblici</h3>
+        <p>Le figure da 3 a 5 forniscono una panoramica completa del segmento dei dati pubblici di KNOT-DM, che è il più grande in termini di classi e proprietà disponibili per l'uso. Ogni figura illustra in dettaglio le proprietà e le classi collegate a uno dei quattro concetti centrali di DCAT: Catalog, Dataset, Data Service e Distribution.</p>
+        <p>La Figura 3 illustra la prima parte del segmento, incentrata su <code class="grafoo-class">dcat:Catalog</code>. Questa classe è definita all'interno di KNOT-DM come un "catalogo o repository che ospita i dataset o i servizi di dati che vengono descritti" [<a href="#bib-8" id="back-8">8</a>], sulla base del profilo applicativo DCAT. Prende anche in considerazione la definizione della specifica W3C, "una raccolta curata di metadati su risorse (ad esempio, insiemi di dati e servizi di dati nel contesto di un catalogo di dati)" [<a href="#bib-1">1</a>], e una nota d'uso secondo cui i cataloghi di dati basati sul web rappresentano una singola istanza di questa classe.</p>
+        <p>Queste definizioni sono il punto di partenza per la concettualizzazione della classe Catalog come rappresentazione dei progetti di ricerca intesi come collettori di risultati. L'esempio più comune e pratico di questa concettualizzazione è un sito web in cui l'attività e i risultati del progetto di ricerca sono documentati (rappresentando la raccolta curata di metadati su risorse) e resi disponibili al pubblico, sia tramite download diretto che attraverso l'interazione con interfacce utente specifiche (rappresentando l'hosting di dataset o servizi di dati).</p>
+        <p>Inoltre, la specifica W3C di DCAT rende esplicitamente <code class="grafoo-class">dcat:Catalog</code> una sottoclasse di <code class="grafoo-class">dcat:Dataset</code>, il che aggiunge un altro livello a questa concettualizzazione, consentendo a KNOT-DM di trattare il contenitore come un'altra forma di output dell'attività del progetto di ricerca.</p>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/dcat_mapping_catalog.svg">
+          <figcaption class="figure-caption">FIG 3. Classe DCAT Catalog con tutte le connessioni.</figcaption>
+        </figure>
+        <p>La figura 4 illustra la seconda parte del segmento, incentrata su <code class="grafoo-class">dcat:Dataset</code>. È definita all'interno di KNOT-DM come "una collezione di dati pubblicati o curati da un singolo agente, e disponibili per l'accesso o il download in una o più rappresentazioni" sulla base della specifica W3C e di una nota aggiuntiva che afferma "i dati si presentano in molte forme, inclusi numeri, parole, pixel, immagini, suoni e altri multi-media, e potenzialmente altri tipi, ognuno dei quali potrebbe essere raccolto in un dataset".  [<a href="#bib-1">1</a>]</p>
+        <p>Pertanto, KNOT-DM utilizza la classe Dataset per la rappresentazione degli output digitali dei progetti di ricerca, qualunque sia la loro forma (ovvero, siano essi dataset o meno). Quest'ultimo punto è fondamentale perché, mentre lo standard DCAT è utilizzato principalmente nell'UE e in Italia per classificare i dataset di enti pubblici, come le agenzie governative, KNOT-DM lo utilizza per coprire tutti i tipi di output digitali della ricerca accademica: un pdf di un articolo, un software, un corpus testuale, un database relazionale, una raccolta di immagini annotate, una mappa interattiva o un servizio di visualizzazione.</p>
+        <p>Come già detto, all'interno di KNOT-DM <code class="grafoo-class">dcat:Dataset</code> è la superclasse di <code class="grafoo-class">dcat:Catalog</code>, il che significa che il progetto di ricerca che ha creato il dataset esiste come un instanza di attività e anche come un istanza di un dataset che contiene altri dataset che rappresentano tutti gli output dell'attività, insieme alle loro possibili distribuzioni e servizi interattivi.</p>
+        <p>Questa classe offre anche una connessione diretta al segmento di provenienza accademica di KNOT-DM attraverso <code class="object-prop">prov:wasGeneratedBy</code>, che DCAT include per consentire agli utenti di "descrivere ulteriormente l'attività che ha generato un dataset". [<a href="#bib-1">1</a>] Le specifiche DCAT indicano che per utilizzare questa proprietà la risorsa di contesto deve essere classificata come <code class="grafoo-class">prov:Entity</code>, che è l'approccio adottato da KNOT-DM. Questo approccio alla classificazione multipla delle istanze è descritto in dettaglio nella sezione relativa alle classi concettualmente simili.</p>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/dcat_mapping_dataset.svg">
+          <figcaption class="figure-caption">FIG 4. Classe DCAT Dataset class con tutte le connessioni.</figcaption>
+        </figure>
+        <p>La Figura 5 illustra la terza e ultima parte del segmento dei dati pubblici, incentrata sulle <code class="grafoo-class">dcat:Distribution</code> e <code class="grafoo-class">dcat:DataService</code>. Queste due classi sono state raggruppate insieme perché sono strettamente collegate tra loro in quanto danno accesso ai dati inclusi nel catalogo, ma presentano alcune differenze fondamentali.</p>
+        <p>Una distribution è definita all'interno di KNOT-DM come una "forma accessibile di un set di dati, come un file scaricabile" [<a href="#bib-1">1</a>], sulla base della specifica W3C. Tuttavia, il termine "forma accessibile" potrebbe essere interpretato come comprendente forme non scaricabili e quindi KNOT-DM rende esplicita la limitazione della Distribution alle forme scaricabili (questo è anche implicito nelle note d'uso e nelle definizioni di DCAT AP). Un Data Service è definito all'interno di KNOT-DM come "un insieme di operazioni che fornisce l'accesso a uno o più insiemi di dati o funzioni di elaborazione dati", sulla base della specifica DCAT AP [<a href="#bib-8">8</a>].</p>
+        <p>Inoltre, KNOT-DM fa esplicito riferimento alla nota d'uso inclusa in DCAT AP 2.1.1 relativa alle distinzioni tra queste due classi, che aggiunge le seguenti dimensioni concettuali a entrambe [<a href="#bib-9" id="back-9">9</a>]:</p>
+        <ul>
+          <li>Una distribuzione non può esistere senza il suo dataset, mentre sia il dataset che il data service sono entità concettuali a sé stanti.</li>
+          <li>Non è necessario che una distribuzione sia il risultato di operazioni del data service.</li>
+          <li>Tutto ciò che non è destinato a fornire una forma scaricabile di un dataset è un data service.</li>
+          <li>Un data service offre modi più intelligenti e interattivi per accedere ai dati.</li>
+        </ul>
+        <p><code class="grafoo-class">dcat:Distribution</code> è concettualizzata come la sola forma scaricabile di un dataset, ed è possibile che un dataset esista senza di essa, come ad esempio quando un database relazionale è accessibile tramite un'interfaccia di ricerca ma non direttamente per il download. <code class="grafoo-class">dcat:DataService</code> viene concettualizzato per rappresentare tutti gli altri servizi web che consentono all'utente di accedere ai dati contenuti in un dataset attraverso un numero qualsiasi di funzioni di elaborazione. Per seguire l'esempio precedente, in questo caso l'interfaccia di ricerca per il database relazionale costituirebbe un data service. Nell'ambito del progetto KNOT, i data service possono rappresentare qualsiasi cosa, dagli endpoint API alle interfacce di ricerca dei siti web e i servizi di analisi. In molti casi è possibile che il data service faccia parte dello stesso sito web che è concettualizzato come <code class="grafoo-class">dcat:Catalog</code>. Pertanto, il sito web di un progetto di ricerca può svolgere la funzione concettuale sia di contenitore dei risultati del progetto, raccogliendo i (meta)dati pertinenti in un unico luogo, sia (in parte) di data service che dà accesso ai dati sottostanti e alle funzioni di elaborazione dei dati per interagire con essi, come le funzionalità di ricerca (per usare uno degli esempi più comuni). Infine, in virtù della sua capacità di fornire agli utenti l'accesso agli dataset, un data service può anche essere concettualizzato come un altro tipo di output della ricerca.</p>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/dcat_mapping_distro_service.svg">
+          <figcaption class="figure-caption">FIG 5. Classi DCAT Data Service e Distribution con tutte le connessioni.</figcaption>
+        </figure>
+        <h4>Un esempio pratico</h4>
+        <p>La Figura 6 descrive in dettaglio un esempio pratico semplificato di come le quattro classi DCAT si uniscono in KNOT-DM: un progetto di ricerca si svolge nel corso di 2 anni con l'obiettivo di creare un dataset di immagini e renderlo disponibile agli utenti per l'interazione tramite un'interfaccia web e tramite download. I risultati finali del progetto sono: un sito Web, che contiene tutti gli output e la documentazione (rappresentati da <code class="grafoo-class">dcat:Catalog</code>, <code class="object-prop">dcat:dataset</code>, e <code class="object-prop">dcat:service</code>), nonché una sezione in cui gli utenti possono interagire con i contenuti del dataset tramite varie funzionalità (rappresentate da <code class="grafoo-class">dcat:DataService</code> e <code class="object-prop">dcat:servesDataset</code>) e il dataset stesso (rappresentato da <code class="grafoo-class">dcat:Dataset</code>). Quest'ultimo è anche reso disponibile per il download diretto per incoraggiare un ulteriore utilizzo (rappresentato da <code class="grafoo-class">dcat:Distribution</code> and <code class="object-prop">dcat:distribution</code>). Il dataset e il sito Web sono collegati all'attività del progetto di ricerca, che è modellato utilizzando PROV-O come dettagliato nella sezione successiva (rappresentata da <code class="grafoo-class">prov:Activity</code> e <code class="object-prop">prov:wasGeneratedBy</code>).</p>
+        <figure>
+          <img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/segment_example_1.svg">
+          <figcaption class="figure-caption">FIG 6. Un esempio pratico che riassume come le classi principali DCAT vengono utilizzate per descrivere il progetto di ricerca come dati.</figcaption>
+        </figure>
+        <p>Si vede la <a href="data_model_modules_it.html">sezione Moduli</a> per ulteriori esempi pratici dettagliati di come questo segmento può essere utilizzato per descrivere progetti di ricerca accademica e <a href="../ontology/index-it.html" target="_blank">la sezione Ontologia</a> per le definizioni di tutte le diverse proprietà e classi.</p>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+          <h3>Il progetto di ricerca come attività accademica</h3>
+          <p>La Figura 7 fornisce una panoramica completa del segmento di provenienza accademica di KNOT-DM, che è incentrato su due classi PROV-O: Activity ed Entity.</p>
+          <p><code class="grafoo-class">prov:Activity</code> è definita come "qualcosa che avviene in un periodo di tempo e agisce su o con entità; può includere il consumo, l'elaborazione, la trasformazione, la modifica, il trasferimento, l'uso o la generazione di entità" [<a href="#bib-2">2</a>]. All'interno di KNOT-DM questo rappresenta i progetti di ricerca come attività, che a loro volta utilizzano e generano entità. Pertanto, all'interno di KNOT-DM un progetto di ricerca è identificato da due individui: una istanza di <code class="grafoo-class">dcat:Catalog</code>, per rappresentare il suo ruolo di contenitore di output, e una istanza di <code class="grafoo-class">prov:Activity</code>, per rappresentare le fasi e le attività, con la proprietà <code class="object-prop">prov:wasGeneratedBy</code> che li collega e rende esplicito che l'attività ha generato tutti gli output, incluso il contenitore.</p>
+          <p><code class="grafoo-class">prov:Entity</code> è definita come "un oggetto fisico, digitale, concettuale o di altro tipo con alcuni aspetti fissi; le entità possono essere reali o immaginarie" [<a href="#bib-2">2</a>]. All'interno di KNOT-DM rappresenta gli output e gli input della ricerca. Come menzionato nella sezione precedente, ciò significa che gli output della ricerca sono classificati come individui appartenenti a entrambe DCAT e PROV-O, al fine di soddisfare la connessione tra i segmenti dati pubblici e provenienza accademica. Anche gli input possono essere modellati con questa classe, per riflettere le entità che entrano in un progetto di ricerca, dalle domande di ricerca agli oggetti utilizzati o alle persone e ai luoghi studiati.</p>
+          <p>Le relazioni tra queste due classi PROV-O possono essere dettagliate in vari modi utilizzando le proprietà <code class="object-prop">prov:used</code>, <code class="object-prop">prov:wasInfluencedBy</code> e <code class="object-prop">prov:generated</code> nonché alcune qualified classi e proprietà (<code class="grafoo-class">prov:Derivation</code>, <code class="grafoo-class">prov:Influence</code>) che dovrebbero essere utilizzate per "fornire informazioni elaborate sulle relazioni binarie" [<a href="#bib-2">2</a>] che non possono essere coperte dalle altre classi e proprietà. Queste qualified classi e proprietà devono essere utilizzate se ci sono informazioni significative sul progetto di ricerca che possono essere modellate, ad esempio per fornire ulteriori dettagli su un'entità che ha influenzato l'attività del progetto di ricerca o su un'entità da cui è derivato l'output del progetto di ricerca. Influence e derivation sono state scelte come le due qualified classi più rilevanti nel contesto del progetto KNOT.</p>
+          <p>Lastly the range of the <code class="object-prop">prov:wasInformedBy</code> property, which is used to connect two activities within PROV-O, was extended to also include <code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code> in order to establish a clear connection between the Academic Provenance and Cultural Heritage Information Segments of  KNOT-DM, similar to the connection created by the <code class="object-prop">prov:wasGeneratedBy</code> property. More details on this connection are given in the Cultural Heritage Information section.</p>
+          <p>Infine, il range di <code class="object-prop">prov:wasInformedBy</code>, utilizzata per collegare due attività all'interno di PROV-O, è stato esteso anche a <code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code>, al fine di stabilire una chiara connessione tra i segmenti della provenienza accademica e del patrimonio culturale del KNOT-DM, in modo simile alla connessione creata da <code class="object-prop">prov:wasGeneratedBy</code>. Maggiori dettagli su questa connessione sono riportati nella scheda del segmento sul patrimonio culturale.</p>
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/provo_mapping_full.svg">
+            <figcaption class="figure-caption">FIG 7. Riassunto delle classi e proprietà PROV-O usato da KNOT-DM per descrivere la provenienza accademica.</figcaption>
+          </figure>
+          <h4>Un esempio pratico continuato</h4>
+          <p>La Figura 8 descrive la continuazione dell'esempio pratico che abbiamo iniziato nella sezione precedente, mostrando ora come vengono utilizzate le classi principali in PROV-O: il nostro progetto di ricerca ha generato tre entità (rappresentate da <code class="grafoo-class">prov:Activity</code>, <code class="object-prop">prov:generated</code>, e <code class="grafoo-class">prov:Entity</code>): il sito Web, il dataset e il servizio dati (ognuno dei quali è anche classificato utilizzando DCAT come indicato in precedenza). Il tema del progetto, articolato attraverso la sua domanda di ricerca, era l'esplorazione dell'architettura medievale italiana che ha influenzato l'attività di ricerca (rappresentata da <code class="grafoo-class">prov:Entity</code> e <code class="object-prop">prov:wasInfluencedBy</code>). Il progetto ha anche utilizzato raccolte di immagini esistenti per assemblare il suo dataset finale, rendendo quest'ultimo una derivazione (rappresentata da <code class="object-prop">prov:used</code> e <code class="object-prop">prov:wasDerivedFrom</code>).</p>
+        <figure>
+          <img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/segment_example_2.svg">
+          <figcaption class="figure-caption">FIG 8. Un esempio pratico che riassume come le classi principali PROV-O vengono utilizzate per descrivere il progetto di ricerca come attività accademica.</figcaption>
+        </figure>
+        <p>Si vede la <a href="data_model_modules_it.html">sezione Moduli</a> per ulteriori esempi pratici dettagliati di come questo segmento può essere utilizzato per descrivere progetti di ricerca accademica e <a href="../ontology/index-it.html" target="_blank">la sezione Ontologia</a> per le definizioni di tutte le diverse proprietà e classi.</p>
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+          <h3>Il progetto di ricerca come patrimonio culturale</h3>
+          <p>La Figura 9 fornisce una panoramica completa del segmento sul patrimonio culturale diKNOT-DM, che è incentrato sulle classi chiave delle estensioni CIDOC CRMdig - D7 Digital Machine Event e D1 Digital Object - e LRMoo (FKA FRBRoo) - F5 Item e F3 Manifestation.</p>
+          <p><code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code> comprende "eventi che accadono su dispositivi digitali fisici a seguito di un'attività umana che ha intenzionalmente causato il suo inizio immediato o ritardato e risulta nella creazione di una nuova istanza di D1 Digital Object per conto dell'attore umano" [<a href="#bib-4">4</a>]. <code class="grafoo-class">crmdig:D1_Digital_Object</code> comprende "elementi immateriali identificabili che possono essere rappresentati come insiemi di sequenze di bit, come dataset, testi elettronici, immagini, elementi audio o video, software, ecc. e sono documentati come singole unità" [<a href="#bib-4">4</a>]. </p>
+          <p>All'interno di KNOT-DM le istanze di D7 e delle sue sottoclassi (che coprono tipi più specifici di attività che possono avere luogo su un dispositivo digitale) rappresentano attività specifiche all'interno di un'attività di ricerca più generale (una <code class="grafoo-class">prov:Activity</code>) e sono collegate ad essa da  <code class="object-prop">prov:wasInformedBy</code>, come descritto nella sezione precedente. </p>
+          <p>Le istanze di D1 e delle sue sottoclassi (che coprono tipi più specifici di oggetti digitali) sono un'altra concettualizzazione degli output e degli input di un progetto di ricerca, ma specificamente limitati all'ambito digitale (nel caso degli output) e nel contesto del patrimonio culturale, una dimensione che non è esplicita né in DCAT né in PROV-O.</p>
+          <p>KNOT-DM fa uso di due sottoclassi di D7: <code class="grafoo-class">crmdig:D2_Digitization_Process</code>, che rappresenta l'attività specifica di trasformazione di un oggetto fisico in uno digitale, e <code class="grafoo-class">crmdig:D10_Software_Execution</code>, che può essere utilizzata per rappresentare attività computazionali o di software più generiche eseguite su un dispositivo digitale, come ad esempio la trasformazione di stringhe di testo in XML. Il data model si avvale anche di due sottoclassi di D1: <code class="grafoo-class">crmdig:D9_Data_Object</code>, che rappresenta istanze specifiche di D1 che contengono proprietà quantitative (come ad esempio un corpus linguistico) e sono state create da D2, e  <code class="grafoo-class">crmdig:D14_Software</code>, che rappresenta sia i programmi software o i codici informatici che un'istanza di D7 può utilizzare sia un tipo di oggetto digitale che può essere creato dall'attività del progetto di ricerca.</p>
+          <p><code class="grafoo-class">frbroo:F5_Item</code> is defined as comprising “physical objects (printed books, scores, CDs, DVDs, CD-ROMS, etc.) that were produced by (P186i) an industrial process involving a given instance of F3 Manifestation,” while <code class="grafoo-class">frbroo:F3_Manifestation</code> is defined as comprising “products rendering one or more Expressions. A Manifestation is defined by both the overall content and the form of its presentation.” [<a href="#bib-10" id="back-10">10</a>] Within KNOT-DM these two classes are used specifically in conjunction with D2. As such F5 represents the physical item that was used for digitization while F3 represents the manifestation that was used to produce the item. The latter can also be related to a <code class="grafoo-class">crm:E1_Entity</code> via <code class="object-prop">crm:P129_is_about</code> in order to attach the subject of the manifestation to the process (for example an author or a historical period). </p>
+          <p><code class="grafoo-class">frbroo:F5_Item</code> è definito come comprendente "oggetti fisici (libri stampati, spartiti, CD, DVD, CD-ROM, ecc.) che sono stati prodotti da (P186i) un processo industriale che coinvolge una determinata istanza di F3 Manifestation", mentre <code class="grafoo-class">frbroo:F3_Manifestation</code> è definita come comprendente "prodotti che rendono una o più Expression. Una Manifestation è definita sia dal contenuto complessivo che dalla forma della sua presentazione" [<a href="#bib-10" id="back-10">10</a>]. All'interno di KNOT-DM queste due classi sono utilizzate specificamente in combinazione con la classe D2. Perciò F5 rappresenta l'oggetto fisico che è stato utilizzato per la digitalizzazione, mentre F3 rappresenta la manifestazione dell'oggetto. Quest'ultima può anche essere correlata a <code class="grafoo-class">crm:E1_Entity</code> via <code class="object-prop">crm:P129_is_about</code> per associare il soggetto alla manifestazione (ad esempio un autore o un periodo storico).</p>
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/crm_mapping_full.svg">
+            <figcaption class="figure-caption">FIG 9. Riassunto delle classi e proprietà CIDOC CRM usato da KNOT-DM per descrivere le informazione del patrimonio culturale.</figcaption>
+          </figure>
+          <h4>Un esempio pratico concluso</h4>
+          <p>La Figura 10 descrive in dettaglio l'ultima iterazione dell'esempio pratico, mostrando come vengono utilizzate le classi principali in CIDOC: il nostro progetto di ricerca è stato informato da due attività specifiche tra cui la digitalizzazione di vecchie fotografie e la creazione del dataset (rappresentato da <code class="object-prop">prov:wasInformedBy</code>, <code class="grafoo-class">crmdig:D2_Digitization_Process</code>, <code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code>). La scansione delle fotografie ha digitalizzato le foto esistenti nei loro equivalenti digitali, foto che rappresentavano specifici edifici di interesse all'interno del tema del progetto (rappresentato da <code class="grafoo-class">crm:E18_Physical_Thing</code>, <code class="object-prop">crm:P129_is_about</code>, <code class="grafoo-class">crm:E1_Entity</code>, e <code class="grafoo-class">crmdig:D9_Data_Object</code>). Se le informazioni sono disponibili, ciascuna di queste foto può a sua volta essere descritta utilizzando CIDOC. La creazione del dataset ha coinvolto l'uso delle scansioni, tra altre cose (rappresentate da <code class="object-prop">crmdig:L10_had_input</code> e <code class="object-prop">crmdig:L11_had_output</code>).</p>
+        <figure>
+          <img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/segment_example_3.svg">
+          <figcaption class="figure-caption">FIG 10. Un esempio pratico che riassume come le classi principali di CIDOC vengono utilizzate per descrivere la dimensione del patrimonio culturale del progetto di ricerca.</figcaption>
+        </figure>
+          <p>Si vede la <a href="data_model_modules_it.html">sezione Moduli</a> per ulteriori esempi pratici dettagliati di come questo segmento può essere utilizzato per descrivere progetti di ricerca accademica e <a href="../ontology/index-it.html" target="_blank">la sezione Ontologia</a> per le definizioni di tutte le diverse proprietà e classi.</p>
+        </div>
+        <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+          <p>Come spiegato nelle sezioni precedenti di questa panoramica, i tre standard utilizzati all'interno di KNOT-DM includono ciascuno classi che si riferiscono a concetti simili, come entita o attività, ma che sono rispettivamente definiti con differenze tali da non essere considerati uguali.</p>
+          <p>Anche se questo problema potrebbe essere risolto utilizzando <code>owl:equivalentClass</code> o <code>rdfs:subClassOf</code> (che punta a una nuova classe creata appositamente), l'obiettivo di KNOT-DM è quello di riutilizzare il più possibile gli standard esistenti piuttosto che creare nuove classi o proprietà. Per questo motivo, durante lo sviluppo, si è deciso di assegnare agli individui descritti con KNOT-DM ogni classe a seconda dei casi.</p>
+          <p>Le classi concettualmente simili comprendono:</p>
+          <ul>
+            <li>Persone e/o organizzazioni coinvolte in progetti di ricerca.</li>
+            <ul>
+              <li><code class="grafoo-class">prov:Agent</code> con l'implicazione che l’agent ha una qualche forma di responsabilità nei confronti di una <code class="grafoo-class">prov:Activity</code> o <code class="grafoo-class">prov:Entity</code>.</li>
+              <li><code class="grafoo-class">foaf:Agent</code> con l'implicazione che l’agent è responsabile di un'azione che è ulteriormente definita da <code class="object-prop">dct:creator</code> o <code class="object-prop">dct:publisher</code>. </li>
+              <li><code class="grafoo-class">crm:E39_Actor</code> con un'implicazione di responsabilità simile a quella di <code class="grafoo-class">prov:Agent</code>, ma in relazione ad attività specifiche e non nell'ambito dell'attività complessiva del progetto di ricerca (<code class="grafoo-class">prov:Activity</code>).</li>
+              <li>Example: A researcher within our example project is responsible for the technological infrastructure that makes the final dataset available but is not involved or responsible for anything to do with the specific activities that created the dataset, such as the digitization of texts. This researcher should be given the <code class="grafoo-class">prov:Agent</code> and <code class="grafoo-class">foaf:Agent</code> classes. Conversely a researcher involved in creating the dataset but not in the development of the website or data service should be given the <code class="grafoo-class">crm:E39_Actor</code> and <code class="grafoo-class">prov:Agent</code> classes.</li>
+              <li>Esempio: un ricercatore all'interno del nostro progetto di esempio è responsabile dell'infrastruttura tecnologica che rende disponibile il dataset finale, ma non è coinvolto o responsabile delle attività specifiche che hanno creato il dataset, come la digitalizzazione delle imagine. A questo ricercatore dovrebbero essere assegnate le classi <code class="grafoo-class">prov:Agent</code> e <code class="grafoo-class">foaf:Agent</code>. Al contrario, un ricercatore coinvolto nella creazione del dataset ma non nello sviluppo del sito web o del data service dovrebbe ricevere le classi <code class="grafoo-class">crm:E39_Actor</code> e <code class="grafoo-class">prov:Agent</code>. </li>
+            </ul>
+            <li>Luoghi in cui si è svolta l'attività di ricerca o che sono rappresentati nei risultati della ricerca. </li>
+            <ul>
+              <li><code class="grafoo-class">prov:Location</code> con l'implicazione che può essere un luogo geografico o non geografico in cui si è svolta un'attività.</li>
+              <li><code class="grafoo-class">dct:Location</code> con l'implicazione che si tratta di una regione spaziale o di un luogo nominato o coperto dai dati. </li>
+              <li><code class="grafoo-class">crm:E53_Place</code> con un'implicazione simile a quella di <code class="grafoo-class">dct:Location</code> in relazione alle attività. </li>
+              <li>Esempio: il dataset creato dal nostro progetto di esempio copra l’Italia, mentre il progetto stesso si è svolto a Roma. Pertanto, <code class="grafoo-class">dct:Location</code> dovrebbe essere usato per indicare l'Italia e allegarlo al dataset, mentre <code class="grafoo-class">prov:Location</code> e <code class="grafoo-class">crm:E53_Place</code> dovrebbero essere usati per indicare Roma e allegarlo alle attività che hanno portato alla creazione del dataset.</li>
+            </ul>
+            <li>Entità che rappresentano oggetti e soggetti utilizzati e generati da progetti di ricerca.</li>
+            <ul>
+              <li><code class="grafoo-class">prov:Entity</code> con l'implicazione che può rappresentare cose con aspetti fissi, reali o immaginari create o usate nell’attività di un progetto di ricerca. </li>
+              <li><code class="grafoo-class">dcat:Dataset</code> con l'implicazione che può rappresentare solo una raccolta di dati creati e pubblicati come risultato di un'attività di progetto di ricerca.</li>
+              <li><code class="grafoo-class">dcat:DataService</code> con l'implicazione che può rappresentare solo un data service creato dall'attività di ricerca per accedere ai dataset che sono stati anche creati dall'attività.</li>
+              <li><code class="grafoo-class">crmdig:D1_Digital_Object</code> (e subclassi), <code class="grafoo-class">crm:E18_Physical_Thing</code> (inclusa la sottoclasse F5) e <code class="grafoo-class">crm:E1_Entity</code> con l'implicazione che D1 e le sue sottoclassi sono utilizzate per rappresentare oggetti digitali creati e/o utilizzati solo da attività specifici all'interno dell'attività di ricerca (e che possono in definitiva far parte di o essere anche un <code class="grafoo-class">dcat:Dataset</code>) mentre E18/F5 è usato per rappresentare oggetti fisici che subiscono un processo di digitalizzazione ed E1 è usato per rappresentare l'entità di cui l'oggetto fisico si occupa.</li>
+              <li>Le classi di ciascuno di questi segmenti sono potenzialmente collegabili tra loro tramite la proprietà <code class="object-prop">dct:relation</code>. Si tratta di una proprietà opzionale.</li>
+              <li>Esempio: il dataset creato dal nostro progetto di esempio è un'istanza di <code class="grafoo-class">prov:Entity</code>, <code class="grafoo-class">dcat:Dataset</code> e <code class="grafoo-class">crmdig:D1_Digital_Object</code>, mentre le rappresentazioni fisiche delle foto utilizzate nel processo di digitalizzazione sono istanze di <code class="grafoo-class">crm:E18_Physical_Thing</code> e/o <code class="grafoo-class">frbroo:F5_Item</code> e i risultati del processo sono istanze di <code class="grafoo-class">crmdig:D9_Data_Object</code>. Il soggeto della ricerca (architettura medievale italiana) può essere rappresentato sia come <code class="grafoo-class">prov:Entity</code> che come <code class="grafoo-class">crm:E1_Entity</code>.</li>
+            </ul>
+            <li>Attività che rappresentano il progetto di ricerca e sotto-attività che avvengono al suo interno.</li>
+            <ul>
+              <li><code class="grafoo-class">prov:Activity</code> è utilizzata per rappresentare l'attività complessiva del progetto di ricerca.</li>
+              <li><code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code> (e le sue sottoclassi) è usata per rappresentare specifiche sotto-attività all'interno della più ampia attività.</li>
+              <li>Queste classi sono collegate tramite <code class="object-prop">prov:wasInformedBy</code>.</li>
+              <li>Example: our example project is an instance of <code class="grafoo-class">prov:Activity</code> while the digitization of the politician’s writings and creation of the datase are instances of <code class="grafoo-class">crmdig:D2_Digitization_Process</code> and <code class="grafoo-class">crmdig:D10_Software_Execution</code> (or <code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code> if there are not enough specific details).</li>
+              <li>Esempio: il nostro progetto di esempio è un'istanza di <code class="grafoo-class">prov:Activity</code>, mentre la digitalizzazione delle foto e la creazione del dataset basato su questa digitalizzazione sono istanze di <code class="grafoo-class">crmdig:D2_Digitization_Process</code> and <code class="grafoo-class">crmdig:D10_Software_Execution</code> (o <code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code> se non ci sono abbastanza dettagli specifici).</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <hr class="mb-5">
+      <h3>References</h3>
+      <span id="bib-1">[<a href="#back-1">1</a>]</span> Albertoni, Riccardo. n.d. “Data Catalog Vocabulary (DCAT) - Version 2.” Www.w3.org. Accessed June 19, 2023. <a href="https://www.w3.org/TR/vocab-dcat-2/" target="_blank">https://www.w3.org/TR/vocab-dcat-2/</a>.<br>
+      <span id="bib-2">[<a href="#back-2">2</a>]</span> “PROV-O: The PROV Ontology.” n.d. Www.w3.org. Accessed July 11, 2023. <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>.<br>
+      <span id="bib-3">[<a href="#back-3">3</a>]</span> “Home.” n.d. Cidoc-crm.org. Accessed July 11, 2023. <a href="https://www.cidoc-crm.org/" target="_blank">https://www.cidoc-crm.org/</a>.<br>
+      <span id="bib-4">[<a href="#back-4">4</a>]</span> “———.” n.d. Cidoc-crm.org. Accessed July 11, 2023b. <a href="https://www.cidoc-crm.org/crm-dig/" target="_blank">https://www.cidoc-crm.org/crm-dig/</a>.
+      <br>
+      <span id="bib-5">[<a href="#back-5">5</a>]</span> “———.” n.d. Cidoc-crm.org. Accessed July 11, 2023c. <a href="https://www.cidoc-crm.org/frbroo/" target="_blank">https://www.cidoc-crm.org/frbroo/</a>.      <br>
+      <span id="bib-6">[<a href="#back-6">6</a>]</span> “Functional Requirements for Bibliographic Records (FRBR).” 2009. In Encyclopedia of Library and Information Sciences, Third Edition, 1884–91. CRC Press.<br>
+      <span id="bib-7">[<a href="#back-7">7</a>]</span> Peroni, Silvio. “Graffoo - Graphical Framework for OWL Ontologies.” n.d. Essepuntato.It. Accessed July 13, 2023. <a href="https://essepuntato.it/graffoo/" target="_blank">https://essepuntato.it/graffoo/</a>.<br>
+      <span id="bib-8">[<a href="#back-8">8</a>]</span> Van Nuffelen, Bert. “DCAT Application Profile for data portals in Europe Version 2.1.0.” Joinup.ec.europa.eu. Accessed July 11, 2023. <a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe" target="_blank">https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe</a>.<br>
+      <span id="bib-9">[<a href="#back-9">9</a>]</span> Van Nuffelen, Bert. “Usage guide on Datasets, Distributions and Data Services.” Github.com. Accessed July 11, 2023. <a href="https://github.com/SEMICeu/DCAT-AP/blob/master/releases/2.1.1/usageguide-dataset-distribution-dataservice.md" target="_blank">https://github.com/SEMICeu/DCAT-AP/blob/master/releases/2.1.1/usageguide-dataset-distribution-dataservice.md</a>.<br>
+      <span id="bib-10">[<a href="#back-10">10</a>]</span> Bekiari, Chryssoula, Martin Doerr, Patrick Le Boeuf, Trond Aalberg, George Bruseker, Günther Görz, and Mika Nyman. n.d. “LRM OO (Formerly FRBR OO ) Object-Oriented Definition and Mapping from IFLA LRM.” Cidoc-crm.org. Accessed July 11, 2023. <a href="https://www.cidoc-crm.org/frbroo/sites/default/files/LRMoo_V0.9%28draft%20for%20WLIC%202022%29.pdf" target="_blank">https://www.cidoc-crm.org/frbroo/sites/default/files/LRMoo_V0.9%28draft%20for%20WLIC%202022%29.pdf</a>.
+      
+      <hr class="mb-5">
+
+      <div class="row g-5 justify-content-center">
+        
+        <div class="col-md-4">
+          <h2 class="text-body-emphasis">Moduli</h2>
+          <p><a href="data_model_modules_it.html">Scopri di più</a> su come utilizzare i diversi moduli di KNOT-DM.</p>
+        </div>
+        
+        <div class="col-md-4">
+          <h2 class="text-body-emphasis">L'Ontologia</h2>
+          <p><a href="../ontology/index-it.html" target="_blank">Scopri di più</a> sull'ontologia KNOT che esprime il Data Model in RDF.</p>
+        </div>
+
+        <div class="col-md-4">
+          <h2 class="text-body-emphasis">Vocabolari Controllati</h2>
+          <p><a href="data_model_cvs_it.html">Scopri di più</a> sui vocabolari controllati utilizzati in KNOT-DM, compresi quelli creati appositamente per il progetto.</p>
+        </div>
+        
+        
+      </div>
+    </main>
+    <footer class="pt-5 my-5 text-body-secondary border-top">
+      Digital Humanities Advanced Research Center &middot; 2023 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza Creative Commons BY-NC 4.0 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+    </footer>
+  </div>
+  <!-- bootstrap js-->
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

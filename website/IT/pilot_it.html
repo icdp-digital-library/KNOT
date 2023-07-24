@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="it">
+<head> 
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KNOT è un progetto pilota triennale dell’Università di Bologna e dell'Istituto centrale per la digitalizzazione del patrimonio culturale - DIGITAL LIBRARY del Ministero della Cultura per la valorizzazione del patrimonio culturale digitale degli Atenei italiani.">
+  <meta name="author" content="Digital Humanities Advanced Research Center">
+  <meta name="keywords" content="Patrimonio Culturale, Digital Humanities, ICDP, Digital Library">
+  <title>KNOT - Il Pilota</title>
+  
+  <!-- bootstrap css-->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- custom css-->
+  <link href="../assets/main.css" rel="stylesheet">
+  
+</head>
+<body>
+  <nav class="navbar sticky-top bg-body-tertiary" aria-label="offcanvas navbar">
+    <div class="container-xxl px-5">
+      <div class="d-flex">
+        <a href="./" class="d-flex text-body-emphasis text-decoration-none">
+          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+        </a>
+        <div class="btn-group px-3" role="group" aria-label="Language buttons">
+          <a href="../../index.html" role="button" class="btn lang">ENG</a>
+          <a href="" role="button" class="btn lang disabled" aria-disabled="true" >IT</a>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="index_it.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pilot_it.html">KNOT Pilota</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_model_structure_it.html">KNOT Data Model</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../ontology/index-it.html" target="_blank">KNOT Ontologia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-xxl px-5">
+    <main>
+      <h1 class="text-body-emphasis">Il Progetto Pilota KNOT</h1>
+      <p class="fs-5 col-md-8">Nell'arco di tre anni, il progetto KNOT intende sviluppare un'applicazione web e delle linee guida per la raccolta, la gestione, l'arricchimento e il risuo dei progetti di ricerca e dei loro risultati come patrimonio culturale digitale degli Atenei.</p>
+      <p>Dopo una prima fase di ricerca e discussione con l'Istituto, il progetto pilota KNOT è partito all'inizio del 2023 con un piccolo censimento dei progetti di ricerca prodotti da Atenei italiani (centrato sulle scienze umanistiche), che sarà utilizzato come fonte di dati eterogenei per lo sviluppo di un data model e knowledge graph. Questi saranno a loro volta una base per esplorare lo sviluppo di servizi che sfruttano queste risorse aggregate, servizi a favore del patrimonio culturale, per far dialogare in un ambiente condiviso dati e sistemi di accesso a quei dati, o strumenti di valorizzazione. </p>
+      <p>Il progetto KNOT è suddiviso in tre fasi annuali, ognuna delle quali segue una linea di ricerca specifica che attinge alle teorie e alle pratiche delle Digital Humanities e del Semantic Web:</p>
+      <ul>
+        <li>Identificazione di dati e metadati eterogenei, elaborazione di un modello trasversale, e creazione di un knowledge graph.</li>
+        <li>Design di un’applicazione web per l’esplorazione e fruizione del knowledge graph e dati.</li>
+        <li>Definizione e sviluppo di una suite di servizi che permettono l’acquisizione di nuova conoscenza dall’ibridazione dei dati.</li>
+      </ul>
+      <p>Di seguito una panoramica più dettagliata delle attività e dei risultati attesi in ciascuna fase del progetto.</p>
+      <div class="row g-5">
+        <div class="col-md-12">
+          <h2 class="text-body-emphasis">Primo Anno</h2>
+          <p>Il primo anno è incentrato sui dati, con i seguenti obiettivi:</p>
+          <ul>
+            <li>Raccolta, classificazione e categorizzazione dei dati da includere nel progetto pilota. I dati devono essere eterogenei e rappresentativi del tema centrale. </li>
+            <li>Elaborazione di un data model concettuale trasversale alle tipologie di dati raccolti. Questo data model dovrebbe essere informato dagli approcci esistenti e dai requisiti del progetto e consentire una rete di collegamenti semantici potenzialmente modellabili, anche attraverso la riconciliazione con i record di autorità e i vocabolari controllati.</li>
+            <li>Definizione di domande di ricerca e di competenza rispetto alle quali il data model può essere testato per garantire la sua capacità di abilitare una rete di collegamenti semantici che rappresentino le relazioni e facilitino la scoperta di conoscenza latente. </li>
+            <li>Creazione di un primo knowledge graph che rappresenta i progetti di ricerca come esempi del patrimonio culturale digitale degli Atenei. Un flusso di lavoro per la raccolta, la normalizzazione, la bonifica e la trasformazione dei dati in RDF sarà alla base della creazione del graph, che sarà reso disponibile tramite un endpoint SPARQL.</li>
+          </ul>
+          
+          <p>Inoltre, il primo anno comprende anche i seguenti obiettivi che proseguiranno nelle fasi successive:</p>
+          <ul>
+            <li>Ricerca sulle tecniche per l'estrazione di nuova conoscenza da dati eterogenei. Questa ricerca sarà condotta in collaborazione con il dipartimento DISI e nell'ambito di un gruppo di lavoro con il CINECA, in linea con gli obiettivi e le esigenze dell'infrastruttura della Digital Library.</li>
+            <li>Interviste con accademici e associazioni italiane per esplorare le sfide che devono affrontare e le potenziali esigenze dei users del progetto pilota. Questa ricerca fungerà da base per le user personas necessarie per la seconda fase del progetto.</li>
+            <li>Creazione di un working document per linee guida sulla descrizione e la valorizzazione dei progetti di ricerca come patrimonio culturale digitale.</li>
+          </ul>          
+          <p>I seguenti risultati sono previsti entro la fine del primo anno:</p> 
+          <ul>
+            <li>Un piccolo censimento di fonti e dati eterogenei che rappresentano il tema centrale del pilota, usato per sviluppare il data model e knowledge graph.</li>
+            <li>Un data model per descrivere i dati selezionati, compresi gli strumenti necessari come ontologie e vocabolari controllati.</li>
+            <li>Un catalogo e un knowledge graph basato sul data model e sui dati selezionati, che può fungere da prima versione dell'applicazione web finale.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row g-5">
+        <div class="col-md-6">
+          <h2 class="text-body-emphasis">Secondo Anno</h2>
+          <p>Il secondo anno è incentrato sull'applicazione, con i seguenti obiettivi:</p>
+          <ul>
+            <li>Creazione di user personas.</li>
+            <li>Sviluppo di un'applicazione web basata sul knowledge graph.</li>
+            <ul>
+              <li>Design delle interfacce utente front-end e back-end.</li>
+              <li>Sviluppo di sistemi di accesso e fruizione dei contenuti del knowledge graph, partendo dall’analisi dei servizi esistenti e compatibili con l’infrastruttura della Digital Library, nonché delle best practice nazionali e internazionali.</li>
+            </ul>
+          </ul> 
+        </div>
+        
+        <div class="col-md-6">
+          <h2 class="text-body-emphasis">Year 3</h2>
+          <p>Il terzo anno è incentrato sui servizi, con i seguenti obiettivi:</p>
+          <ul>
+            <li>Definire una suite di servizi da proporre agli utenti tramite l’applicazione, diversi nella loro offerta e potenzialità, per permettere l’acquisizione di nuova conoscenza.</li>
+            <ul>
+              <li>Questi servizi saranno basati su un sistema di API per l’accesso a dati/tools inclusi nel pilota e a dati/servizi ospitati esternamente ma compatibili con il pilota.</li>
+              <li>Personalizzazione degli servizi sulla base delle preferenze degli utenti.</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <hr class="mb-5">
+      
+      <div class="row g-5 justify-content-center">        
+        <div class="col-md-4">
+          <h2 class="text-body-emphasis">Il Data Model</h2>
+          <p><a href="data_model_it.html">Consulta</a> la base concettuale del progetto pilota, esplora la sua struttura e suoi componenti.</p>
+        </div>
+        
+        <div class="col-md-4">
+          <h2 class="text-body-emphasis">L'Ontologia</h2>
+          <p><a href="../ontology/index-it.html" target="_blank">Scopri di più</a> sull'ontologia KNOT che esprime il Data Model in RDF.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="pt-5 my-5 text-body-secondary border-top">
+      Digital Humanities Advanced Research Center &middot; 2023 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza Creative Commons BY-NC 4.0 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+    </footer>
+  </div>
+  <!-- bootstrap js-->
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>

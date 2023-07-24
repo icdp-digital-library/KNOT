@@ -72,10 +72,31 @@ code {
     background-color: #FFFF00;
 }
 
+.instance {
+    background-color: #FF99CC;
+}
+
 .nav-link.active {
     background-color: #c7254e !important;
 }
 
 .nav-link, .nav-link:hover {
     color: #c7254e ;
+}
+
+aside {
+    float: right;
+    display: flex;
+    width: 25%;
+    border: #c7254e 1px solid;
+    font-size: small;
+}
+
+.btn.disabled {
+    background-color: #337ab7 !important;
+}
+
+.lang, .lang:hover {
+    border-color: grey;
+    text-decoration: none;
 }
