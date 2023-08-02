@@ -1,6 +1,3 @@
-# KNOT
-Patrimoni culturali digitali degli Atenei - Progetto Pilota
-
 # Supporting a New Digital Ecosystem of Culture...
 KNOT is a three-year pilot project from the University of Bologna and the Central Institute for the Digitization of Cultural Heritage (ICDP) - Digital Library of the Italian Ministry of Culture to showcase the digital cultural heritage of Italian universities.
 
