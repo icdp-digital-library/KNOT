@@ -10,9 +10,9 @@
   <title>KNOT - Controlled Vocabularies</title>
 
   <!-- bootstrap css-->
-  <link href="../website/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- custom css-->
-  <link href="../website/assets/main.css" rel="stylesheet">
+  <link href="../assets/main.css" rel="stylesheet">
   
 </head>
 <body>
@@ -25,7 +25,7 @@
         </a>
         <div class="btn-group px-3" role="group" aria-label="Language buttons">
           <a href="" role="button" class="btn lang disabled" aria-disabled="true">ENG</a>
-          <a href="IT/data_model_cvs_it.html" role="button" class="btn lang">IT</a>
+          <a href="../IT/data_model_cvs_it.html" role="button" class="btn lang">IT</a>
         </div>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
               <a class="nav-link" href="data_model.html">KNOT Data Model</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ontology/index-en.html" target="_blank">KNOT Ontology</a>
+              <a class="nav-link" href="../ontology/index-en.html" target="_blank">KNOT Ontology</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
@@ -63,16 +63,9 @@
       
       
       <h1 class="text-body-emphasis">The KNOT Data Model - Controlled Vocabularies</h1>
-      <p class="fs-5 col-md-8">KNOT-DM makes use of a specific set of authority records and controlled vocabularies for thematic descriptions of key concepts and technical details as well as to facilitate search and navigation within the web application. </p>
+      <p class="fs-5 col-md-8">KNOT-DM makes use of a specific set of authority records and controlled vocabularies for descriptions of key concepts and technical details as well as to facilitate search and navigation within the web application. </p>
       
-      <p>The authority records and controlled vocabularies used by KNOT-DM are drawn from the requirements of DCAT and the project as a whole and primarily attached to classes within the Public Data Segment of the KNOT-DM. It is also possible to attach them in the other two segments, in particular within the Cultural Heritage Information Segment using <code class="object-prop">crm:P2_has_type</code>.</p>  
-      
-      <p><code class="object-prop">dcat:theme</code> and <code class="object-prop">dct:type</code> are the primary properties for this purpose within DCAT. They can be used on the catalog, dataset, and data service classes and should point to the vocabularies and records listed below. An additional property, <code class="object-prop">dcat:keyword</code>, is optional and points to literal values. Figure 1 details these connections with the addition of <code class="object-prop">dcat:themeTaxonomy</code> which is used to connect an instance of Catalog to the vocabularies used within it (as opposed to specific concepts).</p> 
-      
-      <figure class="figure">
-        <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/data_model_themes.svg">
-        <figcaption class="figure-caption">FIG 1. Overview of how concepts from controlled vocabularies are attached to the central DCAT classes.</figcaption>
-      </figure>
+      <p>KNOT-DM makes use of external authority records and controlled vocabularies drawn from the requirements of DCAT as well as those of the project as a whole. In addition, two controlled vocabularies have been created specifically for the project (see below). Concepts from these vocabularies and authorities can be attached to instances of classes representing activities and outputs within the Public Data and Cultural Heritage Information Segments of KNOT-DM using <code class="object-prop">dcat:theme</code>, <code class="object-prop">dct:type</code>, and <code class="object-prop">crm:P2_has_type</code>.</p>  
 
       <p>The following list details all the external authority records and controlled vocabularies used by KNOT-DM (see <a href="data_model_modules.html">the Modules section</a> for details on their application):</p>
       <ul>
@@ -93,7 +86,7 @@
       <p>Both vocabularies were developed in an iterative process to refine their hierarchical structures and scope. Due to the central theme of the KNOT project, the <a href="https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/index.html" target="_blank"><em>Introduction to Controlled Vocabularies: Terminology for Art, Architecture, and Other Cultural Works</em></a> published by the Getty Research Institute was used as a key reference to help define which types of vocabularies to use while <a href="https://www.w3.org/TR/skos-reference/" target="_blank">the SKOS standard from the W3C</a> was chosen to represent these vocabularies in RDF as it "provides a standard, low-cost migration path for porting existing knowledge organization systems to the Semantic Web" [<a href="#bib-1" id="back-1">1</a>]. Existing vocabularies specific to the field of Digital Humanities were also used as reference including TaDiRAH, <a href="https://vocabs.dariah.eu/parthenos_vocabularies/en/" target="_blank">PARTHENOS Vocabularies</a> and the <a href="https://vocabs.dariah.eu/dha_taxonomy/en/" target="_blank">DHA Taxonomy</a>, with the latter two originally considered as solutions to the needs of the KNOT project but found to not be precise or extensive enough. </p>
       <p>Taxonomy was chosen as a type of controlled vocabulary to answer the needs for an “orderly classification” of the KNOT project’s domain with a simple hierarchical structure through which to arrange the different types of research project outputs and detail their relationships [<a href="#bib-2" id="back-2">2</a>]. The thesaurus meanwhile was chosen to document the technologies used in academic research projects as it is a more complex type of controlled vocabulary that reflects a “semantic network of unique concepts” with a multiplicity of relationships and the necessary controls “recommended for use as authorities in databases relating to art and cultural heritage.” [<a href="#bib-2">2</a>]</p>
           <figure>
-            <img class="figure-img img-fluid rounded mx-auto d-block" src="assets/imgs/skos_usage.svg">
+            <a href="../assets/imgs/skos_usage.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/skos_usage.svg"></a>
             <figcaption class="figure-caption">FIG 2. Overview of the SKOS structure used for the controlled vocabularies.</figcaption>
           </figure>
       <p>Figure 2 details the SKOS structures used for both vocabularies. The taxonomy only employs <code class="grafoo-class">skos:ConceptScheme</code> and <code class="grafoo-class">skos:Concept</code>, in keeping with its simpler hierarchical structure, while the Thesaurus also makes use of <code class="grafoo-class">skos:Collection</code> to enable a deeper structure. <code class="object-prop">skos:related</code> is used to create non hierarchical connections between concepts within the same vocabulary while <code class="data-prop">skos:closeMatch</code> and <code class="data-prop">skos:relatedMatch</code> are used to connect the concepts to others in external vocabularies, primarily the <a href="https://www.getty.edu/research/tools/vocabularies/aat/" target="_blank">Getty Art & Architecture Thesaurus</a>, the <a href="https://id.loc.gov/authorities/subjects.html" target="_blank">Library of Congress Subject Headings</a>, the DHA Taxonomy, and the PARTHENOS Vocabularies.</p>
@@ -118,7 +111,7 @@
           <p>As the KNOT project progresses the intention is to further refine the Taxonomy to include relevant concepts as well as find ways to reconcile practical and ideal uses. </p>
           <p>Figure 3 details the KNOT Taxonomy structure and concepts.</p>
           <figure class="figure">
-            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/KTX_Diagram.jpg">
+            <a href="../assets/imgs/KTX_Diagram.jpg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/KTX_Diagram.jpg"></a>
             <figcaption class="figure-caption">FIG 3. KNOT Taxonomy structure and concepts.</figcaption>
           </figure>
         </div>
@@ -129,7 +122,7 @@
           <p>As of publication date for the first version, the Technology Thesaurus includes all the meaningful concepts that have been found in the census. Unlike the taxonomy, definitions for concepts in the thesaurus were kept as simple and factual as possible and wherever possible taken from trusted sources such as the Springer Handbook series or existing vocabularies such as the Getty AAT and LoC Subject Headings. </p>
           <p>Figure 4 details the KNOT Technological Thesaurus structure and concepts.</p>
           <figure class="figure">
-            <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/KTH_Diagram.jpg">
+            <a href="../assets/imgs/KTH_Diagram.jpg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/KTH_Diagram.jpg"></a>
             <figcaption class="figure-caption">FIG 4. KNOT Technology Thesaurus structure and concepts.</figcaption>
           </figure>
         </div>
@@ -176,7 +169,7 @@
 
         <div class="col-md-4">
           <h2 class="text-body-emphasis">Ontology</h2>
-          <p><a href="ontology/index-en.html" target="_blank">Learn more</a> about the KNOT Ontology, which expresses the data model in RDF.</p>
+          <p><a href="../ontology/index-en.html" target="_blank">Learn more</a> about the KNOT Ontology, which expresses the data model in RDF.</p>
         </div>
         
       </div>
@@ -186,7 +179,7 @@
     </footer>
   </div>
   <!-- bootstrap js-->
-  <script src="../website/assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   
 </body>
 </html>

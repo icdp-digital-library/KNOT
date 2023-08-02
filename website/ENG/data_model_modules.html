@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en">
+<head> 
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn how to use the different modules that make up the KNOT Data Model in order to describe academic research projects as examples of digital cultural heritage.">
+  <meta name="author" content="Digital Humanities Advanced Research Center">
+  <meta name="keywords" content="Cultural Heritage, Digital Humanities, ICDP, Italy">
+  <title>KNOT - Data Model Modules</title>
+  
+  <!-- bootstrap css-->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- custom css-->
+  <link href="../assets/main.css" rel="stylesheet">
+  
+</head>
+<body>
+  
+  
+  <nav class="navbar sticky-top bg-body-tertiary" aria-label="offcanvas navbar">
+    <div class="container-xxl px-5">
+      <div class="d-flex">
+        <a href="../" class="d-flex text-body-emphasis text-decoration-none">
+          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+        </a>
+        <div class="btn-group px-3" role="group" aria-label="Language buttons">
+          <a href="" role="button" class="btn lang disabled" aria-disabled="true">ENG</a>
+          <a href="../IT/data_model_modules_it.html" role="button" class="btn lang">IT</a>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="../../">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pilot.html">KNOT Pilot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_model.html">KNOT Data Model</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../ontology/index-en.html" target="_blank">KNOT Ontology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-xxl px-5">
+    <main>
+      
+      
+      <h1 class="text-body-emphasis">The KNOT Data Model - Modules</h1>
+      <p>KNOT-DM can be treated as a set of interlinked modules that describe different aspects of academic research projects as digital cultural heritage. Each module works across one or more of the three segments that make up the data model and can be used to describe: the activity of the research project; the entities a research project used and generated (its outputs and inputs); the agents and locations involved; the relationships between activities, entities, agents, and locations; how to access research outputs; and concepts related to the classification of activities and outputs. All of this information should in turn help answer questions about who, what, where, when, and how as they relate to the central theme of the KNOT project.</p>
+      <p>It is recommended to first read the <a href="data_model_structure.html">Data Model Structure</a> section, which gives an overview of the three segments that make up KNOT-DM, though some information is also repeated in this section.</p>
+      <p>The following legend applies to all graphical representations and textual higlights based on the "Graphical Framework for OWL Ontologies" [<a href="#bib-1" id="back-1">1</a>]: <code class="grafoo-class">a yellow box indicates a class</code>, <code class="object-prop">a blue arrow indicates an object property</code>, <code class="data-prop">a green arrow indicates a data property</code>, <code>a black arrow indicates a predicate between two entities</code>, and <code class="instance">a pink dot indicates an instance of a class</code> (also referred to as an individual).</p>
+      <p>The modules makes use of the <a href="https://dh.fbk.eu/2013/06/alcide-analysis-of-language-and-content-in-a-digital-environment/" target="_blank">ALCIDE analysis platform</a> as an example project. ALCIDE was a three-year project conducted by two research labs at the Bruno Kessler Foundation with the goal to create an online platform for analysis of political discourse, using the writings of Italian politician Alcide de Gasperi as an example.</p>
+      <ul class="nav nav-pills mb-3 mt-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-activity-tab" data-bs-toggle="pill" data-bs-target="#pills-activity" type="button" role="tab" aria-controls="pills-activity" aria-selected="true">Activity</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-outputs-tab" data-bs-toggle="pill" data-bs-target="#pills-outputs" type="button" role="tab" aria-controls="pills-outputs" aria-selected="false" >Ouputs & Inputs</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-agent-location-tab" data-bs-toggle="pill" data-bs-target="#pills-agent-location" type="button" role="tab" aria-controls="pills-agent-location" aria-selected="false" >Agents & Locations</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-access-tab" data-bs-toggle="pill" data-bs-target="#pills-access" type="button" role="tab" aria-controls="pills-access" aria-selected="false" >Access</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-relations-tab" data-bs-toggle="pill" data-bs-target="#pills-relations" type="button" role="tab" aria-controls="pills-relations" aria-selected="false" >Relationships</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-activity" role="tabpanel" aria-labelledby="pills-activity-tab" tabindex="0">
+          <h2>The Research Project as Activity</h2>
+          <p>Within KNOT-DM academic research projects are conceptualized as a form of activity that uses and generates entities. </p>
+          <p>The description of academic activity in KNOT-DM happens across two of its three segments: Academic Provenance, using the Activity class from PROV-O which represents the overall research activity, and Cultural Heritage Information, using the D7 Digital Machine Event class from CRMdig which represents more specific sub-activities or tasks within the overall activity. These two classes and segments are connected via <code class="object-prop">prov:wasInformedBy</code>.</p>
+          <p>KNOT-DM does not attempt to record all possible information about the research project as activity but rather a basic level that is almost always publicly available in a project’s documentation such as where and when the project took place, who was involved, and what ‘things’ were used and or generated.</p>
+          <p>It’s recommended to begin by describing the individual representing the overall activity itself before describing the individual(s) that represent more specific tasks.</p>
+          <h3>The Overall Activity</h3>
+          <p><code class="grafoo-class">prov:Activity</code> represents the overall research project, within the context of academic provenance. </p>
+          <p>The following basic information about it should be recorded: its title (<code class="data-prop">dct:title</code>), the dates at which it began and ended (<code class="data-prop">prov:startedAtTime</code>, <code class="data-prop">prov:endedAtTime</code>, formatted as <code>xsd:date</code>), the location(s) it took place at (<code class="object-prop">prov:atLocation</code>), the agent(s) involved (<code class="object-prop">prov:wasAssociatedWith</code>), its primary topic or subject (<code class="object-prop">dct:subject</code>), the entities it used or generated (<code class="object-prop">prov:used</code>, <code class="object-prop">prov:generated</code>), and any specific activities or tasks that informed it (<code class="object-prop">prov:wasInformedBy</code>).</p>
+          <ul>
+            <li>For the title, it’s recommended to use the one that is most evident in the project’s public documentation with the understanding that it may differ from how the project is referred to elsewhere. The goal is to be accurate and consistent.</li>
+            <li>For the start and end dates, these can sometimes be difficult to ascertain. If no full dates are available, at least a year should be recorded (with a value of 01 if either or both month and date are unknown).</li>
+          </ul>
+          <h4>Example</h4>
+          
+          <p>From the public documentation about ALCIDE we can infer the following necessary information about the activity: its subject is the Italian politician Alcide de Gasperi; it took place primarily in Trento, Italy; it involved five researchers and one web designer; it created three entities — a public website, a corpus, and an analysis platform — and made use of another one — a four-volume edition of the speeches and writings of de Gasperi. <aside class="px-2 mx-1">*We could also add a fourth sub-activity representing the creation of the final website, which integrates the platform.</aside> As for the sub-activities, the documentation shows that a digital version of the edition was the source for the creation of the corpus, which was in turn integrated into the analysis platform. We can therefore choose to represent each of these steps — digitization, creation of corpus, creation of platform — as a sub-activity*.</p> 
+          <p>How to detail the individuals representing location, agents, and entities is explained in their respective modules while sub-activities is explained in the next step.</p> 
+          <p> Figure 1 shows a diagram representing this first step, with some simplifications to keep it legible (only one agent is shown), followed by its RDF equivalent in Turtle format (featuring all agents).</p>
+          <a href="../assets/imgs/prov_activity_summary_1.svg"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/prov_activity_summary_1.svg"></a>
+          <figcaption class="figure-caption">FIG 1. Description of the ALCIDE project as an activity.</figcaption>
+          <pre class="">
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            
+            :alcide a prov:Activity ;
+            dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+            dct:subject :alcide_de_gasperi ;
+            prov:startedAtTime "2015/01/01"^^xsd:date ;
+            prov:endedAtTime "2018/12/31"^^xsd:date ;
+            prov:atLocation :trento ;
+            prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+            prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+            prov:used :alcide_edition ;
+            prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+            
+            :trento a prov:Location .
+            :maurizio_cau a prov:Agent .
+            :matteo_largaiolli a prov:Agent . 
+            :sara_tonelli a prov:Agent . 
+            :giovanni_moretti a prov:Agent . 
+            :rachele_sprugnoli a prov:Agent . 
+            :matteo_moretti a prov:Agent .
+            :alcide_corpus a prov:Entity . 
+            :alcide_website a prov:Entity . 
+            :alcide_platform a prov:Entity .
+            :alcide_edition a prov:Entity .
+            :alcide_de_gasperi a prov:Entity .
+            :edition_digitization a crmdig:D7_Digital_Machine_Event . 
+            :corpus_creation a crmdig:D7_Digital_Machine_Event . 
+            :platform_creation a crmdig:D7_Digital_Machine_Event .
+          </pre>
+          <h3>Sub-Activities or Tasks</h3>
+          <p>KNOT-DM uses CIDOC CRM and its extensions CRMdig and LMRoo (FKA FRBRoo) in order to detail what happened during the research project. The goal is to relate this information to the wider domain of cultural heritage and create a connection between research project activity and the central theme of the KNOT project.</p>
+          <p><code class="grafoo-class">crmdig:D7_Digital_Machine_Event</code> represents sub-activities, or tasks, within a larger <code class="grafoo-class">prov:Activity</code>. These activities are implied to have been conducted by a human agent, in a specific place, on a device such as a computer, and to have used a digital object and/or software to create a new digital object. These two classes are connected via <code class="object-prop">prov:wasInformedBy</code>, which has been extended within KNOT-DM to include D7 in its range. This connection provides “dependency information” by suggesting “that the informed Activity used an Entity that was generated by the informing Activity” and can be used to create a “chain of provenance” based on activities [<a href="#bib-2" id="back-2">2</a>]. This chain is used to describe sub-activities (or tasks) such as for example the digitalisation of a physical object or the creation of a digital object from other digital objects.</p>
+          <p>There are two important things to note at this point:</p> 
+          <ul>
+            <li>The PROV-O documentation states that the dependency information created by <code class="object-prop">prov:wasInformedBy</code> does not require further details about either the activities or the entities involved. KNOT-DM suggests that if information about these is available, then they should be described according to the requirements.</li>
+            <li>The Cultural Heritage Information Segment of KNOT-DM has been designed to provide a basic level of information about what happens during a research project and to describe the digital objects it created in a cultural heritage context. The goal is not to describe the specificities of the research project in absolute detail but rather provide an overview of key events and objects that relate directly to cultural heritage and make it possible to further describe these using CIDOC if needed. In cases where information about the activity and  outputs may be lacking, then the PROV-O recommendation stated above can be followed and instances of the sub-activities and their outputs can be created with no or minimal details (we recommend giving individuals at least a label).</li>
+          </ul>
+          <p>The following basic information about instances of D7 should be recorded: a title (<code>rdfs:label</code>), which digital objects they used and/or created (<code class="object-prop">crmdig:L10_had_input</code>, <code class="object-prop">crmdig:L11_had_output</code>, <code class="object-prop">crmdig:L23_used_software</code>), where they took place (<code class="object-prop">crm:P7_took_place_at</code>), who they were carried out by (<code class="object-prop">P14_carried_out_by</code>), and their type (<code class="object-prop">P2_has_type</code>).</p>
+          <p>Depending on the level of information available about a research project, two D7 subclasses can also be used. In the case of digitalisation,<code class="grafoo-class">crmdig:D2_Digitization_Process</code> can also record the physical object used and the digital object created (<code class="object-prop">crmdig:L1_digitized</code>, <code class="object-prop">crmdig:L20_has_created</code>). <code class="grafoo-class">crmdig:D10_Software_Execution</code> can be used to describe activities where a computer used software or other operations on a digital object, recording both the source digital object (<code class="object-prop">crmdig:L2_used_as_source</code>) and the software it used, such as for example creating data visualizations or a dataset. </p>
+          <ul>
+            <li>The title of sub-activities should be given within the context of the record being created and what is being described, using natural language (e.g. "book digitization"). It is recommended to keep it succinct.</li>
+            <li>The type of sub-activity should use a concept from an appropriate controlled vocabulary, such as for example <a href="https://vocabs.dariah.eu/tadirah/en/" target="_blank">Tadirah</a>, which offers an extensive set of concepts related to digital research activities in the humanities. </li>
+            <li>In the case of the location and agents involved in D7 activities, these may often be the same as those involved in the <code class="grafoo-class">prov:Activity</code>. If so, the individuals representing them should each be given the appropriate class from PROV-O and CIDOC, as explained in the <a href="data_model_structure.html">Conceptually Similar Classes section of the KNOT-DM overview</a>. </li>
+          </ul>
+          <h4>Example</h4>
+          <p>In the previous step we stated that ALCIDE involved three sub-activities, as instances of D7. We can now further detail these: the digitization of the editions is an instance of D2 conducted by the publisher, il Mulino; the creation of the corpus is an instance of D10 and the creation of the platform incorporating the corpus is an instance of D7, both conducted by the researchers. Therefore we can say that D2 took place in Bologna (home of the publisher) while D10 and D7 took place in Trento. We can add classes from CIDOC to existing instances of locations and agents already created in the previous step and create the new ones (il Mulino, Bologna). Lastly we can represent the sub-activity types using concepts from Tadirah, such as for example “Annotating” for the corpus creation.</p>
+          <p>How to detail the entities used and created by these sub-activities is covered in the Outputs & Inputs module.</p> 
+          <p>Figure 2 shows a diagram representing this step, with all previously described agents grouped under a single individual to keep the diagram clear, followed by its RDF equivalent (incorporating elements from the previous step).</p>
+          <figure class="figure">
+            <a href="../assets/imgs/cidoc_activity_summary_1.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/cidoc_activity_summary_1.svg"></a>
+            <figcaption class="figure-caption">FIG 2. Description of the sub-activities within the ALCIDE project.</figcaption>
+          </figure>
+          <pre class="">
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix crm: &lt;http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+            @prefix tadirah: &lt;https://vocabs.dariah.eu/tadirah/> .
+            @prefix frbroo: &lt;http://iflastandards.info/ns/fr/frbr/frbroo/> .
+            
+            #the overall activity 
+            
+            :alcide a prov:Activity ;
+            dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+            dct:subject :alcide_de_gasperi ;
+            prov:startedAtTime "2015/01/01"^^xsd:date ;
+            prov:endedAtTime "2018/12/31"^^xsd:date ;
+            prov:atLocation :trento ;
+            prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+            prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+            prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+            
+            #the sub-activities or tasks 
+            
+            :edition_digitization a crmdig:D2_Digitization_Process ;
+            rdfs:label "Digitization of de Gasperi edition"@en ;
+            crm:P7_took_place_at :Bologna ;
+            crm:P14_carried_out_by :il_mulino ;
+            crmdig:L1_digitized :edition_item ;
+            crmdig:L20_has_created :edition_digitized ;
+            crm:P2_has_type tadirah:capturing .
+            
+            :corpus_creation a crmdig:D10_Software_Execution ;
+            rdfs:label "Creation of de Gasperi corpus"@en ;
+            crm:P7_took_place_at :trento ;
+            crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+            crmdig:L2_used_as_source :edition_digitized ;
+            crmdig:L11_had_output :alcide_corpus ;
+            crm:P2_has_type tadirah:annotating .
+            
+            :platform_creation a crmdig:D7_Digital_Machine_Event ;
+            rdfs:label "Creation of ALCIDE platform"@en ;
+            crm:P7_took_place_at :trento ;
+            crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+            crmdig:L10_had_input :alcide_corpus ;
+            crmdig:L11_had_output :alcide_platform ;
+            crm:P2_has_type tadirah:creating .
+            
+            :trento a prov:Location, crm:E53_Place .
+            :bologna a crm:E53_Place . 
+            :il_mulino a crm:E39_Actor .
+            :maurizio_cau a prov:Agent, crm:E39_Actor .
+            :matteo_largaiolli a prov:Agent, crm:E39_Actor . 
+            :sara_tonelli a prov:Agent, crm:E39_Actor . 
+            :giovanni_moretti a prov:Agent, crm:E39_Actor . 
+            :rachele_sprugnoli a prov:Agent, crm:E39_Actor . 
+            :matteo_moretti a prov:Agent, crm:E39_Actor .
+            :alcide_corpus a prov:Entity, crmdig:D1_Digital_Object . 
+            :alcide_website a prov:Entity . 
+            :alcide_platform a prov:Entity, crmdig:D1_Digital_Object .
+            :alcide_de_gasperi a prov:Entity .
+            :edition_item a frbroo:F5_Item . 
+            :edition_digitized a crmdig:D9_Data_Object .
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="pills-outputs" role="tabpanel" aria-labelledby="pills-outputs-tab" tabindex="0">
+          <h2>Research Outputs and Inputs as Entities </h2>
+          <p>Within KNOT-DM the outputs of a research project (the digital objects it created) and the inputs (the things it may have used to do this such as physical or digital objects, historical figures, time periods) are conceptualized across all three of its segments as entities. As the KNOT project is focused on digital cultural heritage, the scope of the model is to record information about outputs as digital objects only. </p>
+          
+          <p>These entities are described using relevant classes from each segment. As detailed in the <a href="data_model_structure.html">Conceptually Similar Classes section of the overview</a>, this means that an individual representing a research output can belong to multiple classes each describing a different aspect of its aboutness as an entity: <code class="grafoo-class">prov:Entity</code> for the entity’s provenance dimension;  <code class="grafoo-class">crmdig:D1_Digital_Object</code> (and subclasses) for the entity’s cultural heritage dimension; and <code class="grafoo-class">dcat:Dataset</code> (and subclasses) or <code class="grafoo-class">dcat:DataService</code> for the entity’s public data dimension. </p>
+          
+          <p>Entities are connected to the overall activity that generated them via <code class="object-prop">prov:wasGeneratedBy</code>, <code class="object-prop">crmdig:L20_has_created</code> and <code class="object-prop">crmdig:L11_had_output</code> (see the Activity module for more). 
+          
+          <p>The level of information that should be recorded about each entity varies depending on which segment is used to describe it, though there is an expected shared minimum such as its title/label, what activity generated and/or used it, its relationship to other entities, a URI for an accessible representation, and its type and/or conceptual features.</p> 
+          
+          <p>The order in which outputs are described is up to the user. Some may find it easier to begin with public data, as it allows the most amount of detail about an entity, some of which may be reused elsewhere, while others may find it easier to follow the same approach as the Activity module and begin with provenance followed by cultural heritage and finally public data (this is the approach this module takes).</p>
+          <h3>Provenance Entities</h3>
+          <p><code class="grafoo-class">prov:Entity</code> represents entities within the Academic Provenance Segment, referring to their provenance within the overall activity. The following information about it should be recorded: a title (<code class="data-prop">dct:title</code> or <code>rdfs:label</code>), a value (<code class="data-prop">prov:value</code>), and its relationship to the activity or to another entity (<code class="object-prop">prov:generated</code>, <code class="object-prop">prov:used</code>,<code class="object-prop">prov:wasInfluencedBy</code>, <code class="object-prop">prov:wasDerivedFrom</code>, <code class="object-prop">dct:subject</code>).</p>
+          <ul>
+            <li>For the title, <code>rdfs:label</code> should only be used when there is no official title available and it should describe the entity succinctly in natural language and in the context of the record being created. </li>
+            <li><code class="data-prop">prov:value</code> should always point to a URI that is an accessible representation of the entity. In this sense it acts in a similar way as <code>owl:sameAs</code>.</li>
+          </ul>
+          <p>Details of how to use the relationship properties between entities are given in the Relationship module.</p>
+          <h4>Example</h4>
+          <aside class="px-2 mx-1"> *The corpus is not detailed in the official documentation however it is available via GitHub, and this is where most of the information about it comes from. This approach is in line with one of the goals of KNOT to bring together products of academic research that are often separated from each other across online repositories.</aside>
+          <p>In the Activity module we created five instances of <code class="grafoo-class">prov:Entity</code> that were either generated or used by the ALCIDE project: three representing the outputs of the project (the website, the corpus*, and the analysis platform); one representing the four-volume edition used to create the corpus; and one representing Alcide de Gasperi as the primary subject of the project. Each of these is given a title (or label in the case of the website and platform) and corresponding URI.</p>
+          <p>Figure 1 shows a diagram representing this step, alongside its RDF equivalent, incorporating the relevant aspects of the <code class="grafoo-class">prov:Activity</code> individual created in the Activity module.</p>
+          <div class="row">
+            <figure class="figure w-50 float-start">
+              <a href="../assets/imgs/prov_entity_summary_1.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/prov_entity_summary_1.svg"></a>
+              <figcaption class="figure-caption">FIG 1. Description of the entities created the ALCIDE activity.</figcaption>
+            </figure>
+            <pre class="w-50 float-end">
+              @prefix : &lt;http://purl.org/knot/ontology/data/> .
+              @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+              @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+              @prefix dct: &lt;http://purl.org/dc/terms/> .
+              @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+              
+              #the overall activity 
+              
+              :alcide a prov:Activity ;
+              dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+              dct:subject :alcide_de_gasperi ;
+              prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+              prov:used :alcide_edition .
+              
+              #the entities used and/or generated
+              
+              :alcide_corpus a prov:Entity ;
+              dct:title "De Gasperi's Corpus"@en ;
+              prov:value &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> .
+              
+              :alcide_website a prov:Entity ;
+              rdfs:label "ALCIDE website"@en ;
+              prov:value &lt;https://alcidedigitale.fbk.eu/> .
+              
+              :alcide_platform a prov:Entity ;
+              rdfs:label "ALCIDE platform"@en ;
+              prov:value &lt;https://alcidedigitale.fbk.eu/platform> .
+              
+              :alcide_edition a prov:Entity ;
+              dct:title "A. De Gasperi, Scritti e discorsi politici, I-IV"@it ;
+              prov:value &lt;https://www.mulino.it/collana/scritti-discorsi-de-gasperi> .
+              
+              :alcide_de_gasperi a prov:Entity ;
+              dct:title "Alcide de Gasperi"@it ;
+              prov:value &lt;https://viaf.org/viaf/32011324> .
+            </pre>
+          </div>
+          <h3>Cultural Heritage Digital Objects</h3>
+          <p><code class="grafoo-class">crmdig:D1_Digital_Object</code> and its subclasses represent entities within the Cultural Heritage Information Segment, referring to their cultural heritage qualities and connected to the specific sub-activities that generated or used them. The <code class="grafoo-class">crmdig:D9_Data_Object</code> subclass refers specifically to digital objects created by a D2 activity while the <code class="grafoo-class">crmdig:D14_Software</code> subclass refers to software used or created by a D7 activity.</p>
+          
+          <p>The following information should be recorded about instances of D1 and its subclasses: a title (<code class="data-prop">dct:title</code> or <code>rdfs:label</code>), unless the object is already an instance of a class from another segment with an existing title or label, their relationship to activities and other entities (<code class="object-prop">crm:P106_is_composed_of</code>, <code class="object-prop">crmdig:L10_had_input</code>, <code class="object-prop">crmdig:L11_had_output</code>, <code class="object-prop">crmdig:L1_digitized</code>, <code class="object-prop">crmdig:L2_used_as_source</code>), and their type (<code class="object-prop">crm:P2_has_type</code>).</p>
+          
+          <p>Furthermore, because a digitization process also involves a physical object KNOT-DM includes <code class="grafoo-class">crm:E18_Physical_Object</code> to describe these if the information is available. Physical objects can be further detailed using classes from the LRMoo extension: <code class="grafoo-class">frbroo:F5_Item</code> (a subclass of E18) and <code class="grafoo-class">frbroo:F3_Manifestation</code>, following the WEMI model of FRBR [<a href="#bib-3" id="back-3">3</a>]. Lastly, this segment also includes <code class="grafoo-class">crm:E1_Entity</code> (which comprises all things in the universe of discourse of CIDOC CRM) which can be connected to D2, E18, or F3 to describe what they are about. The following information should be recorded about these classes: a title (<code class="data-prop">dct:title</code> or <code>rdfs:label</code>), a URI that is an accessible representation of the entity (<code>owl:sameAs</code>), and their relationships to other entities (<code class="object-prop">crm:P129_is_about</code>). Optionally, you can also record the type of the physical object using P2.</p>
+          <h4>Example</h4>
+          <aside class="px-2 mx-1">*The edition of de Gasperi's writings is in four volumes and would have therefore involved four items, however for the sake of simplicity we are representing only one.  </aside>
+          <p>In the Activity module we described three instances of D7 that informed the overall ALCIDE project. We can now describe the objects they involved: the digitization of the edition created an instance of D9 by digitizing an instance of F5*; while the creation of the corpus and platform each created an instance of D1, with the corpus using the digitized edition as a source and the analysis platform using the corpus as input. We can now also state that the corpus is composed of the digitized edition and that the platform is composed of the corpus. Lastly we can also detail the manifestation of the item, which represents the overall content and form of presentation of the editions, which can in turn be connected to the existing instance representing Alcide de Gasperi, which is who the manifestation is about. The instances of D1 can be connected to concepts from the KNOT-DM vocabularies to describe their type.</p>
+          <p>Figure 2 shows a diagram representing this step, followed by its RDF equivalent, incorporating the relevant aspects of the individuals created in the Activity module and the entities from the previous step.</p>
+          <figure>
+            <a href="../assets/imgs/cidoc_entity_summary_1.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/cidoc_entity_summary_1.svg"></a>
+            <figcaption class="figure-caption">FIG 2. Description of the digital objects created by ALCIDE sub-activities.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix crm: &lt;http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+            @prefix frbroo: &lt;http://iflastandards.info/ns/fr/frbr/frbroo/> .
+            @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+            
+            #CRMdig activities 
+            :edition_digitization a crmdig:D2_Digitization_Process ;
+            rdfs:label "Digitization of de Gasperi edition"@en ;
+            crmdig:L1_digitized :edition_item ;
+            crmdig:L20_has_created :edition_digitized .
+            
+            :corpus_creation a crmdig:D10_Software_Execution ;
+            rdfs:label "Creation of de Gasperi corpus"@en ;
+            crmdig:L2_used_as_source :edition_digitized ;
+            crmdig:L11_had_output :alcide_corpus .
+            
+            :platform_creation a crmdig:D7_Digital_Machine_Event ;
+            rdfs:label "Creation of ALCIDE platform"@en ;
+            crmdig:L10_had_input :alcide_corpus ;
+            crmdig:L11_had_output :alcide_platform .
+            
+            #Digital Objects created by the activities 
+            
+            :alcide_corpus a prov:Entity, crmdig:D1_Digital_Object ;  
+            dct:title "De Gasperi's Corpus"@en ;
+            prov:value &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            crm:P106_is_composed_of :edition_digitized ;
+            crm:P2_has_type &lt;http://purl.org/knot/taxonomy#corpus> .
+            
+            :alcide_platform a prov:Entity, crmdig:D1_Digital_Object ;
+            rdfs:label "ALCIDE platform"@en ;
+            prov:value &lt;https://alcidedigitale.fbk.eu/platform> ;
+            crm:P2_has_type &lt;http://purl.org/knot/taxonomy#digital_platform> ;
+            crm:P106_is_composed_of :alcide_corpus .
+            
+            :edition_digitized a crmdig:D9_Data_Object ;
+            rdfs:label "Digitized form of the edition"@en .
+            
+            :edition_item a frbroo:F5_Item ;
+            dct:title "A. De Gasperi, Scritti e discorsi politici, I-IV"@it .
+            
+            :edition_manifestation a frbroo:F3_Manifestation .
+            
+            :alcide_de_gasperi a prov:Entity, crm:E1_Entity ;
+            dct:title "Alcide de Gasperi"@it ;
+            prov:value &lt;https://viaf.org/viaf/32011324> .
+          </pre>
+          <h3>Public Data</h3>
+          <p><code class="grafoo-class">dcat:Dataset</code> (and its subclass <code class="grafoo-class">dcat:Catalog</code>) represents entities within the Public Data Segment, referring to their public data qualities and connecting them to the overall <code class="object-prop">prov:Activity</code> that generated them. In some situations, an instance of <code class="grafoo-class">dcat:DataService</code> can also represent a research output (interactive access to data created by the project) though as this class' primary function relates to access its usage is detailed in the Access module.</p>
+          <p>KNOT-DM makes use of the majority of the DCAT model to record information about entities, such as their technical and conceptual characteristics, their relationship to the research project that created them, the spatio/temporal information they contain or refer to, and how they can be accessed and/or reused. This information follows varying levels of requirement (mandatory, recommended, optional) based on the DCAT AP guidelines with some KNOT-specific updates.</p>
+          <h4>The Data Container</h4>
+          <aside class="px-2 mx-1">*In the rare case that a project does not have a website, this class can be represented by any digital item that records information about the project and/or may give access to its outputs. </aside>
+          <p><code class="grafoo-class">dcat:Catalog</code> represents a container for all research outputs and documentation. It must be a digital object that contains metadata information about the project and its outputs and/or hosts the data and services it describes. It is a subclass of <code class="grafoo-class">dcat:Dataset</code>, thus implying that this container is itself a dataset produced by the research activity. Based on these requirements, its most likely real world representation will be the research project’s official website*.</p>
+          <p>The following information must be recorded about it: a description (<code class="object-prop">dct:description</code>), its title (<code class="data-prop">dct:title</code>), its publisher(s) (<code class="object-prop">dct:publisher</code>), the dataset(s) it includes (<code class="object-prop">dcat:dataset</code>), the knowledge organization systems used to classify its dataset(s) (<code class="object-prop">dcat:themeTaxonomy</code>), and the concepts used to classify the catalogue itself (<code class="object-prop">dcat:theme</code>).</p> 
+          <p>Recommended information that should be recorded, if available, includes: the data service(s) it includes, its homepage, the language used in the metadata of the dataset(s), the license under which the catalogue can be (re)used, its release date and/or last modified date (formatted as <code>xsd:date</code>), its creator(s), and the geographical area it covers.</p> 
+          <p>Optional information that can be recorded, if available, includes: keywords, whether or not the catalogue includes another, whether or not it includes a metadata record about itself, and a rights statement.</p> 
+          <p>Most, if not all, of this information should be available from the existing public documentation of the research project. When something is not clear, efforts should be taken to infer and use the most consistent and logical information available.</p>
+          <ul>
+            <li>In the case of publishers and creators, for the catalogue priority is given to organizations.</li>
+            <li>For the geographical area, as research projects may often cover multiple areas the value that represents the primary location or a location that offers the most coverage should be used. </li>
+          </ul>
+          <p>For details on how to record information about the knowledge organization systems and concepts refer to the Relationships module, <a href="data_model_cvs.html">Controlled Vocabulary section</a>, or <a href="../ontology/index-en.html" target="_blank">Ontology usage notes</a>.</p>
+          <h4>Example</h4>
+          <p>The ALCIDE public website, which we first described in the Activity module, is the catalogue for the project as it includes information about the research and hosts an accessible form of the dataset and the data service, represented by the corpus and analysis platform individuals we’ve already described. Two new individuals are created to represent the research laboratories that the researchers are a part of and which acted as creators and publisher. An individual representing Italy is also created to represent the geographical area covered by the catalogue (while de Gasperi’s speeches and writings cover other areas, Italy is chosen as it is the most represented). Concepts from controlled vocabularies are used for the language and theme while the description is taken from the website.</p>
+          <p>Figure 3 shows a diagram representing this step, with some of the information simplified to keep the diagram legible, followed by its RDF equivalent incorporating the relevant aspects of the individuals already created in previous steps and modules.</p>
+          <figure>
+            <a href="../assets/imgs/dcat_catalog.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/dcat_catalog.svg"></a>
+            <figcaption class="figure-caption">FIG 3. Description of the ALCIDE website as the container for the public data created by the research project.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+            @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
+            
+            :alcide_website a dcat:Catalog, prov:Entity ;
+            dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
+            dct:publisher :dh_fbk ; 
+            dct:title "ALCIDE website"@en ;
+            rdfs:label "ALCIDE website"@en ;
+            dcat:dataset :alcide_corpus ;
+            dcat:service :alcide_platform ;
+            foaf:homepage &lt;https://alcidedigitale.fbk.eu/> ;
+            prov:value &lt;https://alcidedigitale.fbk.eu/> ;
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ;
+            dct:issued "2018-12-31"^^xsd:date ;
+            dct:spatial :italia;
+            dcat:themeTaxonomy &lt;http://publications.europa.eu/resource/dataset/data-theme>, &lt;https://vocabs.dariah.eu/tadirah/en/>, &lt;http://purl.org/knot/taxonomy#> ;
+            dcat:theme &lt;https://w3id.org/italia/controlled-vocabulary/classifications-for-culture/subject-disciplines/002>, &lt;http://viaf.org/viaf/32011324> ;
+            dct:creator :dh_fbk, :isig .
+            
+            :alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object .
+            :alcide_platform a dcat:DataService, prov:Entity, crmdig:D1_Digital_Object .
+            :dh_fbk a foaf:Agent .
+            :isig a foaf:Agent .
+            :italia a dct:Location .
+          </pre>
+          <h4>The Datasets</h4>
+          <p><code class="grafoo-class">dcat:Dataset</code> represents the digital objects created by a research project. This class is intended to be flexible enough to cover most types of digital object a project may create. As such, while the word dataset may imply a certain limitation within KNOT-DM it would cover everything from a pdf of a paper to an annotated training set or a piece of software (a collection of code, data, and documentation). </p>
+          <p>The following information must be recorded about a dataset: a description, its title, its type (<code class="object-prop">dct:type</code>), and the concepts used to classify it. </p>
+          <p>Recommended information that should be recorded, if available, includes: an available distribution, its publisher(s), its creator(s), the spatial and temporal information it covers, its license, an identifier within the context of the catalogue, and the activity that generated it.</p>
+          <p>Optional information that can be recorded, if available, includes: access right details, specification(s) it conforms to, documentation, updating frequency, whether or not it is a version of or is versioned by another dataset, external entities that reference it (such as papers), the language(s) it includes, external identifiers, and its release date and/or last modified date.</p>
+          <ul>
+            <li>In the case of publishers and creators, for the dataset priority should be given to organizations for publishing roles and people for creator roles.</li>
+            <li>A distribution should be only included if it allows a direct download of the dataset (see the Access module for details). </li>
+            <li>For spatial and temporal coverage use the value that represents the primary location or time period or the one that offers the most coverage. </li>
+            <li>External entities that reference the dataset should be represented via a valid URI. </li>
+          </ul>
+          <p>For details of which controlled vocabularies to use refer to the <a href="data_model_cvs.html">Controlled Vocabularies section</a>.</p>
+          <h4>Example</h4>
+          <p>We know that the ALCIDE project created one dataset: a corpus of de Gasperi’s writings and speeches. As mentioned in the first section of this module, this corpus is not directly linked from the project’s official websites but is publicly available from the research laboratory’s GitHub, which provides us with most of the necessary information including its title, a description, the languages covered, external references, available distributions, a license, release date, documentation, and access rights.</p>
+          <p>Figure 4 shows a diagram representing this step, with some of the information simplified to keep the diagram legible, followed by its RDF equivalent incorporating the relevant aspects of the individuals already created in previous steps and modules.</p>
+          <figure>
+            <a href="../assets/imgs/dcat_dataset.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/dcat_dataset.svg"></a>
+            <figcaption class="figure-caption">FIG 4. Description of the ALCIDE corpus as a dataset.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+            @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
+            @prefix crm: &lt;http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+            
+            :alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object ;
+            dct:description "A collection of Alcide De Gasperi's public documents with gold and silver annotation The corpus of Alcide De Gasperi's public documents is a collection of 2,762 documents issued between 1901 and 1954, which had been previously published in four volumes by Il Mulino but were not machine-readable. Our repository contains all documents in three formats: txt, XML and tab-separated. Raw txt files contain only the body of the documents, and may be straightforwardly used to extract embeddings or topics. XML files include metadata that cover not only the title, the date and the place of publication, but also key-concepts automatically extracted from each text (with the corresponding relevance score) and genre labels manually assigned by domain experts. Furthermore, the release includes silver annotation for lemma, part of speech, person names and place names with associated coordinates in a CoNLL-like format. The corpus is released under CC BY-NC-SA license. An online platform to explore the corpus without downloading it can be accessed at http://alcidedigitale.fbk.eu"@en ;
+            dct:title "De Gasperi's Corpus"@en ;
+            dcat:distribution :corpus_distribution ;
+            dct:publisher :dh_fbk ; 
+            dct:spatial :italia ;
+            dct:temporal &lt;https://www.wikidata.org/entity/Q6927> ; 
+            dcat:theme tadirah:capturing, tadirah:analyzing, &lt;http://publications.europa.eu/resource/authority/data-theme/SOCI>, &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+            dct:accessRights &lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+            dct:creator :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+            dct:conformsTo &lt;http://data.europa.eu/r5r/> ;
+            dct:identifier "Alcide Corpus"@en ;
+            dct:isReferencedBy &lt;https://api.semanticscholar.org/CorpusID:204921128> ;
+            dcat:landingPage &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            prov:value &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+            dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ;
+            dct:issued "2019-07-16"^^xsd:date ;
+            dct:type &lt;http://purl.org/knot/taxonomy#corpus> ;
+            crm:P2_has_type &lt;http://purl.org/knot/taxonomy#corpus> ;
+            prov:wasGeneratedBy :alcide ;
+            dct:license &lt;https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> .
+            
+            :corpus_distribution a dcat:Distribution .
+            :dh_fbk a foaf:Agent .
+            :italia a dct:Location .
+            :sara_tonelli a prov:Agent, crm:E39_Actor, foaf:Agent . 
+            :giovanni_moretti a prov:Agent, crm:E39_Actor, foaf:Agent . 
+            :rachele_sprugnoli a prov:Agent, crm:E39_Actor, foaf:Agent .
+            :alcide a prov:Activity .
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="pills-agent-location" role="tabpanel" aria-labelledby="pills-agent-location-tab" tabindex="0">
+          <h2>People and Places</h2>
+          <p>Within KNOT-DM agents and locations are related to activities and outputs: the former represent individuals or organizations involved in an activity or the creation of outputs; the latter represent the geographical location(s) where an activity took place or which is referenced in the outputs.</p>
+          
+          <p>The description of agents and locations happens across all three segments of KNOT-DM. Therefore, as with entities, an individual representing an agent or location can belong to multiple classes each describing an aspect of its aboutness: <code class="grafoo-class">prov:Location</code> and <code class="grafoo-class">crm:E53_Place</code> relate to the location an activity took place in while <code class="grafoo-class">dct:Location</code> refers to locations covered by data; <code class="grafoo-class">prov:Agent</code> and <code class="grafoo-class">crm:E39_Actor</code> relate to agents having some sort of responsibility towards the activity itself, an entity, or another agent while <code class="grafoo-class">foaf:Agent</code> implies that an agent did something. </p>
+          
+          <p>It is recommended to begin by describing the research project activity and outputs which will require the description of agents and locations as needed.</p>
+          <h3>Agents</h3>
+          <p><code class="grafoo-class">prov:Agent</code>, <code class="grafoo-class">foaf:Agent</code>, and <code class="grafoo-class">crm:E39_Actor</code> represent the people or organizations who took part in an activity or in the creation of an entity. The following information should be recorded about them: a name or title (<code>rdfs:label</code> or <code class="object-prop">foaf:name</code>), a URI representing them pointing to a recognized authority control if available (<code>owl:sameAs</code>), and their relationship to activities, entities, or agents (<code class="object-prop">prov:wasAssociatedWith</code>, <code class="object-prop">prov:actedOnBehalfOf</code>, <code class="object-prop">crm:P14_carried_out_by</code>, <code class="object-prop">dct:publisher</code>, <code class="object-prop">dct:creator</code>).</p> 
+          
+          <p>Academic research projects can often involve a multitude of agents, in a variety of roles, from researchers to scientific committees or funders. To this end, KNOT-DM restricts the agents that must be recorded to authors and contributors, the people directly involved in the research activity, and publishers, most often legal entities such as universities or laboratories who made the results of the research available. </p>
+          
+          <p>In the case of people if a clear affiliation to an organization exists this should also be recorded, either using <code class="object-prop">prov:actedOnBehalfOf</code> or <code class="object-prop">org:memberOf</code> alongside <code class="grafoo-class">org:Organization</code> and <code class="grafoo-class">org:OrganizationalUnit</code> (subclasses of <code class="grafoo-class">foaf:Agent</code>) from the Org ontology, which are included in KNOT-DM for this purpose.</p>
+          <h4>Example</h4>
+          <p>As detailed in the previous modules, we know that the ALCIDE project involved five academics, affiliated with with two research labs (DH@FBK, ISIG) and two universities (Cattolica and Trento), and a web designer. Furthermore, the website states that members of ISIG provided linguistic and history support while members of DH@FBK developed the data and software. One more agent, il Mulino, the publisher of the texts used by the project, has also been created in previous modules as being responsible for the digitization of the texts.</p>
+          <aside class="px-2 mx-1">*We choose to attach all five academics to the sub-activities for the sake of simplicity. A more precise detailing of responsibility is possible within the model if the information is available.</aside>
+          <p>Based on the activity and outputs described in previous modules the following can be recorded about the agents: members of both labs were responsible for the project activity and its outputs, including the two sub-activities related to created the corpus and analysis platform*; il Mulino was responsible for the sub-activity related to digitizing the text; DH@FBK published the project; and both labs, alongside the web designer, created the website (the designer is included alongside the organizations because no affiliation is stated). Lastly we can also create a new individual, representing the Fondazione Bruno Kessler which the labs belong to.</p> 
+          <p>Figure 1 shows a diagram representing the description of one of these agents, showcasing how all three segments can interact, followed by its RDF equivalent describing all agents and incorporating relevant elements from previous modules.</p>
+          <figure>
+            <a href="../assets/imgs/agent_summary.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/agent_summary.svg"></a>
+            <figcaption class="figure-caption">FIG 1. Description of an agent involved in the ALCIDE project.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+            @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix crm: &lt;http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+            @prefix owl: &lt;http://www.w3.org/2002/07/owl#> .
+            @prefix org: &lt;http://www.w3.org/ns/org#> .
+            
+            #agents
+            
+            :maurizio_cau a prov:Agent, crm:E39_Actor, foaf:Agent ;
+            rdfs:label "Maurizio Cau"@it ;
+            owl:sameAs &lt;https://viaf.org/viaf/222130465/> ;
+            prov:actedOnBehalfOf :isig ;
+            org:memberOf :isig .
+            
+            :matteo_largaiolli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+            rdfs:label "Matteo Largaiolli"@it ;
+            owl:sameAs &lt;https://viaf.org/viaf/1337155042813472402390/> ;
+            prov:actedOnBehalfOf :uni_trento .
+            
+            :sara_tonelli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+            rdfs:label "Sara Tonelli"@it ;
+            owl:sameAs &lt;https://viaf.org/viaf/85162365719525460619/> ;
+            prov:actedOnBehalfOf :dh_fbk ;
+            org:memberOf :dh_fbk .
+            
+            :giovanni_moretti a prov:Agent, crm:E39_Actor, foaf:Agent ;
+            rdfs:label "Giovanni Moretti"@it ;
+            owl:sameAs &lt;https://www.wikidata.org/wiki/Q107765378> ;
+            prov:actedOnBehalfOf :dh_fbk ;
+            org:memberOf :dh_fbk .
+            
+            :rachele_sprugnoli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+            rdfs:label "Rachele Sprugnoli"@it ;
+            owl:sameAs &lt;https://viaf.org/viaf/128151594450205351651> ;
+            prov:actedOnBehalfOf :uni_cattolica .
+            
+            :matteo_moretti a prov:Agent, crm:E39_Actor, foaf:Agent ;
+            rdfs:label "Matteo Moretti"@it ;
+            owl:sameAs &lt;https://viaf.org/viaf/13158628035922920251/> .
+            
+            :il_mulino a crm:E39_Actor ;
+            rdfs:label "il Mulino"@it ;
+            owl:sameAs &lt;https://www.wikidata.org/wiki/Q3148465> .
+            
+            :uni_cattolica a prov:Agent ;
+            rdfs:label "Università Cattolica"@it ;
+            owl:sameAs &lt;http://www.wikidata.org/entity/Q229022> .
+            
+            :uni_trento a prov:Agent ;
+            rdfs:label "Università di Trento"@it ;
+            owl:sameAs &lt;http://www.wikidata.org/entity/Q930528> .
+            
+            :dh_fbk a prov:Agent, org:OrganizationalUnit ;
+            rdfs:label "DH@FBK"@en ;
+            owl:sameAs &lt;https://dh.fbk.eu/> .
+            
+            :isig a prov:Agent, org:OrganizationalUnit ;
+            rdfs:label "Istituto Storico Italo-Germanico"@it ;
+            owl:sameAs &lt;https://www.wikidata.org/wiki/Q1674874> .
+            
+            :fbk a org:Organization ;
+            skos:preflabel "Fondazione Bruno Kessler"@it ;
+            owl:sameAs &lt;https://www.wikidata.org/wiki/Q3747148> ;
+            org:hasUnit :isig, :dh_fbk .
+            
+            
+            #research project 
+            
+            :alcide a prov:Activity ;
+            dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+            prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+            prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+            prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation . 
+            
+            #sub activities within project 
+            
+            :edition_digitization a crmdig:D2_Digitization_Process ;
+            crmdig:L20_has_created :edition_digitized ;
+            crm:P14_carried_out_by :il_mulino .
+            
+            :corpus_creation a crmdig:D10_Software_Execution ;
+            crmdig:L2_used_as_source :edition_digitized ;
+            crmdig:L11_had_output :alcide_corpus ;
+            crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli .
+            
+            :platform_creation a crmdig:D7_Digital_Machine_Event ;
+            crmdig:L10_had_input :alcide_corpus ;
+            crmdig:L11_had_output :alcide_platform ;
+            crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti .
+            
+            #research outputs 
+            
+            :alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object ;
+            dct:creator :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+            dct:publisher :dh_fbk .
+            
+            :alcide_website a dcat:Catalog, prov:Entity ;
+            dct:creator :isig, :dh_fbk, :matteo_moretti ;
+            dct:publisher :dh_fbk .
+            
+            :alcide_platform a dcat:DataService, prov:Entity, crmdig:D1_Digital_Object .
+          </pre>
+          <h3>Locations</h3>
+          <p><code class="grafoo-class">prov:Location</code>, <code class="grafoo-class">crm:E53_Place</code>, and <code class="grafoo-class">dct:Location</code> represent the locations where the research project activity took place or which are covered by its outputs. The following information should be recorded about them: a name (<code>rdfs:label</code>), a URI pointing to its equivalent in Geonames to act as authority control (<code>owl:sameAs</code>), and its relationship to the activity or outputs (<code class="object-prop">prov:atLocation</code>, <code class="object-prop">crm:P7_took_place_at</code>, <code class="object-prop">dct:spatial</code>). </p>
+          <ul>
+            <li>For activities the primary location of the researchers based on their affiliation should be used, the goal is to be representative rather than absolutely precise about where something took place.</li>
+            <li>For outputs as they can cover many locations, a primary location or the one that offers the widest coverage should be used. So if a dataset covers various European countries then Europe can be used as the location, or if a collection of images refers to multiple cities within a single region then the region can be used. Multiple locations can be used as appropriate. </li>
+          </ul>
+          <h4>Example</h4>
+          <p>The ALCIDE project took place in Trento, which is the primary location of the two main research labs involved in the activity. In addition, the digitization of the texts used in the activity happened in Bologna and the dataset (corpus) covers Italy. All these individuals were already created in previous steps and modules and can now be finalized with labels and Geonames equivalents.</p>
+          <p>Figure 2 shows a diagram representing this step and how each location is connected to an event or output, followed by its RDF equivalent.</p>
+          <figure>
+            <a href="../assets/imgs/location_summary.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/location_summary.svg"></a>
+            <figcaption class="figure-caption">FIG 2. Description of the locations involved in the ALCIDE project.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+            @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix crm: &lt;http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+            @prefix owl: &lt;http://www.w3.org/2002/07/owl#> .
+            
+            #locations
+            
+            :trento a prov:Location, crm:E53_Place ;
+            rdfs:label "Trento"@it ;
+            owl:sameAs &lt;https://www.geonames.org/3165243> .
+            
+            :bologna a crm:E53_Place ;
+            rdfs:label "Bologna"@it ;
+            owl:sameAs &lt;http://www.geonames.org/3181928> .
+            
+            :italia a dct:Location ; 
+            rdfs:label "Italia"@it ;
+            owl:sameAs &lt;http://www.geonames.org/3175395> .
+            
+            #activities and outputs they're related to
+            
+            :alcide a prov:Activity ;
+            prov:generated :alcide_corpus, :alcide_website ;
+            prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation ;
+            prov:atLocation :trento .
+            
+            :edition_digitization a crmdig:D2_Digitization_Process ;
+            crm:P7_took_place_at :bologna .
+            
+            :corpus_creation a crmdig:D10_Software_Execution ;
+            crm:P7_took_place_at :trento . 
+            
+            :platform_creation a crmdig:D7_Digital_Machine_Event ;
+            crm:P7_took_place_at :trento . 
+            
+            #research outputs 
+            
+            :alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object ;
+            dct:spatial :italia .
+            
+            :alcide_website a dcat:Catalog, prov:Entity ;
+            dct:spatial :italia . 
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="pills-access" role="tabpanel" aria-labelledby="pills-access-tab" tabindex="0">
+          <h2>Accessing Outputs as Public Data</h2>
+          <p>The Public Data Segment of KNOT-DM also allows the description of how to access the outputs created by a research project through the use of two DCAT classes: <code class="grafoo-class">dcat:Distribution</code> and <code class="grafoo-class">dcat:DataService</code>.</p>
+          <p>While these two classes share some conceptual similarities in what they describe, they also have some fundamental differences, which are covered in detail in the <a href="data_model_structure.html">KNOT-DM structure overview</a>. A simple summary is that a distribution can only ever represent a downloadable form of a dataset, and therefore cannot exist without the dataset, while a data service represents all other forms of access to the dataset, and exists as its own conceptual entity. Furthermore, a data service is not required to make a distribution available. </p>
+          <h3>Data Service — Enhanced Access</h3>
+          <p><code class="grafoo-class">dcat:DataService</code> represents access to a dataset via a collection of operations that entail data processing and/or interaction, summarised as “offering smarter, more interactive ways to the data.” [<a href="bib-4" id="bib-4">4</a>] Common real world representations of this class include a search interface, such as those enabling a user to browse the contents of a relational database, or an API, which offers advanced ways to access and (re)use the data. </p>
+          <p>One important thing to note is that within KNOT-DM, a data service may also represent another type of output from a project even though it is not a dataset. That is because a data service can be a digital object created during the research activity. </p>  
+          <p>The following information must be recorded about a data service: a title (<code class="data-prop">dct:title</code>), its location as a URL (<code class="object-prop">dcat:endpointURL</code>), its type and/or the concepts used to classify it (<code class="object-prop">dct:type</code>, <code class="object-prop">dcat:theme</code>), and the dataset it serves (<code class="object-prop">dcat:servesDataset</code>).</p> 
+          <p>The recommended information that should be recorded, if available, is a resource that describes the services available at the endpoint (<code class="object-prop">dcat:endpointDescription</code>), such as for example a documentation page on the website.</p> 
+          <p></p>Optional information that can be recorded, if available, includes: access right details, a description of the data service (which may reuse the description of the catalogue if the service is also part of the website that acts as catalogue), usage license, keywords, and its release and/or last modified date. </p>
+          <h4>Example</h4>
+          <p>As detailed in the Activity and Outputs modules, one of the primary results of the ALCIDE project was an online analysis platform that allows users to query the corpus using various approaches including named entity recognition, network visualization, and co-occurences. This platform represents the data service and can be described as such in addition to the existing information already recorded about it. </p>
+          <p>How to use the properties related to controlled vocabularies is detailed in the Relationships module.</p>
+          <p>Figure 1 shows a diagram representing this step followed by its RDF equivalent.</p>
+          <figure class="figure">
+            <a href="../assets/imgs/dcat_dataservice.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/dcat_dataservice.svg"></a>
+            <figcaption class="figure-caption">FIG 1. Description of the ALCIDE project data service.</figcaption>
+          </figure>
+          <pre>
+            @prefix : &lt;http://purl.org/knot/ontology/data/> .
+            @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+            @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+            @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+            @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+            @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
+            @prefix tadirah: &lt;http://tadirah.dariah.eu/vocab/> .
+            @prefix kth: &lt;http://purl.org/knot/thesaurus#> .
+            @prefix crm: &lt;http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+            
+            :alcide_platform a dcat:DataService, prov:Entity ;
+            dcat:endpointURL &lt;https://alcidedigitale.fbk.eu/platform/> ;
+            prov:value &lt;https://alcidedigitale.fbk.eu/platform/> ;
+            dct:title "ALCIDE platform"@en ;
+            rdfs:label "ALCIDE platform"@en ;
+            dcat:endpointDescription &lt;https://alcidedigitale.fbk.eu/> ;
+            dcat:servesDataset :alcide_corpus ;
+            dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ; 
+            prov:wasGeneratedBy :alcide ;
+            dcat:theme tadirah:analyzing, kth:apachetomcat, kth:mysql, kth:react, kth:ner, kth:nlp, kth:data_viz ;
+            dct:type &lt;http://purl.org/knot/taxonomy#digital_platform> ;
+            crm:P2_has_type &lt;http://purl.org/knot/taxonomy#digital_platform> ;
+            dct:issued "2018-12-31"^^xsd:date .
+          </pre>
+          <h3>Distribution — Downloading the Outputs</h3>
+          <p><code class="grafoo-class">dcat:Distribution</code> represents a downloadable form of a dataset and, as mentioned above, cannot exist without it. This class is therefore optional in that some datasets may not be available for direct download.</p>
+          <p>The main thing to note about using this class is that every downloadable instance of a dataset requires its own instance of <code class="grafoo-class">dcat:Distribution</code>, as they may offer different digital representations of a dataset whether that be parts of a whole or different encodings.</p> 
+          <p>The following information must be recorded about it: an access URL (<code class="object-prop">dcat:accessURL</code>) and its format (<code class="object-prop">dct:format</code>). 
+            <p>Recommended information that should be recorded, if available, includes: a description and a release license.</p> 
+            <p>Optional information that can be recorded, if available, includes: a data service that gives access to the distribution, its byte size (using <code>xsd:decimal</code>), its compression format, a page documenting it, a direct download URL, a language used in the distribution, a standard to which it conforms, its title, its release and/or last modified date, a related rights statement, and its status. </p>
+            <ul>
+              <li>For the description, if none is available a succinct summary in natural language should be given.</li>
+              <li>For the title, if none is available then the dataset title can be reused with the addition of a short description of the download (for example “raw text files”). </li>
+              <li>The optional property for a documentation page should not duplicate the access URL but rather direct to a document that provides meaningful information for how to download the dataset, how the distribution was created, and/or how to use it.</li>
+            </ul>
+            <h4>Example</h4>         
+            <p>Based on the information from the GitHub page that details the corpus created by the ALCIDE project we know that three distributions are available, each representing a different encoding format (raw text, XML, and TSV). These distributions are not connected to the data service, they are all compressed in the ZIP format, and they are all released under a CC license (the same license that the dataset itself is available under).</p>
+            <p>In the Outputs & Inputs module we had originally described the distribution as a single individual and we can now expand this to represent all three. </p>
+            <p>Figure 2 shows a diagram representing one of the three distributions, followed by its RDF equivalent featuring all three.</p>
+            <figure class="figure">
+              <a href="../assets/imgs/dcat_distribution.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/dcat_distribution.svg"></a>
+              <figcaption class="figure-caption">FIG 2. Description of a distribution of the ALCIDE corpus.</figcaption>
+            </figure>
+            <pre>
+              @prefix : &lt;http://purl.org/knot/ontology/data/> .
+              @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+              @prefix prov: &lt;http://www.w3.org/ns/prov#> .
+              @prefix dct: &lt;http://purl.org/dc/terms/> .
+              @prefix dcat: &lt;http://www.w3.org/ns/dcat#> .
+              @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+              @prefix adms: &lt;http://www.w3.org/ns/adms#> .
+              
+              :corpus_distro_txt a dcat:Distribution ;
+              dcat:accessURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+              dct:description "Raw txt files contain only the body of the documents, and may be straightforwardly used to extract embeddings or topics."@en ;
+              dcat:compressFormat &lt;http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+              dct:format &lt;http://publications.europa.eu/resource/authority/file-type/TXT> ;
+              dct:license &lt;https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> ;
+              dcat:byteSize "9420000.0"^^xsd:decimal ;
+              dcat:downloadURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/txt-files.zip> ; 
+              dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ; 
+              dct:conformsTo  &lt;http://publications.europa.eu/resource/authority/file-type> ;
+              dct:issued "2019-07-16"^^xsd:date ;
+              adms:status &lt;http://purl.org/adms/status/Completed> ;
+              dct:title "De Gasperi's Corpus - Raw Text Files "@en .
+              
+              :corpus_distro_xml a dcat:Distribution ;
+              dcat:accessURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+              dct:description "XML files include metadata that cover not only the title, the date and the place of publication, but also key-concepts automatically extracted from each text (with the corresponding relevance score) and genre labels manually assigned by domain experts."@en ;
+              dcat:compressFormat &lt;http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+              dct:format &lt;http://publications.europa.eu/resource/authority/file-type/XML> ;
+              dct:license &lt;https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> ;
+              dcat:byteSize "10500000.0"^^xsd:decimal ;
+              dcat:downloadURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/xml-files.zip> ; 
+              dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ; 
+              dct:conformsTo  &lt;http://publications.europa.eu/resource/authority/file-type> ;
+              dct:issued "2019-07-16"^^xsd:date ;
+              adms:status &lt;http://purl.org/adms/status/Completed> ;
+              dct:title "De Gasperi's Corpus - XML Files "@en .
+              
+              :corpus_distro_tsv a dcat:Distribution ;
+              dcat:accessURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+              dct:description "The release includes silver annotation for lemma, part of speech, person names and place names with associated coordinates in a CoNLL-like format."@en ;
+              dcat:compressFormat &lt;http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+              dct:format &lt;http://publications.europa.eu/resource/authority/file-type/TSV> ;
+              dct:license &lt;https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> ;
+              dcat:byteSize "17200000.0"^^xsd:decimal ;
+              dcat:downloadURL &lt;https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/conll-files.zip> ; 
+              dct:language &lt;http://publications.europa.eu/resource/authority/language/ITA> ; 
+              dct:conformsTo  &lt;http://publications.europa.eu/resource/authority/file-type> ;
+              dct:issued "2019-07-16"^^xsd:date ;
+              adms:status &lt;http://purl.org/adms/status/Completed> ;
+              dct:title "De Gasperi's Corpus - TSV Files "@en .
+              
+              :alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object ;
+              dcat:distribution :corpus_distro_txt, :corpus_distro_tsv, :corpus_distro_xml .
+            </pre>
+          </div>
+        <div class="tab-pane fade" id="pills-relations" role="tabpanel" aria-labelledby="pills-relations-tab" tabindex="0">
+            <p>Relationships between the four main concepts used in KNOT-DM — activity, entity, agent, and location — can be expressed in a variety of ways across all three segments of the model by using connective properties that practically relate instances of these four main concepts to each other (such as where an activity took place or who created an object) </p>
+            <p>In addition, some of these properties can also be used to create connections between these concepts and concepts from controlled vocabularies and authority records that are related to subjects, themes, or classification such as for example the type of research activity, the license under which a digital object is available, or the person an entity refers to.</p>
+            <p>See the <a href="data_model_cvs.html">Controlled Vocabularies section</a> for a list of which vocabularies and authority records KNOT-DM uses.</p>
+            <p>The following summary details all of the practical connections possible in KNOT-DM:</p>
+            <ul>
+              <li class="relations">Activity ↔ Entity</li>
+              <ul>
+                <li><code class="object-prop">prov:generated</code> (and its inverse) connects a research project to the results it generated while <code class="object-prop">prov:used</code> connects it to an entity (or concept) it used (such as physical or digital objects, historical figures, time periods).</li>
+                <li><code class="object-prop">prov:wasInfluencedBy</code> connects a research project to an entity (or concept) that influenced it. </li>
+                <li><code class="object-prop">dct:subject</code> connects a research project to the entity (or concept) that is its primary subject.  </li>
+                <li><code class="object-prop">crmdig:L10_had_input</code>, <code class="object-prop">crmdig:L11_had_output</code>, <code class="object-prop">crmdig:L2_used_as_source</code>, <code class="object-prop">crmdig:L1_digitized</code>, and <code class="object-prop">crmdig:L20_has_created</code> connect a sub-activity or task within a research project to the entities it used or created. </li>
+                <li><code class="object-prop">crmdig:L60_documents</code> connects a digitization process to the entity it documents. </li>
+                <li><code class="object-prop">crmdig:L23_used_software</code> connects a sub-activity or task within a research project to the software it used to create a digital object. </li>
+              </ul><br>
+              <li class="relations">Activity ↔ Activity: </li>
+              <ul>
+                <li><code class="object-prop">prov:wasInformedBy</code> connects a research project to a sub-activity or task within it or to another research project that generated entities which it used. </li>
+              </ul><br>
+              <li class="relations">Activity ↔ Concept</li>
+              <ul>
+                <li><code class="object-prop">crm:P2_has_type</code> connects a sub-activity to a concept that explains what it is about, such as the type of research activity. </li>
+                <li><code class="object-prop">dct:subject</code> connects a research project to a concept (or entity) that is its primary subject.  </li>
+                <li><code class="object-prop">prov:used</code> connects a research project it to a concept (or entity) it used.</li>
+                <li><code class="object-prop">prov:wasInfluencedBy</code> connects a research project to a concept (or entity) that influenced it. </li>
+              </ul><br>
+              <li class="relations">Activity ↔ Location </li>
+              <ul>
+                <li><code class="object-prop">prov:atLocation</code> connects a research project to the geographical place it happened at. </li>
+                <li><code class="object-prop">crm:P7_took_place_at</code> does the same for a sub-activity or task. </li>
+              </ul><br>
+              <li class="relations">Activity ↔ Agent </li>
+              <ul>
+                <li><code class="object-prop">prov:wasAssociatedWith</code> connects a research project to an agent that had some responsibility for it. </li>
+                <li><code class="object-prop">crm:P14_carried_out_by</code> does the same for a sub-activity or task.</li>
+              </ul><br>
+              <li class="relations">Entity ↔ Entity</li>
+              <ul>
+                <li><code class="object-prop">prov:wasDerivedFrom</code> connects two instances of an entity to each other to indicate derivation, or the transformation of one entity into another.</li>
+                <li><code class="object-prop">dct:relation</code> can be used to connect a dataset to a related resource while its subproperties offer more specificity including: connect two data catalogues together (<code class="object-prop">dct:hasPart</code>); connect datasets or distributions to their standard (<code class="object-prop">dct:conformsTo</code>); connect an instance of a dataset to another that is a version, edition, or adaptation of it (<code class="object-prop">dct:hasVersion</code>); and connect a dataset to an external resource that references it (<code class="object-prop">dct:isReferencedBy</code>).  </li>
+                <li><code class="object-prop">dcat:dataset</code>, <code class="object-prop">dcat:dataservice</code>, and <code class="object-prop">dcat:distribution</code> (subproperties of <code class="object-prop">dct:hasPart</code>) connect instances of the catalog, dataset, distribution, and data service classes to each other within a research project. </li>
+                <li><code class="object-prop">dcat:servesDataset</code> connects a data service to the dataset(s) it makes available. </li>
+                <li><code class="object-prop">dcat:accessService</code> connects a distribution to a data service through which it is available. </li>
+                <li><code class="object-prop">dcat:accessURL</code>, <code class="object-prop">dcat:downloadURL</code>, <code class="object-prop">dcat:endpointURL</code> and <code class="object-prop">dcat:endpointDescription</code> connect a distribution or data service to a resource that gives access to files or services.</li>
+                <li><code class="object-prop">dcat:record</code> connects a catalogue to a metadata record.</li>
+                <li><code class="object-prop">crm:P106_is_composed_of</code> connects two instances of a digital object created by a sub-activity or task to each other to indicate a part of association.</li>
+                <li><code class="object-prop">crm:P129_is_about</code> connects a physical object or manifestation to its subject which can be an entity or concept. </li>
+                <li><code class="object-prop">foaf:homepage</code>, <code class="object-prop">foaf:page</code>, and <code class="object-prop">dcat:landingPage</code> connect a dataset, catalogue, distribution, or data service to a web page that describes it or is its primary access point.</li>
+                <li><code class="object-prop">adms:identifier</code> connects a dataset to an external identifier, such as those used by institutional repositories.</li>
+              </ul><br>
+              <li class="relations">Entity ↔ Agent</li>
+              <ul>
+                <li><code class="object-prop">dct:creator</code> and <code class="object-prop">dct:publisher</code> connect a catalogue or dataset to the agents that created it and published it.</li>
+              </ul><br>
+              <li class="relations">Entity ↔ Location</li>
+              <ul>
+                <li><code class="object-prop">dct:spatial</code> connects a catalogue or dataset to the geographical area it covers. </li>
+              </ul><br>
+              <li class="relations">Entity ↔ Concept</li>
+              <ul>
+                <li><code class="object-prop">frbroo:R7_is_materialization_of</code> connects a physical item to its manifestation. </li>
+                <li><code class="object-prop">crm:P129_is_about</code> connects a physical object or manifestation to its subject which can be an entity or concept. </li>
+                <li><code class="object-prop">dct:type</code>, <code class="object-prop">dcat:theme</code> and <code class="object-prop">crm:P2_has_type</code> connect entities to a concept from a controlled vocabulary that explains what it is about or classifies it.  </li>
+                <li><code class="object-prop">dcat:themeTaxonomy</code> connects a catalogue to the controlled vocabularies used by its datasets.</li>
+                <li><code class="object-prop">dct:license</code> connects a dataset, catalogue, distribution, or data service to its license.</li>
+                <li><code class="object-prop">dct:temporal</code> connects a dataset or catalogue to the time period it covers. </li>
+                <li><code class="object-prop">dct:format</code> and <code class="object-prop">dct:compressFormat</code> connect a distribution to its file format. </li>
+                <li><code class="object-prop">dct:language</code> connects a dataset or catalogue to the language used its in metadata or a distribution to the language of its textual values. </li>
+                <li><code class="object-prop">dct:frequency</code> connects a dataset to the frequency at which it is updated. </li>
+                <li><code class="object-prop">dct:rights</code> connects a dataset, catalogue, distribution, or data service to a rights statement about its allowed usage. </li>
+                <li><code class="object-prop">adms:status</code> connects a distribution to its state of completion. </li>
+              </ul><br>
+              <li class="relations">Agent ↔ Agent</li>
+              <ul>
+                <li><code class="object-prop">prov:actedOnBehalfOf</code>, <code class="object-prop">org:hasUnit</code>, and <code class="object-prop">org:memberOf</code> connect an agent to another agent to indicate affiliation. </li>
+              </ul><br>
+            </ul>
+        </div>
+        <hr class="mb-5">
+        <h3>References</h3>
+        <span id="bib-1">[<a href="#back-1">1</a>]</span> Peroni, Silvio. “Graffoo - Graphical Framework for OWL Ontologies." n.d. Essepuntato.It. Accessed July 13, 2023. <a href="https://essepuntato.it/graffoo/" target="_blank">https://essepuntato.it/graffoo/</a>.<br>
+        <span id="bib-2">[<a href="#back-2">2</a>]</span> “PROV-O: The PROV Ontology." n.d. Www.w3.org. Accessed July 11, 2023. <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>.<br>
+        <span id="bib-3">[<a href="#back-3">3</a>]</span> “The FRBR Model (Functional Requirements for Bibliographic Records).” 2003. Loc.gov. 2003. <a href="https://www.loc.gov/catdir/cpso/frbreng.pdf" target="_blank">https://www.loc.gov/catdir/cpso/frbreng.pdf</a>.<br>
+        <span id="bib-4">[<a href="#back-4">4</a>]</span> Albertoni, Riccardo. n.d. “Data Catalog Vocabulary (DCAT) - Version 2.” Www.w3.org. Accessed June 19, 2023. <a href="https://www.w3.org/TR/vocab-dcat-2/" target="_blank">https://www.w3.org/TR/vocab-dcat-2/</a>.<br>
+        
+        <hr class="mb-5">
+        
+        <div class="row g-5 justify-content-center">
+          <div class="col-md-4">
+            <h2 class="text-body-emphasis">Structure</h2>
+            <p><a href="data_model_structure.html">Learn more</a> about the different segments that make up the KNOT-DM.</p>
+          </div>
+          
+          <div class="col-md-4">
+            <h2 class="text-body-emphasis">Controlled Vocabularies</h2>
+            <p><a href="data_model_cvs.html">Learn more</a> about the Controlled Vocabularies used in KNOT-DM, including those created specifically for the project.</p>
+          </div>
+          
+          <div class="col-md-4">
+            <h2 class="text-body-emphasis">Ontology</h2>
+            <p><a href="../ontology/index-en.html" target="_blank">Learn more</a> about the KNOT Ontology, which expresses the data model in RDF.</p>
+          </div>
+          
+        </div>
+      </main>
+      <footer class="pt-5 my-5 text-body-secondary border-top">
+        Digital Humanities Advanced Research Center &middot; 2023 | This website and its content are available for reuse under a Creative Commons BY-NC 4.0 License <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+      </footer>
+    </div>
+    <!-- bootstrap js-->
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+  </html>
+  

@@ -100,3 +100,16 @@ aside {
     border-color: grey;
     text-decoration: none;
 }
+
+.relations {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+/* screen size fixes */ 
+
+@media (max-width: 768px) {
+    .btn-group {
+        height: 60% ;
+    }
+}

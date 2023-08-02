@@ -25,7 +25,7 @@
           <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
         </a>
         <div class="btn-group px-3" role="group" aria-label="Language buttons">
-          <a href="../data_model_cvs.html" role="button" class="btn lang">ENG</a>
+          <a href="../ENG/data_model_cvs.html" role="button" class="btn lang">ENG</a>
           <a href="" role="button" class="btn lang disabled" aria-disabled="true" >IT</a>
         </div>
       </div>
@@ -66,17 +66,9 @@
       <h1 class="text-body-emphasis">Il KNOT Data Model - Vocabolari Controllati</h1>
       <p class="fs-5 col-md-8">KNOT-DM utilizza un insieme specifico di authority record e vocabolari controllati per descrizioni tematiche di concetti chiave e dettagli tecnici, nonché per facilitare la ricerca e la navigazione all'interno dell'applicazione web. </p>
       
-      <p>Gli authority record e i vocabolari controllati utilizzati da KNOT-DM sono ricavati dai requisiti di DCAT e del progetto e sono utilizzati principalmente nel segmento dei dati pubblici di KNOT-DM. Sebbene sia possibile utilizzarli anche negli altri due segmenti, in particolare nel segmento sul patrimonio culturale utilizzando <code class="object-prop">crm:P2_has_type</code>.</p>
-      
-      <p><code class="object-prop">dcat:theme</code> and <code class="object-prop">dct:type</code> are the primary properties for this purpose within DCAT. They can be used on the catalog, dataset, and data service classes and should point to the vocabularies and records listed below. An additional property, <code class="object-prop">dcat:keyword</code>, is optional and points to literal values. Figure 8 details these connections with the addition of <code class="object-prop">dcat:themeTaxonomy</code> which is used to connect an instance of Catalog to the vocabularies used within it (as opposed to specific concepts).</p> 
-      <p><code class="object-prop">dcat:theme</code> e <code class="object-prop">dct:type</code> sono le proprietà principali per questo scopo dentro DCAT. Possono essere usate con le classi catalog, dataset e data service e devono usare i vocabolari elencati di seguito. Una proprietà aggiuntiva, la proprietà <code class="object-prop">dcat:keyword</code>, è opzionale e usa valori letterali. La Figura 1 dettaglia queste connessioni con l'aggiunta della proprietà <code class="object-prop">dcat:themeTaxonomy</code>, utilizzata per collegare un'istanza di catalog ai vocabolari utilizzati al suo interno (al contrario di concetti specifici).</p>
-      
-      <figure class="figure">
-        <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/data_model_themes.svg">
-        <figcaption class="figure-caption">FIG 1. Panoramica di come i concetti dei vocabolari controllati sono collegati alle classi DCAT.</figcaption>
-      </figure>
+      <p>KNOT-DM fa uso di authority record e di vocabolari controllati esterni ricavati dai requisiti di DCAT e del progetto. Inoltre, sono stati creati due vocabolari controllati appositamente per il progetto (si vede sotto). I concetti di questi vocabolari e delle autorithy possono essere associati a istanze delle classi che rappresentano le attività e gli output all'interno dei segmenti dati pubblici e patrimonio culturale di KNOT-DM utilizzando <code class="object-prop">dcat:theme</code>, <code class="object-prop">dct:type</code>, e <code class="object-prop">crm:P2_has_type</code>.</p>
 
-      <p>L'elenco seguente illustra tutti i record di autorità e i vocabolari controllati esterni utilizzati da KNOT-DM (si vede <a href="data_model_modules_it.html">la sezioni moduli</a> per più detagli sulla loro applicazione:</p>
+      <p>L'elenco seguente illustra tutti i authority record e i vocabolari controllati esterni utilizzati da KNOT-DM (si vede <a href="data_model_modules_it.html">la sezioni moduli</a> per più detagli sulla loro applicazione):</p>
       <ul>
         <li>Il <a href="https://schema.gov.it/lodview/controlled-vocabulary/licences" target="_blank">vocabolario controllato Licenze</a> di AgID è utilizzato per specificare le licenze utilizzate dai cataloghi, dai dataset, dalle distribution e dai data service.</li>
         <li>Il vocabolario controllato <a href="https://github.com/italia/daf-ontologie-vocabolari-controllati/tree/master/VocabolariControllati/classifications-for-culture/subject-disciplines" target="_blank">Ambiti Disciplinari</a> della rete OntoPia viene utilizzato per specificare la disciplina accademica in cui rientra il progetto di ricerca.</li>
@@ -95,7 +87,7 @@
       <p>Entrambi i vocabolari sono stati sviluppati in un processo iterativo per perfezionare le loro strutture gerarchiche e la loro portata. Dato il tema centrale del progetto KNOT, <a href="https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/index.html" target="_blank"><em>Introduction to Controlled Vocabularies: Terminology for Art, Architecture, and Other Cultural Works</em></a> pubblicato dal Getty Research Institute è stato utilizzato come riferimento chiave per aiutare a definire quali tipi di vocabolari utilizzare, mentre lo <a href="https://www.w3.org/TR/skos-reference/" target="_blank">standard SKOS del W3C</a> è stato scelto per rappresentare questi vocabolari in RDF e "consentirne l'interoperabilità e la connessione al più ampio Web semantico" [<a href="#bib-1" id="back-1">1</a>]. Sono stati utilizzati come riferimento anche vocabolari esistenti specifici per il campo delle Digital Humanities, tra cui TaDiRAH, <a href="https://vocabs.dariah.eu/parthenos_vocabularies/en/" target="_blank">PARTHENOS Vocabularies</a> e la <a href="https://vocabs.dariah.eu/dha_taxonomy/en/" target="_blank">DHA Taxonomy</a>, con questi ultimi due originariamente considerati come soluzioni alle esigenze del progetto KNOT,  ma alla fine si sono rivelati carenti in alcune aree chiave. </p>
       <p>La tassonomia è stata scelta come tipo di vocabolario controllato per rispondere alle esigenze di una "classificazione ordinata" del dominio del progetto KNOT, con una struttura gerarchica semplice attraverso la quale organizzare i diversi tipi di output del progetto di ricerca e dettagliare le relazioni [<a href="#bib-2" id="back-2">2</a>]. Il thesaurus, invece, è stato scelto per documentare le tecnologie utilizzate nei progetti di ricerca, in quanto è un tipo di vocabolario controllato più complesso che riflette una "rete semantica di concetti unici" con una molteplicità di relazioni e i necessari controlli "raccomandati per l'uso come autorità nei database relativi all'arte e al patrimonio culturale" [<a href="#bib-2" id="back-2">2</a>].</p>
           <figure>
-            <img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/skos_usage.svg">
+            <a href="../assets/imgs/skos_usage.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/skos_usage.svg"></a>
             <figcaption class="figure-caption">FIG 2. Panoramica della struttura SKOS dei vocabolari controllati KNOT.</figcaption>
           </figure>
       <p>La figura 2 illustra in dettaglio le strutture SKOS utilizzate per entrambi i vocabolari. La tassonomia impiega solo <code class="grafoo-class">skos:ConceptScheme</code> e <code class="grafoo-class">skos:Concept</code>, in linea con la sua struttura gerarchica più semplice, mentre il thesaurus fa uso anche di <code class="grafoo-class">skos:Collection</code> per consentire una struttura più profonda. <code class="object-prop">skos:related</code> è utilizzata per creare connessioni non gerarchiche tra i concetti all'interno dello stesso vocabolario, mentre <code class="data-prop">skos:closeMatch</code> e <code class="data-prop">skos:relatedMatch</code> sono utilizzate per collegare i concetti ad altri in vocabolari esterni, principalmente il <a href="https://www.getty.edu/research/tools/vocabularies/aat/" target="_blank">Getty Art & Architecture Thesaurus</a>, la <a href="https://id.loc.gov/authorities/subjects.html" target="_blank">Library of Congress Subject Headings</a>, la tassonomia DHA e i vocabolari PARTHENOS.</p>
@@ -120,7 +112,7 @@
           <p>Con il progredire del progetto KNOT, l'intenzione è di perfezionare ulteriormente la tassonomia per includere altri concetti rilevanti e trovare il modo di conciliare gli usi pratici e ideali.</p>
           <p>La Figura 3 illustra in dettaglio la struttura e i concetti della tassonomia KNOT.</p>
           <figure class="figure">
-            <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/KTX_Diagram.jpg">
+            <a href="../assets/imgs/KTX_Diagram.jpg" target="_blank"><img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/KTX_Diagram.jpg"></a>
             <figcaption class="figure-caption">FIG 3. Struttura e concetti della Tassonomia KNOT.</figcaption>
           </figure>
         </div>
@@ -131,7 +123,7 @@
           <p>Alla data di pubblicazione della prima versione, il Thesaurus include tutti i concetti significativi che sono stati trovati nel censimento preliminare dei progetti di ricerca. A differenza della tassonomia, le definizioni dei concetti nel thesaurus sono state mantenute il più possibile semplici e fattuali e, laddove possibile, sono state prese da fonti affidabili come la serie Springer Handbook o da vocabolari esistenti come il Getty AAT e il LoC Subject Headings. </p>
           <p>La Figura 4 illustra in dettaglio la struttura e i concetti del thesaurus.</p>
           <figure class="figure">
-            <img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/KTH_Diagram.jpg">
+            <a href="../assets/imgs/KTH_Diagram.jpg" target="_blank"><img class="figure-img img-fluid rounded mx-auto" src="../assets/imgs/KTH_Diagram.jpg"></a>
             <figcaption class="figure-caption">FIG 4. Struttura e concetti del Thesaurus tecnologico KNOT.</figcaption>
           </figure>
         </div>

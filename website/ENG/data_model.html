@@ -10,9 +10,9 @@
   <title>KNOT - The Data Model</title>
   
   <!-- bootstrap css-->
-  <link href="../website/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- custom css-->
-  <link href="../website/assets/main.css" rel="stylesheet">
+  <link href="../assets/main.css" rel="stylesheet">
   
 </head>
 <body>
@@ -26,7 +26,7 @@
         </a>
         <div class="btn-group px-3" role="group" aria-label="Language buttons">
           <a href="" role="button" class="btn lang disabled" aria-disabled="true">ENG</a>
-          <a href="IT/data_model_it.html" role="button" class="btn lang">IT</a>
+          <a href="../IT/data_model_it.html" role="button" class="btn lang">IT</a>
         </div>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link" href="../">Home</a>
+              <a class="nav-link" href="../../">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pilot.html">KNOT Pilot</a>
@@ -49,7 +49,7 @@
               <a class="nav-link" href="data_model.html">KNOT Data Model</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ontology/index-en.html" target="_blank">KNOT Ontology</a>
+              <a class="nav-link" href="../ontology/index-en.html" target="_blank">KNOT Ontology</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
@@ -71,9 +71,11 @@
 
 
         <figure>
-          <img class="w-50 img-fluid rounded float-start" src="assets/imgs/KNOT_Venn_1.jpg">
-          <img class="w-50 img-fluid rounded float-end" src="assets/imgs/KNOT_Venn_2.jpg">
+          <a href="../assets/imgs/KNOT_Venn_1.jpg" target="_blank"><img class="w-50 img-fluid rounded float-start" src="../assets/imgs/KNOT_Venn_1.jpg"></a>
+          <a href="../assets/imgs/KNOT_Venn_2.jpg" target="_blank"><img class="w-50 img-fluid rounded float-end" src="../assets/imgs/KNOT_Venn_2.jpg"></a>
+          <figcaption class="figure-caption">FIG 1. Intersection of the domains and standards used in KNOT-DM.</figcaption>
         </figure>
+
       
       <p>KNOT-DM is intended to be flexible and reusable, in order to accommodate its potential integration into the Digital Library infrastructure as well as connection to existing systems. As such it is composed of complementary concepts from existing, internationally recognized standards. It is freely available for universities, and other interested parties, to use to model their own data for independent usage or to allow its inclusion within the KNOT pilot project.</p> 
       
@@ -94,14 +96,15 @@
           <ul>
             <li>Relationships — between activities and agents but also, in particular, between research outputs and inputs (influence) as well as between outputs across different research projects (reuse). </li>
             <li>Spatial and temporal information — including that of the projects but also that recorded in research project outputs, such as for example the places mentioned in a text or the time period covered by the data.</li>
-            <li>Themes — such as the type of research activity, the type of outputs, the technologies used, the academic disciplines involved, and the primary and secondary subjects of research. These themes are described using a selection of specific controlled vocabularies and authorities.</li>
+            <li>Concepts — such as the type of research activity, the type of outputs, the technologies used, technical specifications, the academic disciplines involved, and the subjects of research. These concepts are described using a selection of controlled vocabularies and authority controls.</li>
           </ul>
         </div>
       </div>
 
       <p>The figure below summarizes the workflow of the KNOT-DM, in line with the goals of the first year of the project.</p>
       <figure class="figure">
-        <img class="figure-img img-fluid rounded mx-auto" src="assets/imgs/KNOT_overview.jpg">
+        <a href="../assets/imgs/KNOT_overview.jpg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/KNOT_overview.jpg"></a>
+        <figcaption class="figure-caption">FIG 2. KNOT-DM workflow.</figcaption>
       </figure>
       
       <hr class="mb-5">
@@ -119,7 +122,7 @@
         
         <div class="col-md-3">
           <h2 class="text-body-emphasis">Ontology</h2>
-          <p><a href="ontology/index-en.html" target="_blank">Learn more</a> about the KNOT Ontology, which expresses the data model in RDF.</p>
+          <p><a href="../ontology/index-en.html" target="_blank">Learn more</a> about the KNOT Ontology, which expresses the data model in RDF.</p>
         </div>
 
         <div class="col-md-3">
@@ -134,7 +137,7 @@
     </footer>
   </div>
   <!-- bootstrap js-->
-  <script src="../website/assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   
 </body>
 </html>
