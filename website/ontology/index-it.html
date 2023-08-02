@@ -55,23 +55,23 @@ $(function(){
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> <a href="index-it.html"><b>it</b></a> </div>
 <h1>KNOT-O, The KNOT Ontology</h1>
-<h2>Data di pubblicazione  2023-06-01</h2>
+<h2>Data di pubblicazione  2023-06-30</h2>
 
 
 <dl>
 <dt>Ultima versione:</dt>
 <dd><a href="http://purl.org/knot/ontology">http://purl.org/knot/ontology</a></dd>
 <dt>Revisione:</dt>
-<dd>1.0</dd>
+<dd>1.1</dd>
 <dt>Autori:</dt>
-<dd>Laurent Fintoni, Francesca Tomasi, Marilena Daquino</dd>
+<dd>Laurent Fintoni, Marilena Daquino, Francesca Tomasi</dd>
 
 <dt>Pubblicato da:</dt>
 <dd>Dipartimento di Filologia Classica e Italianistica - FICLIT</dd>
 <dt>Scarica la serializzazione:</dt><dd><span><a href="serializations/knot-o.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="serializations/knot-o.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="serializations/knot-o.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="serializations/knot-o.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>Licenza: </dt><dd><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="https://img.shields.io/badge/CC_BY-NC_4-blue.svg" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
 </dd><dt>Visualizzazione:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cita come:</dt>
-<dd>Laurent Fintoni, Francesca Tomasi, Marilena Daquino. KNOT Data Model Ontology. Revision: 1.0.</dd>
+<dd>Laurent Fintoni, Marilena Daquino, Francesca Tomasi. KNOT Data Model Ontology. Revision: 1.1.</dd>
 </dl>
 
 <hr/>
@@ -175,9 +175,6 @@ Questa ontologia definisce le seguenti classe e propriet&agrave;.</span>
       <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a>
    </li>
    <li>
-      <a href="#http://www.w3.org/ns/prov#Derivation" title="http://www.w3.org/ns/prov#Derivation">Derivazione</a>
-   </li>
-   <li>
       <a href="#http://purl.org/dc/terms/RightsStatement" title="http://purl.org/dc/terms/RightsStatement">Dichiarazione Dei Diritti</a>
    </li>
    <li>
@@ -224,9 +221,6 @@ Questa ontologia definisce le seguenti classe e propriet&agrave;.</span>
    </li>
    <li>
       <a href="#http://www.w3.org/ns/adms#Identifier" title="http://www.w3.org/ns/adms#Identifier">Identificativo</a>
-   </li>
-   <li>
-      <a href="#http://www.w3.org/ns/prov#Influence" title="http://www.w3.org/ns/prov#Influence">Influenza</a>
    </li>
    <li>
       <a href="#http://purl.org/dc/terms/Location" title="http://purl.org/dc/terms/Location">Localizzazione Geografica</a>
@@ -293,9 +287,6 @@ Questa ontologia definisce le seguenti classe e propriet&agrave;.</span>
       <a href="#http://www.w3.org/ns/dcat#dataset" title="http://www.w3.org/ns/dcat#dataset">dataset</a>
    </li>
    <li>
-      <a href="#http://www.w3.org/ns/prov#qualifiedDerivation" title="http://www.w3.org/ns/prov#qualifiedDerivation">derivazione qualificata</a>
-   </li>
-   <li>
       <a href="#http://www.w3.org/ns/dcat#endpointDescription" title="http://www.w3.org/ns/dcat#endpointDescription">
          <span>descrizione endpoint</span>
       </a>
@@ -313,9 +304,6 @@ Questa ontologia definisce le seguenti classe e propriet&agrave;.</span>
       <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
          <span>editore</span>
       </a>
-   </li>
-   <li>
-      <a href="#http://www.w3.org/ns/prov#entity" title="http://www.w3.org/ns/prov#entity">entità</a>
    </li>
    <li>
       <a href="#http://purl.org/dc/terms/temporal" title="http://purl.org/dc/terms/temporal">estensione temporale</a>
@@ -348,9 +336,6 @@ Questa ontologia definisce le seguenti classe e propriet&agrave;.</span>
    </li>
    <li>
       <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">homepage</a>
-   </li>
-   <li>
-      <a href="#http://www.w3.org/ns/prov#qualifiedInfluence" title="http://www.w3.org/ns/prov#qualifiedInfluence">influenza qualificata</a>
    </li>
    <li>
       <a href="#https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L1_digitized"
@@ -498,6 +483,12 @@ Questa ontologia definisce le seguenti classe e propriet&agrave;.</span>
    <li>
       <a href="#http://purl.org/dc/terms/isVersionOf" title="http://purl.org/dc/terms/isVersionOf">è versione di</a>
    </li>
+   <li>
+      <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/P2_has_type" title="http://cidoc-crm.org/cidoc-crm/7.1.2/P2_has_type">P2 è di tipo</a>
+   </li>
+   <li>
+      <a href="#https://www.w3.org/TR/vocab-org/#org:memberOf" title="https://www.w3.org/TR/vocab-org/#org:memberOf">membro di</a>
+   </li>
 </ul><h4>Data Properties</h4><ul xmlns:extra="https://w3id.org/extra#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
@@ -632,9 +623,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
          <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a>
       </li>
       <li>
-         <a href="#http://www.w3.org/ns/prov#Derivation" title="http://www.w3.org/ns/prov#Derivation">Derivazione</a>
-      </li>
-      <li>
          <a href="#http://purl.org/dc/terms/RightsStatement" title="http://purl.org/dc/terms/RightsStatement">Dichiarazione Dei Diritti</a>
       </li>
       <li>
@@ -681,9 +669,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
       </li>
       <li>
          <a href="#http://www.w3.org/ns/adms#Identifier" title="http://www.w3.org/ns/adms#Identifier">Identificativo</a>
-      </li>
-      <li>
-         <a href="#http://www.w3.org/ns/prov#Influence" title="http://www.w3.org/ns/prov#Influence">Influenza</a>
       </li>
       <li>
          <a href="#http://purl.org/dc/terms/Location" title="http://purl.org/dc/terms/Location">Localizzazione Geografica</a>
@@ -945,7 +930,7 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
       <p>
          <strong>IRI:</strong> https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#D10_Software_Execution</p>
       <div class="comment">
-         <span class="markdown"><p>Questa classe comprende gli eventi con cui un dispositivo digitale esegue un programma software o una serie di operazioni di calcolo su un oggetto digitale come un'unica attività, che è completamente determinata dal suo ingresso digitale, dal software e dalle proprietà generiche del dispositivo.</p> <p><span class="usage-note">Nota d'uso</span>: questa classe è intesa come rappresentazione primaria di una sottoattività all'interno dell’attività di un progetto di ricerca che prevede l'utilizzo di software o di operazioni di calcolo su un oggetto digitale, come ad esempio la creazione di visualizzazioni di dati o di operazioni statistiche su un corpus di testi. I dettagli specifici dell'esecuzione del software non rientrano nell'ambito del KNOT-DM.</p></span>
+         <span class="markdown"><p>Questa classe comprende gli eventi con cui un dispositivo digitale esegue un programma software o una serie di operazioni di calcolo su un oggetto digitale come un'unica attività, che è completamente determinata dal suo ingresso digitale, dal software e dalle proprietà generiche del dispositivo.</p> <p><span class="usage-note">Nota d'uso</span>: Questa classe è intesa come rappresentazione primaria di una sottoattività all'interno dell’attività di un progetto di ricerca che prevede l'utilizzo di software o di operazioni di calcolo su un oggetto digitale, come ad esempio la creazione di visualizzazioni di dati o di operazioni statistiche su un corpus di testi. KNOT-DM non limite le operazioni a un attività unica. I dettagli specifici dell'esecuzione del software non rientrano nell'ambito del KNOT-DM.</p></span>
       </div>
       <dl class="definedBy">
          <dt>è definito da</dt>
@@ -1132,35 +1117,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
             <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/dcat#servesDataset" title="http://www.w3.org/ns/dcat#servesDataset">serve dataset</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/dc/terms/isVersionOf" title="http://purl.org/dc/terms/isVersionOf">è versione di</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://xmlns.com/foaf/0.1/primaryTopic" title="http://xmlns.com/foaf/0.1/primaryTopic">argomento principale</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://www.w3.org/ns/prov#Derivation">
-      <h3>Derivazione<sup class="type-c" title="classe">c</sup>
-         <span class="backlink"> torna all' <a href="#toc">indice</a> oppure <a href="#classes">indice delle Classi</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/ns/prov#Derivation</p>
-      <div class="comment">
-         <span class="markdown"><p>Una derivazione è una trasformazione di un'entità in un'altra, un aggiornamento di un'entità che ne genera una nuova o la costruzione di una nuova entità basata su un'entità preesistente.</p> <p><span class="usage-note">Nota d'uso</span>: questa classe deve essere utilizzata quando è necessario descrivere ulteriormente le potenziali relazioni tra gli output di un progetto di ricerca, laddove un output è una derivazione di un oggetto fisico (digitalizzazione) o di un oggetto digitale, compreso l'output di un altro progetto di ricerca.</p></span>
-      </div>
-      <dl class="definedBy">
-         <dt>è definito da</dt>
-         <dd>
-            <a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>ha come super-classi</dt>
-         <dd>
-            <a href="#http://www.w3.org/ns/prov#Influence" title="http://www.w3.org/ns/prov#Influence">Influenza</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
-         <dt>è nel range di</dt>
-         <dd>
-            <a href="#http://www.w3.org/ns/prov#qualifiedDerivation" title="http://www.w3.org/ns/prov#qualifiedDerivation">derivazione qualificata</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1511,15 +1467,13 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
       <dl class="description">
          <dt>è nel dominio di</dt>
          <dd>
-            <a href="#http://www.w3.org/ns/prov#qualifiedDerivation" title="http://www.w3.org/ns/prov#qualifiedDerivation">derivazione qualificata</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#value" title="http://www.w3.org/ns/prov#value">valore</a>
+            <a href="#http://www.w3.org/ns/prov#value" title="http://www.w3.org/ns/prov#value">valore</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#wasDerivedFrom" title="http://www.w3.org/ns/prov#wasDerivedFrom">è stato derivato da</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>è nel range di</dt>
          <dd>
-            <a href="#http://www.w3.org/ns/prov#entity" title="http://www.w3.org/ns/prov#entity">entità</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#generated" title="http://www.w3.org/ns/prov#generated">generato</a>
+            <a href="#http://www.w3.org/ns/prov#generated" title="http://www.w3.org/ns/prov#generated">generato</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#used" title="http://www.w3.org/ns/prov#used">usato</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#wasDerivedFrom" title="http://www.w3.org/ns/prov#wasDerivedFrom">è stato derivato da</a>
             <sup class="type-op" title="object property">op</sup>
@@ -1636,35 +1590,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
          <dt>è nel range di</dt>
          <dd>
             <a href="#http://www.w3.org/ns/adms#identifier" title="http://www.w3.org/ns/adms#identifier">altro identificativo</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://www.w3.org/ns/prov#Influence">
-      <h3>Influenza<sup class="type-c" title="classe">c</sup>
-         <span class="backlink"> torna all' <a href="#toc">indice</a> oppure <a href="#classes">indice delle Classi</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/ns/prov#Influence</p>
-      <div class="comment">
-         <span class="markdown"><p>L'influenza è la capacità di un'entità, di un'attività o di un agente di avere un effetto sul carattere, sullo sviluppo o sul comportamento di un'altra persona attraverso l'uso, l'inizio, la fine, la generazione, l'invalidazione, la comunicazione, la derivazione, l'attribuzione, l'associazione o la delega.</p><p> <span class="usage-note">Nota d'uso</span>: questa classe deve essere utilizzata per descrivere ulteriormente le potenziali relazioni tra progetti di ricerca, agenti e risultati e altre istanze di agenti, attività o entità che hanno un effetto su di essi. Nel contesto del KNOT-DM, l'influenza è intesa nel suo senso letterale tradizionale, come una figura o un momento storico (entità) che ha un'influenza sul progetto di ricerca (attività) perché ne è il soggetto principale.</p></span>
-      </div>
-      <dl class="definedBy">
-         <dt>è definito da</dt>
-         <dd>
-            <a href="http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>ha come sotto-classi</dt>
-         <dd>
-            <a href="#http://www.w3.org/ns/prov#Derivation" title="http://www.w3.org/ns/prov#Derivation">Derivazione</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
-         <dt>è nel range di</dt>
-         <dd>
-            <a href="#http://www.w3.org/ns/prov#qualifiedInfluence" title="http://www.w3.org/ns/prov#qualifiedInfluence">influenza qualificata</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -2060,9 +1985,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
          <a href="#http://www.w3.org/ns/dcat#dataset" title="http://www.w3.org/ns/dcat#dataset">dataset</a>
       </li>
       <li>
-         <a href="#http://www.w3.org/ns/prov#qualifiedDerivation" title="http://www.w3.org/ns/prov#qualifiedDerivation">derivazione qualificata</a>
-      </li>
-      <li>
          <a href="#http://www.w3.org/ns/dcat#endpointDescription" title="http://www.w3.org/ns/dcat#endpointDescription">
             <span>descrizione endpoint</span>
          </a>
@@ -2080,9 +2002,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
          <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
             <span>editore</span>
          </a>
-      </li>
-      <li>
-         <a href="#http://www.w3.org/ns/prov#entity" title="http://www.w3.org/ns/prov#entity">entità</a>
       </li>
       <li>
          <a href="#http://purl.org/dc/terms/temporal" title="http://purl.org/dc/terms/temporal">estensione temporale</a>
@@ -2115,9 +2034,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
       </li>
       <li>
          <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">homepage</a>
-      </li>
-      <li>
-         <a href="#http://www.w3.org/ns/prov#qualifiedInfluence" title="http://www.w3.org/ns/prov#qualifiedInfluence">influenza qualificata</a>
       </li>
       <li>
          <a href="#https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#L1_digitized"
@@ -2264,6 +2180,12 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
       </li>
       <li>
          <a href="#http://purl.org/dc/terms/isVersionOf" title="http://purl.org/dc/terms/isVersionOf">è versione di</a>
+      </li>
+      <li>
+         <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/P2_has_type" title="http://cidoc-crm.org/cidoc-crm/7.1.2/P2_has_type">P2 è di tipo</a>
+      </li>
+      <li>
+         <a href="#https://www.w3.org/TR/vocab-org/#org:memberOf" title="https://www.w3.org/TR/vocab-org/#org:memberOf">membro di</a>
       </li>
    </ul>
    <div class="entity" id="http://www.w3.org/ns/adms#identifier">
@@ -2483,42 +2405,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
          </dl>
       </div>
    </div>
-   <div class="entity" id="http://www.w3.org/ns/prov#qualifiedDerivation">
-      <h3>derivazione qualificata<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> torna all' <a href="#toc">indice</a> oppure <a href="#objectproperties">indice delle Object Property</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedDerivation</p>
-      <div class="comment">
-         <span class="markdown">Utilizzato per qualificare prov:wasDerivedFrom.</p></span>
-      </div>
-      <dl class="definedBy">
-         <dt>è definito da</dt>
-         <dd>
-            <a href="http://www.w3.org/ns/prov#qualifiedDerivation">http://www.w3.org/ns/prov#qualifiedDerivation</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>ha come super-proprietà</dt>
-            <dd>
-               <a href="#http://www.w3.org/ns/prov#qualifiedInfluence" title="http://www.w3.org/ns/prov#qualifiedInfluence">influenza qualificata</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>ha come dominio</dt>
-            <dd>
-               <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">Entità</a>
-               <sup class="type-c" title="classe">c</sup>
-            </dd>
-            <dt>ha come range</dt>
-            <dd>
-               <a href="#http://www.w3.org/ns/prov#Derivation" title="http://www.w3.org/ns/prov#Derivation">Derivazione</a>
-               <sup class="type-c" title="classe">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="http://www.w3.org/ns/dcat#endpointDescription">
       <h3>descrizione endpoint<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> torna all' <a href="#toc">indice</a> oppure <a href="#objectproperties">indice delle Object Property</a>
@@ -2702,40 +2588,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
             <dt>ha come range</dt>
             <dd>
                <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">Agente</a>
-               <sup class="type-c" title="classe">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="http://www.w3.org/ns/prov#entity">
-      <h3>entità<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> torna all' <a href="#toc">indice</a> oppure <a href="#objectproperties">indice delle Object Property</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/ns/prov#entity</p>
-      <div class="comment">
-         <span class="markdown"><p>Fa riferimento a una prov:Entità che ha influenzato una risorsa.</p></span>
-      </div>
-      <dl class="definedBy">
-         <dt>è definito da</dt>
-         <dd>
-            <a href="http://www.w3.org/ns/prov#entity">http://www.w3.org/ns/prov#entity</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>ha come dominio</dt>
-            <dd>
-               <a href="#http://www.w3.org/ns/prov#Derivation" title="http://www.w3.org/ns/prov#Derivation">Derivazione</a>
-               <sup class="type-c" title="classe">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/prov#Influence" title="http://www.w3.org/ns/prov#Influence">Influenza</a>
-               <sup class="type-c" title="classe">c</sup>
-            </dd>
-            <dt>ha come range</dt>
-            <dd>
-               <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">Entità</a>
                <sup class="type-c" title="classe">c</sup>
             </dd>
          </dl>
@@ -3065,48 +2917,6 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
             <dt>ha come range</dt>
             <dd>
                <a href="#http://xmlns.com/foaf/0.1/Document" title="http://xmlns.com/foaf/0.1/Document">Documento</a>
-               <sup class="type-c" title="classe">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="http://www.w3.org/ns/prov#qualifiedInfluence">
-      <h3>influenza qualificata<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> torna all' <a href="#toc">indice</a> oppure <a href="#objectproperties">indice delle Object Property</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedInfluence</p>
-      <div class="comment">
-         <span class="markdown"><p>Utilizzato per qualificare prov:wasInfluencedBy.</p> </span>
-      </div>
-      <dl class="definedBy">
-         <dt>è definito da</dt>
-         <dd>
-            <a href="http://www.w3.org/ns/prov#qualifiedInfluence">http://www.w3.org/ns/prov#qualifiedInfluence</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>ha come sotto-proprietà</dt>
-            <dd>
-               <a href="#http://www.w3.org/ns/prov#qualifiedDerivation" title="http://www.w3.org/ns/prov#qualifiedDerivation">derivazione qualificata</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>ha come dominio</dt>
-            <dd>
-               <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Attività</a>
-               <sup class="type-c" title="classe">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agente (PROV-O)</a>
-               <sup class="type-c" title="classe">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">Entità</a>
-               <sup class="type-c" title="classe">c</sup>
-            </dd>
-            <dt>ha come range</dt>
-            <dd>
-               <a href="#http://www.w3.org/ns/prov#Influence" title="http://www.w3.org/ns/prov#Influence">Influenza</a>
                <sup class="type-c" title="classe">c</sup>
             </dd>
          </dl>
@@ -4426,6 +4236,9 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
                <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a>
                <sup class="type-c" title="classe">c</sup> 
                <span class="logic">or</span> 
+               <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Servizio Dati</a>
+               <sup class="type-c" title="classe">c</sup> 
+               <span class="logic">or</span> 
                <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">Entità</a>
                <sup class="type-c" title="classe">c</sup>
             </dd>
@@ -4498,7 +4311,7 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
       <p>
          <strong>IRI:</strong> http://www.w3.org/ns/prov#wasInformedBy</p>
       <div class="comment">
-         <span class="markdown"><p>La comunicazione è lo scambio di un'entità da parte di due attività, una delle quali utilizza l'entità generata dall'altra. </p><p><span class="usage-note">Nota d'uso</span>: può essere utilizzata per una descrizione più dettagliata di come due attività sono collegate attraverso il concetto di informazione.L'ambito di questa proprietà è stato esteso per includere le istanze di D7 del modello CRM DIG, per consentire la descrizione delle relazioni tra il progetto di ricerca come attività complessiva (prov:Activity) e le attività specifiche (o compiti) che si svolgono al suo interno, come ad esempio la digitalizzazione di oggetti fisici, e che sono descritte utilizzando il modello CRM DIG.</p></span>
+         <span class="markdown"><p>La comunicazione è lo scambio di un'entità da parte di due attività, una delle quali utilizza l'entità generata dall'altra. </p><p><span class="usage-note">Nota d'uso</span>: Il range di questa proprietà è stato esteso per includere le istanze di D7 del modello CRM DIG, per consentire la descrizione delle relazioni tra il progetto di ricerca come attività complessiva (prov:Activity) e le attività specifiche (o compiti) che si svolgono al suo interno, come ad esempio la digitalizzazione di oggetti fisici, e che sono descritte utilizzando il modello CRM DIG.</p></span>
       </div>
       <dl class="definedBy">
          <dt>è definito da</dt>
@@ -4566,6 +4379,72 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
          </dl>
       </div>
    </div>
+   <div class="entity" id="http://cidoc-crm.org/cidoc-crm/7.1.2/P2_has_type">
+      <h3>P2 è di tipo<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> torna all' <a href="#toc">indice</a> oppure <a href="#objectproperties">indice delle Object Property</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://cidoc-crm.org/cidoc-crm/7.1.2/P2_has_type</p>
+      <div class="comment">
+         <span class="markdown"><p>Questa proprietà consente la sottotipizzazione delle entità CIDOC CRM - una forma di specializzazione - attraverso l'uso di una gerarchia terminologica o di un thesaurus.</p> <p><span class="usage-note">Nota d'uso:</span>Questa proprietà è inclusa in KNOT-DM per associare i concetti dei vocabolari controllati alle istanze di D7, D1 e E18.</p></span>
+      </div>
+      <dl class="definedBy">
+         <dt>è definito da</dt>
+         <dd>
+            <a href="http://cidoc-crm.org/cidoc-crm/7.1.2/P2_has_type">http://cidoc-crm.org/cidoc-crm/7.1.2/P2_has_type</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>ha come dominio</dt>
+            <dd>
+               <a href="#http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity" title="http://cidoc-crm.org/cidoc-crm/7.1.2/E1_CRM_Entity">E1 CRM Entità</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has come range</dt>
+            <dd>
+               <a href="http://cidoc-crm.org/cidoc-crm/7.1.2/E55_Type" title="http://cidoc-crm.org/cidoc-crm/7.1.2/E55_Type">E55 Tipo</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#http://www.w3.org/2004/02/skos/core#Concept"
+                  title="http://www.w3.org/2004/02/skos/core#Concept">Concetto</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://www.w3.org/TR/vocab-org/#org:memberOf">
+      <h3>membro di<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> torna all' <a href="#toc">indice</a> oppure <a href="#objectproperties">indice delle Object Property</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://www.w3.org/TR/vocab-org/#org:memberOf</p>
+      <div class="comment">
+         <span class="markdown"><p>Indica che una persona è membro di una Organization senza una precisa indicazione sulla natura di questa appartenenza e sul suo ruolo. Si noti che la scelta del nome di questa proprieta non intende limitarla alla sola rappresentazione formalmente di un'appartenenza. La proprieta può coprire anche altri coinvolgimenti nell'organizzazione.  </p> <p><span class="usage-note">Usage Note</span> questa proprietà è inclusa in KNOT-DM per associare gli agent alla loro organization nel segmento dati pubblici.</p></span>
+      </div>
+      <dl class="definedBy">
+         <dt>è definito da</dt>
+         <dd>
+            <a href="https://www.w3.org/TR/vocab-org/#org:memberOf">https://www.w3.org/TR/vocab-org/#org:memberOf</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>ha come dominio</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">Agente</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>ha come range</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/org#Organization"
+                  title="http://www.w3.org/ns/org#Organization">Organizzazione</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
 </div><div xmlns:extra="https://w3id.org/extra#"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      id="dataproperties">
@@ -4982,20 +4861,10 @@ Questa sezione fornisce i dettagli per ogni classe e propriet&agrave; definita d
          <dl>
             <dt>ha come dominio</dt>
             <dd>
-               <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogo</a>
-               <sup class="type-c" title="classe">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#CatalogRecord" title="http://www.w3.org/ns/dcat#CatalogRecord">Record Di Catalogo</a>
-               <sup class="type-c" title="classe">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Servizio Dati</a>
-               <sup class="type-c" title="classe">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a>
-               <sup class="type-c" title="classe">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribuzione</a>
-               <sup class="type-c" title="classe">c</sup>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Resource"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+                  <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
