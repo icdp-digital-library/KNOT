@@ -1,0 +1,109 @@
+@prefix : <http://purl.org/knot/ontology/data/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix crmdig: <https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> . 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> . 
+
+#this RDF file provides an example of how to describe agents using KNOT-DM. See the website's module section for details. The activities and outputs are only described partially, see their respective RDF files in modules for more details. 
+
+#description of agents
+
+:maurizio_cau a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Maurizio Cau"@it ;
+owl:sameAs <https://viaf.org/viaf/222130465/> ;
+prov:actedOnBehalfOf :isig ;
+org:memberOf :isig .
+
+:matteo_largaiolli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Matteo Largaiolli"@it ;
+owl:sameAs <https://viaf.org/viaf/1337155042813472402390/> ;
+prov:actedOnBehalfOf :uni_trento .
+
+:sara_tonelli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Sara Tonelli"@it ;
+owl:sameAs <https://viaf.org/viaf/85162365719525460619/> ;
+prov:actedOnBehalfOf :dh_fbk ;
+org:memberOf :dh_fbk .
+
+:giovanni_moretti a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Giovanni Moretti"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q107765378> ;
+prov:actedOnBehalfOf :dh_fbk ;
+org:memberOf :dh_fbk .
+
+:rachele_sprugnoli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Rachele Sprugnoli"@it ;
+owl:sameAs <https://viaf.org/viaf/128151594450205351651> ;
+prov:actedOnBehalfOf :uni_cattolica .
+
+:matteo_moretti a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Matteo Moretti"@it ;
+owl:sameAs <https://viaf.org/viaf/13158628035922920251/> .
+
+:il_mulino a crm:E39_Actor ;
+rdfs:label "il Mulino"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q3148465> .
+
+:uni_cattolica a prov:Agent ;
+rdfs:label "Università Cattolica"@it ;
+owl:sameAs <http://www.wikidata.org/entity/Q229022> .
+
+:uni_trento a prov:Agent ;
+rdfs:label "Università di Trento"@it ;
+owl:sameAs <http://www.wikidata.org/entity/Q930528> .
+
+:dh_fbk a prov:Agent, org:OrganizationalUnit ;
+rdfs:label "DH@FBK"@en ;
+owl:sameAs <https://dh.fbk.eu/> .
+
+:isig a prov:Agent, org:OrganizationalUnit ;
+rdfs:label "Istituto Storico Italo-Germanico"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q1674874> .
+
+:fbk a org:Organization ;
+skos:preflabel "Fondazione Bruno Kessler"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q3747148> ;
+org:hasUnit :isig, :dh_fbk .
+
+
+#the research project 
+
+:alcide a prov:Activity ;
+dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation . 
+
+#the sub activities within the research project 
+
+:edition_digitization a crmdig:D2_Digitization_Process ;
+crmdig:L20_has_created :edition_digitized ;
+crm:P14_carried_out_by :il_mulino .
+
+:corpus_creation a crmdig:D10_Software_Execution ;
+crmdig:L2_used_as_source :edition_digitized ;
+crmdig:L11_had_output :alcide_corpus ;
+crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli .
+
+:platform_creation a crmdig:D7_Digital_Machine_Event ;
+crmdig:L10_had_input :alcide_corpus ;
+crmdig:L11_had_output :alcide_platform ;
+crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti .
+
+#the research outputs of the project
+
+:alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object ;
+dct:creator :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+dct:publisher :dh_fbk .
+
+:alcide_website a dcat:Catalog, prov:Entity ;
+dct:creator :isig, :dh_fbk, :matteo_moretti ;
+dct:publisher :dh_fbk .
+
+:alcide_platform a dcat:DataService, prov:Entity, crmdig:D1_Digital_Object .

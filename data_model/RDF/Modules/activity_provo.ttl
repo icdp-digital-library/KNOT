@@ -1,0 +1,41 @@
+@prefix : <http://purl.org/knot/ontology/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix crmdig: <https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+@prefix tadirah: <https://vocabs.dariah.eu/tadirah/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+
+#this RDF file provides an example of how to describe a research project activity using the PROV-O segment of the KNOT-DM. See the website's module section for details. The agents, entities, and sub-activities involved are only described partially, see their respective RDF files in modules for more details.
+
+#the overall activity 
+
+:alcide a prov:Activity ;
+dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+dct:subject :alcide_de_gasperi ;
+prov:startedAtTime "2015/01/01"^^xsd:date ;
+prov:endedAtTime "2018/12/31"^^xsd:date ;
+prov:atLocation :trento ;
+prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+prov:used :alcide_edition ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+
+:trento a prov:Location .
+:bologna a crm:E53_Place . 
+:il_mulino a crm:E39_Actor .
+:maurizio_cau a prov:Agent .
+:matteo_largaiolli a prov:Agent . 
+:sara_tonelli a prov:Agent . 
+:giovanni_moretti a prov:Agent . 
+:rachele_sprugnoli a prov:Agent . 
+:matteo_moretti a prov:Agent .
+:alcide_corpus a prov:Entity . 
+:alcide_website a prov:Entity . 
+:alcide_platform a prov:Entity .
+:alcide_edition a prov:Entity .
+:alcide_de_gasperi a prov:Entity .
+:edition_digitization a crmdig:D7_Digital_Machine_Event .
+:corpus_creation a crmdig:D7_Digital_Machine_Event .
+:platform_creation a crmdig:D7_Digital_Machine_Event .

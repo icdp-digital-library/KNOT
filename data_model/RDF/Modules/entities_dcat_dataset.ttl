@@ -1,0 +1,42 @@
+@prefix : <http://purl.org/knot/ontology/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix crmdig: <https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tadirah: <http://tadirah.dariah.eu/vocab/> .
+
+#this RDF file provides an example of how to describe a dataset used and/or created by a research project activity using the DCAT segment of the KNOT-DM. See the website's module section for details. The agents, locations and entities involved are only described partially, see their respective RDF files in modules for more details.
+
+:alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object ;
+                         dct:description "A collection of Alcide De Gasperi's public documents with gold and silver annotation The corpus of Alcide De Gasperi's public documents is a collection of 2,762 documents issued between 1901 and 1954, which had been previously published in four volumes by Il Mulino but were not machine-readable. Our repository contains all documents in three formats: txt, XML and tab-separated. Raw txt files contain only the body of the documents, and may be straightforwardly used to extract embeddings or topics. XML files include metadata that cover not only the title, the date and the place of publication, but also key-concepts automatically extracted from each text (with the corresponding relevance score) and genre labels manually assigned by domain experts. Furthermore, the release includes silver annotation for lemma, part of speech, person names and place names with associated coordinates in a CoNLL-like format. The corpus is released under CC BY-NC-SA license. An online platform to explore the corpus without downloading it can be accessed at http://alcidedigitale.fbk.eu"@en ;
+                         dct:title "De Gasperi's Corpus"@en ;
+                         dcat:distribution :corpus_distribution ;
+                         dct:publisher :dh_fbk ; 
+                         dct:spatial :italia ;
+                         dct:temporal <https://www.wikidata.org/entity/Q6927> ; 
+                         dcat:theme tadirah:capturing, tadirah:analyzing, <http://publications.europa.eu/resource/authority/data-theme/SOCI>, <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+                         dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+                         dct:creator :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+                         dct:conformsTo <http://data.europa.eu/r5r/> ;
+                         dct:identifier "Alcide Corpus"@en ;
+                         dct:isReferencedBy <https://api.semanticscholar.org/CorpusID:204921128> ;
+                         dcat:landingPage <https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+                         prov:value <https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+                         dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
+                         dct:issued "2019-07-16"^^xsd:date ;
+                         dct:type <http://purl.org/knot/taxonomy#corpus> ;
+                         crm:P2_has_type <http://purl.org/knot/taxonomy#corpus> ;
+                         prov:wasGeneratedBy :alcide ;
+                         dct:license <https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> .
+
+:corpus_distribution a dcat:Distribution .
+:dh_fbk a foaf:Agent .
+:italia a dct:Location .
+:sara_tonelli a prov:Agent, crm:E39_Actor, foaf:Agent . 
+:giovanni_moretti a prov:Agent, crm:E39_Actor, foaf:Agent . 
+:rachele_sprugnoli a prov:Agent, crm:E39_Actor, foaf:Agent .
+:alcide a prov:Activity .

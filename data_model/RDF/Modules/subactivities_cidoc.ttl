@@ -1,0 +1,65 @@
+@prefix : <http://purl.org/knot/ontology/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix crmdig: <https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+@prefix tadirah: <https://vocabs.dariah.eu/tadirah/> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+
+#this RDF file provides an example of how to describe sub-activities or tasks within a research project activity using the CIDOC CRM segment of the KNOT-DM. See the website's module section for details. The agents and entities involved are only described partially, see their respective RDF files in modules for more details. 
+
+#The reserch project as overall activity 
+
+:alcide a prov:Activity ;
+dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+dct:subject :alcide_de_gasperi ;
+prov:startedAtTime "2015/01/01"^^xsd:date ;
+prov:endedAtTime "2018/12/31"^^xsd:date ;
+prov:atLocation :trento ;
+prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+
+#the sub-activities or tasks within the research project 
+
+:edition_digitization a crmdig:D2_Digitization_Process ;
+rdfs:label "Digitization of de Gasperi edition"@en ;
+crm:P7_took_place_at :Bologna ;
+crm:P14_carried_out_by :il_mulino ;
+crmdig:L1_digitized :edition_item ;
+crmdig:L20_has_created :edition_digitized ;
+crm:P2_has_type tadirah:capturing .
+
+:corpus_creation a crmdig:D10_Software_Execution ;
+rdfs:label "Creation of de Gasperi corpus"@en ;
+crm:P7_took_place_at :trento ;
+crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+crmdig:L2_used_as_source :edition_digitized ;
+crmdig:L11_had_output :alcide_corpus ;
+crm:P2_has_type tadirah:annotating .
+
+:platform_creation a crmdig:D7_Digital_Machine_Event ;
+rdfs:label "Creation of ALCIDE platform"@en ;
+crm:P7_took_place_at :trento ;
+crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+crmdig:L10_had_input :alcide_corpus ;
+crmdig:L11_had_output :alcide_platform ;
+crm:P2_has_type tadirah:creating .
+
+:trento a prov:Location, crm:E53_Place .
+:bologna a crm:E53_Place . 
+:il_mulino a crm:E39_Actor .
+:maurizio_cau a prov:Agent, crm:E39_Actor .
+:matteo_largaiolli a prov:Agent, crm:E39_Actor . 
+:sara_tonelli a prov:Agent, crm:E39_Actor . 
+:giovanni_moretti a prov:Agent, crm:E39_Actor . 
+:rachele_sprugnoli a prov:Agent, crm:E39_Actor . 
+:matteo_moretti a prov:Agent, crm:E39_Actor .
+:alcide_corpus a prov:Entity, crmdig:D1_Digital_Object . 
+:alcide_website a prov:Entity . 
+:alcide_platform a prov:Entity, crmdig:D1_Digital_Object .
+:alcide_de_gasperi a prov:Entity .
+:edition_item a frbroo:F5_Item . 
+:edition_digitized a crmdig:D9_Data_Object .

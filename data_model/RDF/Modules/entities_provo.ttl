@@ -1,0 +1,38 @@
+@prefix : <http://purl.org/knot/ontology/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#this RDF file provides an example of how to describe entities used or created by a research project activity using the PROV-O segment of the KNOT-DM. See the website's module section for details. The activity involved is only described partially, see its respective RDF file in modules for more details. 
+
+#the overall activity 
+
+:alcide a prov:Activity ;
+dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+dct:subject :alcide_de_gasperi ;
+prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+prov:used :alcide_edition .
+
+#the entities used and/or generated
+
+:alcide_corpus a prov:Entity ;
+dct:title "De Gasperi's Corpus"@en ;
+prov:value <https://github.com/StefanoMenini/De-Gasperi-s-Corpus> .
+
+:alcide_website a prov:Entity ;
+rdfs:label "ALCIDE website"@en ;
+prov:value <https://alcidedigitale.fbk.eu/> .
+
+:alcide_platform a prov:Entity ;
+rdfs:label "ALCIDE platform"@en ;
+prov:value <https://alcidedigitale.fbk.eu/platform> .
+
+:alcide_edition a prov:Entity ;
+dct:title "A. De Gasperi, Scritti e discorsi politici, I-IV"@it ;
+prov:value <https://www.mulino.it/collana/scritti-discorsi-de-gasperi> .
+
+:alcide_de_gasperi a prov:Entity ;
+dct:title "Alcide de Gasperi"@it ;
+prov:value <https://viaf.org/viaf/32011324> .
+

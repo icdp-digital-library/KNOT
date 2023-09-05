@@ -1,0 +1,46 @@
+@prefix : <http://purl.org/knot/ontology/data/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix crmdig: <https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+#this RDF file provides an example of how to describe locations referenced within a research project activity using the KNOT-DM. See the website's module section for details. The activities and entities involved are only described partially, see their respective RDF files in modules for more details.
+
+#locations
+
+:trento a prov:Location, crm:E53_Place ;
+rdfs:label "Trento"@it ;
+owl:sameAs <https://www.geonames.org/3165243> .
+
+:bologna a crm:E53_Place ;
+rdfs:label "Bologna"@it ;
+owl:sameAs <http://www.geonames.org/3181928> .
+
+:italia a dct:Location ; 
+rdfs:label "Italia"@it ;
+owl:sameAs <http://www.geonames.org/3175395> .
+
+#activities and outputs they're related to
+
+:alcide a prov:Activity ;
+prov:generated :alcide_corpus, :alcide_website ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation ;
+prov:atLocation :trento .
+
+:edition_digitization a crmdig:D2_Digitization_Process ;
+crm:P7_took_place_at :bologna .
+
+:corpus_creation a crmdig:D10_Software_Execution ;
+crm:P7_took_place_at :trento . 
+
+:platform_creation a crmdig:D7_Digital_Machine_Event ;
+crm:P7_took_place_at :trento . 
+
+:alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object ;
+dct:spatial :italia .
+
+:alcide_website a dcat:Catalog, prov:Entity ;
+dct:spatial :italia . 
