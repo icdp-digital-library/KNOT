@@ -1,0 +1,248 @@
+@prefix : <http://purl.org/knot/ontology/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix crmdig: <https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+@prefix tadirah: <https://vocabs.dariah.eu/tadirah/> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> . 
+@prefix kth: <http://purl.org/knot/thesaurus#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+
+###this RDF file provides an example of a full description of a research project and its outputs using the KNOT Data Model. See the website for further details and documentation. 
+
+##ACTIVITY - describes the research project as a form of activity using elements from PROV-O 
+
+:alcide a prov:Activity ;
+dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+dct:subject :alcide_de_gasperi ;
+prov:startedAtTime "2015/01/01"^^xsd:date ;
+prov:endedAtTime "2018/12/31"^^xsd:date ;
+prov:atLocation :trento ;
+prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+prov:used :alcide_edition ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+
+##SUB-ACTIVITIES OR TASKS - describes activities that took place within the wider research project as activity using elements from CIDOC CRM
+
+:edition_digitization a crmdig:D2_Digitization_Process ;
+rdfs:label "Digitization of de Gasperi edition"@en ;
+crm:P7_took_place_at :Bologna ;
+crm:P14_carried_out_by :il_mulino ;
+crmdig:L1_digitized :edition_item ;
+crmdig:L20_has_created :edition_digitized ;
+crm:P2_has_type tadirah:capturing .
+
+:corpus_creation a crmdig:D10_Software_Execution ;
+rdfs:label "Creation of de Gasperi corpus"@en ;
+crm:P7_took_place_at :trento ;
+crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+crmdig:L2_used_as_source :edition_digitized ;
+crmdig:L11_had_output :alcide_corpus ;
+crm:P2_has_type tadirah:annotating .
+
+:platform_creation a crmdig:D7_Digital_Machine_Event ;
+rdfs:label "Creation of ALCIDE platform"@en ;
+crm:P7_took_place_at :trento ;
+crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+crmdig:L10_had_input :alcide_corpus ;
+crmdig:L11_had_output :alcide_platform ;
+crm:P2_has_type tadirah:creating .
+
+## ENTITIES - objects or people/places used and/or created by the activity described using elements from PROV-O, CIDOC-CRM, and DCAT 
+
+:alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object ;
+                         dct:description "A collection of Alcide De Gasperi's public documents with gold and silver annotation The corpus of Alcide De Gasperi's public documents is a collection of 2,762 documents issued between 1901 and 1954, which had been previously published in four volumes by Il Mulino but were not machine-readable. Our repository contains all documents in three formats: txt, XML and tab-separated. Raw txt files contain only the body of the documents, and may be straightforwardly used to extract embeddings or topics. XML files include metadata that cover not only the title, the date and the place of publication, but also key-concepts automatically extracted from each text (with the corresponding relevance score) and genre labels manually assigned by domain experts. Furthermore, the release includes silver annotation for lemma, part of speech, person names and place names with associated coordinates in a CoNLL-like format. The corpus is released under CC BY-NC-SA license. An online platform to explore the corpus without downloading it can be accessed at http://alcidedigitale.fbk.eu"@en ;
+                         dct:title "De Gasperi's Corpus"@en ;
+                         rdfs:label "De Gasperi's Corpus"@en ;
+                         dcat:distribution :corpus_distro_txt, :corpus_distro_tsv, :corpus_distro_xml;
+                         dct:publisher :dh_fbk ; 
+                         dct:spatial :italia ;
+                         dct:temporal <https://www.wikidata.org/entity/Q6927> ; 
+                         dcat:theme tadirah:capturing, tadirah:analyzing, <http://publications.europa.eu/resource/authority/data-theme/SOCI>, <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+                         dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+                         dct:creator :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+                         dct:conformsTo <http://data.europa.eu/r5r/> ;
+                         dct:identifier "Alcide Corpus"@en ;
+                         dct:isReferencedBy <https://api.semanticscholar.org/CorpusID:204921128> ;
+                         dcat:landingPage <https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+                         prov:value <https://github.com/StefanoMenini/De-Gasperi-s-Corpus> ;
+                         dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
+                         dct:issued "2019-07-16"^^xsd:date ;
+                         dct:type <http://purl.org/knot/taxonomy#corpus> ;
+                         crm:P2_has_type <http://purl.org/knot/taxonomy#corpus> ;
+                         crm:P106_is_composed_of :edition_digitized ;
+                         prov:wasGeneratedBy :alcide ;
+                         dct:license <https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> .
+
+:alcide_website a dcat:Catalog, prov:Entity ;
+                  dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
+                  dct:publisher :dh_fbk ; 
+                  dct:title "ALCIDE website"@en ;
+                  rdfs:label "ALCIDE website"@en ;
+                  dcat:dataset :alcide_corpus ;
+                  dcat:service :alcide_platform ;
+                  foaf:homepage <https://alcidedigitale.fbk.eu/> ;
+                  prov:value <https://alcidedigitale.fbk.eu/> ;
+                  dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
+                  dct:issued "2018-12-31"^^xsd:date ;
+                  dct:spatial :italia;
+                  dcat:themeTaxonomy <http://publications.europa.eu/resource/dataset/data-theme>, <https://vocabs.dariah.eu/tadirah/en/>, <http://purl.org/knot/taxonomy#> ;
+                  dcat:theme <https://w3id.org/italia/controlled-vocabulary/classifications-for-culture/subject-disciplines/002>, <http://viaf.org/viaf/32011324> ;
+                  dct:creator :dh_fbk, :isig .
+
+:alcide_platform a dcat:DataService, prov:Entity, crmdig:D1_Digital_Object ;
+                   dcat:endpointURL <https://alcidedigitale.fbk.eu/platform/> ;
+                   prov:value <https://alcidedigitale.fbk.eu/platform/> ;
+                   dct:title "ALCIDE platform"@en ;
+                   rdfs:label "ALCIDE platform"@en ;
+                   dcat:endpointDescription <https://alcidedigitale.fbk.eu/> ;
+                   dcat:servesDataset :alcide_corpus ;
+                   dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
+                   prov:wasGeneratedBy :alcide ;
+                   dct:issued "2018/12/31^^xsd:date" ;
+                   dcat:theme tadirah:analyzing, kth:apachetomcat, kth:mysql, kth:react, kth:ner, kth:nlp, kth:data_viz ;
+                   dct:type <http://purl.org/knot/taxonomy#digital_platform> ;
+                   crm:P2_has_type <http://purl.org/knot/taxonomy#digital_platform> ;
+                   crm:P106_is_composed_of :alcide_corpus .
+
+:alcide_edition a prov:Entity ;
+dct:title "A. De Gasperi, Scritti e discorsi politici, I-IV"@it ;
+prov:value <https://www.mulino.it/collana/scritti-discorsi-de-gasperi> .
+
+:alcide_de_gasperi a prov:Entity, crm:E1_Entity ;
+dct:title "Alcide de Gasperi"@it ;
+prov:value <https://viaf.org/viaf/32011324> .
+
+:edition_digitized a crmdig:D9_Data_Object ;
+rdfs:label "Digitized form of the edition"@en .
+
+:edition_item a frbroo:F5_Item ;
+dct:title "A. De Gasperi, Scritti e discorsi politici, I-IV"@it .
+
+:edition_manifestation a frbroo:F3_Manifestation .
+
+### AGENTS - People and/or organizations involved in the research project 
+
+:maurizio_cau a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Maurizio Cau"@it ;
+owl:sameAs <https://viaf.org/viaf/222130465/> ;
+prov:actedOnBehalfOf :isig ;
+org:memberOf :isig .
+
+:matteo_largaiolli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Matteo Largaiolli"@it ;
+owl:sameAs <https://viaf.org/viaf/1337155042813472402390/> ;
+prov:actedOnBehalfOf :uni_trento .
+
+:sara_tonelli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Sara Tonelli"@it ;
+owl:sameAs <https://viaf.org/viaf/85162365719525460619/> ;
+prov:actedOnBehalfOf :dh_fbk ;
+org:memberOf :dh_fbk .
+
+:giovanni_moretti a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Giovanni Moretti"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q107765378> ;
+prov:actedOnBehalfOf :dh_fbk ;
+org:memberOf :dh_fbk .
+
+:rachele_sprugnoli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Rachele Sprugnoli"@it ;
+owl:sameAs <https://viaf.org/viaf/128151594450205351651> ;
+prov:actedOnBehalfOf :uni_cattolica .
+
+:matteo_moretti a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Matteo Moretti"@it ;
+owl:sameAs <https://viaf.org/viaf/13158628035922920251/> .
+
+:il_mulino a crm:E39_Actor ;
+rdfs:label "il Mulino"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q3148465> .
+
+:uni_cattolica a prov:Agent ;
+rdfs:label "Università Cattolica"@it ;
+owl:sameAs <http://www.wikidata.org/entity/Q229022> .
+
+:uni_trento a prov:Agent ;
+rdfs:label "Università di Trento"@it ;
+owl:sameAs <http://www.wikidata.org/entity/Q930528> .
+
+:dh_fbk a prov:Agent, org:OrganizationalUnit ;
+rdfs:label "DH@FBK"@en ;
+owl:sameAs <https://dh.fbk.eu/> .
+
+:isig a prov:Agent, org:OrganizationalUnit ;
+rdfs:label "Istituto Storico Italo-Germanico"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q1674874> .
+
+:fbk a org:Organization ;
+skos:preflabel "Fondazione Bruno Kessler"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q3747148> ;
+org:hasUnit :isig, :dh_fbk .
+
+### LOCATIONS - Physical places where research activity took place or which are referenced in research outputs 
+
+:trento a prov:Location, crm:E53_Place ;
+rdfs:label "Trento"@it ;
+owl:sameAs <https://www.geonames.org/3165243> .
+
+:bologna a crm:E53_Place ;
+rdfs:label "Bologna"@it ;
+owl:sameAs <http://www.geonames.org/3181928> .
+
+:italia a dct:Location ; 
+rdfs:label "Italia"@it ;
+owl:sameAs <http://www.geonames.org/3175395> .
+
+### ACCESS - Downloadable versions of the entities/datasets created by the research projects 
+
+:corpus_distro_txt a dcat:Distribution ;
+dcat:accessURL <https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+dct:description "Raw txt files contain only the body of the documents, and may be straightforwardly used to extract embeddings or topics."@en ;
+dcat:compressFormat <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+dct:format <http://publications.europa.eu/resource/authority/file-type/TXT> ;
+dct:license <https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> ;
+dcat:byteSize "9420000.0"^^xsd:decimal ;
+dcat:downloadURL <https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/txt-files.zip> ; 
+dct:language <http://publications.europa.eu/resource/authority/language/ITA> ; 
+dct:conformsTo  <http://publications.europa.eu/resource/authority/file-type> ;
+dct:issued "2019-07-16"^^xsd:date ;
+adms:status <http://purl.org/adms/status/Completed> ;
+dct:title "De Gasperi's Corpus - Raw Text Files "@en .
+
+:corpus_distro_xml a dcat:Distribution ;
+dcat:accessURL <https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+dct:description "XML files include metadata that cover not only the title, the date and the place of publication, but also key-concepts automatically extracted from each text (with the corresponding relevance score) and genre labels manually assigned by domain experts."@en ;
+dcat:compressFormat <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+dct:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
+dct:license <https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> ;
+dcat:byteSize "10500000.0"^^xsd:decimal ;
+dcat:downloadURL <https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/xml-files.zip> ; 
+dct:language <http://publications.europa.eu/resource/authority/language/ITA> ; 
+dct:conformsTo  <http://publications.europa.eu/resource/authority/file-type> ;
+dct:issued "2019-07-16"^^xsd:date ;
+adms:status <http://purl.org/adms/status/Completed> ;
+dct:title "De Gasperi's Corpus - XML Files "@en .
+
+:corpus_distro_tsv a dcat:Distribution ;
+dcat:accessURL <https://github.com/StefanoMenini/De-Gasperi-s-Corpus>;
+dct:description "The release includes silver annotation for lemma, part of speech, person names and place names with associated coordinates in a CoNLL-like format."@en ;
+dcat:compressFormat <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+dct:format <http://publications.europa.eu/resource/authority/file-type/TSV> ;
+dct:license <https://w3id.org/italia/controlled-vocabulary/licences/B19_CCBYNCSA40> ;
+dcat:byteSize "17200000.0"^^xsd:decimal ;
+dcat:downloadURL <https://github.com/StefanoMenini/De-Gasperi-s-Corpus/raw/master/conll-files.zip> ; 
+dct:language <http://publications.europa.eu/resource/authority/language/ITA> ; 
+dct:conformsTo  <http://publications.europa.eu/resource/authority/file-type> ;
+dct:issued "2019-07-16"^^xsd:date ;
+adms:status <http://purl.org/adms/status/Completed> ;
+dct:title "De Gasperi's Corpus - TSV Files "@en .
+

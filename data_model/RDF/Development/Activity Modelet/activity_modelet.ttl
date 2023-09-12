@@ -1,0 +1,120 @@
+@prefix : <http://purl.org/knot/ontology/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> .
+@prefix crmdig: <https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
+@prefix tadirah: <https://vocabs.dariah.eu/tadirah/> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Linking to the main ontology
+<http://purl.org/knot/ontology/data/> a owl:Ontology ;
+    owl:imports <http://purl.org/knot/ontology> .
+
+#The research project as overall activity 
+
+:alcide a prov:Activity ;
+dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
+dct:subject :alcide_de_gasperi ;
+prov:startedAtTime "2015/01/01"^^xsd:date ;
+prov:endedAtTime "2018/12/31"^^xsd:date ;
+prov:atLocation :trento ;
+prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
+prov:used :alcide_edition ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+
+#the sub-activities or tasks within the research project 
+
+:edition_digitization a crmdig:D2_Digitization_Process ;
+rdfs:label "Digitization of de Gasperi edition"@en ;
+crm:P7_took_place_at :Bologna ;
+crm:P14_carried_out_by :il_mulino ;
+crmdig:L1_digitized :edition_item ;
+crmdig:L20_has_created :edition_digitized ;
+crm:P2_has_type tadirah:capturing .
+
+:corpus_creation a crmdig:D10_Software_Execution ;
+rdfs:label "Creation of de Gasperi corpus"@en ;
+crm:P7_took_place_at :trento ;
+crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
+crmdig:L2_used_as_source :edition_digitized ;
+crmdig:L11_had_output :alcide_corpus ;
+crm:P2_has_type tadirah:annotating .
+
+:platform_creation a crmdig:D7_Digital_Machine_Event ;
+rdfs:label "Creation of ALCIDE platform"@en ;
+crm:P7_took_place_at :trento ;
+crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
+crmdig:L10_had_input :alcide_corpus ;
+crmdig:L11_had_output :alcide_platform ;
+crm:P2_has_type tadirah:creating .
+
+:edition_item a frbroo:F5_Item . 
+
+:edition_digitized a crmdig:D9_Data_Object .
+
+
+#locations 
+
+:trento a prov:Location, crm:E53_Place ;
+rdfs:label "Trento"@it ;
+owl:sameAs <https://www.geonames.org/3165243> .
+
+#agents 
+
+:maurizio_cau a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Maurizio Cau"@it ;
+owl:sameAs <https://viaf.org/viaf/222130465/> .
+
+:matteo_largaiolli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Matteo Largaiolli"@it ;
+owl:sameAs <https://viaf.org/viaf/1337155042813472402390/> .
+
+:sara_tonelli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Sara Tonelli"@it ;
+owl:sameAs <https://viaf.org/viaf/85162365719525460619/> .
+
+:giovanni_moretti a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Giovanni Moretti"@it ;
+owl:sameAs <https://www.wikidata.org/wiki/Q107765378> . 
+
+:rachele_sprugnoli a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Rachele Sprugnoli"@it ;
+owl:sameAs <https://viaf.org/viaf/128151594450205351651> .
+
+:matteo_moretti a prov:Agent, crm:E39_Actor, foaf:Agent ;
+rdfs:label "Matteo Moretti"@it ;
+owl:sameAs <https://viaf.org/viaf/13158628035922920251/> .
+
+#outputs
+
+:alcide_corpus a prov:Entity, crmdig:D1_Digital_Object ;
+dct:title "De Gasperi's Corpus"@en ;
+rdfs:label "De Gasperi's Corpus"@en ;
+dct:type <http://purl.org/knot/taxonomy#corpus> ;
+crm:P2_has_type <http://purl.org/knot/taxonomy#corpus> .
+
+:alcide_website a prov:Entity ;
+dct:title "ALCIDE website"@en ;
+rdfs:label "ALCIDE website"@en ;
+dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en .
+
+:alcide_platform a prov:Entity, crmdig:D1_Digital_Object ;
+dct:title "ALCIDE platform"@en ;
+rdfs:label "ALCIDE platform"@en ;
+dct:type <http://purl.org/knot/taxonomy#digital_platform> ;
+crm:P2_has_type <http://purl.org/knot/taxonomy#digital_platform> .
+
+#inputs 
+
+:alcide_edition a prov:Entity ;
+dct:title "A. De Gasperi, Scritti e discorsi politici, I-IV"@it ;
+prov:value <https://www.mulino.it/collana/scritti-discorsi-de-gasperi> .
+
+:alcide_de_gasperi a prov:Entity, crm:E1_Entity ;
+dct:title "Alcide de Gasperi"@it ;
+prov:value <https://viaf.org/viaf/32011324> .
