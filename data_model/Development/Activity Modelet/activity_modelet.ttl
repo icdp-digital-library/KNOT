@@ -54,9 +54,11 @@ crmdig:L10_had_input :alcide_corpus ;
 crmdig:L11_had_output :alcide_platform ;
 crm:P2_has_type tadirah:creating .
 
-:edition_item a frbroo:F5_Item . 
+:edition_digitized a crmdig:D9_Data_Object ;
+rdfs:label "Digitized form of the edition"@en .
 
-:edition_digitized a crmdig:D9_Data_Object .
+:edition_item a frbroo:F5_Item ;
+dct:title "A. De Gasperi, Scritti e discorsi politici, I-IV"@it .
 
 
 #locations 
@@ -64,6 +66,10 @@ crm:P2_has_type tadirah:creating .
 :trento a prov:Location, crm:E53_Place ;
 rdfs:label "Trento"@it ;
 owl:sameAs <https://www.geonames.org/3165243> .
+
+:bologna a crm:E53_Place ;
+rdfs:label "Bologna"@it ;
+owl:sameAs <http://www.geonames.org/3181928> .
 
 #agents 
 
