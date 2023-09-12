@@ -36,9 +36,11 @@ OPTIONAL {?activity crm:P2_has_type ?type}}
 ```
 
 _Outcome_
+
 A list of the activities that informed the overall research project along with their labels and types, based on the Tadirah vocabulary of digital research activities in the humanities. 
 
 _Example_ 
+
 Activity | Label | Type
 --- | --- | ---
 <http://purl.org/knot/ontology/data/platform_creation> | Creation of ALCIDE platform | <https://vocabs.dariah.eu/tadirah/creating>
