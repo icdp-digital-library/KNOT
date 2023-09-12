@@ -5,9 +5,9 @@ Retrieve information about a research project such as what activities it involve
 Given a research project X documented using the KNOT Data Model and with the minimum available amount of information about it, we should be able to retrieve the following statements: 
 - Project X involved at least one sub-activity or task, which is classified using a relevant controlled vocabulary such as Tadirah.
 - Project X produced at least one output, which is classified using the KNOT Taxonomy.
-- Project X may have used some existing object in the course of its activity.
+- Project X may have used some existing physical or digital object(s) in the course of its activity.
 - Project X is about subject Y.
-- Project X took place in at least one location, began and ended at specific dates that include at least the year, and involved at least one person.
+- Project X took place in at least one location, began and ended at specific dates that include at least the year, and involved at least one agent (person or entity).
 
 # Competency Questions 
 
