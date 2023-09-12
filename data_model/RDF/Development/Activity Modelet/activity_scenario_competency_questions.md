@@ -19,9 +19,7 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX dct: <http://purl.org/dc/terms/> 
 PREFIX crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> 
 PREFIX tadirah: <https://vocabs.dariah.eu/tadirah/> 
-PREFIX frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-PREFIX owl: <http://www.w3.org/2002/07/owl#> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 ```
 
