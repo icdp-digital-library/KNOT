@@ -63,9 +63,11 @@ OPTIONAL {?result dct:type ?type} }
 ```
 
 _Outcome_
+
 A list of digital objects that were produced by the research project activity alongside their title and, if available, their type based on the KNOT taxonomy of research project outputs. 
 
 _Example_ 
+
 Result | Type | Title
 --- | --- | ---
 http://purl.org/knot/ontology/data/alcide_website | | "ALCIDE website"@en
@@ -73,6 +75,7 @@ http://purl.org/knot/ontology/data/alcide_corpus	| http://purl.org/knot/taxonomy
 http://purl.org/knot/ontology/data/alcide_platform	| http://purl.org/knot/taxonomy#digital_platform	| "ALCIDE platform"@en
 
 ## CQ1.3 Research project inputs 
+
 What objects, if any, did project X use as inputs in the research? 
 
 ```
@@ -85,14 +88,17 @@ OPTIONAL {?object prov:value ?value} }
 ```
 
 _Outcome_
+
 A list of entities that a research project used in the course of its activity such as physical or digital objects along with their titles and, if available, a URI. 
 
 _Example_ 
+
 Object | Value | Title
 --- | --- | ---
 http://purl.org/knot/ontology/data/alcide_edition | https://www.mulino.it/collana/scritti-discorsi-de-gasperi	|  "A. De Gasperi, Scritti e discorsi politici, I-IV"@it
 
 ## CQ1.4 Research project location, timespan, and associated persons 
+
 Where did project X take place, when did it begin and end, and who was involved? 
 
 ```
@@ -105,12 +111,15 @@ UNION {?project prov:startedAtTime ?startdate ; prov:endedAtTime ?enddate }}
 ```
 
 _Outcome_
+
 A summary of the available information about where the project took place, who was associated with it, and when it began and ended. 
 
 _Example_ 
+
 Trento, Bologna (locations); 2015/01/01 (start date); 2018/12/31 (end date); Maurizio Cau, Matteo Largaiolli, Sara Tonelli, Giovanni Moretti, Rachele Sprugnoli, Matteo Moretti (persons).
 
 ## CQ1.5 Research project subject/topic
+
 What are the primary subjects/topics of project X? 
 
 ```
@@ -121,9 +130,11 @@ OPTIONAL {?object prov:value ?value ; dct:title ?title} }
 ```
 
 _Outcome_
+
 The subject/topic, or subjects/topics, of the research project alongside their label, if available, and a URI of their representation in an authority control. 
 
 _Example_ 
+
 Subject | Label | Value
 --- | --- | ---
 http://purl.org/knot/ontology/data/alcide_de_gasperi |	"Alcide de Gasperi"@it | https://viaf.org/viaf/32011324
