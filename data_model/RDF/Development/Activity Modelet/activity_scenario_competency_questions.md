@@ -95,16 +95,17 @@ Object | Value | Title
 --- | --- | ---
 http://purl.org/knot/ontology/data/alcide_edition | https://www.mulino.it/collana/scritti-discorsi-de-gasperi	|  "A. De Gasperi, Scritti e discorsi politici, I-IV"@it
 
-## CQ1.4 Research project location, timespan, and associated persons 
+## CQ1.4 Research project location, timespan, and associated agents 
 
 Where did project X take place, when did it begin and end, and who was involved? 
 
 ```
-SELECT distinct ?location ?person ?startdate ?enddate
+SELECT distinct ?location ?agent ?startdate ?enddate
 {
 {?project prov:atLocation ?location }
 UNION {?activity crm:P7_took_place_at ?location }
-UNION {?project prov:wasAssociatedWith ?person }
+UNION {?project prov:wasAssociatedWith ?agent }
+UNION {?activity crm:P14_carried_out_by ?agent }
 UNION {?project prov:startedAtTime ?startdate ; prov:endedAtTime ?enddate }}
 ```
 
@@ -114,7 +115,7 @@ A summary of the available information about where the project took place, who w
 
 _Example_ 
 
-Trento, Bologna (locations); 2015/01/01 (start date); 2018/12/31 (end date); Maurizio Cau, Matteo Largaiolli, Sara Tonelli, Giovanni Moretti, Rachele Sprugnoli, Matteo Moretti (persons).
+Trento, Bologna (locations); 2015/01/01 (start date); 2018/12/31 (end date); Maurizio Cau, Matteo Largaiolli, Sara Tonelli, Giovanni Moretti, Rachele Sprugnoli, Matteo Moretti, Il Mulino (agents).
 
 ## CQ1.5 Research project subject/topic
 
