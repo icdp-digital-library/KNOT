@@ -93,6 +93,7 @@ Where did project X take place, when did it begin and end, and who was involved?
 SELECT distinct ?location ?person ?startdate ?enddate
 {
 {?project prov:atLocation ?location }
+UNION {?activity crm:P7_took_place_at ?location }
 UNION {?project prov:wasAssociatedWith ?person }
 UNION {?project prov:startedAtTime ?startdate ; prov:endedAtTime ?enddate }}
 ```
@@ -101,7 +102,7 @@ _Outcome_
 A summary of the available information about where the project took place, who was associated with it, and when it began and ended. 
 
 _Example_ 
-Trento (location); 2015/01/01 (start date); 2018/12/31 (end date); Maurizio Cau, Matteo Largaiolli, Sara Tonelli, Giovanni Moretti, Rachele Sprugnoli, Matteo Moretti (persons).
+Trento, Bologna (locations); 2015/01/01 (start date); 2018/12/31 (end date); Maurizio Cau, Matteo Largaiolli, Sara Tonelli, Giovanni Moretti, Rachele Sprugnoli, Matteo Moretti (persons).
 
 ## CQ1.5 Research project subject/topic
 What are the primary subjects/topics of project X? 
