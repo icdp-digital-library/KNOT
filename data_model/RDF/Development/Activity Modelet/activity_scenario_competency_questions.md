@@ -1,4 +1,5 @@
 # Motivating Scenario 
+
 Retrieve information about a research project such as what activities it involved, what outputs it produced, what objects it may have used, what it’s about, and where, when, and who was involved. 
 
 Given a research project X documented using the KNOT Data Model and with the minimum available amount of information about it, we should be able to retrieve the following statements: 
@@ -9,6 +10,7 @@ Given a research project X documented using the KNOT Data Model and with the min
 - Project X took place in at least one location, began and ended at specific dates that include at least the year, and involved at least one person.
 
 # Competency Questions 
+
 Prefixes
 ```
 PREFIX : <http://purl.org/knot/ontology/data/> 
@@ -24,6 +26,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 ```
 
 ## CQ1.1 Sub-activities or tasks within the research project 
+
 Given a research project X, what are the sub-activities / tasks that informed the project?  
 
 ```
@@ -48,6 +51,7 @@ Activity | Label | Type
 <http://purl.org/knot/ontology/data/edition_digitization>	| Digitization of de Gasperi edition	| <https://vocabs.dariah.eu/tadirah/capturing>
 
 ## CQ1.2 Research project outputs 
+
 What digital objects did project X produce? 
 
 ```
