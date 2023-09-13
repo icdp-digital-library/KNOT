@@ -1,10 +1,15 @@
 # Motivating Scenario
 
-Retrieve information about the entities that a research project used and/or produced such as … .
+Retrieve information about the entities that a research project used and/or produced such as the data formats they are available in, their type, the licenses attached to their use, their level of accessability, whether or not physical objects were digitized, what services or tools are available, what the relationships between outputs and inputs are.
 
 Given a research project X documented using the KNOT Data Model with a minimum available amount of information about it, we should be able to retrieve the following statements:
 
-- Project X involved... 
+- The output(s) of project X are available in at least one format.
+- The output(s) of project X are of the following types.
+- The output(s) of project X are released using the following licenses.
+- The output(s) of project X may have used a digitized physical object.
+- The output(s) of project X may include a service or tool alongside its description.
+- The output(s) of project X are related to each other in the following ways. 
 
 # Competency Questions
 
@@ -155,3 +160,48 @@ A list of the physical objects a research project digitized, if any, along with 
 | Object | Label | Digitized Object | Label | Output 
 | --- | --- | --- | --- | --- |
 http://purl.org/knot/ontology/data/edition_item	| "A. De Gasperi, Scritti e discorsi politici, I-IV"@it	| http://purl.org/knot/ontology/data/edition_digitized	| "Digitized form of the edition"@en	| http://purl.org/knot/ontology/data/alcide_corpus |
+
+## CQ1.6 Services or tools 
+
+What services or tools does research project X make available, if any? 
+
+```
+SELECT distinct ?service ?type ?description 
+
+WHERE {?service a dcat:DataService ; dct:type ?type ; dct:description ?description .
+FILTER (lang(?description) = 'en') }
+
+```
+
+*Outcome*
+
+A list of the available services or tools produced by a research project along with their type and a textual description in English. 
+
+*Example*
+
+| Service | Type | Description | 
+| --- | --- | --- | 
+http://purl.org/knot/ontology/data/alcide_platform	| http://purl.org/knot/taxonomy#digital_platform	| "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en
+
+## CQ1.6 Relationships between outputs 
+
+What are the relationships between the different objects created during the course of research project X? 
+
+```
+SELECT ?output ?element
+WHERE {
+?output a prov:Entity ;
+crm:P106_is_composed_of ?element }
+
+```
+
+*Outcome*
+
+A list of digital objects created during the course of the research project and used within other objects. 
+
+*Example*
+
+| Output | Element |  
+| --- | --- | 
+http://purl.org/knot/ontology/data/alcide_platform	| http://purl.org/knot/ontology/data/alcide_corpus | 
+http://purl.org/knot/ontology/data/alcide_corpus	| http://purl.org/knot/ontology/data/edition_digitized | 
