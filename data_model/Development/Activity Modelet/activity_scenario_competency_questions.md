@@ -1,13 +1,13 @@
 # Motivating Scenario 
 
-Retrieve information about a research project such as what activities it involved, what outputs it produced, what objects it may have used, what it’s about, and where, when, and who was involved. 
+Retrieve information about a research project such as what research activities it involved, what outputs it produced, what objects it may have used, its primary subject(s)/topic(s), and where and when it tooks place and who was involved. 
 
-Given a research project X documented using the KNOT Data Model and with the minimum available amount of information about it, we should be able to retrieve the following statements: 
+Given a research project X documented using the KNOT Data Model with a minimum available amount of information about it, we should be able to retrieve the following statements: 
 - Project X involved at least one sub-activity or task, which is classified using a relevant controlled vocabulary such as Tadirah.
 - Project X produced at least one output, which is classified using the KNOT Taxonomy.
 - Project X may have used some existing physical or digital object(s) in the course of its activity.
-- Project X is about subject Y.
-- Project X took place in at least one location, began and ended at specific dates that include at least the year, and involved at least one agent (person or entity).
+- Project X has at least one primary subject/topic.
+- Project X took place in at least one location, began and ended on specific dates that include at least the year, and involved at least one agent (person or entity).
 
 # Competency Questions 
 
@@ -18,9 +18,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#> 
 PREFIX dct: <http://purl.org/dc/terms/> 
 PREFIX crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> 
-PREFIX tadirah: <https://vocabs.dariah.eu/tadirah/> 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 ```
 
 ## CQ1.1 Sub-activities or tasks within the research project 
@@ -81,13 +79,12 @@ SELECT distinct ?object ?value ?title
 
 WHERE {?project prov:used ?object .
 ?object dct:title ?title . 
-
 OPTIONAL {?object prov:value ?value} }
 ```
 
 _Outcome_
 
-A list of entities that a research project used in the course of its activity such as physical or digital objects along with their titles and, if available, a URI. 
+A list of entities that a research project may have used in the course of its activity such as physical or digital objects along with their titles and, if available, a URI. 
 
 _Example_ 
 
@@ -101,7 +98,7 @@ Where did project X take place, when did it begin and end, and who was involved?
 
 ```
 SELECT distinct ?location ?agent ?startdate ?enddate
-{
+WHERE {
 {?project prov:atLocation ?location }
 UNION {?activity crm:P7_took_place_at ?location }
 UNION {?project prov:wasAssociatedWith ?agent }
@@ -130,7 +127,7 @@ OPTIONAL {?object prov:value ?value ; dct:title ?title} }
 
 _Outcome_
 
-The subject/topic, or subjects/topics, of the research project alongside their label, if available, and a URI of their representation in an authority control. 
+A list of the primary subject(s)/topic(s) of the research project alongside their label, if available, and a URI of their representation in an authority control. 
 
 _Example_ 
 
