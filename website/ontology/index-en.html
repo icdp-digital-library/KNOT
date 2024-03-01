@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/knot/ontology","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/knot/ontology#","name":"KNOT-O, The KNOT Ontology", "headline":"The KNOT Ontology (KNOT-O) brings together existing and complementary ontological entities from three primary standards, used in the KNOT Data Model, for the purpose of describing academic research projects and their outputs as examples of the digital cultural heritage of Italian universities. Descriptive metadata created with KNOT-O is used to catalogue academic research and feeds the KNOT Knowledge Graph, which is intended to be integrated into the Digital Library initiative of the Italian Ministry of Culture. Both the ontology and the data model are freely available for universities, and other interested parties, to use on their own data independently or to allow its inclusion within the KNOT pilot project. ", "datePublished":"2023-06-01", "version":"1.0", "author":[{"@type":"Person","name":"Laurent Fintoni, Francesca Tomasi, Marilena Daquino"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/knot/ontology","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/knot/ontology#","name":"KNOT-O, The KNOT Ontology", "headline":"The KNOT Ontology (KNOT-O) expresses the KNOT Data Model (KNOT-DM) in RDF. It brings together existing and complementary ontological entities from three primary standards — DCAT, PROV-O, and CIDOC-CRM — for the purpose of describing digital scholarly activity and objects as examples of the digital cultural heritage of Italian universities. It is part of the KNOT pilot project.", "datePublished":"2023-06-01", "version":"1.2", "author":[{"@type":"Person","name":"Laurent Fintoni, Francesca Tomasi, Marilena Daquino"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -62,7 +62,7 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="http://purl.org/knot/ontology">http://purl.org/knot/ontology</a></dd>
 <dt>Revision:</dt>
-<dd>1.1</dd>
+<dd>1.2</dd>
 <dt>Authors:</dt>
 <dd>Laurent Fintoni, Marilena Daquino, Francesca Tomasi</dd>
 
@@ -71,13 +71,13 @@ $(function(){
 <dt>Download serialization:</dt><dd><span><a href="serializations/knot-o.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="serializations/knot-o.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="serializations/knot-o.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="serializations/knot-o.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="https://img.shields.io/badge/CC_BY-NC_4-blue.svg" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Laurent Fintoni, Marilena Daquino, Francesca Tomasi. KNOT Data Model Ontology. Revision: 1.1.</dd>
+<dd>Laurent Fintoni, Marilena Daquino, Francesca Tomasi. KNOT Data Model Ontology. Revision: 1.2.</dd>
 </dl>
 
 <hr/>
 </div>
      <div id="abstract"><h2>Abstract</h2><span class="markdown">
-      The KNOT Ontology (KNOT-O) brings together existing and complementary ontological entities from three primary standards, used in the KNOT Data Model, for the purpose of describing academic research projects and their outputs as examples of the digital cultural heritage of Italian universities. Descriptive metadata created with KNOT-O is used to catalogue academic research and feeds the KNOT Knowledge Graph, which is intended to be integrated into the Digital Library initiative of the Italian Ministry of Culture. Both the ontology and the data model are freely available for universities, and other interested parties, to use on their own data independently or to allow its inclusion within the KNOT pilot project. </span>
+      The KNOT Ontology (KNOT-O) expresses the KNOT Data Model (KNOT-DM) in RDF. It brings together existing and complementary ontological entities from three primary standards — DCAT, PROV-O, and CIDOC-CRM — for the purpose of describing digital scholarly activity and objects as examples of the digital cultural heritage of Italian universities. </span>
 </div>
 <div id="toc"><h2>Table of Content</h2>
    <ol>
@@ -94,7 +94,7 @@ $(function(){
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-   <p>The KNOT Ontology (KNOT-O) connects complementary ontological entities from existing standards to provide metadata for the description of academic research projects and their outputs as examples of the digital cultural heritage of Italian universities. It was developed as part of the KNOT pilot project within the Digital Humanities Advanced Research Center (/DH.ARC), part of the FICLIT department at the University of Bologna. </p>  
+   <p>The KNOT Ontology (KNOT-O) connects complementary ontological entities from existing standards — DCAT, PROV-O, and CIDOC-CRM — to provide metadata for the description of digital scholarly activity and objects as examples of the digital cultural heritage of Italian universities. It was developed as part of the KNOT pilot project within the Digital Humanities Advanced Research Center (/DH.ARC), part of the FICLIT department at the University of Bologna. </p>  
    <p>For more details on the KNOT project and its goals, <a href="https://icdp-digital-library.github.io/KNOT/" target="_blank">please see the website</a>.</p>
 </span>
 <div id="namespacedeclarations">
@@ -539,12 +539,12 @@ This ontology has the following classes and properties.</span>
 <!--DESCRIPTION SECTION-->
     <div id="description"><h2 id="desc" class="list">KNOT-O, The KNOT Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-   <p>KNOT-O is an expression of the KNOT-DM in RDF, in order to enable the publication of the metadata generated by the KNOT pilot project as Linked Open Data so as to maximize its interoperability both within the Digital Library initiative from the Italian Ministry of Culture and across the internet. KNOT-DM is freely available for universities, and other interested parties, to use to model their own data for independent use or to allow its inclusion within the KNOT pilot project.</p> 
-   <p>KNOT-DM is organized in three segments that reflect the specificities of the different domains covered by the data model. Each segment makes use of concepts from an internationally recognized standard to describe entities, activities, agents, themes, and spatio-temporal information. The segments and their relative standards are:</p>  
+   <p>KNOT-O is an expression of the KNOT-DM in RDF for the purpose of describing digital scholarly activity and objects as examples of the digital cultural heritage of Italian universities. It is used to publish the metadata generated by the KNOT pilot project as Linked Open Data so as to maximize its interoperability both within the Digital Library initiative from the Italian Ministry of Culture and across the internet. KNOT-DM is freely available for universities, and other interested parties, to use to model their own data for independent use or to allow its inclusion within the KNOT pilot project.</p> 
+   <p>KNOT-DM is organized in three segments that reflect the specificities of the different domains covered by the data model (<a href="https://icdp-digital-library.github.io/KNOT/" target="_blank">see the website</a> for more details). Each segment makes use of concepts from an internationally recognized standard to describe entities, activities, agents, themes, and spatio-temporal information. The segments and their relative standards are:</p>  
    <ul>
-      <li>Public data: academic research outputs as examples of public data. For this KNOT-O makes use of the W3C RDF Vocabulary DCAT as well as its European and Italian Application Profiles.</li>
-      <li>Academic provenance: research projects and their outputs as examples of academic activity and production. KNOT-O models this using the PROV Ontology (PROV-O), chosen because it is already integrated into DCAT as a means of detailing the provenance of datasets.</li>
-      <li>Cultural heritage information: specific activities within an academic research project (such as digitization processes) and their outputs as examples of digital cultural heritage. This is modeled using the CIDOC Conceptual Reference Model (CIDOC CRM) and its extensions, in particular CRMdig, which models the production of digital objects and offers various activity concepts that align with standard academic research project practices, and LRMoo, which is primarily used to enable relations with the WEMI model of FRBR.</li>
+      <li>Public data: digital scholarly objects as examples of public data. For this KNOT-O makes use of the W3C RDF Vocabulary DCAT as well as its European and Italian Application Profiles.</li>
+      <li>Academic provenance: digital scholarly activity and outputs as examples of academic activity and production. KNOT-O models this using the PROV Ontology (PROV-O), chosen because it is already integrated into DCAT.</li>
+      <li>Cultural heritage information: digital scholarly activity tasks (such as digitization processes) and digital scholarly objects as examples of digital cultural heritage. This is modeled using the CIDOC Conceptual Reference Model (CIDOC CRM) and its extensions, in particular CRMdig, which models the production of digital objects and offers various activity concepts that align with standard academic research project practices, and LRMoo, which is primarily used to enable relations with the WEMI model of FRBR.</li>
    </ul>
    <p>Taken together, these three segments offer the necessary descriptive flexibility required by the KNOT pilot project.</p>
    <p>The figures below summarise the core of the KNOT-DM by highlighting key classes (yellow boxes) and properties (arrows) from each standard and their interconnection as well as relationship to the entities (pink dots) central to the project.</p>
@@ -2229,11 +2229,10 @@ This section provides details for each class and property defined by KNOT Data M
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data Service</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a>
-               <sup class="type-c" title="class">c</sup>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Resource"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+                  <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
@@ -2522,6 +2521,11 @@ This section provides details for each class and property defined by KNOT Data M
          </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a>
@@ -3081,8 +3085,10 @@ This section provides details for each class and property defined by KNOT Data M
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a>
-               <sup class="type-c" title="class">c</sup>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Resource"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+                  <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
@@ -3217,6 +3223,9 @@ This section provides details for each class and property defined by KNOT Data M
             <dt>has domain</dt>
             <dd>
                <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+               <span class="logic">or</span> 
+               <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Activity</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -4002,7 +4011,7 @@ This section provides details for each class and property defined by KNOT Data M
       <p>
          <strong>IRI:</strong> http://www.w3.org/ns/prov#used</p>
       <div class="comment">
-         <span class="markdown"><p>Usage is the beginning of utilizing an entity by an activity. Before usage, the activity had not begun to utilize this entity and could not have been affected by the entity.</p> <p><span class="usage-note">Usage Note</span> This property enables similar descriptions as crmdig:L10_had_input within the academic provenance segment of the KNOT Data Model. Please see the Data Model documentation for full details of how KNOT makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</p></span>
+         <span class="markdown"><p>Usage is the beginning of utilizing an entity by an activity. Before usage, the activity had not begun to utilize this entity and could not have been affected by the entity.</p> <p><span class="usage-note">Usage Note</span> This property can be used to connect an activity to concepts as well as things. It enables similar descriptions as crmdig:L10_had_input within the academic provenance segment of the KNOT Data Model. Please see the Data Model documentation for full details of how KNOT makes use of classes and properties that relate to similar concepts but refer to specific conceptual definitions.</p></span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -4673,7 +4682,7 @@ This section provides details for each class and property defined by KNOT Data M
       <p>
          <strong>IRI:</strong> http://purl.org/dc/terms/issued</p>
       <div class="comment">
-         <span class="markdown"><p>This property contains the date on which the subject class was published or included in the Catalogue. (DCAT AP documentation).</p></span>
+         <span class="markdown"><p>Date of formal issuance (e.g., publication) of the item (DCAT documentation).</p></span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -4685,20 +4694,10 @@ This section provides details for each class and property defined by KNOT Data M
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#CatalogRecord" title="http://www.w3.org/ns/dcat#CatalogRecord">Catalogue Record</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data Service</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a>
-               <sup class="type-c" title="class">c</sup>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Resource"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+                  <sup class="type-c" title="class">c</sup> 
             </dd>
             <dt>has range</dt>
             <dd>
@@ -4767,20 +4766,10 @@ This section provides details for each class and property defined by KNOT Data M
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Resource"
+               target="_blank"
+               title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
                <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#CatalogRecord" title="http://www.w3.org/ns/dcat#CatalogRecord">Catalogue Record</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data Service</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a>
-               <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
