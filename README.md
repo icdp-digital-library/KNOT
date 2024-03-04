@@ -5,7 +5,7 @@ The project is part of an agreement between the University of Bologna and the Mi
 
 KNOT is undertaken within the Digital Humanities Advanced Research Center (/DH.ARC), part of the FICLIT department, with support from DISI, and in collaboration with the DBC, which is undertaking a two-year census of the digital and digitized cultural heritage of Italian universities.
 
-# Supporting a New Digital Ecosystem of Culture...
+# ... By Rethinking Scholarly Digital Objects as Cultural Heritage
 
 For years now academic research has operated in a primarily digital space, with digital tools playing an increasingly important role in both the activity of research and the production of results as digital-born and/or digitized objects. As a result of this, universities find themselves already in possession of a multifaceted and interesting, and so far unexplored, example of DCH in the form of digital objects created by academic research projects.
 
