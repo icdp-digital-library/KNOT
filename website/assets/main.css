@@ -12,7 +12,7 @@ body {
 }
 
 .bg-body-tertiary {
-    border-bottom: 1px #c7254e solid;
+    border-bottom: 1px #DA555B solid;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,7 +29,7 @@ nav .nav-link {
 }
 
 a {
-    color: #337ab7;
+    color: #DA555B;
     text-decoration: none;
 }
 
@@ -77,23 +77,23 @@ code {
 }
 
 .nav-link.active {
-    background-color: #c7254e !important;
+    background-color: #DA555B !important;
 }
 
 .nav-link, .nav-link:hover {
-    color: #c7254e ;
+    color: #DA555B ;
 }
 
 aside {
     float: right;
     display: flex;
     width: 25%;
-    border: #c7254e 1px solid;
+    border: #DA555B 1px solid;
     font-size: small;
 }
 
 .btn.disabled {
-    background-color: #337ab7 !important;
+    background-color: #77789C !important;
 }
 
 .lang, .lang:hover {

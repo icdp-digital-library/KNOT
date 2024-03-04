@@ -1,7 +1,19 @@
-# Sostenere un nuovo ecosistema digitale della cultura...
-KNOT è un progetto pilota triennale dell’Università di Bologna e dell'Istituto centrale per la digitalizzazione del patrimonio culturale - DIGITAL LIBRARY del Ministero della Cultura per la valorizzazione del patrimonio culturale digitale degli Atenei italiani.
+# Supporting a New Digital Ecosystem of Culture...
+KNOT is a three-year pilot project from the University of Bologna and the Central Institute for the Digitization of Cultural Heritage (ICDP) - Digital Library of the Italian Ministry of Culture to showcase the digital cultural heritage of Italian universities.
 
-Il progetto si inserisce nell'ambito di un accordo tra l'Università di Bologna e il Ministero per la costituzione di un centro di ricerca a supporto dell'ecosistema digitale della cultura che è parte centrale della missione dell’Istituto. A tal fine l’attività di ricerca dell'Università di Bologna coinvolge tre Dipartimenti (Dipartimento dei Beni Culturali – DBC, Dipartimento di Filologia classica e italianistica – FICLIT, Dipartimento di Informatica, Scienza e Ingegneria – DISI) ed ha l'obiettivo di sviluppare forme e metodi di integrazione del patrimonio culturale digitale degli Atenei italiani all’interno dell’infrastruttura nazionale.
+The project is part of an agreement between the University of Bologna and the Ministry to establish a research infrastructure to support the digital ecosystem of culture that is a central part of the ICDP’s mission. To this end the University of Bologna is carrying out parallel and connected research initiatives in three departments (Department of Cultural Heritage - DBC, Department of Classical Philology and Italian Studies - FICLIT, and Department of Computer Science and Engineering - DISI) with the goal of investigating ways to integrate the digital cultural heritage (DCH) of Italian universities within the national infrastructure.
+
+KNOT is undertaken within the Digital Humanities Advanced Research Center (/DH.ARC), part of the FICLIT department, with support from DISI, and in collaboration with the DBC, which is undertaking a two-year census of the digital and digitized cultural heritage of Italian universities.
+
+# Supporting a New Digital Ecosystem of Culture...
+
+For years now academic research has operated in a primarily digital space, with digital tools playing an increasingly important role in both the activity of research and the production of results as digital-born and/or digitized objects. As a result of this, universities find themselves already in possession of a multifaceted and interesting, and so far unexplored, example of DCH in the form of digital objects created by academic research projects.
+
+These digital scholarly objects are the focus of investigation of the KNOT project with the goal to explore ways to describe and valorize them within the context of the national infrastructure being built by the ICDP. Our investigation starts from the field of the Humanities, and in particular the Digital Humanities (DH), where a project-oriented and multidisciplinary approach often results in the creation of digital objects that recontextualise existing cultural heritage — such as digital editions, corpora, visualization tools, collections — and thus offer a particularly interesting example of the scholarly digital object as DCH.
+
+From this conceptual base, KNOT will leverage the Digital Library’s infrastructure alongside practices from the field of DH to create a web application and guidelines for the collection, management, enrichment, and reuse of these digital scholarly objects. In doing so, the project will also confront some key issues facing these objects including their visibility within the Italian academic system and the lack of a shared framework for their display and preservation, which affects their documentation and classification among other things.
+
+The development of a national infrastructure for DCH such as the one currently being undertaken by the ICDP offers a unique opportunity for Italian universities to engage with this segment of their DCH holdings in new ways. By focusing on the scholarly digital objects produced by humanities research, and in particular DH, the KNOT project seeks to provide a useful base from which to let new insights emerge around how to valorize these objects both within and outside of academia.
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial 4.0 International License][cc-by-nc].
