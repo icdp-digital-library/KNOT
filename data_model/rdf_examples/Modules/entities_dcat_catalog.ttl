@@ -22,11 +22,13 @@
                   dct:issued "2018-12-31"^^xsd:date ;
                   dct:spatial :italia;
                   dcat:themeTaxonomy <http://publications.europa.eu/resource/dataset/data-theme>, <https://vocabs.dariah.eu/tadirah/en/>, <http://purl.org/knot/taxonomy#> ;
-                  dcat:theme <https://w3id.org/italia/controlled-vocabulary/classifications-for-culture/subject-disciplines/002>, <http://viaf.org/viaf/32011324> ;
-                  dct:creator :dh_fbk, :isig .
+                  dcat:theme <https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines/MSC-14-B>, <http://viaf.org/viaf/32011324> ;
+                  dct:creator :dh_fbk, :isig ;
+                  prov:wasGeneratedBy :alcide .
 
 :alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object .
 :alcide_platform a dcat:DataService, prov:Entity, crmdig:D1_Digital_Object .
 :dh_fbk a foaf:Agent .
 :isig a foaf:Agent .
 :italia a dct:Location .
+:alcide a prov:Activity .

@@ -20,7 +20,9 @@ prov:endedAtTime "2018/12/31"^^xsd:date ;
 prov:atLocation :trento ;
 prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
 prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
-prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+prov:used :alcide_edition, kth:apachetomcat, kth:mysql, kth:react ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation, :tint ;
+prov:wasInfluencedBy tadirah:annotating, tadirah:programming, tadirah:gathering .
 
 #the sub-activities or tasks within the research project 
 
@@ -30,7 +32,7 @@ crm:P7_took_place_at :Bologna ;
 crm:P14_carried_out_by :il_mulino ;
 crmdig:L1_digitized :edition_item ;
 crmdig:L20_has_created :edition_digitized ;
-crm:P2_has_type tadirah:capturing .
+crm:P2_has_type tadirah:gathering .
 
 :corpus_creation a crmdig:D10_Software_Execution ;
 rdfs:label "Creation of de Gasperi corpus"@en ;
@@ -46,7 +48,7 @@ crm:P7_took_place_at :trento ;
 crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
 crmdig:L10_had_input :alcide_corpus ;
 crmdig:L11_had_output :alcide_platform ;
-crm:P2_has_type tadirah:creating .
+crm:P2_has_type tadirah:programming .
 
 :trento a prov:Location, crm:E53_Place .
 :bologna a crm:E53_Place . 

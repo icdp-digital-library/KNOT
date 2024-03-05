@@ -103,14 +103,15 @@
           <p>Si raccomanda di iniziare a descrivere l'individuo che rappresenta l'attività complessiva prima di descrivere l'individuo o gli individui che rappresentano sotto-attività più specifici.</p>
           <h3>L'attività complessiva</h3>
           <p><code class="grafoo-class">prov:Activity</code> rappresenta il progetto di ricerca nel contesto della provenienza accademica.</p>
-          <p>Devono essere registrate le seguenti informazioni di base: il titolo (<code class="data-prop">dct:title</code>), le date di inizio e fine (<code class="data-prop">prov:startedAtTime</code>, <code class="data-prop">prov:endedAtTime</code>, formattate come <code>xsd:date</code>), il luogo o i luoghi in cui si è svolta (<code class="object-prop">prov:atLocation</code>), gli agent coinvolti (<code class="object-prop">prov:wasAssociatedWith</code>), l'argomento o il soggetto principale (<code class="object-prop">dct:subject</code>), le entità che ha usato o generato (<code class="object-prop">prov:used</code>, <code class="object-prop">prov:generated</code>) e qualsiasi attività specifica che l'ha informata (<code class="object-prop">prov:wasInformedBy</code>).</p>
+          <p>Devono essere registrate le seguenti informazioni di base: il titolo (<code class="data-prop">dct:title</code>), le date di inizio e fine (<code class="data-prop">prov:startedAtTime</code>, <code class="data-prop">prov:endedAtTime</code>, formattate come <code>xsd:date</code>), il luogo o i luoghi in cui si è svolta (<code class="object-prop">prov:atLocation</code>), gli agent coinvolti (<code class="object-prop">prov:wasAssociatedWith</code>), l'argomento o il soggetto principale (<code class="object-prop">dct:subject</code>), le entità e/o concetti che ha usato o generato (<code class="object-prop">prov:used</code>, <code class="object-prop">prov:generated</code>), qualsiasi concetto o altra entità che lo abbia influenzato (<code class="object-prop">prov:wasInfluencedBy</code>) e qualsiasi altro progetto di ricerca o attività specifica che l'ha informata (<code class="object-prop">prov:wasInformedBy</code>).</p>
           <ul>
             <li>Per il titolo, si raccomanda di usare quello più evidente nella documentazione pubblica del progetto, con la consapevolezza che potrebbe differire da come il progetto viene indicato altrove. L'obiettivo è quello di essere precisi e coerenti.</li>
             <li>Per quanto riguarda le date di inizio e fine, a volte possono essere difficili da accertare. Se non sono disponibili date complete, si dovrebbe registrare almeno un anno (con un valore di 01 se uno o entrambi i mesi e la data sono sconosciuti).</li>
+            <li>Opzionalmente si può usare <code class="data-prop">foaf:homepage</code> per registrare la homepage del sito web che documenta il progetto di ricerca e <code class="data-prop">dct:referencedBy</code> per connettere la ricerca a qualsiasi publicazione.</li>
           </ul>
           <h4>Esempio</h4>
-          <p>Dalla documentazione pubblica di ALCIDE possiamo dedurre le seguenti informazioni sull'attività: il soggetto è il politico italiano Alcide de Gasperi; si è svolta principalmente a Trento; ha coinvolto cinque ricercatori e un web designer; ha creato tre entità - un sito web, un corpus e una piattaforma di analisi - e ne ha utilizzata un'altra - un'edizione in quattro volumi dei discorsi e degli scritti di de Gasperi.</p>
-          <p><aside class="px-2 mx-1">*Potremmo anche aggiungere una quarta sotto-attività che rappresenta la creazione del sito web finale, che integra la piattaforma.</aside>Per quanto riguarda le sotto-attività, la documentazione mostra che una versione digitale dell'edizione è stata la fonte per la creazione del corpus, a sua volta integrato nella piattaforma di analisi. Possiamo quindi scegliere di rappresentare ciascuna di queste fasi - digitalizzazione, creazione del corpus, creazione della piattaforma - come una sotto-attività*.</p>
+          <p>Dalla documentazione pubblica di ALCIDE possiamo dedurre le seguenti informazioni sull'attività: il soggetto è il politico italiano Alcide de Gasperi e concetti relativi alle discipline accademiche coinvolte nel progetto (in questo caso Storia Politica); si è svolta principalmente a Trento; ha coinvolto cinque ricercatori e un web designer; ha creato tre entità - un sito web, un corpus e una piattaforma di analisi - e ne ha utilizzata un'altra - un'edizione in quattro volumi dei discorsi e degli scritti di de Gasperi. Ha anche utilizzato alcune tecnologie specifiche nella creazione della sua piattaforma di analisi, che possono essere referenziate attraverso l'uso di concetti del Thesaurus tecnologico KNOT.</p>
+          <p><aside class="px-2 mx-1">*Potremmo anche aggiungere una quarta sotto-attività che rappresenta la creazione del sito web finale, che integra la piattaforma.</aside> Ha anche risuato una NLP pipeline per italiano creata da un altro progetto di ricerca chiamato Tint e per quanto riguarda le sotto-attività, la documentazione mostra che una versione digitale dell'edizione è stata la fonte per la creazione del corpus, a sua volta integrato nella piattaforma di analisi. Possiamo quindi scegliere di rappresentare ciascuna di queste fasi - digitalizzazione, creazione del corpus, creazione della piattaforma - come una sotto-attività*. Gli aspetti concettuali di queste attività possono essere riferiti al livello del progetto utilizzando i concetti della tassonomia TaDiRAH.</p>
           <p>Il modo in cui dettagliare gli individui che rappresentano il luogo, gli agent e le entità è spiegato nei rispettivi moduli, mentre le sotto-attività sono illustrate nel passo successivo. </p>
           <p>Il diagramma riportato nella figura 1 rappresenta questa prima fase, con alcune semplificazioni per mantenerlo leggibile (è incluso solo un agent), seguito dal suo equivalente in RDF in formato Turtle (con tutti gli agenti).</p>
           <a href="../assets/imgs/prov_activity_summary_1.svg"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/prov_activity_summary_1.svg"></a>
@@ -121,17 +122,19 @@
             @prefix prov: &lt;http://www.w3.org/ns/prov#> .
             @prefix crmdig: &lt;https://projects.ics.forth.gr/isl/CRMext/CRMdig_v3.2.2.rdfs#> .
             @prefix dct: &lt;http://purl.org/dc/terms/> .
+            @prefix kth: &lt;http://purl.org/knot/thesaurus#> . 
             
             :alcide a prov:Activity ;
             dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
-            dct:subject :alcide_de_gasperi ;
+            dct:subject :alcide_de_gasperi, &lt;https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines/MSC-14-B> ;
             prov:startedAtTime "2015/01/01"^^xsd:date ;
             prov:endedAtTime "2018/12/31"^^xsd:date ;
             prov:atLocation :trento ;
             prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
             prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
-            prov:used :alcide_edition ;
-            prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+            prov:used :alcide_edition, kth:apachetomcat, kth:mysql, kth:react ;
+            prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation, :tint ;
+            prov:wasInfluencedBy tadirah:annotating, tadirah:programming, tadirah:gathering .
             
             :trento a prov:Location .
             :maurizio_cau a prov:Agent .
@@ -148,6 +151,7 @@
             :edition_digitization a crmdig:D7_Digital_Machine_Event . 
             :corpus_creation a crmdig:D7_Digital_Machine_Event . 
             :platform_creation a crmdig:D7_Digital_Machine_Event .
+            :tint a prov:Activity .
           </pre>
           <h3>Sotto-attività</h3>
           <p>KNOT-DM utilizza CIDOC CRM e le sue estensioni CRMdig e LMRoo (FKA FRBRoo) per dettagliare ciò che è accaduto durante il progetto di ricerca. L'obiettivo è quello di mettere in relazione queste informazioni con il dominio più ampio del patrimonio culturale e di creare un collegamento tra l'attività del progetto di ricerca e il tema centrale del progetto KNOT.</p>
@@ -165,7 +169,7 @@
             <li>Nel caso dei luoghi e degli agent coinvolti nelle attività D7, questi possono spesso essere gli stessi coinvolti nella <code class="grafoo-class">prov:Activity</code>. In tal caso, agli individui che li rappresentano dovrebbe essere assegnata la classe appropriata da PROV-O e CIDOC, come spiegato nella <a href="data_model_structure_it.html">sezione Classi concettualmente simili della panoramica di KNOT-DM</a>.</li>
           </ul>
           <h4>Esempio</h4>
-          <p>Nel passo precedente abbiamo affermato che ALCIDE ha coinvolto tre sotto-attività, come istanze di D7. Possiamo ora dettagliarle ulteriormente: la digitalizzazione delle edizioni è un'istanza di D2 condotta dall'editore, il Mulino; la creazione del corpus è un'istanza di D10 e la creazione della piattaforma che incorpora il corpus è un'istanza di D7, entrambe condotte dai ricercatori. Possiamo quindi dire che D2 si è svolto a Bologna (sede dell'editore) mentre D10 e D7 si sono svolti a Trento. Possiamo aggiungere le classi di CIDOC alle istanze di luoghi e agent già create nel passo precedente e creare quelle nuove (il Mulino, Bologna). Infine, possiamo rappresentare i tipi di sottoattività utilizzando i concetti di Tadirah, come ad esempio "Annotating" per la creazione del corpus.</p>
+          <p>Nel passo precedente abbiamo affermato che ALCIDE ha coinvolto tre sotto-attività, come istanze di D7. Possiamo ora dettagliarle ulteriormente: la digitalizzazione delle edizioni è un'istanza di D2 condotta dall'editore, il Mulino; la creazione del corpus è un'istanza di D10 e la creazione della piattaforma che incorpora il corpus è un'istanza di D7, entrambe condotte dai ricercatori. Possiamo quindi dire che D2 si è svolto a Bologna (sede dell'editore) mentre D10 e D7 si sono svolti a Trento. Possiamo aggiungere le classi di CIDOC alle istanze di luoghi e agent già create nel passo precedente e creare quelle nuove (il Mulino, Bologna). Infine, possiamo rappresentare i tipi di sottoattività utilizzando i stessi concetti di TaDiRAH che si possono usare al livello di attività.</p>
           <p>Il modo in cui dettagliare le entità utilizzate e create da queste sotto-attività è trattato nel modulo Output & Input.</p> 
           <p>La Figura 2 rappresenta questa fase, con tutti gli agent precedentemente descritti raggruppati sotto un unico individuo per mantenerlo chiaro, seguito dal suo equivalente RDF (che incorpora gli elementi della fase precedente).</p>
           <figure class="figure">
@@ -192,7 +196,9 @@
             prov:atLocation :trento ;
             prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
             prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
-            prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+            prov:used :alcide_edition, kth:apachetomcat, kth:mysql, kth:react ;
+            prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation, :tint ;
+            prov:wasInfluencedBy tadirah:annotating, tadirah:programming, tadirah:gathering .
             
             #the sub-activities or tasks 
             
@@ -202,7 +208,7 @@
             crm:P14_carried_out_by :il_mulino ;
             crmdig:L1_digitized :edition_item ;
             crmdig:L20_has_created :edition_digitized ;
-            crm:P2_has_type tadirah:capturing .
+            crm:P2_has_type tadirah:gathering .
             
             :corpus_creation a crmdig:D10_Software_Execution ;
             rdfs:label "Creation of de Gasperi corpus"@en ;
@@ -218,7 +224,7 @@
             crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
             crmdig:L10_had_input :alcide_corpus ;
             crmdig:L11_had_output :alcide_platform ;
-            crm:P2_has_type tadirah:creating .
+            crm:P2_has_type tadirah:programming .
             
             :trento a prov:Location, crm:E53_Place .
             :bologna a crm:E53_Place . 
@@ -235,6 +241,7 @@
             :alcide_de_gasperi a prov:Entity .
             :edition_item a frbroo:F5_Item . 
             :edition_digitized a crmdig:D9_Data_Object .
+            :tint a prov:Activity .
           </pre>
         </div>
         <div class="tab-pane fade" id="pills-outputs" role="tabpanel" aria-labelledby="pills-outputs-tab" tabindex="0">
@@ -276,7 +283,7 @@
               
               :alcide a prov:Activity ;
               dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
-              dct:subject :alcide_de_gasperi ;
+              dct:subject :alcide_de_gasperi, <https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines/MSC-14-B> ;
               prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
               prov:used :alcide_edition .
               
@@ -381,9 +388,9 @@
 
           <p>Devono essere registrate le seguenti informazioni: una descrizione (<code class="object-prop">dct:description</code>), il titolo (<code class="data-prop">dct:title</code>), l'editore (<code class="object-prop">dct:publisher</code>), i dataset che include (<code class="object-prop">dcat:dataset</code>), i sistemi di organizzazione della conoscenza utilizzati per classificare i dataset inclusi (<code class="object-prop">dcat:themeTaxonomy</code>) e i concetti utilizzati per classificare il catalogo stesso (<code class="object-prop">dcat:theme</code>).</p>
 
-          <p>Le informazioni raccomandate che dovrebbero essere registrate, se disponibili, includono: i servizi di dati che include, la sua homepage, la lingua usata nei metadati dei dataset, la licenza con cui il catalogo può essere (ri)usato, la data di rilascio e/o l'ultima data modificata (formattata come <code>xsd:date</code>), il suo creatore e l'area geografica che copre.</p>
+          <p>Le informazioni raccomandate che dovrebbero essere registrate, se disponibili, includono: i servizi di dati che include, la sua homepage, la lingua usata nei metadati dei dataset, la licenza con cui il catalogo può essere (ri)usato, la data di rilascio e/o l'ultima data modificata (formattata come <code>xsd:date</code>), e l'area geografica che copre.</p>
 
-          <p>Le informazioni opzionali che possono essere registrate, se disponibili, includono: parole chiave, se il catalogo include un altro, se include un record di metadati su se stesso e una dichiarazione sui diritti.</p>
+          <p>Le informazioni opzionali che possono essere registrate, se disponibili, includono: diriti di accesso, parole chiave, se il catalogo include un altro, se include un record di metadati su se stesso, una dichiarazione sui diritti, e il suo creatore.</p>
 
           <p>La maggior parte, se non tutte, di queste informazioni dovrebbero essere disponibili nella documentazione pubblica esistente del progetto di ricerca. Quando qualcosa non è chiaro, si dovrebbe cercare di dedurre e utilizzare le informazioni più coerenti e logiche disponibili.</p>
 
@@ -425,14 +432,16 @@
             dct:issued "2018-12-31"^^xsd:date ;
             dct:spatial :italia;
             dcat:themeTaxonomy &lt;http://publications.europa.eu/resource/dataset/data-theme>, &lt;https://vocabs.dariah.eu/tadirah/en/>, &lt;http://purl.org/knot/taxonomy#> ;
-            dcat:theme &lt;https://w3id.org/italia/controlled-vocabulary/classifications-for-culture/subject-disciplines/002>, &lt;http://viaf.org/viaf/32011324> ;
-            dct:creator :dh_fbk, :isig .
+            dcat:theme &lt;https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines/MSC-14-B>, &lt;http://viaf.org/viaf/32011324> ;
+            dct:creator :dh_fbk, :isig ;
+            prov:wasGeneratedBy :alcide .
             
             :alcide_corpus a dcat:Dataset, prov:Entity, crmdig:D1_Digital_Object .
             :alcide_platform a dcat:DataService, prov:Entity, crmdig:D1_Digital_Object .
             :dh_fbk a foaf:Agent .
             :isig a foaf:Agent .
             :italia a dct:Location .
+            :alcide a prov:Activity .
           </pre>
           <h4>I dataset</h4>
           <p><code class="grafoo-class">dcat:Dataset</code> rappresenta gli oggetti digitali creati da un progetto di ricerca. Questa classe vuole essere abbastanza flessibile da coprire la maggior parte dei tipi di oggetti digitali che un progetto può creare. Per questo motivo, anche se la parola dataset può implicare una certa limitazione, all'interno di KNOT-DM, essa copre tutto, da un pdf di un articolo a un training set annotato o a un software (una raccolta di codice, dati e documentazione).</p>
@@ -477,7 +486,7 @@
             dct:publisher :dh_fbk ; 
             dct:spatial :italia ;
             dct:temporal &lt;https://www.wikidata.org/entity/Q6927> ; 
-            dcat:theme tadirah:capturing, tadirah:analyzing, &lt;http://publications.europa.eu/resource/authority/data-theme/SOCI>, &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+            dcat:theme &lt;http://viaf.org/viaf/32011324>, &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
             dct:accessRights &lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
             dct:creator :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
             dct:conformsTo &lt;http://data.europa.eu/r5r/> ;
@@ -510,11 +519,11 @@
           <p>Si raccomanda di iniziare a descrivere l'attività e i risultati del progetto di ricerca, che richiederà la descrizione di agent e luoghi, se necessario.</p>
 
           <h3>Agent</h3>
-          <p><code class="grafoo-class">prov:Agent</code>, <code class="grafoo-class">foaf:Agent</code>, e <code class="grafoo-class">crm:E39_Actor</code> rappresentano le persone o le organizzazioni che hanno preso parte a un'attività o nella creazione di un entità. Su di loro dovrebbero essere registrate le seguenti informazioni: un nome o un titolo (<code>rdfs:label</code> o <code class="object-prop">foaf:name</code>), un URI che li rappresenta e che punta a un authority control riconosciuto, se disponibile (<code>owl:sameAs</code>), e la loro relazione con attività, entità o agent (<code class="object-prop">prov:wasAssociatedWith</code>, <code class="object-prop">prov:actedOnBehalfOf</code>, <code class="object-prop">crm:P14_carried_out_by</code>, <code class="object-prop">dct:publisher</code>, <code class="object-prop">dct:creator</code>).</p>
+          <p><code class="grafoo-class">prov:Agent</code>, <code class="grafoo-class">foaf:Agent</code>, e <code class="grafoo-class">crm:E39_Actor</code> rappresentano le persone o le organizzazioni che hanno preso parte a un'attività o nella creazione di un entità. Su di loro dovrebbero essere registrate le seguenti informazioni: un nome o un titolo (<code>rdfs:label</code> o <code class="object-prop">foaf:name</code>), un URI che li rappresenta e che punta a un authority control riconosciuto, se disponibile (<code>owl:sameAs</code>), e la loro relazione con attività, entità o agent (<code class="object-prop">prov:wasAssociatedWith</code>, <code class="object-prop">prov:actedOnBehalfOf</code>, <code class="object-prop">crm:P14_carried_out_by</code>, <code class="object-prop">dct:publisher</code>, <code class="object-prop">dct:creator</code>, <code class="object-prop">dct:contributor</code).</p>
           
           <p>I progetti di ricerca accademica possono spesso coinvolgere una moltitudine di agent, con ruoli diversi, dai ricercatori ai comitati scientifici o ai finanziatori. Per questo motivo, KNOT-DM limita gli agent che devono essere registrati agli autori e ai collaboratori, le persone direttamente coinvolte nell'attività di ricerca, e agli editori, spesso entità legali come università o laboratori che hanno reso disponibili i risultati della ricerca.</p>
           
-          <p>Nel caso delle persone, se esiste una chiara affiliazione a un'organizzazione, anche questa dovrebbe essere registrata, utilizzando <code class="object-prop">prov:actedOnBehalfOf</code> o <code class="object-prop">org:memberOf</code> insieme a <code class="grafoo-class">org:Organization</code> e <code class="grafoo-class">org:OrganizationalUnit</code> (sottoclassi di <code class="grafoo-class">foaf:Agent</code>) dell'ontologia Org, che sono incluse in KNOT-DM per questo scopo.</p>
+          <p>Nel caso delle persone, se esiste una chiara affiliazione a un'organizzazione, anche questa dovrebbe essere registrata, utilizzando <code class="object-prop">prov:actedOnBehalfOf</code> o <code class="object-prop">org:memberOf</code> insieme a <code class="grafoo-class">org:Organization</code> e <code class="grafoo-class">org:OrganizationalUnit</code> (sottoclassi di <code class="grafoo-class">foaf:Agent</code>) dell'ontologia Org, che sono incluse in KNOT-DM per questo scopo. In alternativa, le differenze tra agent umani e non umani coinvolti in un'attività <code class="grafoo-class">prov:Activity</code> possono essere rilevate da <code class="object-prop">dct:contributor</code> per i primi e <code class="object-prop">prov:wasAssociatedWith</code> per i secondi.</p>
 
           <h4>Esempio</h4>
 
@@ -716,6 +725,11 @@
           <p>L'informazione raccomandata da registrare, se disponibile, è una risorsa che descrive i servizi disponibili all'endpoint (<code class="object-prop">dcat:endpointDescription</code>), come ad esempio una pagina di documentazione sul sito web.</p>
 
           <p>Le informazioni opzionali che possono essere registrate, se disponibili, comprendono: i dettagli del diritto di accesso, una descrizione del servizio dati (che può riutilizzare la descrizione del catalogo se il servizio è anche parte del sito web che funge da catalogo), la licenza d'uso, le parole chiave e la data di rilascio e/o di ultima modifica.</p>
+          <p>
+            <ul>
+              <li>Si raccomanda di utilizzare i concetti di un vocabolario controllato, come TaDiRAH, per registrare i tipi di attività di ricerca che gli utenti dei servizi di dati possono intraprendere attraverso la proprietà <code class="object-prop">dcat:theme</code>.</li>
+            </ul>
+          </p>
 
           <h4>Esempio</h4>
           <p>Come illustrato nei moduli Attività e Output, uno dei risultati principali del progetto ALCIDE è stata una piattaforma di analisi online che consente agli utenti di interrogare il corpus utilizzando vari approcci, tra cui named entity recognition, la visualizzazione della rete e le co-occorrenze. Questa piattaforma rappresenta il servizio dati e può essere descritta come tale in aggiunta alle informazioni esistenti già registrate.</p>
@@ -744,9 +758,9 @@
             rdfs:label "ALCIDE platform"@en ;
             dcat:endpointDescription &lt;https://alcidedigitale.fbk.eu/> ;
             dcat:servesDataset :alcide_corpus ;
-            dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ; 
+            dct:description "La piattaforma ALCIDE consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino."@it , "The ALCIDE platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of t exts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
             prov:wasGeneratedBy :alcide ;
-            dcat:theme tadirah:analyzing, kth:apachetomcat, kth:mysql, kth:react, kth:ner, kth:nlp, kth:data_viz ;
+            dcat:theme tadirah:spatialAnalysis, tadirah:contentAnalysis, tadirah:networkAnalysis ;
             dct:type &lt;http://purl.org/knot/taxonomy#digital_platform> ;
             crm:P2_has_type &lt;http://purl.org/knot/taxonomy#digital_platform> ;
             dct:issued "2018-12-31"^^xsd:date .
@@ -760,7 +774,7 @@
 
           <p>Le informazioni raccomandate da registrare, se disponibili, includono: una descrizione e una licenza di rilascio.</p>
           
-          <p>Le informazioni opzionali che possono essere registrate, se disponibili, includono: un servizio dati che dà accesso alla distribuzione, la sua dimensione in byte (usando <code>xsd:decimal</code>), il suo formato di compressione, una pagina che la documenta, un URL per il download diretto, un linguaggio usato nella distribuzione, uno standard a cui è conforme, il suo titolo, la sua data di rilascio e/o di ultima modifica, una dichiarazione sui diritti correlati e il suo stato.</p> 
+          <p>Le informazioni opzionali che possono essere registrate, se disponibili, includono: diriti di accesso, un servizio dati che dà accesso alla distribuzione, la sua dimensione in byte (usando <code>xsd:decimal</code>), il suo formato di compressione, una pagina che la documenta, un URL per il download diretto, un linguaggio usato nella distribuzione, uno standard a cui è conforme, il suo titolo, la sua data di rilascio e/o di ultima modifica, una dichiarazione sui diritti correlati e il suo stato.</p> 
 
           <ul>
               <li>Per quanto riguarda la descrizione, se non è disponibile, è necessario fornire un breve riassunto in linguaggio naturale.</li>

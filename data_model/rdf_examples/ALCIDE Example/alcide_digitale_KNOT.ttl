@@ -21,14 +21,20 @@
 
 :alcide a prov:Activity ;
 dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
-dct:subject :alcide_de_gasperi ;
+dct:subject :alcide_de_gasperi, <https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines/MSC-14-B> ;
 prov:startedAtTime "2015/01/01"^^xsd:date ;
 prov:endedAtTime "2018/12/31"^^xsd:date ;
 prov:atLocation :trento ;
 prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
 prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
-prov:used :alcide_edition ;
-prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+prov:used :alcide_edition, kth:apachetomcat, kth:mysql, kth:react ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation, :tint ;
+prov:wasInfluencedBy tadirah:annotating, tadirah:programming, tadirah:gathering .
+
+##This is a related activity that shared entities with Alcide
+
+:tint a prov:Activity ;
+dct:title "Tint"@en .
 
 ##SUB-ACTIVITIES OR TASKS - describes activities that took place within the wider research project as activity using elements from CIDOC CRM
 
@@ -38,7 +44,7 @@ crm:P7_took_place_at :Bologna ;
 crm:P14_carried_out_by :il_mulino ;
 crmdig:L1_digitized :edition_item ;
 crmdig:L20_has_created :edition_digitized ;
-crm:P2_has_type tadirah:capturing .
+crm:P2_has_type tadirah:gathering .
 
 :corpus_creation a crmdig:D10_Software_Execution ;
 rdfs:label "Creation of de Gasperi corpus"@en ;
@@ -54,7 +60,7 @@ crm:P7_took_place_at :trento ;
 crm:P14_carried_out_by :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
 crmdig:L10_had_input :alcide_corpus ;
 crmdig:L11_had_output :alcide_platform ;
-crm:P2_has_type tadirah:creating .
+crm:P2_has_type tadirah:programming .
 
 ## ENTITIES - objects or people/places used and/or created by the activity described using elements from PROV-O, CIDOC-CRM, and DCAT 
 
@@ -66,7 +72,7 @@ crm:P2_has_type tadirah:creating .
                          dct:publisher :dh_fbk ; 
                          dct:spatial :italia ;
                          dct:temporal <https://www.wikidata.org/entity/Q6927> ; 
-                         dcat:theme tadirah:capturing, tadirah:analyzing, <http://publications.europa.eu/resource/authority/data-theme/SOCI>, <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+                         dcat:theme  <http://viaf.org/viaf/32011324>, <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
                          dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
                          dct:creator :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
                          dct:conformsTo <http://data.europa.eu/r5r/> ;
@@ -95,8 +101,9 @@ crm:P2_has_type tadirah:creating .
                   dct:issued "2018-12-31"^^xsd:date ;
                   dct:spatial :italia;
                   dcat:themeTaxonomy <http://publications.europa.eu/resource/dataset/data-theme>, <https://vocabs.dariah.eu/tadirah/en/>, <http://purl.org/knot/taxonomy#> ;
-                  dcat:theme <https://w3id.org/italia/controlled-vocabulary/classifications-for-culture/subject-disciplines/002>, <http://viaf.org/viaf/32011324> ;
-                  dct:creator :dh_fbk, :isig .
+                  dcat:theme <https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines/MSC-14-B>, <http://viaf.org/viaf/32011324> ;
+                  dct:creator :dh_fbk, :isig ;
+                  prov:wasGeneratedBy :alcide .
 
 :alcide_platform a dcat:DataService, prov:Entity, crmdig:D1_Digital_Object ;
                    dcat:endpointURL <https://alcidedigitale.fbk.eu/platform/> ;
@@ -105,10 +112,10 @@ crm:P2_has_type tadirah:creating .
                    rdfs:label "ALCIDE platform"@en ;
                    dcat:endpointDescription <https://alcidedigitale.fbk.eu/> ;
                    dcat:servesDataset :alcide_corpus ;
-                   dct:description "La piattaforma ALCIDE (Analysis of Language and Content In a Digital Environment) nasce dalla collaborazione tra due centri di ricerca della Fondazione Bruno Kessler di Trento: l’Istituto storico italo-germanico e il gruppo Digital Humanities del Center for Information and Communication Technology. Storici e informatici umanistici hanno lavorato alla costruzione di un software originale di analisi del discorso, che unisce strumenti di analisi del linguaggio a modelli di visualizzazione di strutture dati complesse. La piattaforma consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino, 2006-2009."@it , "The ALCIDE platform (Analysis of Language and Content In a Digital Environment) was born from the collaboration between two research centers of the Bruno Kessler Foundation in Trento: the Italian-German Historical Institute and the Digital Humanities group of the Center for Information and Communication Technology. Humanities historians and computer scientists worked together on building speech analysis software that combines language analysis tools with visualization models of complex data structures. The platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of texts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
+                   dct:description "La piattaforma ALCIDE consente diversi tipi di analisi automatica dei documenti: l’estrazione di concetti chiave, la ricerca testuale, il riconoscimento di nomi di persona e di luogo, la visualizzazione dei network, l’individuazione delle co-occorrenze, l’analisi della complessità sintattica e semantica dei testi. Il corpus dei documenti riprende integralmente l’edizione A. De Gasperi, Scritti e discorsi politici, I-IV, sotto la direzione scientifica di Paolo Pombeni, Bologna, il Mulino."@it , "The ALCIDE platform allows different types of automatic document analysis: extraction of key concepts, text search, recognition of names of people and places, network visualization, identification of co-occurrences, and complex analysis of the syntax and semantics of t exts. The corpus used the entire edition A. De Gasperi, Scritti e discorsi politici, I-IV, created under the scientific direction of Paolo Pombeni (Bologna, il Mulino, 2006-2009)."@en ;
                    prov:wasGeneratedBy :alcide ;
                    dct:issued "2018/12/31^^xsd:date" ;
-                   dcat:theme tadirah:analyzing, kth:apachetomcat, kth:mysql, kth:react, kth:ner, kth:nlp, kth:data_viz ;
+                   dcat:theme tadirah:spatialAnalysis, tadirah:contentAnalysis, tadirah:networkAnalysis ;
                    dct:type <http://purl.org/knot/taxonomy#digital_platform> ;
                    crm:P2_has_type <http://purl.org/knot/taxonomy#digital_platform> ;
                    crm:P106_is_composed_of :alcide_corpus .

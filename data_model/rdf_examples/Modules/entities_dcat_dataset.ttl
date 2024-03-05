@@ -18,7 +18,7 @@
                          dct:publisher :dh_fbk ; 
                          dct:spatial :italia ;
                          dct:temporal <https://www.wikidata.org/entity/Q6927> ; 
-                         dcat:theme tadirah:capturing, tadirah:analyzing, <http://publications.europa.eu/resource/authority/data-theme/SOCI>, <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+                         dcat:theme  <http://viaf.org/viaf/32011324>, <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
                          dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
                          dct:creator :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli ;
                          dct:conformsTo <http://data.europa.eu/r5r/> ;

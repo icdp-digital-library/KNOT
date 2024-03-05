@@ -5,7 +5,8 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix crm: <http://cidoc-crm.org/cidoc-crm/7.1.2/> .
 @prefix tadirah: <https://vocabs.dariah.eu/tadirah/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix kth: <http://purl.org/knot/thesaurus#> . 
 
 #this RDF file provides an example of how to describe a research project activity using the PROV-O segment of the KNOT-DM. See the website's module section for details. The agents, entities, and sub-activities involved are only described partially, see their respective RDF files in modules for more details.
 
@@ -13,14 +14,15 @@
 
 :alcide a prov:Activity ;
 dct:title "ALCIDE (Analysis of Language and Content In a Digital Environment)"@en ;
-dct:subject :alcide_de_gasperi ;
+dct:subject :alcide_de_gasperi, <https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines/MSC-14-B> ;
 prov:startedAtTime "2015/01/01"^^xsd:date ;
 prov:endedAtTime "2018/12/31"^^xsd:date ;
 prov:atLocation :trento ;
 prov:wasAssociatedWith :maurizio_cau, :matteo_largaiolli, :sara_tonelli, :giovanni_moretti, :rachele_sprugnoli, :matteo_moretti ;
 prov:generated :alcide_corpus, :alcide_website, :alcide_platform ;
-prov:used :alcide_edition ;
-prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
+prov:used :alcide_edition, kth:apachetomcat, kth:mysql, kth:react ;
+prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation, :tint ;
+prov:wasInfluencedBy tadirah:annotating, tadirah:programming, tadirah:gathering .
 
 :trento a prov:Location .
 :bologna a crm:E53_Place . 
@@ -39,3 +41,4 @@ prov:wasInformedBy :edition_digitization, :corpus_creation, :platform_creation.
 :edition_digitization a crmdig:D7_Digital_Machine_Event .
 :corpus_creation a crmdig:D7_Digital_Machine_Event .
 :platform_creation a crmdig:D7_Digital_Machine_Event .
+:tint a prov:Activity .
