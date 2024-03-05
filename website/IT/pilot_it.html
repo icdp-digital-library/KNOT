@@ -63,66 +63,66 @@
   <div class="container-xxl px-5">
     <main>
       <h1 class="text-body-emphasis">Il Progetto Pilota KNOT</h1>
-      <p class="fs-5 col-md-8">Nell'arco di tre anni, il progetto KNOT intende sviluppare un'applicazione web e delle linee guida per la raccolta, la gestione, l'arricchimento e il risuo dei progetti di ricerca e dei loro risultati come patrimonio culturale digitale degli Atenei.</p>
-      <p>Dopo una prima fase di ricerca e discussione con l'Istituto, il progetto pilota KNOT è partito all'inizio del 2023 con un piccolo censimento dei progetti di ricerca prodotti da Atenei italiani (centrato sulle scienze umanistiche), che sarà utilizzato come fonte di dati eterogenei per lo sviluppo di un data model e knowledge graph. Questi saranno a loro volta una base per esplorare lo sviluppo di servizi che sfruttano queste risorse aggregate, servizi a favore del patrimonio culturale, per far dialogare in un ambiente condiviso dati e sistemi di accesso a quei dati, o strumenti di valorizzazione. </p>
-      <p>Il progetto KNOT è suddiviso in tre fasi annuali, ognuna delle quali segue una linea di ricerca specifica che attinge alle teorie e alle pratiche delle Digital Humanities e del Semantic Web:</p>
+      <p class="fs-5 col-md-8">KNOT è un progetto pilota triennale (2023-2025) incaricato di indagare le modalità per integrare il patrimonio culturale digitale degli Atenei italiani nell'infrastruttura nazionale in fase di realizzazione da parte dell'Istituto Centrale per la Digitalizzazione dei Beni Culturali (ICDP) - Digital Library.</p>
+      <p>Considerando la mancanza di consenso all'interno degli Atenei e tra di esse su ciò che costituisce il loro patrimonio culturale digitale (PCD), il progetto KNOT ha scelto di concentrare la sua indagine sugli oggetti digitali (scholarly digital objects) creati dalla ricerca accademica nell'ambito delle scienze umane, e in particolare delle Digital Humanities, come esempio interessante ma inesplorato di PCD esistente. Il nostro approccio fa riferimento alle definizioni di PCD fornite dall'UNESCO [<a href="#bib-1" id="back-1">1</a>] e dall'ICDP [<a href="#bib-2" id="back-2">2</a>], nonché alle intuizioni del settore del patrimonio culturale, per considerare gli oggetti digitali come una forma che va oltre i semplici dati e contiene molteplici agenzie e distribuzioni spazio-temporali [<a href="#bib-3" id="back-3">3</a>]. In quanto tali, gli oggetti in cui siamo interessati comprendono collezioni di informazioni (come gli dataset) e forme digitali che consentono l'interazione con le informazioni, da software e servizi di dati come interfacce di ricerca o API a strumenti di visualizzazione e annotazione. Questo ci permette di andare oltre il contesto scientifico in cui questi oggetti sono più comunemente intesi e di guardare al valore patrimoniale che potrebbe essere trovato nel loro "serbatoio di significato" [3]: l'attività che li ha prodotti, le relazioni con le informazioni che codificano, i nuovi contesti che creano per queste informazioni e i modi in cui possono favorire l'acquisizione di nuova conoscenza da questa combinazione di contesto e informazioni.</p>
+      <p>I principali risultati attesi dal progetto pilota sono un'applicazione web che mostra una prima adozione della nuova infrastruttura nazionale (compresa l'integrazione dei dati e i servizi) e una serie di linee guida per la raccolta, la gestione, l'arricchimento e il riutilizzo di questi scholarly digital objects.</p>
+      <p>Il progetto KNOT è suddiviso in tre fasi annuali, ciascuna con un proprio obiettivo:</p>
       <ul>
-        <li>Identificazione di dati e metadati eterogenei, elaborazione di un modello trasversale, e creazione di un knowledge graph.</li>
-        <li>Design di un’applicazione web per l’esplorazione e fruizione del knowledge graph e dati.</li>
-        <li>Definizione e sviluppo di una suite di servizi che permettono l’acquisizione di nuova conoscenza dall’ibridazione dei dati.</li>
+        <li>Identificazione di dati e metadati eterogenei, utilizzati per creare un modello trasversale e knowledge graph (primo anno).</li>
+        <li>Sviluppo di un’applicazione web per l’esplorazione e fruizione del knowledge graph e dati (secondo anno).</li>
+        <li>Sviluppo di una suite di servizi che permettono l’acquisizione di nuova conoscenza dall’ibridazione dei dati (terzo anno).</li>
       </ul>
       <p>Di seguito una panoramica più dettagliata delle attività e dei risultati attesi in ciascuna fase del progetto.</p>
       <div class="row g-5">
         <div class="col-md-12">
-          <h2 class="text-body-emphasis">Primo Anno</h2>
-          <p>Il primo anno è incentrato sui dati, con i seguenti obiettivi:</p>
+          <h2 class="text-body-emphasis">Primo Anno (2023)</h2>
+          <p>Il primo anno è stato incentrato sui dati, con i seguenti obiettivi:</p>
           <ul>
-            <li>Raccolta, classificazione e categorizzazione dei dati da includere nel progetto pilota. I dati devono essere eterogenei e rappresentativi del tema centrale. </li>
-            <li>Elaborazione di un data model concettuale trasversale alle tipologie di dati raccolti. Questo data model dovrebbe essere informato dagli approcci esistenti e dai requisiti del progetto e consentire una rete di collegamenti semantici potenzialmente modellabili, anche attraverso la riconciliazione con i record di autorità e i vocabolari controllati.</li>
+            <li>Raccolta, classificazione e categorizzazione dei dati, eterogenei e rappresentativi del tema centrale, da includere nel progetto pilota. </li>
+            <li>Elaborazione di un data model per descrivere i dati selezionati e riflettere l'argomento centrale del progetto. Questo modello deve essere informato dagli approcci esistenti e dai requisiti del progetto e deve consentire una rete di collegamenti semantici, anche attraverso la riconciliazione con i record di autorità e i vocabolari controllati.</li>
             <li>Definizione di domande di ricerca e di competenza rispetto alle quali il data model può essere testato per garantire la sua capacità di abilitare una rete di collegamenti semantici che rappresentino le relazioni e facilitino la scoperta di conoscenza latente. </li>
-            <li>Creazione di un primo knowledge graph che rappresenta i progetti di ricerca come esempi del patrimonio culturale digitale degli Atenei. Un flusso di lavoro per la raccolta, la normalizzazione, la bonifica e la trasformazione dei dati in RDF sarà alla base della creazione del graph, che sarà reso disponibile tramite un endpoint SPARQL.</li>
+            <li>Creazione di un knowledge graph, accessibile tramite SPARQL endpoint, che rappresenta i scholarly digital objects come esempi del PCD degli Atenei e di un flusso di lavoro per la raccolta, la normalizzazione, la bonifica e la trasformazione dei dati in RDF.</li>
           </ul>
           
           <p>Inoltre, il primo anno comprende anche i seguenti obiettivi che proseguiranno nelle fasi successive:</p>
           <ul>
             <li>Ricerca sulle tecniche per l'estrazione di nuova conoscenza da dati eterogenei. Questa ricerca sarà condotta in collaborazione con il dipartimento DISI e nell'ambito di un gruppo di lavoro con il CINECA, in linea con gli obiettivi e le esigenze dell'infrastruttura della Digital Library.</li>
-            <li>Interviste con accademici e associazioni italiane per esplorare le sfide che devono affrontare e le potenziali esigenze dei users del progetto pilota. Questa ricerca fungerà da base per le user personas necessarie per la seconda fase del progetto.</li>
-            <li>Creazione di un working document per linee guida sulla descrizione e la valorizzazione dei progetti di ricerca come patrimonio culturale digitale.</li>
+            <li>Interviste con accademici italiani per esplorare le sfide che devono affrontare nella creazione e nella gestione di scholarly digital objects nati dalla ricerca umanistica.</li>
+            <li>Creazione di un documento di lavoro per le linee guida previste alla fine del progetto, attingendo alle intuizioni acquisite durante lo sviluppo del data model, come le questioni relative alla visibilità, alla categorizzazione e alla classificazione.</li>
           </ul>          
-          <p>I seguenti risultati sono previsti entro la fine del primo anno:</p> 
+          <p>Il primo anno ha prodotto i seguenti risultati:</p> 
           <ul>
-            <li>Un piccolo censimento di fonti e dati eterogenei che rappresentano il tema centrale del pilota, usato per sviluppare il data model e knowledge graph.</li>
-            <li>Un data model per descrivere i dati selezionati, compresi gli strumenti necessari come ontologie e vocabolari controllati.</li>
+            <li>Un piccolo censimento di fonti e dati eterogenei (scholarly digital objects e i loro progetti) che rappresentano il tema centrale del pilota, usato per sviluppare il data model e knowledge graph.</li>
+            <li>Un data model per descrivere scholarly digital objects come PCD, compresi gli strumenti necessari come ontologie e vocabolari controllati in RDF.</li>
             <li>Un catalogo e un knowledge graph basato sul data model e sui dati selezionati, che può fungere da prima versione dell'applicazione web finale.</li>
           </ul>
         </div>
       </div>
       <div class="row g-5">
         <div class="col-md-6">
-          <h2 class="text-body-emphasis">Secondo Anno</h2>
+          <h2 class="text-body-emphasis">Secondo Anno (2024)</h2>
           <p>Il secondo anno è incentrato sull'applicazione, con i seguenti obiettivi:</p>
           <ul>
-            <li>Creazione di user personas.</li>
-            <li>Sviluppo di un'applicazione web basata sul knowledge graph.</li>
-            <ul>
-              <li>Design delle interfacce utente front-end e back-end.</li>
-              <li>Sviluppo di sistemi di accesso e fruizione dei contenuti del knowledge graph, partendo dall’analisi dei servizi esistenti e compatibili con l’infrastruttura della Digital Library, nonché delle best practice nazionali e internazionali.</li>
-            </ul>
+            <li>Integrazione dei dati e metadati nella piattaforma nazionale I.PaC.</li>
+            <li>Valutazione di potenziali servizi per estrarre nuova conoscenza dai dati e riconciliare le informazioni con i sistemi di gestione della ricerca istituzionali esistenti.</li>
+            <li>Sviluppo continuato del catalogo.</li>
           </ul> 
         </div>
         
         <div class="col-md-6">
-          <h2 class="text-body-emphasis">Year 3</h2>
+          <h2 class="text-body-emphasis">Terzo Anno (2025)</h2>
           <p>Il terzo anno è incentrato sui servizi, con i seguenti obiettivi:</p>
           <ul>
             <li>Definire una suite di servizi da proporre agli utenti tramite l’applicazione, diversi nella loro offerta e potenzialità, per permettere l’acquisizione di nuova conoscenza.</li>
-            <ul>
-              <li>Questi servizi saranno basati su un sistema di API per l’accesso a dati/tools inclusi nel pilota e a dati/servizi ospitati esternamente ma compatibili con il pilota.</li>
-              <li>Personalizzazione degli servizi sulla base delle preferenze degli utenti.</li>
-            </ul>
+            <li>Integrazione dei servizi e dell'app nella piattaforma nazionale.</li>
           </ul>
         </div>
       </div>
+      <hr class="mb-5">
+      <h3>References</h3>
+      <span id="bib-1">[<a href="#back-1">1</a>]</span> “Records of the General Conference, 32nd Session, Paris, 29 September to 17 October 2003, v. 1: Resolutions.” UNESCO, 2004. <a href="https://unesdoc.unesco.org/ark:/48223/pf0000133171" target="_blank">https://unesdoc.unesco.org/ark:/48223/pf0000133171</a>.<br>
+      <span id="bib-2">[<a href="#back-2">2</a>]</span> Docs Italia. “01_Piano nazionale di digitalizzazione del patrimonio culturale | Piano nazionale di digitalizzazione del patrimonio culturale.” Accessed January 28, 2024. <a href="https://docs.italia.it/italia/icdp/icdp-pnd-docs/it/v1.1-febbraio-2023/index.html">https://docs.italia.it/italia/icdp/icdp-pnd-docs/it/v1.1-febbraio-2023/index.html</a>.<br>
+      <span id="bib-3">[<a href="#back-3">3</a>]</span> Cameron, Fiona. The Future of Digital Data, Heritage and Curation in a More-than Human World.London ; New York:Routledge/Taylor & Francis Group, 2021. ZA4080.4.
     </main>
     <footer class="pt-5 my-5 text-body-secondary border-top">
       Digital Humanities Advanced Research Center &middot; 2023 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza Creative Commons BY-NC 4.0 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
