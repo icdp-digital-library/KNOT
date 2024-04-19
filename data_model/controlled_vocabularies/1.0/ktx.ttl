@@ -11,7 +11,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-<http://purl.org/knot/taxonomy#> a skos:ConceptScheme;
+<http://purl.org/knot/taxonomy> a skos:ConceptScheme;
   dct:title "KNOT Taxonomy"@en, "KNOT Tassonomia"@it;
   skos:prefLabel "KNOT Taxonomy"@en, "KNOT Tassonomia"@it;
   dct:description "The KNOT Taxonomy is a knowledge organization system developed by the Digital Humanities Advanced Research Center at the University of Bologna as part of the KNOT pilot project. The purpose of this taxonomy is to provide a simple hierarchical classification and definitions for different types of digital objects that have been produced by academic research at Italian universities such as software, databases, collections of resources, or web interfaces. These digital objects are assumed to share some common features such as their content including digital born and/or digitized objects and the content being thematically unified by the research project’s goal, such as for example a collection of resources about a specific topic. These features are therefore inherent to all concepts within the taxonomy."@en,
@@ -19,12 +19,14 @@
   dct:publisher "/DH.ARC - Digital Humanities Advanced Research Centre"@en, "Dipartimento di Filologia Classica e Italianistica - FICLIT"@it;
   dct:creator "Laurent Fintoni, Francesca Tomasi, Marilena Daquino" ;
   dct:license <https://creativecommons.org/licenses/by-sa/4.0/>;
+  dct:issued "2023-06-30"^^xsd:date ;
   skos:hasTopConcept ktx:corpus, ktx:database, ktx:dataset, 
     ktx:digital_archive, ktx:digital_catalogue, ktx:digital_edition,
     ktx:digital_library, ktx:digital_platform, ktx:digital_repository,
     ktx:knowledge_base, ktx:knowledge_graph, ktx:ontology,
     ktx:software ;
-  owl:imports <http://www.w3.org/2004/02/skos/core#> .
+  owl:imports <http://www.w3.org/2004/02/skos/core#> ;
+  owl:versionInfo "1.0" .
 
 ktx:corpus a skos:Concept;
   skos:definition "A corpus is a type of digital collection in the form of a structured set of text resources, and potential attached metadata, electronically stored and processed and intended for use in linguistic analysis."@en,
@@ -211,7 +213,7 @@ ktx:knowledge_base a skos:Concept;
   skos:inScheme <http://purl.org/knot/taxonomy#> .
 
 ktx:knowledge_graph a skos:Concept;
-  skos:definition "A type of knowledge base centered around the relationship between entities. It uses a graph as its structure to represent knowledge as concepts and the relationships between them (facts). It is generally understood and used within the context of the semantic web and is “intended to accumulate and convey knowledge of the real world.” (Hogan, Aidan et al. 2021) It should make use of a data model and/or ontology to allow both humans and machines to understand and reason about its contents."@en,
+  skos:definition "A type of knowledge base centered around the relationship between entities. It uses a graph as its structure to represent knowledge as concepts and the relationships betwee n them (facts). It is generally understood and used within the context of the semantic web and is “intended to accumulate and convey knowledge of the real world.” (Hogan, Aidan et al. 2021) It should make use of a data model and/or ontology to allow both humans and machines to understand and reason about its contents."@en,
     "Una tipologia di knowledge base incentrata sulla relazione tra entità. Utilizza un grafo come sua struttura per rappresentare la conoscenza come concetti e le relazioni tra di essi (fatti). È generalmente compreso e utilizzato nel contesto del web semantico ed è \"destinato ad accumulare e trasmettere la conoscenza del mondo reale.\" (Hogan, Aidan et al. 2021) Dovrebbe utilizzare un modello di dati e/o un'ontologia per consentire sia agli esseri umani che alle macchine di comprendere e ragionare sui suoi contenuti."@it;
   dct:source "Cook, Merrill. 2020. “Knowledge Base.” Diffblog (blog). Diffbot. April 21, 2020. https://blog.diffbot.com/knowledge-graph-glossary/knowledge-base/. Ehrlinger, Lisa, and Wolfram Wöß. n.d. “Towards a Definition of Knowledge Graphs.” Ceur-ws.org. Accessed June 20, 2023. https://ceur-ws.org/Vol-1695/paper4.pdf. Hogan, Aidan, Eva Blomqvist, Michael Cochez, Claudia d’Amato, Gerard de Melo, Claudio Gutierrez, José Emilio Labra Gayo, et al. 2020. “Knowledge Graphs.” ArXiv [Cs.AI]. http://arxiv.org/abs/2003.02320."@en;
   skos:example "The knowledge graph produced as part of the mythLOD project from the University of Bologna, https://dharc-org.github.io/mythlod/static/mima.html."@en;

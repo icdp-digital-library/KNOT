@@ -12,13 +12,14 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 
-<http://purl.org/knot/thesaurus#> a skos:ConceptScheme;
+<http://purl.org/knot/thesaurus> a skos:ConceptScheme;
   dct:title "KNOT Technology Thesaurus"@en, "KNOT Thesaurus Tecnologico"@it;
   dct:description "The KNOT Technology Thesaurus is a knowledge organization system developed by the Digital Humanities Advanced Research Center at the University of Bologna as part of the KNOT pilot project. The purpose of this thesaurus is to provide a hierarchical classification and definitions for a variety of technological concepts related to the research projects and digital objects included in the KNOT pilot such as the formal languages and information architecture used and the services and tools offered."@en, "Il KNOT Thesaurus Tecnologico è un sistema di organizzazione della conoscenza sviluppato dal Digital Humanities Advanced Research Center dell'Università di Bologna nell'ambito del progetto pilota KNOT. Lo scopo di questo thesaurus è quello di fornire una classificazione gerarchica e definizioni per una serie di concetti tecnologici relativi ai progetti di ricerca e agli oggetti digitali inclusi nel progetto pilota KNOT, come i linguaggi formali e l'architettura dell'informazione utilizzati e i servizi e gli strumenti offerti."@it;
   skos:prefLabel "KNOT Technology Thesaurus"@en, "KNOT Thesaurus Tecnologico"@it;
   dct:publisher "/DH.ARC - Digital Humanities Advanced Research Centre"@en, "Dipartimento di Filologia Classica e Italianistica - FICLIT"@it;
   dct:creator "Laurent Fintoni, Francesca Tomasi, Marilena Daquino" ;
   dct:license <https://creativecommons.org/licenses/by-sa/4.0/>;
+  dct:issued "2023-06-30"^^xsd:date ;
   skos:hasTopConcept kth:comp_viz, kth:data_viz, kth:nlp,
     kth:graph_database, kth:object_database, kth:relational_database,
     kth:triplestore, kth:markup_language, kth:ontology_language,
@@ -26,7 +27,8 @@
     kth:content_management, kth:framework, kth:frontend,
     kth:metadata, kth:api, kth:evt, kth:sparql_endpoint,
     kth:tint ;
-  owl:imports <http://www.w3.org/2004/02/skos/core#> .
+  owl:imports <http://www.w3.org/2004/02/skos/core#> ;
+  owl:versionInfo "1.0" .
 
 kth:comp_inf_sciences a skos:Collection;
   skos:definition "This group comprises concepts that relate to the academic fields of computer and information sciences, understood as the use of technology to problem-solve as well as to design, produce, and use information systems for innovation. In the context of this thesaurus, this collection refers in particular to sub fields within those two larger and related academic disciplines."@en,
@@ -688,7 +690,7 @@ kth:dc a skos:Concept;
 
 kth:linked_data a skos:Concept;
   skos:definition "Linked Data refers to data that follows a paradigm based on four rules established by Tim Berners-Lee. Linked Data is intended to be readable by both humans and machine, to be interlinked, and to be semantically queryable. It uses the RDF family of standards for data interchange (e.g., RDF/XML, RDFa, Turtle) and query (SPARQL)."@en,
-    "I Linked Data si riferiscono a dati che seguono un paradigma basato su quattro regole stabilite da Tim Berners-Lee. I Linked Data sono destinati a essere leggibili sia dall'uomo che dalla macchina, a essere interconnessi e a essere interrogabili semanticamente. Utilizza la famiglia di standard RDF per l'interscambio dei dati (ad esempio, RDF/XML, RDFa, Turtle) e l'interrogazione (SPARQL)."@it;
+    "I Linked Data si riferiscono a dati che seguono un paradigma basato su quattro regole stabilite da Tim Berners-Lee. I Linked Data sono destinati a essere leggibili sia dall'uomo che dalle macchine, a essere interconnessi e a essere interrogabili semanticamente. Utilizza la famiglia di standard RDF per l'interscambio dei dati (ad esempio, RDF/XML, RDFa, Turtle) e l'interrogazione (SPARQL)."@it;
   dct:source "Gottron, Thomas, and Steffen Staab. 2014. “Linked Open Data.” In Encyclopedia of Social Network Analysis and Mining, 811–13. New York, NY: Springer New York. “Linked Data Glossary.” n.d. Www.w3.org. Accessed June 20, 2023. https://www.w3.org/TR/ld-glossary/."@en ;
   skos:broader kth:metadata;
   skos:closeMatch <https://id.loc.gov/authorities/subjects/sh2013002090.html>, <https://vocabs.acdh.oeaw.ac.at/dha_taxonomy/en/page/Concept59.01>;
@@ -711,7 +713,7 @@ kth:lod a skos:Concept;
 
 kth:marc a skos:Concept;
   skos:definition "Machine-Readable Cataloging (MARC) is a communications format originally developed by the Library of Congress for producing and distributing machine-readable bibliographic records on magnetic tape and now used as an international standard set of digital formats for the description of items catalogued by libraries. The set of standards includes formats for authority records, holdings records, classification schedules, and community information, in addition to bibliographic records."@en,
-    "Il Machine-Readable Cataloging (MARC) è un formato di comunicazione originariamente sviluppato dalla Biblioteca del Congresso per la produzione e la distribuzione di record bibliografici leggibili a macchina su nastro magnetico e ora utilizzato come standard internazionale di formati digitali per la descrizione degli articoli catalogati dalle biblioteche. L'insieme di standard comprende formati per i record di autorità, i record di posseduti, i programmi di classificazione e le informazioni sulla comunità, oltre ai record bibliografici."@it;
+    "Il Machine-Readable Cataloging (MARC) è un formato di comunicazione sviluppato dalla Biblioteca del Congresso per la produzione e la distribuzione di record bibliografici leggibili a macchina su nastro magnetico e ora utilizzato come standard internazionale di formati digitali per la descrizione degli articoli catalogati dalle biblioteche. L'insieme di standard comprende formati per i record di autorità, i record di posseduti, i programmi di classificazione e le informazioni sulla comunità, oltre ai record bibliografici."@it;
   dct:source "Wikipedia Contributors. 2023b. “MARC Standards.” Wikipedia, The Free Encyclopedia. May 30, 2023. https://en.wikipedia.org/w/index.php?title=MARC_standards&oldid=1157684049. “MARC Formats.” Loc.gov. Accessed June 20, 2023g. https://id.loc.gov/authorities/subjects/sh85080966.html."@en;
   skos:broader kth:metadata;
   skos:closeMatch <https://id.loc.gov/authorities/subjects/sh85080966.html>;
@@ -770,7 +772,7 @@ kth:tei a skos:Concept;
 kth:service_tool a skos:Collection;
   skos:definition "This group comprises technologies that relate to making data available to different types of users as well as enable interaction with data and/or metadata. The technologies in this group are expected to be reusable and accessible. Some research projects may produce tools as an output that may then be integrated into other research projects, whether directly or via an API."@en,
     "Questo gruppo comprende le tecnologie che si riferiscono alla messa a disposizione dei dati a diversi tipi di utenti e che consentono l'interazione con i dati e/o i metadati. Le tecnologie di questo gruppo devono essere riutilizzabili e accessibili. Alcuni progetti di ricerca possono produrre strumenti che possono essere integrati in altri progetti di ricerca, direttamente o tramite API."@it;
-  skos:prefLabel "Service & Tool"@en, "Servizi e Strumenti"@it;
+  skos:prefLabel "Service & Tool"@en, "Servizio e Strumento"@it;
   skos:inScheme <http://purl.org/knot/thesaurus#>;
   skos:member kth:api, kth:evt, kth:sparql_endpoint,
     kth:tint .
