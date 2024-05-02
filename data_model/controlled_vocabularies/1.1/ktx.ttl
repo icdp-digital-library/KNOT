@@ -11,7 +11,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-<http://purl.org/knot/taxonomy> a skos:ConceptScheme;
+<http://purl.org/knot/taxonomy#> a skos:ConceptScheme;
   dct:title "KNOT Taxonomy"@en, "KNOT Tassonomia"@it;
   skos:prefLabel "KNOT Taxonomy"@en, "KNOT Tassonomia"@it;
   dct:description "The KNOT Taxonomy is a knowledge organization system developed by the Digital Humanities Advanced Research Center at the University of Bologna as part of the KNOT pilot project. The purpose of this taxonomy is to provide a simple hierarchical classification and definitions for different types of digital objects that have been produced by academic research at Italian universities such as software, databases, collections of resources, or web interfaces. These digital objects are assumed to share some common features such as their content including digital born and/or digitized objects and the content being thematically unified by the research project’s goal, such as for example a collection of resources about a specific topic. These features are therefore inherent to all concepts within the taxonomy."@en,
