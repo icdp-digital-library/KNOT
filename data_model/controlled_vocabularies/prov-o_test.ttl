@@ -20,7 +20,7 @@ owl:versionInfo a owl:AnnotationProperty .
 prov: a skos:ConceptScheme .
 
 prov:Bundle a owl:Class, skos:Concept ;
-    rdfs:label "Bundle" ;
+    rdfs:label "Bundle"@en ;
     rdfs:comment "Note that there are kinds of bundles (e.g. handwritten letters, audio recordings, etc.) that are not expressed in PROV-O, but can be still be described by PROV-O."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:subClassOf prov:Entity ;
