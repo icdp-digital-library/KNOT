@@ -4,11 +4,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://purl.org/ebr/odi#> a skos:ConceptScheme ;
-    rdfs:label "ODI" .
+<https://purl.org/ebr/odi#> a skos:ConceptScheme, owl:Ontology ;
+    rdfs:label "ODI" ;
+    rdfs:comment "This is a test" .
 
 odi:Condition a owl:Class ;
     skos:inScheme <https://purl.org/ebr/odi#> ;
+    skos:topConceptOf <https://purl.org/ebr/odi#> ;
     rdfs:label "Condition"@en,
         "Condizione"@it ;
     skos:prefLabel "Condition"@en,
