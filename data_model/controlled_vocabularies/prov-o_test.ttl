@@ -1107,6 +1107,7 @@ prov:Activity a owl:Class ;
 
 prov:Entity a owl:Class, skos:Concept ;
     skos:topConceptOf <http://www.w3.org/ns/prov-o#> ;
+    skos:inScheme <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "Entity" ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     owl:disjointWith prov:InstantaneousEvent ;
