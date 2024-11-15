@@ -7,7 +7,7 @@
 <https://purl.org/ebr/odi#> a skos:ConceptScheme ;
     rdfs:label "ODI" .
 
-<https://w3id.org/odi/Condition> a owl:Class, skos:Concept ;
+<https://w3id.org/odi/Condition> a skos:Concept ;
     skos:inScheme <https://purl.org/ebr/odi#> ;
     rdfs:label "Condition"@en,
         "Condizione"@it ;
