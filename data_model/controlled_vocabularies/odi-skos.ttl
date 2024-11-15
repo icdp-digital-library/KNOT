@@ -22,11 +22,14 @@ odi:Condition a owl:Class ;
 odi:arrivesAt a owl:ObjectProperty ;
     rdfs:label "Arrives at"@en,
         "Arriva a"@it ;
+    skos:prefLabel "Arrives at"@en,
+        "Arriva a"@it ;
     rdfs:comment "It means that a main character arrives at a place in his story."@en,
         "Significa che un protagonista arriva in un luogo nella sua storia."@it ;
     rdfs:domain <https://w3id.org/odi/Character> ;
     rdfs:range <https://w3id.org/odi/FictionalPlace> ;
-    rdfs:subPropertyOf owl:topObjectProperty .
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:subClassOf skos:Concept .
 
 <https://w3id.org/odi/bumpsInto> a owl:ObjectProperty ;
     rdfs:label "Bumps into"@en,
