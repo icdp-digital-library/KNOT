@@ -19,7 +19,7 @@ odi:Condition a owl:Class ;
         "È lo stato fisico attuale di una carta."@it ;
     rdfs:subClassOf skos:Concept .
 
-<https://w3id.org/odi/arrivesAt> a owl:ObjectProperty ;
+odi:arrivesAt a owl:ObjectProperty ;
     rdfs:label "Arrives at"@en,
         "Arriva a"@it ;
     rdfs:comment "It means that a main character arrives at a place in his story."@en,
