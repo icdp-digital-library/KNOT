@@ -7,7 +7,7 @@
 <https://purl.org/ebr/odi#> a skos:ConceptScheme ;
     rdfs:label "ODI" .
 
-odi:Condition a skos:Concept ;
+odi:Condition a owl:Class ;
     skos:inScheme <https://purl.org/ebr/odi#> ;
     rdfs:label "Condition"@en,
         "Condizione"@it ;
@@ -15,7 +15,7 @@ odi:Condition a skos:Concept ;
         "Condizione"@it ;
     rdfs:comment "Is the current phisically condition of a card."@en,
         "È lo stato fisico attuale di una carta."@it ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf skos:Concept .
 
 <https://w3id.org/odi/arrivesAt> a owl:ObjectProperty ;
     rdfs:label "Arrives at"@en,
