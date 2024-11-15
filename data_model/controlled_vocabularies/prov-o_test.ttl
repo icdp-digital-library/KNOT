@@ -1106,6 +1106,7 @@ prov:Activity a owl:Class ;
     prov:n "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Activity"^^xsd:anyURI .
 
 prov:Entity a owl:Class, skos:Concept ;
+    skos:topConceptOf <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "Entity" ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     owl:disjointWith prov:InstantaneousEvent ;
