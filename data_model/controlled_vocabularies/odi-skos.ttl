@@ -624,23 +624,27 @@ odi:FictionalPlace a owl:Class ;
         "È una carta che appartiene al mazzo."@it ;
     rdfs:subClassOf owl:Thing .
 
-<https://w3id.org/odi/Representation> a owl:Class ;
-    rdfs:comment "Representation"@en,
-        "The representation of a card."@en,
+odi:Representation a owl:Class ;
+    skos:inScheme <https://purl.org/ebr/odi#> ;
+    skos:topConceptOf <https://purl.org/ebr/odi#> ;
+    rdfs:label "Representation"@en,
+         "Rappresentazione"@it ;
+    rdfs:comment "The representation of a card."@en,
         "La rappresentazione di una carta."@it,
-        "Rappresentazione"@it ;
-    rdfs:subClassOf owl:Thing .
+    skos:prefLabel "Representation"@en,
+         "Rappresentazione"@it ;
+    rdfs:subClassOf owl:Thing, skos:Concept .
 
 odi:Character a owl:Class ;
     skos:inScheme <https://purl.org/ebr/odi#> ;
-    skos:topConceptOf <https://purl.org/ebr/odi#> ;
     rdfs:label "Character"@en,
         "Personaggio"@it ;
     skos:prefLabel "Character"@en,
         "Personaggio"@it ;
     rdfs:comment "A character of a story."@en,
         "Un personaggio di una storia."@it ;
-    rdfs:subClassOf <https://w3id.org/odi/Representation>, skos:Concept . 
+    skos:broader odi:Representation ;
+    rdfs:subClassOf odi:Representation, skos:Concept . 
 
 owl:topObjectProperty rdfs:subPropertyOf owl:topObjectProperty .
 
