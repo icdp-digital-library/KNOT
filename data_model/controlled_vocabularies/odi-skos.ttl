@@ -30,6 +30,7 @@ odi:arrivesAt a owl:ObjectProperty ;
         "Significa che un protagonista arriva in un luogo nella sua storia."@it ;
     rdfs:domain odi:Character ;
     rdfs:range odi:FictionalPlace ;
+    skos:related odi:Character, odi:FictionalPlace ;
     rdfs:subPropertyOf owl:topObjectProperty ;
     rdfs:subClassOf skos:Concept .
 
