@@ -629,7 +629,7 @@ odi:Representation a owl:Class ;
     rdfs:label "Representation"@en,
          "Rappresentazione"@it ;
     rdfs:comment "The representation of a card."@en,
-        "La rappresentazione di una carta."@it,
+        "La rappresentazione di una carta."@it ;
     skos:prefLabel "Representation"@en,
          "Rappresentazione"@it ;
     rdfs:subClassOf skos:Concept .
