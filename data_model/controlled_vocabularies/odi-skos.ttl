@@ -557,12 +557,16 @@ odi:arrivesAt a owl:ObjectProperty ;
         "Un avvenimento che viene eseguito da qualcuno e/o implica degli oggetti in una storia."@it ;
     rdfs:subClassOf <https://w3id.org/odi/Representation> .
 
-<https://w3id.org/odi/FictionalPlace> a owl:Class ;
+odi:FictionalPlace a owl:Class ;
+    skos:inScheme <https://purl.org/ebr/odi#> ;
+    skos:topConceptOf <https://purl.org/ebr/odi#> ;
     rdfs:label "Fictional Place"@en,
+        "Luogo ideale"@it ;
+    skos:prefLabel "Fictional Place"@en,
         "Luogo ideale"@it ;
     rdfs:comment "A place where a character is moving through or arrives at in a story."@en,
         "Un luogo in cui un personaggio si muove o arriva in una storia."@it ;
-    rdfs:subClassOf <https://w3id.org/odi/Representation> .
+    rdfs:subClassOf <https://w3id.org/odi/Representation>, skos:Concept .
 
 <https://w3id.org/odi/Place> a owl:Class ;
     rdfs:label "Place"@en,
@@ -627,12 +631,16 @@ odi:arrivesAt a owl:ObjectProperty ;
         "Rappresentazione"@it ;
     rdfs:subClassOf owl:Thing .
 
-<https://w3id.org/odi/Character> a owl:Class ;
+odi:Character a owl:Class ;
+    skos:inScheme <https://purl.org/ebr/odi#> ;
+    skos:topConceptOf <https://purl.org/ebr/odi#> ;
     rdfs:label "Character"@en,
+        "Personaggio"@it ;
+    skos:prefLabel "Character"@en,
         "Personaggio"@it ;
     rdfs:comment "A character of a story."@en,
         "Un personaggio di una storia."@it ;
-    rdfs:subClassOf <https://w3id.org/odi/Representation> .
+    rdfs:subClassOf <https://w3id.org/odi/Representation>, skos:Concept . 
 
 owl:topObjectProperty rdfs:subPropertyOf owl:topObjectProperty .
 
