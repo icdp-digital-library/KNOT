@@ -28,8 +28,6 @@ odi:arrivesAt a owl:ObjectProperty ;
         "Arriva a"@it ;
     rdfs:comment "It means that a main character arrives at a place in his story."@en,
         "Significa che un protagonista arriva in un luogo nella sua storia."@it ;
-    rdfs:domain odi:Character ;
-    rdfs:range odi:FictionalPlace ;
     skos:related odi:Character, odi:FictionalPlace ;
     rdfs:subPropertyOf owl:topObjectProperty ;
     rdfs:subClassOf skos:Concept .
