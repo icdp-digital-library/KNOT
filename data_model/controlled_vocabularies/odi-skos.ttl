@@ -632,7 +632,7 @@ odi:Representation a owl:Class ;
         "La rappresentazione di una carta."@it,
     skos:prefLabel "Representation"@en,
          "Rappresentazione"@it ;
-    rdfs:subClassOf owl:Thing, skos:Concept .
+    rdfs:subClassOf skos:Concept .
 
 odi:Character a owl:Class ;
     skos:inScheme <https://purl.org/ebr/odi#> ;
