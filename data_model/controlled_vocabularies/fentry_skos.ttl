@@ -1,6 +1,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
 @prefix hico: <http://purl.org/emmedi/hico/> .
 @prefix cito: <http://purl.org/spar/cito/> .
