@@ -1,0 +1,65 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix hico: <http://purl.org/emmedi/hico/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fentry: <http://www.essepuntato.it/2014/03/fentry/> .
+
+<http://www.essepuntato.it/2014/03/fentry/> a owl:Ontology, skos:ConceptScheme ;
+    dct:title "F Entry (Scheda F) Ontology"@en;
+    rdfs:label "F Entry (Scheda F) Ontology"@en;
+    skos:prefLabel "F Entry (Scheda F) Ontology"@en;
+    dct:creator "Marilena Daquino", "Silvio Peroni" ; 
+    dct:description "The Scheda F is a document containing metadata describing a photograph having as subject a concrete object (or part of it) or a group of different objects. Any Scheda F (F), as well as the photograph (P) it describes and the subjects of such photograph (S), can be described in terms of some entities of the Functional Requirements for Bibliographic Records, i.e., Work (referring to the essence of the object; it applies to F, P and S), Expression (referring to the content of the object; it applies to F and, P), Manifestation (referring to the format of the object; it applies to P and S) and Item (referring to the physical location of the object; it applies to F, P and S). All these objects, i.e., the Scheda F, the photograph and the related object portrayed, are subject to authorial attribution as result of some production activity involving someone. Exemples of usage of this ontology as well as exemplar SPARQL queries are available online."@en ; 
+    owl:imports skos:, fabio:, hico:, cito:, pro:, scoro: ;
+    dct:relation prov: ;
+    dct:language "English"@en ;
+    dct:created "2016" ;
+    dct:issued "2016-12-15"^^xsd:date ;
+    owl:versionInfo "1.0" ;
+    skos:hasTopConcept fentry:photograph, fentry:scheda_f, fentry:shot ;
+    foaf:homepage <https://essepuntato.it/fentry/current/fentry.html> .
+
+fentry:photograph a owl:Class, skos:Concept ;
+    skos:inScheme <http://www.essepuntato.it/2014/03/fentry/> ;
+    skos:topConceptOf <http://www.essepuntato.it/2014/03/fentry/> ;
+    rdfs:label "Photograph"@en ;
+    skos:prefLabel "Photograph"@en ;
+    rdfs:comment "It is a static, visual representation of some concrete object (or part of it) or a group of different objects."@en ;
+    skos:definition "It is a static, visual representation of some concrete object (or part of it) or a group of different objects."@en ;
+    rdfs:subClassOf fabio:StillImage ;
+    skos:broader fabio:StillImage .
+
+fentry:scheda_f a owl:Class, skos:Concept ;
+    skos:inScheme <http://www.essepuntato.it/2014/03/fentry/> ;
+    skos:topConceptOf <http://www.essepuntato.it/2014/03/fentry/> ;
+    rdfs:label "F Entry"@en ;
+    skos:prefLabel "F Entry"@en ;
+    rdfs:comment "It is a document containing metadata about a photograph and about the concrete object portrayed by the photograph."@en ;
+    skos:definition "It is a document containing metadata about a photograph and about the concrete object portrayed by the photograph."@en ;
+    rdfs:subClassOf fabio:EntityMetadata ;
+    skos:broader fabio:EntityMetadata . 
+
+fentry:shot a owl:Class, skos:Concept ;
+    skos:inScheme <http://www.essepuntato.it/2014/03/fentry/> ;
+    skos:topConceptOf <http://www.essepuntato.it/2014/03/fentry/> ;
+    rdfs:label "Shot"@en ;
+    skos:prefLabel "Shot"@en ;
+    rdfs:comment "The realisation of a photograph - it is strictly related with the act of taking the picture by someone."@en ;
+    skos:definition "The realisation of a photograph - it is strictly related with the act of taking the picture by someone."@en ;
+    rdfs:subClassOf frbr:Expression ;
+    skos:broader frbr:Expression . 
+
+fentry:describes a owl:ObjectProperty, skos:Concept ;
+    skos:inScheme <http://www.essepuntato.it/2014/03/fentry/> ;
+    rdfs:label "describes"@en ;
+    skos:prefLabel "describes"@en ;
+    skos:definition "It allows one to link a Scheda F to the photograph and the portrayed object the Scheda F describes."@en ;
+    owl:inverseOf fentry:isDescribedBy .
