@@ -65,4 +65,5 @@ fentry:describes a owl:ObjectProperty, skos:Concept ;
     skos:definition "It allows one to link a Scheda F to the photograph and the portrayed object the Scheda F describes."@en ;
     rdfs:domain fentry:FEntry ;
     rdfs:range fentry:shot ;
+    skos:related fentry:FEntry, fentry:shot ;
     owl:inverseOf fentry:isDescribedBy .
