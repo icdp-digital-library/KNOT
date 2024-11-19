@@ -38,7 +38,7 @@ fentry:photograph a owl:Class, skos:Concept ;
     rdfs:subClassOf fabio:StillImage ;
     skos:broader fabio:StillImage .
 
-fentry:scheda_f a owl:Class, skos:Concept ;
+fentry:FEntry  a owl:Class, skos:Concept ;
     skos:inScheme <http://www.essepuntato.it/2014/03/fentry/> ;
     skos:topConceptOf <http://www.essepuntato.it/2014/03/fentry/> ;
     rdfs:label "F Entry"@en ;
@@ -63,4 +63,6 @@ fentry:describes a owl:ObjectProperty, skos:Concept ;
     rdfs:label "describes"@en ;
     skos:prefLabel "describes"@en ;
     skos:definition "It allows one to link a Scheda F to the photograph and the portrayed object the Scheda F describes."@en ;
+    rdfs:domain fentry:FEntry ;
+    rdfs:range fentry:shot ;
     owl:inverseOf fentry:isDescribedBy .
