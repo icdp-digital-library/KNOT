@@ -8,6 +8,7 @@
 @prefix pro: <http://purl.org/spar/pro/> .
 @prefix scoro: <http://purl.org/spar/scoro/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -64,6 +65,14 @@ fentry:describes a owl:ObjectProperty, skos:Concept ;
     skos:prefLabel "describes"@en ;
     skos:definition "It allows one to link a Scheda F to the photograph and the portrayed object the Scheda F describes."@en ;
     rdfs:domain fentry:FEntry ;
-    rdfs:range fentry:shot ;
-    skos:related fentry:FEntry, fentry:shot ;
+    rdfs:range fentry:shot, fentry:Photograph ;
+    skos:related fentry:FEntry, fentry:shot, fentry:Photograph ;
     owl:inverseOf fentry:isDescribedBy .
+
+owl:inverseOf a rdf:Property ;
+     rdfs:label "inverseOf"@en ;
+     rdfs:comment "The property that determines that two given properties are inverse."@en ;
+     skos:definition "The property that determines that two given properties are inverse."@en ;
+     rdfs:domain owl:ObjectProperty ;
+     rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
+     rdfs:range owl:ObjectProperty . 
