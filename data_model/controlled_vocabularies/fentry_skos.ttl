@@ -68,6 +68,12 @@ fentry:describes a owl:ObjectProperty, skos:Concept ;
     rdfs:range fentry:shot, fentry:photograph ;
     owl:inverseOf fentry:isDescribedBy .
 
+fentry:isDescribedBy a owl:ObjectProperty, skos:Concept ;
+    skos:inScheme <http://www.essepuntato.it/2014/03/fentry/> ;
+    rdfs:label "is described by"@en ;
+    skos:prefLabel "is described by"@en ;
+    skos:definition "It allows one to link a photograph and portrayed object to the scheda F that describes them."@en .
+
 owl:inverseOf a rdf:Property ;
      rdfs:label "inverseOf"@en ;
      rdfs:comment "The property that determines that two given properties are inverse."@en ;
