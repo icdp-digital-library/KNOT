@@ -76,3 +76,19 @@ owl:inverseOf a rdf:Property ;
      rdfs:domain owl:ObjectProperty ;
      rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
      rdfs:range owl:ObjectProperty . 
+
+rdfs:domain a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "domain"@en ;
+	rdfs:comment "A domain of the subject property."@en ;
+    skos:definition  "A domain of the subject property."@en ;
+	rdfs:range rdfs:Class ;
+	rdfs:domain rdf:Property .
+
+rdfs:range a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "range"@en ;
+	rdfs:comment "A range of the subject property."@en ;
+    skos:definition "A range of the subject property."@en ;
+	rdfs:range rdfs:Class ;
+	rdfs:domain rdf:Property .
