@@ -4,7 +4,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://purl.org/ebr/odi#> a skos:ConceptScheme, owl:Ontology ;
+<https://purl.org/ebr/odi/> a skos:ConceptScheme, owl:Ontology ;
     dct:title "Ontologia dei Destini incrociati di Italo Calvino"@it;
     rdfs:label "Ontologia dei Destini incrociati di Italo Calvino"@it;
     skos:prefLabel "Ontologia dei Destini incrociati di Italo Calvino"@it;
