@@ -11,6 +11,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix fentry: <http://www.essepuntato.it/2014/03/fentry/> .
 
@@ -27,7 +28,8 @@
     dct:issued "2016-12-15"^^xsd:date ;
     owl:versionInfo "1.0" ;
     skos:hasTopConcept fentry:photograph, fentry:FEntry, fentry:shot ;
-    foaf:homepage <https://essepuntato.it/fentry/current/fentry.html> .
+    foaf:homepage <https://essepuntato.it/fentry/current/fentry.html> ;
+    dcat:downloadURL <https://svn.code.sf.net/p/dwellonit/code/FEO/feo.owl> .
 
 fentry:photograph a owl:Class, skos:Concept ;
     skos:inScheme <http://www.essepuntato.it/2014/03/fentry/> ;
@@ -97,3 +99,11 @@ rdfs:range a rdf:Property ;
     skos:definition "A range of the subject property."@en ;
 	rdfs:range rdfs:Class ;
 	rdfs:domain rdf:Property .
+
+dcat:downloadURL a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/TR/vocab-dcat/> ;
+	rdfs:label "Download URL"@en ;
+	rdfs:comment "The URL of the downloadable file in a given format. E.g. CSV file or RDF file. The format is indicated by the distribution's dct:format and/or dcat:mediaType."@en ;
+    skos:definition "The URL of the downloadable file in a given format. E.g. CSV file or RDF file. The format is indicated by the distribution's dct:format and/or dcat:mediaType."@en ;
+	rdfs:range rdfs:Resource ;
+	rdfs:domain  dcat:Distribution .
