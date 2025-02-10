@@ -39,7 +39,7 @@ ktx:corpus a skos:Concept;
   skos:example "The corpus created as part of the ALCIDE (Analysis of Language and Content In a Digital Environment) project, https://github.com/StefanoMenini/De-Gasperi-s-Corpus."@en;
   skos:topConceptOf <http://purl.org/knot/taxonomy/>;
   skos:closeMatch <https://vocabs.acdh.oeaw.ac.at/dhataxonomy/Concept39.01>;
-  skos:relatedMatch <http://vocab.getty.edu/page/aat/300311737>, <http://id.loc.gov/authorities/subjects/sh2006006393>;
+  skos:relatedMatch <http://vocab.getty.edu/aat/300311737>, <http://id.loc.gov/authorities/subjects/sh2006006393>, <http://www.wikidata.org/entity/Q461183>;
   skos:related ktx:dataset;
   skos:prefLabel "Corpus"@en, "Corpus"@it;
   skos:inScheme <http://purl.org/knot/taxonomy/> .
