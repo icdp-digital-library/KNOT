@@ -22,15 +22,15 @@
   dct:license <https://creativecommons.org/licenses/by-sa/4.0/>;
   dct:language "English"@en, "Italiano"@it ;
   dct:issued "2023-06-15"^^xsd:date ;
-  dct:modified "2024-10-24"^^xsd:date ;
+  dct:modified "2025-02-10"^^xsd:date ;
   skos:hasTopConcept ktx:corpus, ktx:database, ktx:dataset, 
     ktx:digital_archive, ktx:digital_catalogue, ktx:digital_edition,
     ktx:digital_library, ktx:digital_platform, ktx:digital_repository,
     ktx:knowledge_base, ktx:knowledge_graph, ktx:ontology, ktx:controlled_vocabulary,
     ktx:software, ktx:endpoint ;
   owl:imports <http://www.w3.org/2004/02/skos/core#> ;
-  owl:versionInfo "1.2" ;
-  skos:editorialNote "Updated purl URI to function with Skosmos. Updated description. Added dct:language and rdfs:label to conceptscheme."@en .
+  owl:versionInfo "1.3" ;
+  skos:editorialNote "Updated LOC urls to URIs to correctly display in related box."@en .
 
 ktx:corpus a skos:Concept;
   skos:definition "A corpus is a type of digital collection in the form of a structured set of text resources, and potential attached metadata, electronically stored and processed and intended for use in linguistic analysis."@en,
@@ -49,8 +49,8 @@ ktx:database a skos:Concept;
   dct:source "“Art & Architecture Thesaurus Full Record Display (Getty Research).” n.d. Getty.edu. Accessed June 20, 2023. http://vocab.getty.edu/page/aat/300028543."@en;
   skos:example "The Epigraphic Database Vernacular project from the University of Roma Sapienza, http://www.edvcorpus.com/wp/."@en;
   skos:topConceptOf <http://purl.org/knot/taxonomy/>;
-  skos:closeMatch <http://vocab.getty.edu/page/aat/300028543>, <https://id.loc.gov/authorities/subjects/sh86007767.html>;
-  skos:relatedMatch <https://w3id.org/cerif/vocab/OutputTypes#Researchdatasetsanddatabases> ;
+  skos:closeMatch <http://vocab.getty.edu/aat/300028543>, <http://id.loc.gov/authorities/subjects/sh86007767>, <http://www.wikidata.org/entity/Q8513>;
+  skos:relatedMatch <https://cerif.eurocris.org/vocab/html/OutputTypes.html#Researchdatasetsanddatabases> ;
   skos:related ktx:knowledge_base, ktx:knowledge_graph;
   skos:altLabel "DB"@en;
   skos:prefLabel "Database"@en, "Banca Dati"@it;
