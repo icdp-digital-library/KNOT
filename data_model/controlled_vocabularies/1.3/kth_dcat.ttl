@@ -132,6 +132,7 @@ owl:versionInfo
     kth:content_management, kth:framework, kth:frontend,
     kth:metadata, kth:api, kth:sparql_endpoint ;
   owl:imports <http://www.w3.org/2004/02/skos/core#> ;
+  foaf:homepage <https://icdp-digital-library.github.io/KNOT/> ;
   dct:issued "2023-06-15"^^xsd:date ;
   dct:modified "2023-02-10"^^xsd:date ;
   owl:versionInfo 1.3 ;

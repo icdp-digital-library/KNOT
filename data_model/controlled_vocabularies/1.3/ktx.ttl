@@ -29,6 +29,7 @@
     ktx:knowledge_base, ktx:knowledge_graph, ktx:ontology, ktx:controlled_vocabulary,
     ktx:software, ktx:endpoint ;
   owl:imports <http://www.w3.org/2004/02/skos/core#> ;
+  foaf:homepage <https://icdp-digital-library.github.io/KNOT/> ;
   owl:versionInfo "1.3" ;
   skos:editorialNote "Updated LOC urls to URIs to correctly display in related box. Adjusted objects of mapping properties to be more consistent in usage of closeMatch and relatedMatch based on SKOS documentation. Adjusted irregular use of capitalisation. Added alt labels for plurals."@en .
 

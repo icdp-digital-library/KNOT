@@ -23,6 +23,7 @@
   dct:language "English"@en, "Italiano"@it ;
   dct:issued "2023-06-30"^^xsd:date ;
   dct:modified "2024-02-10"^^xsd:date ;
+  foaf:homepage <https://icdp-digital-library.github.io/KNOT/> ;
   skos:hasTopConcept kth:comp_viz, kth:data_viz, kth:nlp, kth:ner, kth:ocr,
     kth:graph_database, kth:object_database, kth:relational_database,
     kth:triplestore, kth:markup_language, kth:ontology_language,

@@ -134,6 +134,7 @@ owl:versionInfo
     ktx:knowledge_base, ktx:knowledge_graph, ktx:ontology,
     ktx:software ;
   owl:imports <http://www.w3.org/2004/02/skos/core#> ;
+  foaf:homepage <https://icdp-digital-library.github.io/KNOT/> ;
   dct:issued "2023-06-15"^^xsd:date ;
   dct:modified "2025-02-10"^^xsd:date ;
   owl:versionInfo 1.3 ;
