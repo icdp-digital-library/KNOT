@@ -266,7 +266,7 @@ ktx:software a skos:Concept;
   skos:definition "Software is a set of computer programs and their associated documentation and data that requires hardware, whether local or remote to the user, for usage. In the context of this taxonomy, software is assumed to be available for reuse in order to facilitate further research or knowledge production by different communities."@en,
     "Il software è un insieme di programmi per computer e la documentazione e i dati associati che richiedono hardware, locale o remoto per l'utente, per l'utilizzo. Nel contesto di questa tassonomia, si presume che il software sia disponibile per il riutilizzo al fine di facilitare ulteriori ricerche o produzione di conoscenza da parte di diverse comunità."@it;
   dct:source "“Iso/Iec 2382:2015.” 2020. ISO. 2020. https://www.iso.org/standard/63598.html."@en;
-  skos:example "The Bradypus software developed the University of Rome Sapienza, https://bdus.cloud/."@en;
+  skos:example "The Bradypus software developed by the University of Rome Sapienza, https://bdus.cloud/."@en;
   skos:topConceptOf <http://purl.org/knot/taxonomy/>;
   skos:closeMatch <https://cerif.eurocris.org/vocab/html/OutputTypes.html#Software>, <http://vocab.getty.edu/aat/300028566>, <http://id.loc.gov/authorities/subjects/sh85029534>;
   skos:prefLabel "software"@en, "software"@it;
@@ -278,7 +278,7 @@ ktx:software a skos:Concept;
   dct:source "Wikipedia contributors. 2023. “Web API.” Wikipedia, The Free Encyclopedia. December 8, 2023. https://en.wikipedia.org/w/index.php?title=Web_API&oldid=1188983708. Wikipedia contributors. 2024. “Communication Endpoint.” Wikipedia, The Free Encyclopedia. January 16, 2024. https://en.wikipedia.org/w/index.php?title=Communication_endpoint&oldid=1196087839."@en;
   skos:example "The API offered by the FRED project, http://wit.istc.cnr.it/stlab-tools/fred_api/."@en;
   skos:topConceptOf <http://purl.org/knot/taxonomy/>;
-  skos:relatedMatch <http://id.loc.gov/authorities/subjects/sh98004527>, <http://vocab.getty.edu/aat/300419453>;
+  skos:closeMatch <http://id.loc.gov/authorities/subjects/sh98004527>, <http://vocab.getty.edu/aat/300419453>;
   skos:prefLabel "endpoint"@en, "endpoint"@it;
   skos:altLabel "endpoints"@en ;
   skos:inScheme <http://purl.org/knot/taxonomy/> .
