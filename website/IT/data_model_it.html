@@ -4,7 +4,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Il modello di dati concettuale KNOT viene utilizzato per descrivere i dati del progetto pilota e abilitare una rete di collegamenti semantici per aiutare a facilitare la scoperta delle conoscenze latente e valorizzare la ricerca accademica come patrimonio culturale digitale.">
+  <meta name="description" content="Il modello di dati KNOT è stato sviluppato per descrivere gli oggetti digitali accademici e viene utilizzato per descrivere i dati del progetto e consentire una rete di collegamenti semantici per aiutare a facilitare la scoperta della conoscenza latente e valorizzare la ricerca accademica come patrimonio culturale digitale.">
   <meta name="author" content="Digital Humanities Advanced Research Center">
   <meta name="keywords" content="Patrimonio Culturale, Digital Humanities, ICDP, Digital Library">
   <title>KNOT - Il Data Model</title>
@@ -20,7 +20,7 @@
     <div class="container-xxl px-5">
       <div class="d-flex">
         <a href="index_it.html" class="d-flex text-body-emphasis text-decoration-none">
-          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+          <span class="fs-4">KNOT - Rethinking Scholarly Digital Objects as Cultural Heritage</span>
         </a>
         <div class="btn-group px-3" role="group" aria-label="Language buttons">
           <a href="../ENG/data_model.html" role="button" class="btn lang">ENG</a>
@@ -43,14 +43,25 @@
             <li class="nav-item">
               <a class="nav-link" href="pilot_it.html">KNOT Pilota</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="data_model_structure_it.html">KNOT Data Model</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                KNOT Data Model
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item disabled" aria-disabled="true" href="data_model_it.html">Overview</a></li>
+                <li><a class="dropdown-item" href="data_model_structure_it.html">Structure</a></li>
+                <li><a class="dropdown-item" href="data_model_modules_it.html">Modules</a></li>
+                <li><a class="dropdown-item" href="data_model_cvs_it.html">Controlled Vocabularies</a></li>
+              </ul>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalogue</a>
+            </li> 
             <li class="nav-item">
               <a class="nav-link" href="../ontology/index-it.html" target="_blank">KNOT Ontologia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalog</a>
+              <a class="nav-link" href="https://lab.dharc.unibo.it/skosmos/" target="_blank">KNOT Controlled Vocabularies</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
@@ -64,39 +75,38 @@
     <main>
       
       
-      <h1 class="text-body-emphasis">Il KNOT Data Model - KNOT-DM</h1>
-      <p class="fs-5 col-md-8">Una linea guida per la descrizione dell'attività scientifica e degli digital scholarly objects come patrimonio culturale, utilizzando un vocabolario comune e facilitando la diffusione di buone pratiche.</p>
-
-      <p>KNOT-DM è utilizzato per descrivere i dati del progetto KNOT, in base al focus dell'indagine del progetto che sostiene che gli digital scholarly objects sono forme digitali che rappresentano un esempio unico e interessante del patrimonio culturale digitale (PCD) degli Atenei italiani (si veda <a href="pilot_it.html">la pagina Pilota</a> per maggiori informazioni). Il modello di dati è incentrato sull'intersezione di tre domini - atenei, dati pubblici e patrimonio culturale digitale - che rappresentano aspetti specifici di questo argomento.</p> 
-      <p>KNOT-DM è stato sviluppato per aiutare a descrivere l'attività di ricerca e i scholarly digital objects come esempi di PCD e favorire l'interconnessione con i sistemi esistenti che già documentano quest'attività e oggetti, come i repository (sia istituzionali che pubblici) e i siti web dedicati, per evitare la duplicazione di dati e informazioni esistenti. Il data model è organizzato in tre segmenti interconnessi, ciascuno dei quali riflette uno dei domini e usa uno standard riconosciuto a livello internazionale, che si occupano di entità, attività, agenti, temi, relazioni e informazioni spazio-temporali. I metadati creati con KNOT-DM costituiscono la base del knowledge graph usato nel <a href="https://projects.dharc.unibo.it/knot/" target="_blank">catalogo KNOT</a>.
-      </p>
+      <h1 class="text-body-emphasis">Il KNOT Data Model - Panoramica</h1>
+      <p class="fs-5 col-md-8">Una linea guida per la descrizione dell'attività scientifica e degli scholarly digital objects come patrimonio culturale, utilizzando un vocabolario comune e facilitando la diffusione di buone pratiche.</p>
+      <p>Il processo di modellazione nelle Digital Humanities è fondamentale per passare dalla teoria alla pratica [<a href="#bib-1" id="back-1">1</a>], trasformando il pensiero critico e l'interpretazione in un oggetto potenzialmente pratico come un modello di dati. Inoltre, la modellazione, sia nel campo dei beni culturali che in quello delle Digital Humanities, non riguarda solo la rappresentazione della fonte, ma anche il processo stesso, in parte perché questo processo implica la rappresentazione e la cattura di alcune delle soggettività e delle peculiarità intrinseche delle creazioni e delle attività umane per esprimere principi che sono ancorati a un contesto specifico piuttosto che a una legge generale [<a href="#bib-2" id="back-2">1</a>].</p>
+      <p>Il KNOT Data Model (KNOT-DM) è stato sviluppato per catturare alcune delle peculiarità della nostra argomentazione sugli scholarly digital objects come esempi unici e interessanti del patrimonio culturale digitale (PCD) delgli Atenei italiani (si veda la pagina <a href=“pilot.html”>Pilot</a> per saperne di più), e fungere da linea guida per la descrizione degli scholarly digital objects e la loro attività come PCD utilizzando un vocabolario comune e facilitando la diffusione di buone pratiche.</p> 
+      <p><a href="https://essepuntato.it/samod/" target="_blank">La metodologia SAMOD</a> è stata utilizzata come punto di riferimento nello sviluppo del KNOT-DM per creare un flusso di lavoro iterativo: abbiamo innanzitutto utilizzato i risultati del nostro censimento (dei progetti e degli oggetti prodotti di scienze umanistiche in Italia) per creare un insieme iniziale di requisiti, come la capacità di descrivere sia scholarly digital objects che l'attività che li ha creati, i diversi tipi di oggetti e di accesso, e la loro dimensione di patrimonio culturale; abbiamo quindi valutato vari standard, modelli, ontologie e vocabolari esistenti per la loro interoperabilità, lo sviluppo e il supporto in corso, e l'uso in applicazioni reali; in seguito abbiamo ristretto la nostra scelta di standard e ontologie esistenti e li abbiamo valutati rispetto a una prima serie di domande di competenza (chi, cosa, dove, quando, come) modellando un piccolo sottoinsieme di dati del censimento (12 voci); in seguito sono stati apportati ulteriori perfezionamenti agli elementi degli standard che il modello doveva utilizzare e al modo in cui dovevano essere collegati e usati; le intuizioni di questa fase hanno portato anche alla creazione dei <a href="data_model_cvs.html">KNOT Controlled Vocabularies</a>; infine, è stata creata la prima versione dell'ontologia e della documentazione del data model, attingendo alle intuizioni acquisite in ogni fase precedente.</p>
+      <p>L'uso di standard riconosciuti e complementari a livello internazionale deriva da una decisione iniziale di design secondo la quale KNOT-DM dovrebbe essere incentrato sulla riutilizzabilità piuttosto che sulla creazione di nuovi componenti ontologici, al fine di consentire la flessibilità e garantire la compatibilità finale con l'infrastruttura della Digital Library.</p>
+      <p>Uno dei principali aspetti emersi durante il processo di sviluppo è stata la comprensione che il dominio che ci interessava modellare si trovava all'intersezione di tre domini esistenti che rappresentano aspetti specifici della nostra argomentazione a favore degli scholarly digital objects come esempi del patrimonio culturale digitale degli Atenei italiani: il mondo accademico, dati pubblici e patrimonio culturale digitale. Questo ha portato a un modello progettato con tre segmenti interconnessi, che riflettono questa intersezione, in grado di rappresentare entità, attività, agenti, temi, relazioni e informazioni spazio-temporali.</p>
       <p>I Venn diagram riportati nella figura 1 riassumono l'intersezione di domini su cui si basa KNOT-DM e gli standard equivalenti che utilizza. <a href="data_model_structure.html">Si vede la sezione Struttura</a> per maggiori dettagli su come il modello di dati integra ogni standard.</p>
-
-
+      <p>L'obiettivo di KNOT-DM è quello di facilitare la descrizione dell'attività di ricerca e i scholarly digital objects come esempi di PCD (a partire dai dati prodotti dal progetto) e di favorire l'interconnessione con i sistemi esistenti che già documentano questa attività e questi oggetti, come i repository (sia istituzionali che pubblici) e i siti web dedicati, per evitare la duplicazione di dati e informazioni esistenti. Una prima area di interesse in questo senso è l'esplorazione di come KNOT possa integrarsi con <a href="https://www.cineca.it/sistemi-informativi-universita/ricerca/iris-la-gestione-della-ricerca" target="_blank">il sistema di gestione della ricerca IRIS</a> offerto agli Atenei dal CINECA.</p>
+      <p>I metadati creati con KNOT-DM costituiscono la base del knowledge graph usato nel <a href="https://projects.dharc.unibo.it/knot/" target="_blank">catalogo KNOT</a>.</p>
+      
         <figure>
           <a href="../assets/imgs/KNOT_Venn_1.jpg" target="_blank"><img class="w-50 img-fluid rounded float-start" src="../assets/imgs/KNOT_Venn_1.jpg"></a>
           <a href="../assets/imgs/KNOT_Venn_2.jpg" target="_blank"><img class="w-50 img-fluid rounded float-end" src="../assets/imgs/KNOT_Venn_2.jpg"></a>
           <figcaption class="figure-caption">FIG 1. Intersezione di domini e standard all'intorno di KNOT-DM.</figcaption>
         </figure>
       
-      <p>Il KNOT-DM è concepito per essere flessibile e riutilizzabile, nonché per consentire la sua potenziale integrazione nell'infrastruttura della Digital Library e la connessione ai sistemi esistenti. In quanto tale, è composto da concetti complementari provenienti da standard esistenti e riconosciuti a livello internazionale. È liberamente disponibile per le università e altre parti interessate, che possono utilizzarlo per modellare i propri dati per uso indipendente o per consentirne l'inclusione nel progetto pilota KNOT.</p>
+      <p>Il KNOT-DM è concepito per essere flessibile e riutilizzabile. È liberamente disponibile per le università e altre parti interessate, che possono utilizzarlo per modellare i propri dati per uso indipendente o per consentirne l'inclusione nel progetto pilota KNOT.</p>
       
       <p>KNOT-DM consente di registrare le seguenti informazioni:</p>
       <div class="row g-5">
         <div class="col-md-6">
           <ul>
             <li>Attività del progetto di ricerca - chi, cosa, dove, quando e come.</li>
-            <li>Output dei progetti di ricerca - gli scholarly digital objects creati dalle attività dei progetti di ricerca.</li>
-            <ul>
-              <li>Il data model è sufficientemente flessibile da consentire la descrizione di vari oggetti possibili, come software, siti web, documentazione, servizi web e raccolte di dati. </li>
-            </ul>
+            <li>Output dei progetti di ricerca - gli scholarly digital objects creati dalle attività dei progetti di ricerca. (Il data model è sufficientemente flessibile da consentire la descrizione di vari oggetti possibili, come software, siti web, documentazione, servizi web e raccolte di dati.)</li>
             <li>Input del progetto di ricerca - le entità che alimentano un progetto di ricerca come oggetti fisici, persone, luoghi e temi.</li>
             <li>Agenti - coinvolto in progetti e creazione di oggetti come contributor o publisher, dall'individuo all'organizzazione attraverso le unità organizzative (come i dipartimenti o i laboratori) e le loro sedi. </li>
           </ul>
         </div>
         <div class="col-md-6">
           <ul>
-            <li>Relazioni - tra attività, agenti, entità e luoghi, come l'influenza di concetti esterni o il riutilizzo di scholarly digital objects tra progetti. </li>
+            <li>Relazioni - tra attività, agenti, entità, luoghi, e concetti, come l'influenza di concetti esterni o il riutilizzo di scholarly digital objects tra progetti. </li>
             <li>Informazioni spaziali e temporali - dei progetti ma anche quelle registrate negli scholarly digital objects, come ad esempio i luoghi citati in un testo o il periodo di tempo coperto dai dati.</li>
             <li>Concetti - come il tipo di oggetto, le tecnologie utilizzate, le attività di ricerca, le specifiche tecniche, le discipline accademiche coinvolte e gli argomenti di ricerca. Questi concetti sono descritti utilizzando una selezione di vocabolari controllati e controlli di autorità.</li>
           </ul>
@@ -109,6 +119,11 @@
         <figcaption class="figure-caption">FIG 2. Il flusso di lavoro del KNOT-DM.</figcaption>
       </figure>
       
+      <hr class="mb-4">
+      <h3>References</h3>
+      <span id="bib-1">[<a href="#back-1">1</a>]</span> Tomasi, Francesca. 2018. “Modelling in the Digital Humanities: Conceptual Data Models and Knowledge Organization in the Cultural Heritage Domain.” <a href="https://doi.org/10.12759/HSR.SUPPL.31.2018.170-179" target="_blank">https://doi.org/10.12759/HSR.SUPPL.31.2018.170-179</a>.<br>
+      <span id="bib-2">[<a href="#back-2">2</a>]</span> Ciula, Arianna, Øyvind Eide, Cristina Marras, and Patrick Sahle. 2018. “Models and Modelling between Digital and Humanities. Remarks from a Multidisciplinary Perspective.” GESIS - Leibniz Institute for the Social Sciences. <a href="https://doi.org/10.12759/HSR.43.2018.4.343-361" target="_blank">https://doi.org/10.12759/HSR.43.2018.4.343-361</a>.<br>
+
       <hr class="mb-5">
       
       <div class="row g-5">
@@ -135,7 +150,7 @@
       </div>
     </main>
     <footer class="pt-5 my-5 text-body-secondary border-top">
-      Digital Humanities Advanced Research Center &middot; 2023 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza Creative Commons BY-NC 4.0 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+      Digital Humanities Advanced Research Center &middot; 2023-25 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons BY-NC 4.0</a>
     </footer>
   </div>
   <!-- bootstrap js-->

@@ -4,7 +4,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Il KNOT Data Model è incentrato sull'intersezione di tre domini che riflettono aspetti specifici del tema centrale e aiutano a descrivere la ricerca accademica come esempi di patrimonio culturale digitale.">
+  <meta name="description" content="Spiegazione dettagliata della struttura del KNOT Data Model, comprese le classi chiave e il loro utilizzo per descrivere scholarly digital objects come esempi di patrimonio culturale digitale.">
   <meta name="author" content="Digital Humanities Advanced Research Center">
   <meta name="keywords" content="Patrimonio Culturale, Digital Humanities, ICDP, Digital Library">
   <title>KNOT - Struttura del Data Model</title>
@@ -20,7 +20,7 @@
     <div class="container-xxl px-5">
       <div class="d-flex">
         <a href="index_it.html" class="d-flex text-body-emphasis text-decoration-none">
-          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+          <span class="fs-4">KNOT - Rethinking Scholarly Digital Objects as Cultural Heritage</span>
         </a>
         <div class="btn-group px-3" role="group" aria-label="Language buttons">
           <a href="../ENG/data_model_structure.html" role="button" class="btn lang">ENG</a>
@@ -43,14 +43,25 @@
             <li class="nav-item">
               <a class="nav-link" href="pilot_it.html">KNOT Pilota</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="data_model_structure_it.html">KNOT Data Model</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                KNOT Data Model
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="data_model_it.html">Overview</a></li>
+                <li><a class="dropdown-item disabled" aria-disabled="true" href="data_model_structure_it.html">Structure</a></li>
+                <li><a class="dropdown-item" href="data_model_modules_it.html">Modules</a></li>
+                <li><a class="dropdown-item" href="data_model_cvs_it.html">Controlled Vocabularies</a></li>
+              </ul>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalogue</a>
+            </li> 
             <li class="nav-item">
               <a class="nav-link" href="../ontology/index-it.html" target="_blank">KNOT Ontologia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalog</a>
+              <a class="nav-link" href="https://lab.dharc.unibo.it/skosmos/" target="_blank">KNOT Controlled Vocabularies</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
@@ -64,19 +75,20 @@
     <main>
       
       
-      <h1 class="text-body-emphasis">The KNOT Data Model - Overview</h1>
+      <h1 class="text-body-emphasis">The KNOT Data Model - Struttura</h1>
+      <p class="fs-5 col-md-8">Un approfondimento sui segmenti e alle classi chiave che compongono il KNOT-DM e che consentono di descrivere i scholarly digital objects come patrimonio culturale digitale.</p>
       <p>Come spiegato nella <a href="data_model_it.html">panoramica di KNOT-DM</a>, il data model è incentrato sull'intersezione di tre domini che riflettono aspetti specifici del tema centrale del progetto:</p>
       <ul>
-        <li>Il mondo accademico - che rappresenta gli Atenei e i loro agenti (accademici, ricercatori, dipartimenti, laboratori, studenti), nonché l'attività di ricerca e gli oggetti digitali da essa creati.</li>
+        <li>Il mondo accademico - che rappresenta gli Atenei e i loro agenti (accademici, ricercatori, dipartimenti, laboratori, studenti), nonché l'attività di ricerca e i scholarly digital objects da essa creati.</li>
         <li>I dati pubblici - che rappresentano come i scholarly digital objects sono disponibili al pubblico per facilitare e promuovere ulteriori ricerche (versioni, distribuzioni). </li>
         <li>Il patrimonio culturale digitale - i soggetti della ricerca (opere, persone, oggetti) e i prodotti della ricerca (dataset, software, imagine) come esempi di patrimonio culturale.</li>
       </ul> 
       <p>Questa intersezione fornisce lo schema strutturale del KNOT-DM, che è organizzato in tre segmenti che riflettono le specificità di ciascun dominio e fanno uso di concetti di uno standard riconosciuto a livello internazionale per descrivere entità, attività, agenti, temi, relazioni e informazioni spazio-temporali. I segmenti e i relativi standard sono:</p>
       <ul>
         <li>
-          Segmento dati pubblici - modellato con il Data Catalog Vocabulary (DCAT), un vocabolario RDF del W3C "progettato per facilitare l'interoperabilità tra i cataloghi di dati" pubblicato online [<a href="#bib-1" id="back-1">1</a>]. È utilizzato per rappresentare i digital scholarly objects come dati pubblici usando entità concettuali come dataset o data service. KNOT-DM combina entità ontologiche e il loro utilizzo dalla specifica W3C DCAT e dai profili applicativi europei e italiani (<a href="https://github.com/SEMICeu/DCAT-AP/tree/2.1.0-draft/releases" target="_blank">DCAT AP</a> e <a href="https://www.dati.gov.it/content/dcat-ap-it-v10-profilo-italiano-dcat-ap-0" target="_blank">DCAT AP IT</a>).
+          Segmento dati pubblici - modellato con il Data Catalog Vocabulary (DCAT), un vocabolario RDF del W3C "progettato per facilitare l'interoperabilità tra i cataloghi di dati" pubblicato online [<a href="#bib-1" id="back-1">1</a>]. È utilizzato per rappresentare i scholarly digital objects come dati pubblici. KNOT-DM combina entità ontologiche e il loro utilizzo dalla specifica W3C DCAT e dai profili applicativi europei e italiani (<a href="https://github.com/SEMICeu/DCAT-AP/tree/2.1.0-draft/releases" target="_blank">DCAT AP</a> e <a href="https://www.dati.gov.it/content/dcat-ap-it-v10-profilo-italiano-dcat-ap-0" target="_blank">DCAT AP IT</a>). DCAT è stato scelto in quanto già incluso nella rete OntoPiA (come profilo applicativo italiano), utilizzato dal Ministero della Cultura, fa uso delle proprietà base di DCMI Metadata Terms, che facilitano l'allineamento con i sistemi esistenti, e ci permette di descrivere scholarly digital objects sia come dataset che come data service, un elemento centrale della nostra argomentazione.
         </li>
-        <li>Segmento di provenienza accademica - modellato con l'ontologia PROV (PROV-O), un linguaggio ontologico Web OWL2 del W3C progettato per "rappresentare le informazioni di provenienza generate in diversi sistemi e in diversi contesti" [<a href="#bib-2" id="back-2">2</a>]. È utilizzata per rappresentare le specificità delle attività e le fasi di ricerca.  PROV è già integrata in DCAT.</li>
+        <li>Segmento di provenienza accademica - modellato con l'ontologia PROV (PROV-O), un linguaggio ontologico Web OWL2 del W3C progettato per "rappresentare le informazioni di provenienza generate in diversi sistemi e in diversi contesti" [<a href="#bib-2" id="back-2">2</a>]. È utilizzata per rappresentare le specificità delle attività e le fasi di ricerca ed è stata scelta perché già integrata in DCAT per descrivere la provenienza degli oggetti digitali, offrendo un modo semplice per collegare questi due domini e allo stesso tempo abbastanza flessibile da coprire molti aspetti dell'attività di ricerca accademica.</li>
         <li>Segmento sul  patrimonio culturale - modellato con il Modello Concettuale di Riferimento CIDOC (CIDOC CRM), uno "standard vivente" che offre "uno strumento teorico e pratico per l'integrazione delle informazioni nel campo del patrimonio culturale" [<a href="#bib-3" id="back-3">3</a>]. Viene utilizzato per rappresentare attività specifiche all'interno di un progetto di ricerca, nonché la dimensione patrimoniale degli scholarly digital objects. KNOT-DM utilizza principalmente le estensioni CRMdig e LRMoo di CIDOC CRM. La prima modella "le fasi e i metodi di produzione ("provenienza") dei prodotti di digitalizzazione e delle rappresentazioni digitali sintetiche" [<a href="#bib-4" id="back-4">4</a>] e come tale offre vari concetti che si allineano alle pratiche standard dei progetti di ricerca, mentre la seconda è "intesa a catturare e rappresentare la semantica sottostante alle informazioni bibliografiche e a facilitare l'integrazione, la mediazione e l'interscambio di informazioni bibliografiche e museali" [<a href="#bib-5" id="back-5">5</a>] ed è utilizzata principalmente per consentire relazioni con il concetto WEMI (Work, Expression, Manifestation, Item) del modello Functional Requirements for Bibliographic Records (FRBR) [<a href="#bib-6" id="back-6">6</a>].</li>
       </ul>
       <p>Le figure 1 e 2 riassumono il nucleo di KNOT-DM evidenziando le classi chiave (caselle gialle), le proprietà (frecce) di ogni standard e la loro interconnessione, nonché la relazione con esempi di istanze di classi (punti rosa) centrali per il progetto. Ulteriori dettagli sull'estensione di ciascun segmento e sulla notazione utilizzata nel progetto sono forniti nella sezione successiva.</p>
@@ -89,13 +101,18 @@
         <figcaption class="figure-caption">FIG 2. Un riepilogo delle classi principali e delle proprietà che compongono KNOT-DM.</figcaption>
       </figure>
 
-      <p>L'uso di standard riconosciuti e complementari a livello internazionale deriva da una decisione iniziale di design secondo la quale KNOT-DM dovrebbe essere incentrato sulla riutilizzabilità piuttosto che sulla creazione di nuovi componenti ontologici, al fine di consentire la flessibilità e garantire la compatibilità finale con l'infrastruttura della Digital Library. Questo è esemplificato dall'uso di DCAT, che è lo standard utilizzato dal Dipartimento per la trasformazione digitale ed è una delle ontologie raccomandate dalla <a href="https://github.com/icdp-digital-library/daf-ontologie-vocabolari-controllati" target="_blank">rete nazionale OntoPia</a> di ontologie e vocabolari controllati promossa dal Ministero della Cultura e dalla Digital Library. Inoltre, questa flessibilità dovrebbe consentire al progetto KNOT di integrare le informazioni e i dati già esistenti della ricerca accademica, per ridurre al minimo le duplicazioni e favorire l'interconnessione. Una prima area di interesse in questo senso è l'esplorazione di come KNOT possa integrarsi con <a href="https://www.cineca.it/sistemi-informativi-universita/ricerca/iris-la-gestione-della-ricerca" target="_blank">il sistema di gestione della ricerca IRIS</a> offerto agli Atenei dal CINECA.</p>
+      <p>Tutti i termini e i concetti di KNOT-DM sono raccolti ed espressi in RDF attraverso <a href="../ontology/index-it.html" target="_blank">l'Ontologia KNOT (KNOT-O)</a>, mentre alcuni dei requisiti tematici e di indicizzazione sono espressi in RDF attraverso <a href="data_model_cvs.html">la Tassonomia KNOT e il Thesaurus tecnologico KNOT</a>, due vocabolari controllati basati sul modello di dati SKOS. L'uso di standard esistenti basati su, o adattati a, RDF consente al progetto KNOT di pubblicare i suoi metadati come Linked Open Data (LOD) per garantire la leggibilità automatica e massimizzare l'interoperabilità con altri dati aperti disponibili online.</p>
 
-      <p>Tutti i termini e i concetti di KNOT-DM sono raccolti ed espressi in RDF attraverso <a href="../ontology/index-it.html" target="_blank">l'Ontologia KNOT (KNOT-O)</a>, mentre alcuni dei requisiti tematici e di indicizzazione sono espressi in RDF attraverso la Tassonomia KNOT e il Thesaurus tecnologico KNOT, due vocabolari controllati basati sul modello di dati SKOS. L'uso di standard esistenti basati su, o adattati a, RDF consente al progetto KNOT di pubblicare i suoi metadati come Linked Open Data (LOD) per garantire la leggibilità automatica e massimizzare l'interoperabilità con altri dati aperti disponibili online.</p>
+      <p>Dopo la pubblicazione della prima versione del data model nell'estate del 2023, la valutazione continuerà per tutta la durata del progetto con particolare attenzione alla capacità del modello di rispondere ai requisiti dell'integrazione del progetto nell'infrastruttura nazionale.</p>
 
-      <p><a href="https://essepuntato.it/samod/" target="_blank">La metodologia SAMOD</a> è stata utilizzata come punto di riferimento nello sviluppo del KNOT-DM per creare un flusso di lavoro iterativo: una volta scelto il tema centrale, il dominio è stato progettato ricercando e valutando gli standard esistenti rispetto a una prima serie di requisiti ricavati in parte dalle informazioni acquisite durante il censimento dei progetti di ricerca esistenti; ogni standard è stato poi assemblato in un segmento e valutato rispetto a una prima serie di domande di competenza (chi, cosa, dove, quando, come) modellando un piccolo sottoinsieme di dati del censimento (12 voci); in seguito sono stati apportati ulteriori perfezionamenti agli elementi degli standard che il modello doveva utilizzare e al modo in cui dovevano essere collegati e usati; le intuizioni di questa fase hanno portato anche alla creazione dei vocabolari controllati; infine, è stata creata la prima versione dell'ontologia e della documentazione del data model, attingendo alle intuizioni acquisite in ogni fase precedente.</p>
+      <p><a href="https://projects.dharc.unibo.it/knot/" target="_blank">Il Catalogo KNOT</a> fa uso del KNOT-DM per descrivere i dati del censimento, ma a causa delle limitazioni nel modo in cui i dati sono creati e gestiti dalla <a href="https://github.com/polifonia-project/clef">piattaforma CLEF</a> utilizzata dal catalogo (in primo luogo il requisito che ogni istanza di classe sia collegata a un template) non era facilmente realizzabile né pratico implementare il completo KNOT-DM. Questo ci ha portato a sviluppare una versione semplificata del KNOT-DM, allineata a questi vincoli ma comunque in grado di descrivere in modo significativo gli scholarly digital objects e la loro attività, tenendo conto degli obiettivi e delle specificità del nostro progetto.</p>
 
-      <p>Dopo la pubblicazione della prima versione del data model nell'estate del 2023, la valutazione continuerà con particolare attenzione alla capacità del modello di rispondere ai requisiti dell'integrazione del progetto nell'infrastruttura nazionale..</p>
+      <p>Pertanto, il Catalogo KNOT fa uso di tre classi chiave di KNOT-DM per creare records che rappresentano i progetti di ricerca e li collegano agli oggetti che hanno creato, comprese sia le raccolte di informazioni già strutturate in qualche modo (piuttosto che i dati grezzi), sia le forme digitali che consentono l'interazione con le informazioni tramite interfacce utente. Come nel modello di dati completo, queste tre classi possono essere collegate tra loro e queste connessioni sono rappresentate nell'interfaccia del catalogo, consentendo la navigazione tra i records. Questa focalizzazione su tre classi limita tuttavia l'uso delle proprietà e introduce alcuni nuovi usi, mentre molte delle classi che non possono essere utilizzate a causa delle limitazioni di CLEF sono sostituite da data type (principalmente URL e stringhe di testo). La <a href="https://projects.dharc.unibo.it/knot/documentation" target="_blank">documentazione completa</a> di come KNOT-DM è adattato e utilizzato in CLEF è disponibile sul sito web del catalogo. La Figura 3 offre una sintesi visiva del KNOT-DM semplificato.</p>
+
+      <figure class="figure">
+        <a href="../assets/imgs/data_model_core_catalog.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/data_model_core_catalog.svg"></a>
+        <figcaption class="figure-caption">FIG 3. Sintesi del KNOT-DM semplificato utilizzato dal Catalogo KNOT.</figcaption>
+      </figure>
 
       <p>Tutti gli elementi del KNOT-DM, compresi KNOT-O e i vocabolari controllati KNOT Taxonomy e KNOT Technological Thesaurus, sono pubblicati in inglese e in italiano e sono disponibili su <a href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a> con licenza CC BY-NC 4.0.</p>
       
@@ -273,7 +290,7 @@
       </div>
     </main>
     <footer class="pt-5 my-5 text-body-secondary border-top">
-      Digital Humanities Advanced Research Center &middot; 2023 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza Creative Commons BY-NC 4.0 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+      Digital Humanities Advanced Research Center &middot; 2023-25 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons BY-NC 4.0</a>
     </footer>
   </div>
   <!-- bootstrap js-->

@@ -4,10 +4,10 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KNOT is a three-year pilot project to create a use case for the Central Institute for the Digitization of Cultural Heritage (ICDP) - Digital Library of the Italian Ministry of Culture that adopts its infrastructural approach to showcase the digital cultural heritage of Italian universities.">
+  <meta name="description" content="The KNOT project is a three-year pilot tasked with investigating ways to integrate the Digital Cultural Heritage of Italian universities within the national infrastructure being developed by the Ministry of Culture. To do this, KNOT argues for rethinking the digital objects produced by academic research projects as interesting and unexplored examples of this DCH worthy of integration into the national infrastructure.">
   <meta name="author" content="Digital Humanities Advanced Research Center">
   <meta name="keywords" content="Cultural Heritage, Digital Humanities, ICDP, Italy">
-  <title>KNOT - Pilot</title>
+  <title>KNOT - The Project</title>
   
   <!-- bootstrap css-->
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
     <div class="container-xxl px-5">
       <div class="d-flex">
         <a href="../../" class="d-flex text-body-emphasis text-decoration-none">
-          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+          <span class="fs-4">KNOT - Rethinking Scholarly Digital Objects as Cultural Heritage</span>
         </a>
         <div class="btn-group px-3" role="group" aria-label="Language buttons">
           <a href="" role="button" class="btn lang disabled" aria-disabled="true">ENG</a>
@@ -41,16 +41,27 @@
               <a class="nav-link" href="../../">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pilot.html">KNOT Pilot</a>
+              <a class="nav-link disabled" aria-disabled="true" href="pilot.html">KNOT Pilot</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                KNOT Data Model
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="data_model.html">Overview</a></li>
+                <li><a class="dropdown-item" href="data_model_structure.html">Structure</a></li>
+                <li><a class="dropdown-item" href="data_model_modules.html">Modules</a></li>
+                <li><a class="dropdown-item" href="data_model_cvs.html">Controlled Vocabularies</a></li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="data_model.html">KNOT Data Model</a>
+              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalogue</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../ontology/index-en.html" target="_blank">KNOT Ontology</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalog</a>
+              <a class="nav-link" href="https://lab.dharc.unibo.it/skosmos/" target="_blank">KNOT Controlled Vocabularies</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
@@ -63,70 +74,80 @@
   <div class="container-xxl px-5">
     <main>
       <h1 class="text-body-emphasis">The KNOT Pilot</h1>
-      <p class="fs-5 col-md-8">KNOT is a three-year pilot (2023-2025) tasked with investigating ways to integrate the digital cultural heritage of Italian universities into the national infrastructure being built by the Central Institute for the Digitization of Cultural Heritage (ICDP) - Digital Library.</p>
-      <p>Considering the lack of consensus within universities and across them as to what constitutes their digital cultural heritage (DCH), the KNOT project has chosen to focus its investigation on the digital scholarly objects created by academic research within the field of the Humanities, and in particular the Digital Humanities, as an interesting yet unexplored example of existing DCH held by Italian universities. Our approach makes reference to the definitions of DCH provided by both UNESCO [<a href="#bib-1" id="back-1">1</a>] and the ICDP [<a href="#bib-2" id="back-2">2</a>] as well as insights from the heritage sector to consider digital objects as a form that goes beyond just data and contains multiple agencies and spatio-temporal distributions [<a href="#bib-3" id="back-3">3</a>]. As such the objects we are interested comprise collections of information (such as datasets) as well as digital forms that enable interaction with information, from software and data services such as search interfaces or APIs to visualization and annotation tools. This allows us to move past the scientific context in which these objects are most commonly understood and look at what heritage value might be found in their “reservoir of meaning” [<a href="#bib-3" id="back-3">3</a>]: such as the activity that produced them; the relationships to the information they encode; the new contexts they create for this information; and the ways in which they can foster the acquisition of new knowledge from this combination of context and information.  </p>
-      <p>The primary expected outputs of the pilot are a web application showcasing early adoption of the new national infrastructure (including data integration and services) and a set of guidelines for the collection, management, enrichment, and reuse of these digital scholarly objects. </p>
-      <p>The KNOT project is divided into three annual phases, each with its own focus: </p>
-      <ul>
-        <li>The identification and collection of heterogenous data, used to create a transversal data model and a knowledge graph (year 1).</li>
-        <li>The development of a web application to allow the exploration and use of the knowledge graph and collected data (year 2).</li>
-        <li>The development of a suite of services to allow the acquisition of new knowledge from the hybridization of data (year 3). </li>
-      </ul>
-      <p>Below is a more detailed overview of the activities and outputs expected within each phase of the project.</p>
+      <p class="fs-5 col-md-8">KNOT is a three-year pilot (2022-2025) tasked with investigating ways to integrate the Digital Cultural Heritage (DCH) of Italian universities into <a href="https://ipac.cultura.gov.it/" target="_blank">I.PaC</a>, the national infrastructure being built by the Central Institute for the Digitization of Cultural Heritage (ICDP) - Digital Library.</p>
+      <p>Considering the lack of consensus within universities and across them as to what constitutes their DCH, the KNOT project has chosen to focus its investigation on the scholarly digital objects created by academic research within the field of the Humanities, and in particular the Digital Humanities, as an interesting yet unexplored example of existing DCH held by Italian universities. Our approach makes reference to the definitions of DCH provided by both UNESCO [<a href="#bib-1" id="back-1">1</a>] and the ICDP [<a href="#bib-2" id="back-2">2</a>] as well as insights from the heritage sector to consider digital objects as a form that goes beyond just data and contains multiple agencies and spatio-temporal distributions [<a href="#bib-3" id="back-3">3</a>]. As such the objects we are interested in comprise collections of information (such as datasets) as well as digital forms that enable interaction with information, from software and data services such as search interfaces or APIs to visualization and annotation tools. This allows us to move past the scientific context in which these objects are most commonly understood and look at what heritage value might be found in their “reservoir of meaning” [<a href="#bib-3" id="back-3">3</a>]: such as the activity that produced them; the relationships to the information they encode; the new contexts they create for this information; and the ways in which they can foster the acquisition of new knowledge from this combination of context and information.</p>
+      <p>The expected outputs of the pilot include a data model to support the description and valorization of these scholarly digital objects as DCH, a web application showcasing the implementation of the data model and potential ways to integrate the data produced by the pilot into the national infrastructure, and a set of guidelines for the collection, management, enrichment, and reuse of these scholarly digital objects. </p>
+      <p>Below is a detailed overview of the activities and outputs within each phase of the project.</p>
       <div class="row g-5">
         <div class="col-md-12">
           <h2 class="text-body-emphasis">Year 1 (2023)</h2>
           <p>The first year was focused on data, with the following goals: </p>
           <ul>
             <li>Collection, classification, and categorization of heterogeneous and representative data for inclusion and use in the pilot. </li>
-            <li>Elaboration of a conceptual and metadata model to describe the selected data and reflect the central argument of the project. This model is to be informed by relevant existing approaches and project requirements and should enable a network of semantic links, including through reconciliation with authority records and controlled vocabularies.</li>
+            <li>Elaboration of a conceptual and data model to describe the selected data and reflect the central argument of the project. This model is to be informed by relevant existing approaches and project requirements and should enable a network of semantic links, including through reconciliation with authority records and controlled vocabularies.</li>
             <li>Definition of competency questions against which the conceptual model can be tested to ensure its ability to facilitate the discovery of latent knowledge.</li>
             <li>Creation of a knowledge graph, available via a SPARQL endpoint, representing digital scholarly objects as examples of the DCH of Italian universities alongside a workflow for the collection, normalization, cleaning, and transformation of data into RDF.</li>
           </ul>
           
-          <p>Additionally the first year also included the following objectives which will continue in subsequent phases:</p>
+          <p>Additionally the first year also included the following work which continued and fed into subsequent phases:</p>
           <ul>
-            <li>Research into techniques for the extraction of knowledge from heterogenous data. This research is conducted alongside the DISI department and as part of a working group with CINECA, aligned with the goals and needs of the Digital Library infrastructure.</li>
-            <li>Interviews with Italian academics to explore the challenges they face in the creation and management of digital scholarly objects born of Humanities research.</li>
+            <li>Collaboration with the DISI department as part of a working group with CINECA to explore potentials for integration of the pilot data into I.PaC and collaboration with the DBC department to explore issues around the classification of DCH faced by Italian universities.</li>
+            <li>Interviews with Italian academics to explore the challenges they face in the creation and management of scholarly digital objects born of Humanities research.</li>
           </ul>          
-          <p>The outputs for the first year were:</p> 
+          <p>The outputs for the first year included:</p> 
           <ul>
-            <li>A small census of sources and heterogenous data (digital scholarly objects and their related projects), used to develop the data model and knowledge graph.</li>
-            <li>A data model to describe digital scholarly objects as DCH, including an ontology and controlled vocabularies in RDF. </li>
-            <li>A small-scale catalogue, using the census, powered by a knowledge graph based on the data model that can act as a first version of the final web application.</li>
+            <li>A small census of scholarly digital objects and their related projects, used to develop the data model and knowledge graph.</li>
+            <li>A data model to describe scholarly digital objects as DCH, including an ontology and controlled vocabularies published in RDF. </li>
+            <li>Development of a small-scale catalogue application that uses the data model to describe the results of the census and generate a usable knowledge graph of scholarly digital objects and activity.</li>
           </ul>
         </div>
       </div>
       <div class="row g-5">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <h2 class="text-body-emphasis">Year 2 (2024)</h2>
-          <p>The second year is focused on the application, with the following goals:</p>
+          <p>The second year was focused on the catalogue, with the following goals:</p>
           <ul>
-            <li>Integration of data and metadata into the I.PaC platform. </li>
-            <li>Evaluation of potential services to extract new knowledge from the data as well as reconcile information with existing institutional repositories. </li>
-            <li>Further development of the catalogue.</li>
-            <li>Creation of a working document for the guidelines expected at the end of the project, drawing from early insights acquired during the data model development phase such as issues around visibility, categorization, and classification.</li>
+            <li>Evaluation of potential services to extract new knowledge from the data as well as reconcile information with existing institutional repositories.</li>
+            <li>Deployment and further development of the KNOT Catalogue.</li>
+            <li>Development of a repository to host and distribute the KNOT Controlled Vocabularies and ensure their FAIR-ness.</li>
+            <li>Development of a working document for guidelines expected at the end of the project, drawing from insights acquired during the first year around issues of visibility, categorization, and classification of scholarly digital objects.</li>
           </ul> 
-        </div>
-        
-        <div class="col-md-6">
-          <h2 class="text-body-emphasis">Year 3 (2025)</h2>
-          <p>The third year is focused on services, with the following goals:</p>
+          <p>The outputs for the second year included:</p> 
           <ul>
-            <li>Definition of a suite of user services available through the application, diverse in their offerings and potential and focused on the acquisition of new knowledge.</li>
-            <li>Integration of services and application into the national infrastructure.</li>
+            <li>Deployment of the <a href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalogue</a>, using the <a href="https://github.com/polifonia-project/clef" target="_blank">CLEF cataloguing application</a> and featuring a knowledge graph of scholarly digital objects and activity from the Italian humanities that includes records for 100 research projects, 35 digital objects, and 96 web services.</li>
+            <li>Publication of <a href="https://projects.dharc.unibo.it/knot/numbers" target="_blank">visualizations of the KNOT Catalogue knowledge graph</a>, showcasing some of the more interesting aspects of the dataset.</li>
+            <li>Extensions to the functionality of CLEF, such as the ability to generate pages for entities used for authority control and reconciliation.</li>
+            <li>Further development of both the KNOT Data Model and Controlled Vocabularies, including a simplified version of the data model tailored to the limitations of the CLEF functionalities.</li>
+            <li>Development of an application, based on <a href="https://skosmos.org/" target="_blank">Skosmos</a>, to publish the KNOT Controlled Vocabularies and for potential expanded use as a repository for all semantic artefacts produced by /DH.ARC.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row g-5"> 
+        <div class="col-md-12">
+          <h2 class="text-body-emphasis">Year 3 (2025)</h2>
+          <p>The third year is focused on integration with I.PaC and the production of guidelines, with the following goals:</p>
+          <ul>
+            <li>Integration of the project's data and metadata into the I.PaC platform through continued collaboration with the DISI and CINECA Working Group.</li>
+            <li>Publication of the guidelines for the description and valorization of scholarly digital objects as cultural heritage.</li>
+            <li>Deployment of the /DH.ARC Vocabularies repository and publication of internal guidelines for its continued usage.</li>
           </ul>
         </div>
       </div>
       
-      <hr class="mb-5">
+      <hr class="mb-4">
+      <h3>Journal Articles</h3>
+      <p>Giacomini, Sebastiano, Marilena Daquino, Francesca Tomasi, and Laurent Antoine Fintoni. 2025. “CLEF 2.0. Solutions for Native Linked Data Cataloguing of Italian Digital Cultural Heritage.” <em>JLIS.It</em> 16 (1): 108–26. <a href="https://doi.org/10.36253/jlis.it-611" target="_blank">https://doi.org/10.36253/jlis.it-611</a>.</p>
+      <h3>Conference Proceedings</h3>
+      <p>Sabba, Fiammetta, Francesca Tomasi, Silvia Tripodi, and Laurent Antoine Fintoni. 2023. “L’Università Di Bologna a Supporto Dell’ecosistema Digitale Della Cultura Presso Il Ministero Della Cultura.” In <em>Visioni Future: Next Generation Library</em> - Vol.1, 45–50. Editrice Bibliografica. <a href="https://hdl.handle.net/11585/947326" target="_blank">https://hdl.handle.net/11585/947326</a>.</p>
+      <p>Fintoni, Laurent Antoine. 2024. "Rethinking Scholarly Digital Objects as Cultural Heritage: The KNOT Project."" In <em>Me.Te. Digitali. Mediterraneo in rete tra testi e contesti, Proceedings del XIII Convegno Annuale AIUCD2024</em>, 582–587. <a href="https://dx.doi.org/10.6092/unibo/amsacta/7927" target="_blank">https://dx.doi.org/10.6092/unibo/amsacta/7927</a>.</p>
+      <hr class="mb-4">
       <h3>References</h3>
       <span id="bib-1">[<a href="#back-1">1</a>]</span> “Records of the General Conference, 32nd Session, Paris, 29 September to 17 October 2003, v. 1: Resolutions.” UNESCO, 2004. <a href="https://unesdoc.unesco.org/ark:/48223/pf0000133171" target="_blank">https://unesdoc.unesco.org/ark:/48223/pf0000133171</a>.<br>
       <span id="bib-2">[<a href="#back-2">2</a>]</span> Docs Italia. “01_Piano nazionale di digitalizzazione del patrimonio culturale | Piano nazionale di digitalizzazione del patrimonio culturale.” Accessed January 28, 2024. <a href="https://docs.italia.it/italia/icdp/icdp-pnd-docs/it/v1.1-febbraio-2023/index.html">https://docs.italia.it/italia/icdp/icdp-pnd-docs/it/v1.1-febbraio-2023/index.html</a>.<br>
       <span id="bib-3">[<a href="#back-3">3</a>]</span> Cameron, Fiona. The Future of Digital Data, Heritage and Curation in a More-than Human World.London ; New York:Routledge/Taylor & Francis Group, 2021. ZA4080.4.
     </main>
     <footer class="pt-5 my-5 text-body-secondary border-top">
-      Digital Humanities Advanced Research Center &middot; 2023 | This website and its content are available for reuse under a Creative Commons BY-NC 4.0 License <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+      Digital Humanities Advanced Research Center &middot; 2023-25 | This website and its content are available for reuse under a <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons BY-NC 4.0 License</a>
     </footer>
   </div>
   <!-- bootstrap js-->

@@ -4,7 +4,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn more about the KNOT Controlled Vocabularies and how they are use in the KNOT Data Model to describe academic research projects and the technologies they use.">
+  <meta name="description" content="The KNOT Data Model uses a variety of vocabularies and authority controls for key concepts and reconciliation, including the KNOT Controlled Vocabularies created specifically to describe scholarly digital objects and the technologies they use.">
   <meta name="author" content="Digital Humanities Advanced Research Center">
   <meta name="keywords" content="Cultural Heritage, Digital Humanities, ICDP, Italy">
   <title>KNOT - Controlled Vocabularies</title>
@@ -21,7 +21,7 @@
     <div class="container-xxl px-5">
       <div class="d-flex">
         <a href="../../" class="d-flex text-body-emphasis text-decoration-none">
-          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+          <span class="fs-4">KNOT - Rethinking Scholarly Digital Objects as Cultural Heritage</span>
         </a>
         <div class="btn-group px-3" role="group" aria-label="Language buttons">
           <a href="" role="button" class="btn lang disabled" aria-disabled="true">ENG</a>
@@ -44,14 +44,25 @@
             <li class="nav-item">
               <a class="nav-link" href="pilot.html">KNOT Pilot</a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                KNOT Data Model
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="data_model.html">Overview</a></li>
+                <li><a class="dropdown-item" href="data_model_structure.html">Structure</a></li>
+                <li><a class="dropdown-item" href="data_model_modules.html">Modules</a></li>
+                <li><a class="dropdown-item disabled" aria-disabled="true" href="data_model_cvs.html">Controlled Vocabularies</a></li>
+              </ul>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="data_model.html">KNOT Data Model</a>
+              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalogue</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../ontology/index-en.html" target="_blank">KNOT Ontology</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalog</a>
+              <a class="nav-link" href="https://lab.dharc.unibo.it/skosmos/" target="_blank">KNOT Controlled Vocabularies</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
@@ -66,16 +77,16 @@
       
       
       <h1 class="text-body-emphasis">The KNOT Data Model - Controlled Vocabularies</h1>
-      <p class="fs-5 col-md-8">KNOT-DM makes use of various authority records and controlled vocabularies for descriptions of key concepts and technical details. </p>
+      <p class="fs-5 col-md-8">KNOT-DM makes use of various authority records and controlled vocabularies for descriptions of key concepts and for reconciliation. </p>
       
-      <p>KNOT-DM makes use of external authority records and controlled vocabularies drawn from the requirements of DCAT as well as those of the project as a whole. These are listed below. In addition, two controlled vocabularies have been created specifically for the project, detailed in the next section. See the <a href="data_model_modules.html">Relationships section of the Module pag</a>e for details on how concepts from these vocabularies and authorities can be attached to the classes representing activities, entities, agents, and locations.</p>  
+      <p>KNOT-DM makes use of external authority records and controlled vocabularies drawn from the requirements of DCAT as well as those of the project as a whole. These are listed below. In addition, two controlled vocabularies have been created specifically for the project, detailed in the next section. See the <a href="data_model_modules.html">Relationships section of the Modules page</a> for details on how concepts from these vocabularies and authorities can be attached to classes representing activities, entities, agents, and locations.</p>  
       <ul>
-        <li>The <a href="https://schema.gov.it/lodview/controlled-vocabulary/licences" target="_blank">Licenze controlled vocabulary from AgID</a> is used to specify licenses (however it notably does not include some key license types like GNU).</li>
+        <li>The <a href="https://schema.gov.it/lodview/controlled-vocabulary/licences" target="_blank">Licenze controlled vocabulary from AgID</a> is used to specify licenses. For licenses not included in the vocabulary, such as GNU, direct links to the public license pages can be used.</li>
         <li>The <a href="https://github.com/italia/daf-ontologie-vocabolari-controllati/tree/master/VocabolariControllati/classifications-for-universities/academic-disciplines" target="_blank">Vocabolario delle Aree CUN, dei Macrosettori, dei Settori Concorsuali e dei Settori Scientifico-Disciplinari delle Università Italiane from the OntoPia network</a> is used to specify academic disciplines. It's recommended to use concepts at the Macro Sector level, especially for interdisciplinary projects, unless enough information is available to identify the relevant Scientific Disciplinary Sector. </li>
         <li><a href="https://www.geonames.org/" target="_blank">Geonames</a> is used to specify geographical locations.</li>
         <li><a href="https://www.wikidata.org/" target="_blank">Wikidata</a> is used to specify geographical locations, temporal periods, and people (lowest level of priority if another vocabulary or authority record in the list can specify the necessary information).</li>
         <li><a href="https://viaf.org/" target="_blank">VIAF</a> is used to specify people.</li>
-        <li><a href="https://vocabs.dariah.eu/tadirah/en/" target="_blank">TaDiRAH</a>, the Taxonomy of Digital Research Activities in the Humanities, is used to specify the types of research activities. It's recommended to use concepts from the first two levels of the taxonomy unless a more specific concept is more accurate (for example encoding) and to limit it to three, to avoid overusage. TaDiRAH can be used to specify both the specific activities involved in a research project, for example the fact that contributors programmed something, as well as the activities available to end users via data services, such as for example the ability to manipulate data.</li>
+        <li><a href="https://vocabs.dariah.eu/tadirah/en/" target="_blank">TaDiRAH</a>, the Taxonomy of Digital Research Activities in the Humanities, is used to specify the types of research activities. It's recommended to use concepts from the first two levels of the taxonomy unless a more specific concept provides better accuracy (for example encoding) and to limit it to three, to avoid overusage. TaDiRAH can be used to specify both the specific activities involved in a research project, for example the fact that contributors programmed something, as well as the activities available to end users via data services, such as for example the ability to manipulate data.</li>
         <li>The Data Theme, File Type, Access Right, Language, and Frequency <a href="https://op.europa.eu/en/web/eu-vocabularies/authority-tables" target="_blank">authority tables from the EU</a> are used to specify various technical aspects of DCAT classes.</li>
         <li>The <a href="http://purl.org/adms/status/1.0" target="_blank">ADMS Status vocabulary</a> is used to specify the state of a dataset’s distribution.</li>
       </ul>
@@ -83,16 +94,17 @@
       <hr class="mb-5">
 
       <h2 class="text-body-emphasis">The KNOT Controlled Vocabularies</h2>
-      <p>The KNOT Controlled Vocabularies were developed to answer specific needs of the data model which were not appropriately covered by existing vocabularies, namely the need to classify the types of digital scholarly objects KNOT documents and the need to have an authority control for technologies used by these objects. This resulted in the creation of the KNOT Taxonomy and KNOT Technology Thesaurus, two SKOS-based controlled vocabularies that are part of the KNOT-DM.</p>
+      <p>The development of the KNOT-DM and Catalogue evidenced a number of issues for us to consider and confront regarding the classification of scholarly digital objects, their documentation, and their visibility within the Italian academic system.</p>
+      <p>The KNOT Controlled Vocabularies were developed to answer specific needs of the data model which were not appropriately covered by existing vocabularies, namely the need to classify the types of scholarly digital objects KNOT documents and the need to have an authority control for technologies used by these objects. This resulted in the creation of the KNOT Taxonomy and KNOT Technology Thesaurus, two SKOS-based controlled vocabularies that are part of the KNOT-DM.</p>
       <p>Both vocabularies were developed in an iterative process to refine their hierarchical structures and scope. The <a href="https://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/index.html" target="_blank"><em>Introduction to Controlled Vocabularies: Terminology for Art, Architecture, and Other Cultural Works</em></a> published by the Getty Research Institute was used as a reference to help define which types of vocabularies to use while <a href="https://www.w3.org/TR/skos-reference/" target="_blank">the SKOS standard from the W3C</a> was chosen to represent these vocabularies in RDF as it "provides a standard, low-cost migration path for porting existing knowledge organization systems to the Semantic Web" [<a href="#bib-1" id="back-1">1</a>]. Existing vocabularies specific to the field of Digital Humanities were also used as reference including TaDiRAH, <a href="https://vocabs.dariah.eu/parthenos_vocabularies/en/" target="_blank">PARTHENOS Vocabularies</a> and the <a href="https://vocabs.dariah.eu/dha_taxonomy/en/" target="_blank">DHA Taxonomy</a>, with the latter two originally considered as solutions to the needs of the project but found to not be precise or extensive enough. </p>
       <p>Taxonomy was chosen to answer the needs for an “orderly classification” of the digital scholarly objects investigated by the project with a simple hierarchical structure through which to arrange the different types and detail their relationships [<a href="#bib-2" id="back-2">2</a>]. The thesaurus meanwhile was chosen to document the technologies used in research projects and objects as it is a more complex type of controlled vocabulary that reflects a “semantic network of unique concepts” with a multiplicity of relationships and the necessary controls “recommended for use as authorities in databases relating to art and cultural heritage.” [<a href="#bib-2">2</a>]</p>
           <figure>
             <a href="../assets/imgs/skos_usage.svg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/skos_usage.svg"></a>
             <figcaption class="figure-caption">FIG 2. Overview of the SKOS structure used for the controlled vocabularies.</figcaption>
           </figure>
-      <p>Figure 2 details the SKOS structures used for both vocabularies. The taxonomy only employs <code class="grafoo-class">skos:ConceptScheme</code> and <code class="grafoo-class">skos:Concept</code>, in keeping with its simpler hierarchical structure, while the Thesaurus also makes use of <code class="grafoo-class">skos:Collection</code> to enable a deeper structure. <code class="object-prop">skos:related</code> is used to create non hierarchical connections between concepts within the same vocabulary while <code class="data-prop">skos:closeMatch</code> and <code class="data-prop">skos:relatedMatch</code> are used to connect the concepts to others in external vocabularies, primarily the <a href="https://www.getty.edu/research/tools/vocabularies/aat/" target="_blank">Getty Art & Architecture Thesaurus</a>, the <a href="https://id.loc.gov/authorities/subjects.html" target="_blank">Library of Congress Subject Headings</a>, the DHA Taxonomy, and the PARTHENOS Vocabularies.</p>
+      <p>Figure 2 details the SKOS structures used for both vocabularies. The taxonomy only employs <code class="grafoo-class">skos:ConceptScheme</code> and <code class="grafoo-class">skos:Concept</code>, in keeping with its simpler hierarchical structure, while the Thesaurus also makes use of <code class="grafoo-class">skos:Collection</code> to enable a deeper structure. <code class="object-prop">skos:related</code> is used to create non hierarchical semantic connections between concepts within the same vocabulary while <code class="data-prop">skos:closeMatch</code> and <code class="data-prop">skos:relatedMatch</code> are used to map concepts to others in external vocabularies, primarily the <a href="https://www.getty.edu/research/tools/vocabularies/aat/" target="_blank">Getty Art & Architecture Thesaurus</a>, the <a href="https://id.loc.gov/authorities/subjects.html" target="_blank">Library of Congress Subject Headings</a>, the DHA Taxonomy, and the PARTHENOS Vocabularies.</p>
       <p>Both the KNOT Technology Thesaurus and Taxonomy are intended to be “living, growing tools” [<a href="#bib-2">2</a>] that will be updated throughout the duration of the KNOT project. During their development a list of editorial guidelines was created (see below), which are intended as the first point of reference for any update to either vocabularies. </p>
-      <p>The KNOT vocabularies are <a href="https://github.com/icdp-digital-library/KNOT/tree/main/data_model" target="_blank">available directly from our GitHub</a> in both SKOS format and with additional DCAT information, similarly to the SKOS vocabularies available from Schema, the Italian national catalogue of semantic data.</p>
+      <p>The KNOT vocabularies are <a href="https://github.com/icdp-digital-library/KNOT/tree/main/data_model" target="_blank">available directly from our GitHub</a> in both SKOS format and with additional DCAT information, similarly to the SKOS vocabularies available from Schema, the Italian national catalogue of semantic data. They can also be browsed and accessed via <a href="https://lab.dharc.unibo.it/skosmos/" target="_blank">the /DH.ARC Vocabularies repository</a> (and queried via API), making them fully FAIR.</p>
       <ul class="nav nav-pills mb-3 mt-3 justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">KNOT Taxonomy</button>
@@ -107,11 +119,11 @@
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
           <h3>The KNOT Taxonomy</h3>
-          <p>The list of concepts included in the KNOT Taxonomy reflects the most common types of digital scholarly objects encountered during the design phase of the KNOT-DM, based on a census of academic research projects from Italian universities focused on the Humanities.</p>
-          <p>The taxonomy is not intended as a complete or accurate picture of the landscape of digital scholarly objects produced by academic research in Italy but rather as a starting point from which to begin addressing this complex topic with a view to incorporate the learnings into the guidelines that the KNOT project will produce. While there have been efforts within the international Digital Humanities community to create useful taxonomies of research methods, tools, and activities, notably the DiRT Directory of digital research tools [<a href="#bib-3">3</a>] and TaDiRAH, less focus appears to have been given to the objects such methods, tools, and activities might produce. This makes classification of digital scholarly objects a particularly interesting and useful line of investigation for the project. </p>
-          <p>The concepts for the taxonomy were chosen and defined based on both existing literature and institutional definitions as well as by considering the classifications used by the research projects in order to account for both practical usage as well as ideal usage. As such a concept like Database reflects both its technical definition as well as its use by many research projects to describe a collection of resources and their metadata while a concept like Digital Archive is in practice almost always used to reflect a collection of items from different entities unified thematically which stands in contrast to the traditional definition of a collection of records originating from one person or organization and created in the course of their activity. </p>
+          <p>The list of concepts included in the KNOT Taxonomy reflects the most common types of scholarly digital objects encountered during the design phase of the KNOT-DM, based on a census of academic research projects from Italian universities focused on the Humanities.</p>
+          <p>The taxonomy is not intended as a complete or accurate picture of the landscape of scholarly digital objects produced by humanities research in Italy but rather as a starting point from which to begin addressing this complex topic with a view to incorporate the learnings into the guidelines that the KNOT project will produce. While there have been efforts within the international Digital Humanities community to create useful taxonomies of research methods, tools, and activities, notably the DiRT Directory of digital research tools [<a href="#bib-3">3</a>] and TaDiRAH, less focus appears to have been given to the objects such methods, tools, and activities might produce. This makes classification of scholarly digital objects a particularly interesting and useful line of investigation for the project. </p>
+          <p>The concepts for the taxonomy were chosen and defined based on both existing literature and institutional definitions as well as by considering the classifications used by the research projects themselves in order to account for both practical usage as well as ideal usage. As such a concept like Database reflects both its technical definition as well as its use by many research projects to describe a collection of resources and their metadata while a concept like Digital Archive is in practice almost always used to reflect a collection of items from different entities unified thematically which stands in contrast to the traditional definition of a collection of records originating from one person or organization and created in the course of their activity. </p>
           <p>As the KNOT project progresses the intention is to further refine the Taxonomy to include relevant concepts as well as find ways to reconcile practical and ideal uses. </p>
-          <p>Figure 3 details the KNOT Taxonomy structure and concepts.</p>
+          <p>Figure 3 details the KNOT Taxonomy structure and concepts in its first version. The current version can be easily browsed and accessed at the <a href="https://lab.dharc.unibo.it/skosmos/ktx/en/" target="_blank">the /DH.ARC Vocabularies repository</a>.</p>
           <figure class="figure">
             <a href="../assets/imgs/KTX_Diagram.jpg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/KTX_Diagram.jpg"></a>
             <figcaption class="figure-caption">FIG 3. KNOT Taxonomy structure and concepts.</figcaption>
@@ -119,9 +131,10 @@
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
           <h3>The KNOT Technological Thesaurus</h3>
-          <p>Concepts for the KNOT Technology Thesaurus were drawn from the technologies found in the same census data used for the Taxonomy, with particular attention to concepts related to the technology stack of many web-based applications. This was due to existing thesauri often lacking in concepts relating to this particular point of interest in our project. Concepts were then further expanded to also include research tasks, services, and tools and to therefore have the thesaurus be a more encompassing reference point for various relevant technological aspects of digital scholarly objects.</p>
+          <p>Concepts for the KNOT Technology Thesaurus were drawn from the technologies found in the same census data used for the Taxonomy, with particular attention to concepts related to the technology stack of many web-based applications. This was due to existing thesauri often lacking in concepts relating to this particular point of interest in our project. Concepts were then further expanded to also include research tasks, services, and tools and to therefore have the thesaurus be a more encompassing reference point for various relevant technological aspects of scholarly digital objects.</p>
           <p>From this the decision was taken to use <code class="grafoo-class">skos:Collection</code> to help create a deeper hierarchy as well as groupings for concepts that share something in common with the decision to begin with five collections: Computer & Information Sciences (representing research tasks and techniques), Data Storage, Formal Languages (representing programming and other technological languages), Information Technology Architecture (representing the IT stack), and Services & Tools (representing things that research projects both create or make available). As with the Taxonomy, these collections are not intended to be perfect or exact but rather reflect the needs of the project in its first year and act as a starting point from which to think about the specific issues of detailing the technologies that make digital scholarly objects examples of digital cultural heritage.</p>
           <p>Unlike the taxonomy, definitions for concepts in the thesaurus were kept as simple and factual as possible and wherever possible taken from trusted sources such as the Springer Handbook series or existing vocabularies such as the Getty AAT and LoC Subject Headings.</p>
+          <p>Figure 4 details the KNOT Technology Thesaurus structure and concepts in its first version. The current version can be easily browsed and accessed at the <a href="https://lab.dharc.unibo.it/skosmos/kth/en/" target="_blank">the /DH.ARC Vocabularies repository</a>.</p>
           <figure class="figure">
             <a href="../assets/imgs/KTH_Diagram.jpg" target="_blank"><img class="figure-img img-fluid rounded mx-auto d-block" src="../assets/imgs/KTH_Diagram.jpg"></a>
             <figcaption class="figure-caption">FIG 4. KNOT Technology Thesaurus structure and concepts.</figcaption>
@@ -172,7 +185,7 @@
       </div>
     </main>
     <footer class="pt-5 my-5 text-body-secondary border-top">
-      Digital Humanities Advanced Research Center &middot; 2023 | This website and its content are available for reuse under a Creative Commons BY-NC 4.0 License <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+      Digital Humanities Advanced Research Center &middot; 2023-25 | This website and its content are available for reuse under a <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons BY-NC 4.0 License</a>
     </footer>
   </div>
   <!-- bootstrap js-->

@@ -76,12 +76,21 @@ code {
     background-color: #FF99CC;
 }
 
-.nav-link.active {
-    background-color: #DA555B !important;
+.nav-link, .nav-link:hover, .dropdown-item:hover {
+    color: #DA555B !important;
 }
 
-.nav-link, .nav-link:hover {
-    color: #DA555B ;
+.nav-link.active {
+    background-color: #DA555B !important;
+    color: #fff !important;    
+}
+
+.dropdown-item:active {
+    background-color: transparent !important;
+}
+
+.nav-link.disabled {
+    color: var(--bs-nav-link-disabled-color) !important;
 }
 
 aside {
@@ -104,6 +113,16 @@ aside {
 .relations {
     text-decoration: underline;
     font-weight: bolder;
+}
+
+.dropdown-item {
+    font-weight: var(--bs-nav-link-font-weight) !important;
+}
+
+.dropdown-menu {
+    --bs-dropdown-padding-y: 0 !important;
+    --bs-dropdown-border-width: none !important;
+    --bs-dropdown-link-hover-bg: none !important;
 }
 
 /* screen size fixes */ 

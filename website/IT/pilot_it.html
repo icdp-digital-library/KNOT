@@ -4,7 +4,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KNOT è un progetto pilota triennale dell’Università di Bologna e dell'Istituto centrale per la digitalizzazione del patrimonio culturale - DIGITAL LIBRARY del Ministero della Cultura per la valorizzazione del patrimonio culturale digitale degli Atenei italiani.">
+  <meta name="description" content="Il progetto KNOT è un pilota triennale che ha il compito di studiare come integrare il patrimonio culturale digitale degli Atenei italiani all'interno dell'infrastruttura nazionale sviluppata dal Ministero della Cultura. Per fare questo, KNOT sostiene la necessità di ripensare agli oggetti digitali prodotti dai progetti di ricerca come esempi interessanti e inesplorati di patrimonio culturale da integrare nell'infrastruttura nazionale.">
   <meta name="author" content="Digital Humanities Advanced Research Center">
   <meta name="keywords" content="Patrimonio Culturale, Digital Humanities, ICDP, Digital Library">
   <title>KNOT - Il Pilota</title>
@@ -20,7 +20,7 @@
     <div class="container-xxl px-5">
       <div class="d-flex">
         <a href="index_it.html" class="d-flex text-body-emphasis text-decoration-none">
-          <span class="fs-4">KNOT. Patrimoni culturali digitali degli Atenei</span>
+          <span class="fs-4">KNOT - Rethinking Scholarly Digital Objects as Cultural Heritage</span>
         </a>
         <div class="btn-group px-3" role="group" aria-label="Language buttons">
           <a href="../ENG/pilot.html" role="button" class="btn lang">ENG</a>
@@ -41,16 +41,27 @@
               <a class="nav-link" href="index_it.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pilot_it.html">KNOT Pilota</a>
+              <a class="nav-link disabled" aria-disabled="true" href="pilot_it.html">KNOT Pilota</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                KNOT Data Model
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="data_model_it.html">Overview</a></li>
+                <li><a class="dropdown-item" href="data_model_structure_it.html">Structure</a></li>
+                <li><a class="dropdown-item" href="data_model_modules_it.html">Modules</a></li>
+                <li><a class="dropdown-item" href="data_model_cvs_it.html">Controlled Vocabularies</a></li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="data_model_structure_it.html">KNOT Data Model</a>
-            </li>
+              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalogue</a>
+            </li> 
             <li class="nav-item">
               <a class="nav-link" href="../ontology/index-it.html" target="_blank">KNOT Ontologia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://projects.dharc.unibo.it/knot/" target="_blank">KNOT Catalog</a>
+              <a class="nav-link" href="https://lab.dharc.unibo.it/skosmos/" target="_blank">KNOT Controlled Vocabularies</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/icdp-digital-library/KNOT" target="_blank">GitHub</a>
@@ -63,16 +74,10 @@
   <div class="container-xxl px-5">
     <main>
       <h1 class="text-body-emphasis">Il Progetto Pilota KNOT</h1>
-      <p class="fs-5 col-md-8">KNOT è un progetto pilota triennale (2023-2025) incaricato di indagare le modalità per integrare il patrimonio culturale digitale degli Atenei italiani nell'infrastruttura nazionale in fase di realizzazione da parte dell'Istituto Centrale per la Digitalizzazione dei Beni Culturali (ICDP) - Digital Library.</p>
-      <p>Considerando la mancanza di consenso all'interno degli Atenei e tra di esse su ciò che costituisce il loro patrimonio culturale digitale (PCD), il progetto KNOT ha scelto di concentrare la sua indagine sugli oggetti digitali (scholarly digital objects) creati dalla ricerca accademica nell'ambito delle scienze umane, e in particolare delle Digital Humanities, come esempio interessante ma inesplorato di PCD esistente. Il nostro approccio fa riferimento alle definizioni di PCD fornite dall'UNESCO [<a href="#bib-1" id="back-1">1</a>] e dall'ICDP [<a href="#bib-2" id="back-2">2</a>], nonché alle intuizioni del settore del patrimonio culturale, per considerare gli oggetti digitali come una forma che va oltre i semplici dati e contiene molteplici agenzie e distribuzioni spazio-temporali [<a href="#bib-3" id="back-3">3</a>]. In quanto tali, gli oggetti in cui siamo interessati comprendono collezioni di informazioni (come gli dataset) e forme digitali che consentono l'interazione con le informazioni, da software e servizi di dati come interfacce di ricerca o API a strumenti di visualizzazione e annotazione. Questo ci permette di andare oltre il contesto scientifico in cui questi oggetti sono più comunemente intesi e di guardare al valore patrimoniale che potrebbe essere trovato nel loro "serbatoio di significato" [3]: l'attività che li ha prodotti, le relazioni con le informazioni che codificano, i nuovi contesti che creano per queste informazioni e i modi in cui possono favorire l'acquisizione di nuova conoscenza da questa combinazione di contesto e informazioni.</p>
-      <p>I principali risultati attesi dal progetto pilota sono un'applicazione web che mostra una prima adozione della nuova infrastruttura nazionale (compresa l'integrazione dei dati e i servizi) e una serie di linee guida per la raccolta, la gestione, l'arricchimento e il riutilizzo di questi scholarly digital objects.</p>
-      <p>Il progetto KNOT è suddiviso in tre fasi annuali, ciascuna con un proprio obiettivo:</p>
-      <ul>
-        <li>Identificazione di dati e metadati eterogenei, utilizzati per creare un modello trasversale e knowledge graph (primo anno).</li>
-        <li>Sviluppo di un’applicazione web per l’esplorazione e fruizione del knowledge graph e dati (secondo anno).</li>
-        <li>Sviluppo di una suite di servizi che permettono l’acquisizione di nuova conoscenza dall’ibridazione dei dati (terzo anno).</li>
-      </ul>
-      <p>Di seguito una panoramica più dettagliata delle attività e dei risultati attesi in ciascuna fase del progetto.</p>
+      <p class="fs-5 col-md-8">KNOT è un progetto pilota triennale (2022-2025) incaricato di indagare le modalità per integrare il patrimonio culturale digitale (PCD) degli Atenei italiani in <a href="https://ipac.cultura.gov.it/" target="_blank">I.PaC</a>, l'infrastruttura nazionale in fase di realizzazione da parte dell'Istituto Centrale per la Digitalizzazione dei Beni Culturali (ICDP) - Digital Library.</p>
+      <p>Considerando la mancanza di consenso all'interno degli Atenei e tra di esse su ciò che costituisce il loro patrimonio culturale digitale, il progetto KNOT ha scelto di concentrare la sua indagine sugli oggetti digitali (scholarly digital objects) creati dalla ricerca accademica nell'ambito delle scienze umane, e in particolare delle Digital Humanities, come esempio interessante ma inesplorato di PCD esistente. Il nostro approccio fa riferimento alle definizioni di PCD fornite dall'UNESCO [<a href="#bib-1" id="back-1">1</a>] e dall'ICDP [<a href="#bib-2" id="back-2">2</a>], nonché alle intuizioni del settore del patrimonio culturale, per considerare gli oggetti digitali come una forma che va oltre i semplici dati e contiene molteplici agenzie e distribuzioni spazio-temporali [<a href="#bib-3" id="back-3">3</a>]. In quanto tali, gli oggetti in cui siamo interessati comprendono collezioni di informazioni (come gli dataset) e forme digitali che consentono l'interazione con le informazioni, da software e servizi di dati come interfacce di ricerca o API a strumenti di visualizzazione e annotazione. Questo ci permette di andare oltre il contesto scientifico in cui questi oggetti sono più comunemente intesi e di guardare al valore patrimoniale che potrebbe essere trovato nel loro "serbatoio di significato" [3]: l'attività che li ha prodotti, le relazioni con le informazioni che codificano, i nuovi contesti che creano per queste informazioni e i modi in cui possono favorire l'acquisizione di nuova conoscenza da questa combinazione di contesto e informazioni.</p>
+      <p>I risultati attesi del progetto includono un data model per supportare la descrizione e la valorizzazione di questi oggetti digitali come DCH, un'applicazione web che mostra l'implementazione del data model e i potenziali modi per integrare i dati prodotti dal progetto nell'infrastruttura nazionale e una serie di linee guida per la raccolta, la gestione, l'arricchimento e il riutilizzo di questi scholarly digital objects.</p>
+      <p>Di seguito una panoramica più dettagliata delle attività e dei risultati in ciascuna fase del progetto.</p>
       <div class="row g-5">
         <div class="col-md-12">
           <h2 class="text-body-emphasis">Primo Anno (2023)</h2>
@@ -84,48 +89,64 @@
             <li>Creazione di un knowledge graph, accessibile tramite SPARQL endpoint, che rappresenta i scholarly digital objects come esempi del PCD degli Atenei e di un flusso di lavoro per la raccolta, la normalizzazione, la bonifica e la trasformazione dei dati in RDF.</li>
           </ul>
           
-          <p>Inoltre, il primo anno comprende anche i seguenti obiettivi che proseguiranno nelle fasi successive:</p>
+          <p>Inoltre il primo anno ha incluso anche il seguente lavoro che è continuato e ha alimentato le fasi successive:</p>
           <ul>
-            <li>Ricerca sulle tecniche per l'estrazione di nuova conoscenza da dati eterogenei. Questa ricerca sarà condotta in collaborazione con il dipartimento DISI e nell'ambito di un gruppo di lavoro con il CINECA, in linea con gli obiettivi e le esigenze dell'infrastruttura della Digital Library.</li>
+            <li>Collaborazione con il dipartimento DISI come parte di un gruppo di lavoro con CINECA per esplorare le potenzialità di integrazione dei dati pilota in I.PaC e collaborazione con il dipartimento DBC per esplorare le problematiche relative alla classificazione del PCD affrontate dagli Atenei italiani.</li>
             <li>Interviste con accademici italiani per esplorare le sfide che devono affrontare nella creazione e nella gestione di scholarly digital objects nati dalla ricerca umanistica.</li>
-            <li>Creazione di un documento di lavoro per le linee guida previste alla fine del progetto, attingendo alle intuizioni acquisite durante lo sviluppo del data model, come le questioni relative alla visibilità, alla categorizzazione e alla classificazione.</li>
           </ul>          
           <p>Il primo anno ha prodotto i seguenti risultati:</p> 
           <ul>
             <li>Un piccolo censimento di fonti e dati eterogenei (scholarly digital objects e i loro progetti) che rappresentano il tema centrale del pilota, usato per sviluppare il data model e knowledge graph.</li>
-            <li>Un data model per descrivere scholarly digital objects come PCD, compresi gli strumenti necessari come ontologie e vocabolari controllati in RDF.</li>
-            <li>Un catalogo e un knowledge graph basato sul data model e sui dati selezionati, che può fungere da prima versione dell'applicazione web finale.</li>
+            <li>Un data model per descrivere scholarly digital objects come PCD, compresi gli strumenti necessari come ontologie e vocabolari controllati pubblicati in RDF.</li>
+            <li>Sviluppo di un catalogo su piccola scala che utilizza il data model per descrivere i risultati del censimento e generare un knowledge graph degli scholarly digital objects e attività.</li>
           </ul>
         </div>
       </div>
       <div class="row g-5">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <h2 class="text-body-emphasis">Secondo Anno (2024)</h2>
-          <p>Il secondo anno è incentrato sull'applicazione, con i seguenti obiettivi:</p>
+          <p>Il secondo anno è stato incentrato sul cataloguo, con i seguenti obiettivi:</p>
           <ul>
-            <li>Integrazione dei dati e metadati nella piattaforma nazionale I.PaC.</li>
             <li>Valutazione di potenziali servizi per estrarre nuova conoscenza dai dati e riconciliare le informazioni con i sistemi di gestione della ricerca istituzionali esistenti.</li>
-            <li>Sviluppo continuato del catalogo.</li>
+            <li>Distribuzione e ulteriore sviluppo del Catalogo KNOT.</li>
+            <li>Sviluppo di un repository per ospitare e distribuire i vocabolari controllati KNOT e garantirne la FAIR-ness.</li>
+            <li>Sviluppo di un documento di lavoro per le linee guida attese alla fine del progetto, che tragga spunto dalle intuizioni acquisite durante il primo anno sulle questioni di visibilità, categorizzazione e classificazione degli scholarly digital objects.</li>
           </ul> 
-        </div>
-        
-        <div class="col-md-6">
-          <h2 class="text-body-emphasis">Terzo Anno (2025)</h2>
-          <p>Il terzo anno è incentrato sui servizi, con i seguenti obiettivi:</p>
+          <p>Il secondo anno ha prodotto i seguenti risultati:</p> 
           <ul>
-            <li>Definire una suite di servizi da proporre agli utenti tramite l’applicazione, diversi nella loro offerta e potenzialità, per permettere l’acquisizione di nuova conoscenza.</li>
-            <li>Integrazione dei servizi e dell'app nella piattaforma nazionale.</li>
+            <li>Distribuzione del <a href="https://projects.dharc.unibo.it/knot/" target="_blank">Catalogo KNOT</a>, che utilizza <a href="https://github.com/polifonia-project/clef" target="_blank">l'applicazione di catalogazione CLEF</a> e presenta un knowledge graph degli scholarly digital objects e attività creati nel dominio delle scienze umanistiche italiane che include records per 100 progetti di ricerca, 35 oggetti digitali e 96 servizi web.</li>
+            <li>Pubblicazione di <a href="https://projects.dharc.unibo.it/knot/numbers" target="_blank">visualizzazioni del knowledge graph</a> del Catalogo KNOT, che mostrano alcuni degli aspetti più interessanti del dataset.</li>
+            <li>Estensione delle funzionalità di CLEF, come la possibilità di generare pagine per entità utilizzate per il controllo di autorità e la riconciliazione.</li>
+            <li>Ulteriore sviluppo del KNOT Data Model e dei vocabolari controllati, compresa una versione semplificata del modello di dati adattata ai limiti delle funzionalità di CLEF.</li>
+            <li>Sviluppo di un'applicazione, basata su <a href="https://skosmos.org/" target="_blank">Skosmos</a>, per pubblicare i vocabolari controllati KNOT e per un potenziale uso esteso come repository per tutti gli artefatti semantici prodotti da /DH.ARC.</li>
           </ul>
         </div>
       </div>
-      <hr class="mb-5">
+      <div class="row g-5">  
+        <div class="col-md-12">
+          <h2 class="text-body-emphasis">Terzo Anno (2025)</h2>
+          <p>Il terzo anno è incentrato sull'integrazione con I.PaC e sulla produzione di linee guida, con i seguenti obiettivi:</p>
+          <ul>
+            <li>Integrazione dei dati e dei metadati del progetto nella piattaforma I.PaC attraverso la continua collaborazione con il gruppo di lavoro DISI e CINECA.</li>
+            <li>Pubblicazione delle linee guida per la descrizione e la valorizzazione degli scholarly digital objects come patrimonio culturale.</li>
+            <li>Distribuzione del repository /DH.ARC Vocabularies e pubblicazione di linee guida interne per il suo continuo utilizzo.</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="mb-4">
+      <h3>Journal Articles</h3>
+      <p>Giacomini, Sebastiano, Marilena Daquino, Francesca Tomasi, and Laurent Antoine Fintoni. 2025. “CLEF 2.0. Solutions for Native Linked Data Cataloguing of Italian Digital Cultural Heritage.” <em>JLIS.It</em> 16 (1): 108–26. <a href="https://doi.org/10.36253/jlis.it-611" target="_blank">https://doi.org/10.36253/jlis.it-611</a>.</p>
+      <h3>Conference Proceedings</h3>
+      <p>Sabba, Fiammetta, Francesca Tomasi, Silvia Tripodi, and Laurent Antoine Fintoni. 2023. “L’Università Di Bologna a Supporto Dell’ecosistema Digitale Della Cultura Presso Il Ministero Della Cultura.” In <em>Visioni Future: Next Generation Library</em> - Vol.1, 45–50. Editrice Bibliografica. <a href="https://hdl.handle.net/11585/947326" target="_blank">https://hdl.handle.net/11585/947326</a>.</p>
+      <p>Fintoni, Laurent Antoine. 2024. "Rethinking Scholarly Digital Objects as Cultural Heritage: The KNOT Project."" In <em>Me.Te. Digitali. Mediterraneo in rete tra testi e contesti, Proceedings del XIII Convegno Annuale AIUCD2024</em>, 582–587. <a href="https://dx.doi.org/10.6092/unibo/amsacta/7927" target="_blank">https://dx.doi.org/10.6092/unibo/amsacta/7927</a>.</p>
+      <hr class="mb-4">
       <h3>References</h3>
       <span id="bib-1">[<a href="#back-1">1</a>]</span> “Records of the General Conference, 32nd Session, Paris, 29 September to 17 October 2003, v. 1: Resolutions.” UNESCO, 2004. <a href="https://unesdoc.unesco.org/ark:/48223/pf0000133171" target="_blank">https://unesdoc.unesco.org/ark:/48223/pf0000133171</a>.<br>
       <span id="bib-2">[<a href="#back-2">2</a>]</span> Docs Italia. “01_Piano nazionale di digitalizzazione del patrimonio culturale | Piano nazionale di digitalizzazione del patrimonio culturale.” Accessed January 28, 2024. <a href="https://docs.italia.it/italia/icdp/icdp-pnd-docs/it/v1.1-febbraio-2023/index.html">https://docs.italia.it/italia/icdp/icdp-pnd-docs/it/v1.1-febbraio-2023/index.html</a>.<br>
       <span id="bib-3">[<a href="#back-3">3</a>]</span> Cameron, Fiona. The Future of Digital Data, Heritage and Curation in a More-than Human World.London ; New York:Routledge/Taylor & Francis Group, 2021. ZA4080.4.
     </main>
     <footer class="pt-5 my-5 text-body-secondary border-top">
-      Digital Humanities Advanced Research Center &middot; 2023 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza Creative Commons BY-NC 4.0 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" alt="https://creativecommons.org/licenses/by-nc/4.0/" /></a>
+      Digital Humanities Advanced Research Center &middot; 2023-25 | Questo sito e il contenuto sono disponibili per il riutilizzo con licenza <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons BY-NC 4.0</a>
     </footer>
   </div>
   <!-- bootstrap js-->

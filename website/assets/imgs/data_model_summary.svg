@@ -10,370 +10,782 @@
         <path d="M652 428 L2011 428 L2011 1199 L652 1199 L652 428 Z"/>
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath3">
-        <path d="M-234.6955 775.1664 L-234.6955 -583.8336 L536.3044 -583.8336 L536.3044 775.1664 L-234.6955 775.1664 Z"/>
+        <path d="M0 0 L0 18 L54 18 L54 0 Z"/>
       </clipPath>
-      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath4">
-        <path d="M-91.2361 755.3355 L-91.2361 -603.6645 L679.7639 -603.6645 L679.7639 755.3355 L-91.2361 755.3355 Z"/>
-      </clipPath>
-      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath5">
-        <path d="M-492.644 586.2364 L-492.644 -772.7636 L278.356 -772.7636 L278.356 586.2364 L-492.644 586.2364 Z"/>
-      </clipPath>
-      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath6">
-        <path d="M-402.2178 271.4284 L-402.2178 -1087.5715 L368.7822 -1087.5715 L368.7822 271.4284 L-402.2178 271.4284 Z"/>
-      </clipPath>
-      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath7">
-        <path d="M-371.4912 522.2494 L-371.4912 -836.7506 L399.5088 -836.7506 L399.5088 522.2494 L-371.4912 522.2494 Z"/>
-      </clipPath>
+      <script type="text/ecmascript"><![CDATA[      var SVGDocument = null;
+      var SVGRoot = null;
+      var TrueCoords = null;
+      var lastElement = null;
+      var initialized = null;
+      var tipGroup;
+      function Init(evt)
+      {
+         SVGDocument = evt.target.ownerDocument;
+         SVGRoot = SVGDocument.documentElement;
+         TrueCoords = SVGRoot.createSVGPoint();
+         initialized = evt;
+      };
+      function GetTrueCoords(evt)
+      {
+         var newScale = SVGRoot.currentScale;
+         var translation = SVGRoot.currentTranslate;
+         TrueCoords.x = (evt.clientX - translation.x)/newScale;
+         TrueCoords.y = (evt.clientY - translation.y)/newScale;
+      };
+      function HideTooltip( evt )
+      {
+         if(initialized == null) {
+           Init(evt);
+         }
+         if(tipGroup != null) {
+           tipGroup.setAttributeNS(null, 'visibility', 'hidden');
+         }
+      };
+      function ShowTooltip( evt )
+      {
+         if(initialized == null) {
+           Init(evt);
+         }
+         GetTrueCoords( evt );
+         var tipScale = 1/SVGRoot.currentScale;
+         var targetElement = evt.currentTarget;
+         if ( lastElement != targetElement )
+         {
+            var targetId = targetElement.getAttributeNS(null, 'id');
+            var tipId = 'tooltip.' + targetId;
+            tipGroup = SVGDocument.getElementById(tipId);
+            var xPos = TrueCoords.x + (10 * tipScale);
+            var yPos = TrueCoords.y + (10 * tipScale);
+            tipGroup.setAttributeNS(null, 'transform', 'translate(' + xPos + ',' + yPos + ') scale(' + tipScale + ')');
+            tipGroup.setAttributeNS(null, 'visibility', 'visible');
+         }
+      };
+]]></script>
     </defs>
     <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="translate(-652,-428)" stroke="white">
       <rect x="652" width="1359" height="771" y="428" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
-    <g fill="rgb(242,140,120)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(242,140,120)">
-      <path d="M1381.9761 443.4524 L1980.4894 443.4524 L1980.4894 458.4524 L1995.4894 458.4524 L1995.4894 911.7972 L1381.9761 911.7972 Z" stroke="none" clip-path="url(#clipPath2)"/>
-      <path fill="white" d="M1980.4894 443.4524 L1980.4894 458.4524 L1995.4894 458.4524 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
+    <g onmouseout="HideTooltip(evt)" id="y.node.0" onmousemove="ShowTooltip(evt)">
+      <g fill="rgb(242,140,120)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(242,140,120)">
+        <path d="M1381.9761 443.4524 L1980.4894 443.4524 L1980.4894 458.4524 L1995.4894 458.4524 L1995.4894 911.7972 L1381.9761 911.7972 Z" stroke="none"/>
+      </g>
+      <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="white">
+        <path d="M1980.4894 443.4524 L1980.4894 458.4524 L1995.4894 458.4524 Z" stroke="none" fill-rule="evenodd"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1381.9761 443.4524 L1980.4894 443.4524 L1980.4894 458.4524 L1995.4894 458.4524 L1995.4894 911.7972 L1381.9761 911.7972 Z"/>
+        <path fill="none" d="M1980.4894 443.4524 L1980.4894 458.4524 L1995.4894 458.4524 Z" fill-rule="evenodd"/>
+      </g>
+      <g/>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <path fill="none" d="M1381.9761 443.4524 L1980.4894 443.4524 L1980.4894 458.4524 L1995.4894 458.4524 L1995.4894 911.7972 L1381.9761 911.7972 Z" clip-path="url(#clipPath2)"/>
-      <path fill="none" d="M1980.4894 443.4524 L1980.4894 458.4524 L1995.4894 458.4524 Z" clip-path="url(#clipPath2)" fill-rule="evenodd"/>
+    <g onmouseout="HideTooltip(evt)" id="y.node.1" onmousemove="ShowTooltip(evt)">
+      <g fill="rgb(255,204,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,204,153)">
+        <path d="M1201.4751 916.9843 L1799.9884 916.9843 L1799.9884 931.9843 L1814.9884 931.9843 L1814.9884 1183.6885 L1201.4751 1183.6885 Z" stroke="none"/>
+        <path fill="white" d="M1799.9884 916.9843 L1799.9884 931.9843 L1814.9884 931.9843 Z" fill-rule="evenodd" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1201.4751 916.9843 L1799.9884 916.9843 L1799.9884 931.9843 L1814.9884 931.9843 L1814.9884 1183.6885 L1201.4751 1183.6885 Z"/>
+        <path fill="none" d="M1799.9884 916.9843 L1799.9884 931.9843 L1814.9884 931.9843 Z" fill-rule="evenodd"/>
+      </g>
+      <g/>
     </g>
-    <g fill="rgb(255,204,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,204,153)">
-      <path d="M1201.4751 916.9843 L1799.9884 916.9843 L1799.9884 931.9843 L1814.9884 931.9843 L1814.9884 1183.6885 L1201.4751 1183.6885 Z" stroke="none" clip-path="url(#clipPath2)"/>
-      <path fill="white" d="M1799.9884 916.9843 L1799.9884 931.9843 L1814.9884 931.9843 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
+    <g onmouseout="HideTooltip(evt)" id="y.node.2" onmousemove="ShowTooltip(evt)">
+      <g fill="rgb(204,255,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(204,255,255)">
+        <path d="M667.7559 510.3637 L1180.8518 510.3637 L1180.8518 525.3637 L1195.8518 525.3637 L1195.8518 1183.6885 L667.7559 1183.6885 Z" stroke="none"/>
+        <path fill="white" d="M1180.8518 510.3637 L1180.8518 525.3637 L1195.8518 525.3637 Z" fill-rule="evenodd" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M667.7559 510.3637 L1180.8518 510.3637 L1180.8518 525.3637 L1195.8518 525.3637 L1195.8518 1183.6885 L667.7559 1183.6885 Z"/>
+        <path fill="none" d="M1180.8518 510.3637 L1180.8518 525.3637 L1195.8518 525.3637 Z" fill-rule="evenodd"/>
+      </g>
+      <g/>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <path fill="none" d="M1201.4751 916.9843 L1799.9884 916.9843 L1799.9884 931.9843 L1814.9884 931.9843 L1814.9884 1183.6885 L1201.4751 1183.6885 Z" clip-path="url(#clipPath2)"/>
-      <path fill="none" d="M1799.9884 916.9843 L1799.9884 931.9843 L1814.9884 931.9843 Z" clip-path="url(#clipPath2)" fill-rule="evenodd"/>
+    <g id="y.node.3">
+      <g fill="rgb(255,153,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,153,204)">
+        <circle r="10" cx="1308.1084" cy="599.0153" stroke="none"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+          <text x="1259.7334" xml:space="preserve" y="626.6169" stroke="none">Research Output</text>
+          <text x="1259.1768" xml:space="preserve" y="640.7497" stroke="none">(Scholarly Digital</text>
+          <text x="1287.2344" xml:space="preserve" y="654.8825" stroke="none">Object)</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-width="3" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <circle fill="none" r="10" cx="1308.1084" cy="599.0153"/>
+      </g>
     </g>
-    <g fill="rgb(204,255,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(204,255,255)">
-      <path d="M667.7559 510.3637 L1180.8518 510.3637 L1180.8518 525.3637 L1195.8518 525.3637 L1195.8518 1183.6885 L667.7559 1183.6885 Z" stroke="none" clip-path="url(#clipPath2)"/>
-      <path fill="white" d="M1180.8518 510.3637 L1180.8518 525.3637 L1195.8518 525.3637 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
+    <g id="y.node.4">
+      <g fill="rgb(255,153,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,153,204)">
+        <circle r="10" cx="1308.1084" cy="851.7673" stroke="none"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+          <text x="1260.1641" xml:space="preserve" y="819.1033" stroke="none">Research Project</text>
+          <text x="1282.7959" xml:space="preserve" y="833.2361" stroke="none">(Activity)</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-width="3" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <circle fill="none" r="10" cx="1308.1084" cy="851.7673"/>
+      </g>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <path fill="none" d="M667.7559 510.3637 L1180.8518 510.3637 L1180.8518 525.3637 L1195.8518 525.3637 L1195.8518 1183.6885 L667.7559 1183.6885 Z" clip-path="url(#clipPath2)"/>
-      <path fill="none" d="M1180.8518 510.3637 L1180.8518 525.3637 L1195.8518 525.3637 Z" clip-path="url(#clipPath2)" fill-rule="evenodd"/>
+    <g id="y.node.5">
+      <g fill="rgb(255,153,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,153,204)">
+        <circle r="10" cx="1308.1084" cy="680.124" stroke="none"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+          <text x="1257.4629" xml:space="preserve" y="707.7256" stroke="none">Output Container</text>
+          <text x="1250.7217" xml:space="preserve" y="721.8584" stroke="none">(Website, Repo, etc)</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-width="3" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <circle fill="none" r="10" cx="1308.1084" cy="680.124"/>
+      </g>
     </g>
-    <g fill="rgb(255,153,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,153,204)">
-      <circle r="10" clip-path="url(#clipPath2)" cx="1308.1084" cy="599.0153" stroke="none"/>
+    <g id="y.node.6">
+      <g>
+        <g font-size="14px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
+          <text x="1661.0693" xml:space="preserve" y="940.4504" stroke="none">PROV-O</text>
+          <text x="1579.561" xml:space="preserve" y="956.9387" stroke="none">Academic Provenance Segment</text>
+        </g>
+      </g>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <text x="1259.7334" xml:space="preserve" y="626.6169" clip-path="url(#clipPath2)" stroke="none">Research Output</text>
-      <circle fill="none" stroke-width="3" r="10" clip-path="url(#clipPath2)" cx="1308.1084" cy="599.0153"/>
+    <g id="y.node.7">
+      <g>
+        <g font-size="14px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
+          <text x="738.3937" xml:space="preserve" y="551.2285" stroke="none">CIDOC CRM</text>
+          <text x="685.3024" xml:space="preserve" y="567.7168" stroke="none">Cultural Heritage segment</text>
+        </g>
+      </g>
     </g>
-    <g fill="rgb(255,153,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,153,204)">
-      <circle r="10" clip-path="url(#clipPath2)" cx="1308.1084" cy="851.7673" stroke="none"/>
+    <g id="y.node.8">
+      <g>
+        <g font-size="14px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
+          <text x="1859.2848" xml:space="preserve" y="477.7417" stroke="none">DCAT (AP, IT)</text>
+          <text x="1833.8551" xml:space="preserve" y="494.2299" stroke="none">Public Data Segment</text>
+        </g>
+      </g>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <text x="1260.1641" xml:space="preserve" y="819.1033" clip-path="url(#clipPath2)" stroke="none">Research Project</text>
-      <text x="1282.7959" xml:space="preserve" y="833.2361" clip-path="url(#clipPath2)" stroke="none">(Activity)</text>
-      <circle fill="none" stroke-width="3" r="10" clip-path="url(#clipPath2)" cx="1308.1084" cy="851.7673"/>
+    <g id="y.node.9">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1440.8165" y="710.4263" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1492.1642" xml:space="preserve" y="745.4732" stroke="none">dcat:Catalog</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1440.8165" y="710.4263" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="rgb(255,153,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,153,204)">
-      <circle r="10" clip-path="url(#clipPath2)" cx="1308.1084" cy="680.124" stroke="none"/>
+    <g id="y.node.10">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1440.8165" y="830.8526" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1492.3947" xml:space="preserve" y="865.8995" stroke="none">dcat:Dataset</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1440.8165" y="830.8526" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <text x="1260.1641" xml:space="preserve" y="707.7256" clip-path="url(#clipPath2)" stroke="none">Research Project</text>
-      <text x="1253.5605" xml:space="preserve" y="721.8584" clip-path="url(#clipPath2)" stroke="none">(Output Container)</text>
-      <circle fill="none" stroke-width="3" r="10" clip-path="url(#clipPath2)" cx="1308.1084" cy="680.124"/>
-      <text x="1661.0693" font-size="14px" y="940.4504" clip-path="url(#clipPath2)" stroke="none" font-weight="bold" xml:space="preserve">PROV-O</text>
-      <text x="1579.561" font-size="14px" y="956.9387" clip-path="url(#clipPath2)" stroke="none" font-weight="bold" xml:space="preserve">Academic Provenance Segment</text>
-      <text x="738.3937" font-size="14px" y="551.2285" clip-path="url(#clipPath2)" stroke="none" font-weight="bold" xml:space="preserve">CIDOC CRM</text>
-      <text x="685.3024" font-size="14px" y="567.7168" clip-path="url(#clipPath2)" stroke="none" font-weight="bold" xml:space="preserve">Cultural Heritage segment</text>
-      <text x="1859.2848" font-size="14px" y="477.7417" clip-path="url(#clipPath2)" stroke="none" font-weight="bold" xml:space="preserve">DCAT (AP, IT)</text>
-      <text x="1833.8551" font-size="14px" y="494.2299" clip-path="url(#clipPath2)" stroke="none" font-weight="bold" xml:space="preserve">Public Data Segment</text>
+    <g id="y.node.11">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1440.8165" y="590" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1476.8751" xml:space="preserve" y="625.0469" stroke="none">dcat:DataService</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1440.8165" y="590" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1440.8165" y="710.4263" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.node.12">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1440.8165" y="469.5737" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1475.5978" xml:space="preserve" y="504.6206" stroke="none">dcat:Distribution</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1440.8165" y="469.5737" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1492.1642" xml:space="preserve" y="745.4732" clip-path="url(#clipPath2)" stroke="none">dcat:Catalog</text>
-      <rect x="1440.8165" y="710.4263" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.node.13">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1830.4441" y="830.8526" width="154.9841" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1867.2682" xml:space="preserve" y="865.8995" stroke="none">foaf:Agent</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1830.4441" y="830.8526" fill="none" width="154.9841" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1440.8165" y="830.8526" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.node.14">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1830.4441" y="590" width="154.9841" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1855.6627" xml:space="preserve" y="625.0469" stroke="none">skos:Concept</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1830.4441" y="590" fill="none" width="154.9841" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1492.3947" xml:space="preserve" y="865.8995" clip-path="url(#clipPath2)" stroke="none">dcat:Dataset</text>
-      <rect x="1440.8165" y="830.8526" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.node.15">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1830.4441" y="710.4263" width="154.9841" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1860.401" xml:space="preserve" y="745.4732" stroke="none">dct:Location</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1830.4441" y="710.4263" fill="none" width="154.9841" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1440.8165" y="590" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.node.16">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1250.8256" y="994.774" width="204.9682" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1304.8683" xml:space="preserve" y="1029.8209" stroke="none">prov:Activity</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1250.8256" y="994.774" fill="none" width="204.9682" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1476.8751" xml:space="preserve" y="625.0469" clip-path="url(#clipPath2)" stroke="none">dcat:DataService</text>
-      <rect x="1440.8165" y="590" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.node.17">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1253.3097" y="1114.2414" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1311.6378" xml:space="preserve" y="1149.2883" stroke="none">prov:Entity</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1253.3097" y="1114.2414" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1440.8165" y="469.5737" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.node.18">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1647.9214" y="1068.1958" width="150" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1680.105" xml:space="preserve" y="1103.2427" stroke="none">prov:Agent</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1647.9214" y="1068.1958" fill="none" width="150" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1475.5978" xml:space="preserve" y="504.6206" clip-path="url(#clipPath2)" stroke="none">dcat:Distribution</text>
-      <rect x="1440.8165" y="469.5737" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.node.19">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="1647.9214" y="994.774" width="150" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="1670.1479" xml:space="preserve" y="1029.8209" stroke="none">prov:Location</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="1647.9214" y="994.774" fill="none" width="150" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1830.4441" y="830.8526" clip-path="url(#clipPath2)" width="154.9841" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.node.20">
+      <g fill="rgb(255,153,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,153,204)">
+        <circle r="10" cx="1308.1084" cy="753.5503" stroke="none"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+          <text x="1244.4932" xml:space="preserve" y="781.1519" stroke="none">Research Sub-Activity</text>
+          <text x="1287.4746" xml:space="preserve" y="795.2847" stroke="none">(Tasks)</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-width="3" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <circle fill="none" r="10" cx="1308.1084" cy="753.5503"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1867.2682" xml:space="preserve" y="865.8995" clip-path="url(#clipPath2)" stroke="none">foaf:Agent</text>
-      <rect x="1830.4441" y="830.8526" clip-path="url(#clipPath2)" fill="none" width="154.9841" rx="4" ry="4" height="58"/>
+    <g id="y.node.21">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="896.8717" y="720.924" width="280" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="905.7897" xml:space="preserve" y="755.9709" stroke="none">crmdig:D7_Digital_Machine_Event</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="896.8717" y="720.924" fill="none" width="280" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1830.4441" y="590" clip-path="url(#clipPath2)" width="154.9841" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.node.22">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="692.2802" y="979.3122" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="735.6591" xml:space="preserve" y="1014.3591" stroke="none">crm:E39_Actor</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="692.2802" y="979.3122" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1855.6627" xml:space="preserve" y="625.0469" clip-path="url(#clipPath2)" stroke="none">skos:Concept</text>
-      <rect x="1830.4441" y="590" clip-path="url(#clipPath2)" fill="none" width="154.9841" rx="4" ry="4" height="58"/>
+    <g id="y.node.23">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="936.8717" y="844.3829" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="979.4186" xml:space="preserve" y="879.4298" stroke="none">frbroo:F5_Item</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="936.8717" y="844.3829" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1830.4441" y="710.4263" clip-path="url(#clipPath2)" width="154.9841" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.node.24">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="936.8717" y="979.3122" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="943.985" xml:space="preserve" y="1014.3591" stroke="none">frbroo:F3_Manifestation</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="936.8717" y="979.3122" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1860.401" xml:space="preserve" y="745.4732" clip-path="url(#clipPath2)" stroke="none">dct:Location</text>
-      <rect x="1830.4441" y="710.4263" clip-path="url(#clipPath2)" fill="none" width="154.9841" rx="4" ry="4" height="58"/>
+    <g id="y.node.25">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="936.8717" y="1114.2414" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="981.7975" xml:space="preserve" y="1149.2883" stroke="none">crm:E1_Entity </text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="936.8717" y="1114.2414" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1250.8256" y="994.774" clip-path="url(#clipPath2)" width="204.9682" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.node.26">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="927.7743" y="570.0153" width="205" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="930.9579" xml:space="preserve" y="605.0622" stroke="none">crmdig:D1_Digital_Object</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="927.7743" y="570.0153" fill="none" width="205" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1304.8683" xml:space="preserve" y="1029.8209" clip-path="url(#clipPath2)" stroke="none">prov:Activity</text>
-      <rect x="1250.8256" y="994.774" clip-path="url(#clipPath2)" fill="none" width="204.9682" rx="4" ry="4" height="58"/>
+    <g id="y.node.27">
+      <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
+        <rect x="692.2802" y="844.3829" width="200" rx="4" ry="4" height="58" stroke="none"/>
+      </g>
+      <g>
+        <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+          <text x="736.7489" xml:space="preserve" y="879.4298" stroke="none">crm:E53_Place</text>
+        </g>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <rect x="692.2802" y="844.3829" fill="none" width="200" rx="4" ry="4" height="58"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1253.3097" y="1114.2414" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.12">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1466.4734 710.4053 L1466.4734 680.124 L1326.1084 680.124"/>
+        <path d="M1318.1084 680.124 L1330.1084 685.124 L1327.1084 680.124 L1330.1084 675.124 Z" stroke="none"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1311.6378" xml:space="preserve" y="1149.2883" clip-path="url(#clipPath2)" stroke="none">prov:Entity</text>
-      <rect x="1253.3097" y="1114.2414" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.edge.0">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1468.4193 772.4352 L1468.4193 819.8363"/>
+        <path d="M1468.4193 764.4352 C1470.6284 764.4352 1472.4193 766.226 1472.4193 768.4352 C1472.4193 770.6443 1470.6284 772.4352 1468.4193 772.4352 C1466.2102 772.4352 1464.4193 770.6443 1464.4193 768.4352 C1464.4193 766.226 1466.2102 764.4352 1468.4193 764.4352 Z" stroke="none"/>
+        <path d="M1468.4193 830.8363 L1474.4193 818.8363 L1462.4193 818.8363 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1430.8207" width="75.1973" height="18.1328" y="784.3607" stroke="none"/>
+          <text fill="navy" x="1432.8207" xml:space="preserve" y="797.9623" font-family="sans-serif" stroke="none">dcat:dataset</text>
+        </g>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1647.9214" y="1068.1958" clip-path="url(#clipPath2)" width="150" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.13">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1440.8074 859.8526 L1375.1727 859.8526 L1375.1727 599.0153 L1326.1084 599.0153"/>
+        <path d="M1318.1084 599.0153 L1330.1084 604.0153 L1327.1084 599.0153 L1330.1084 594.0153 Z" stroke="none"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1680.105" xml:space="preserve" y="1103.2427" clip-path="url(#clipPath2)" stroke="none">prov:Agent</text>
-      <rect x="1647.9214" y="1068.1958" clip-path="url(#clipPath2)" fill="none" width="150" rx="4" ry="4" height="58"/>
+    <g id="y.edge.8">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1519.4408 706.3992 L1519.4408 659.007"/>
+        <path d="M1519.4408 714.3992 C1517.2317 714.3992 1515.4408 712.6084 1515.4408 710.3992 C1515.4408 708.1901 1517.2317 706.3992 1519.4408 706.3992 C1521.6499 706.3992 1523.4408 708.1901 1523.4408 710.3992 C1523.4408 712.6084 1521.6499 714.3992 1519.4408 714.3992 Z" stroke="none"/>
+        <path d="M1519.4408 648.007 L1513.4408 660.007 L1525.4408 660.007 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1483.0229" width="72.8359" height="18.1328" y="670.1467" stroke="none"/>
+          <text fill="navy" x="1485.0228" xml:space="preserve" y="683.7483" font-family="sans-serif" stroke="none">dcat:service</text>
+        </g>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="1647.9214" y="994.774" clip-path="url(#clipPath2)" width="150" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.2">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1436.7892 619 L1418.1 619 L1418.1 834.4291 L1429.8187 834.4291"/>
+        <path d="M1444.7892 619 C1444.7892 621.2092 1442.9983 623 1440.7892 623 C1438.5801 623 1436.7892 621.2092 1436.7892 619 C1436.7892 616.7908 1438.5801 615 1440.7892 615 C1442.9983 615 1444.7892 616.7908 1444.7892 619 Z" stroke="none"/>
+        <path d="M1440.8187 834.4291 L1428.8187 828.4291 L1428.8187 840.4291 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(-0,1,-1,-0,775.1664,234.6955)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="0" width="113.3594" height="18.1328" y="0" stroke="none"/>
+          <text fill="navy" x="2" xml:space="preserve" y="13.6016" font-family="sans-serif" stroke="none">dcat:servesDataset</text>
+        </g>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="1670.1479" xml:space="preserve" y="1029.8209" clip-path="url(#clipPath2)" stroke="none">prov:Location</text>
-      <rect x="1647.9214" y="994.774" clip-path="url(#clipPath2)" fill="none" width="150" rx="4" ry="4" height="58"/>
+    <g id="y.edge.14">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1455.1666 590.002 L1455.1666 575.5 L1308.1084 575.5 L1308.1084 581.0153"/>
+        <path d="M1308.1084 589.0153 L1313.1084 577.0153 L1308.1084 580.0153 L1303.1084 577.0153 Z" stroke="none"/>
+      </g>
     </g>
-    <g fill="rgb(255,153,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="rgb(255,153,204)">
-      <circle r="10" clip-path="url(#clipPath2)" cx="1308.1084" cy="753.5503" stroke="none"/>
+    <g id="y.edge.1">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1436.8075 846.2859 L1398.269 846.2859 L1398.269 498.5737 L1429.792 498.5737"/>
+        <path d="M1444.8075 846.2859 C1444.8075 848.4951 1443.0166 850.2859 1440.8075 850.2859 C1438.5984 850.2859 1436.8075 848.4951 1436.8075 846.2859 C1436.8075 844.0768 1438.5984 842.2859 1440.8075 842.2859 C1443.0166 842.2859 1444.8075 844.0768 1444.8075 846.2859 Z" stroke="none"/>
+        <path d="M1440.792 498.5737 L1428.792 492.5737 L1428.792 504.5737 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(-0,1,-1,-0,755.3355,91.2361)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="0" width="100.3926" height="18.1328" y="0" stroke="none"/>
+          <text fill="navy" x="2" xml:space="preserve" y="13.6016" font-family="sans-serif" stroke="none">dcat:distribution</text>
+        </g>
+      </g>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <text x="1244.4932" xml:space="preserve" y="781.1519" clip-path="url(#clipPath2)" stroke="none">Research Sub-Activity</text>
-      <text x="1287.4746" xml:space="preserve" y="795.2847" clip-path="url(#clipPath2)" stroke="none">(Tasks)</text>
-      <circle fill="none" stroke-width="3" r="10" clip-path="url(#clipPath2)" cx="1308.1084" cy="753.5503"/>
+    <g id="y.edge.3">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1540.8165 531.5898 L1540.8165 578.9861"/>
+        <path d="M1540.8165 523.5898 C1543.0256 523.5898 1544.8165 525.3806 1544.8165 527.5898 C1544.8165 529.799 1543.0256 531.5898 1540.8165 531.5898 C1538.6074 531.5898 1536.8165 529.799 1536.8165 527.5898 C1536.8165 525.3806 1538.6074 523.5898 1540.8165 523.5898 Z" stroke="none"/>
+        <path d="M1540.8165 589.9861 L1546.8165 577.9861 L1534.8165 577.9861 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1485.3057" width="111.0215" height="18.1328" y="549.7204" stroke="none"/>
+          <text fill="navy" x="1487.3058" xml:space="preserve" y="563.322" font-family="sans-serif" stroke="none">dcat:accessService</text>
+        </g>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="896.8717" y="720.924" clip-path="url(#clipPath2)" width="280" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.4">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1644.8234 757.4249 L1756.9574 757.4249 L1756.9574 859.8526 L1819.426 859.8526"/>
+        <path d="M1636.8234 757.4249 C1636.8234 755.2157 1638.6143 753.4249 1640.8234 753.4249 C1643.0325 753.4249 1644.8234 755.2157 1644.8234 757.4249 C1644.8234 759.634 1643.0325 761.4249 1640.8234 761.4249 C1638.6143 761.4249 1636.8234 759.634 1636.8234 757.4249 Z" stroke="none"/>
+        <path d="M1830.426 859.8526 L1818.426 853.8526 L1818.426 865.8526 Z" stroke="none"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="905.7897" xml:space="preserve" y="755.9709" clip-path="url(#clipPath2)" stroke="none">crmdig:D7_Digital_Machine_Event</text>
-      <rect x="896.8717" y="720.924" clip-path="url(#clipPath2)" fill="none" width="280" rx="4" ry="4" height="58"/>
+    <g id="y.edge.5">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1647.277 859.8526 L1819.423 859.8526"/>
+        <path d="M1639.277 859.8526 C1639.277 857.6434 1641.0679 855.8526 1643.277 855.8526 C1645.4861 855.8526 1647.277 857.6434 1647.277 859.8526 C1647.277 862.0618 1645.4861 863.8526 1643.277 863.8526 C1641.0679 863.8526 1639.277 862.0618 1639.277 859.8526 Z" stroke="none"/>
+        <path d="M1830.423 859.8526 L1818.423 853.8526 L1818.423 865.8526 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1671.5971" width="128.0664" height="18.1328" y="850.7862" stroke="none"/>
+          <text fill="navy" x="1673.597" xml:space="preserve" y="864.3878" font-family="sans-serif" stroke="none">dct:creator/publisher</text>
+        </g>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="692.2802" y="979.3122" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.6">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1647.2931 839.0888 L1667.5919 839.0888 L1667.5919 619 L1819.4221 619"/>
+        <path d="M1639.2931 839.0888 C1639.2931 836.8796 1641.084 835.0888 1643.2931 835.0888 C1645.5022 835.0888 1647.2931 836.8796 1647.2931 839.0888 C1647.2931 841.298 1645.5022 843.0888 1643.2931 843.0888 C1641.084 843.0888 1639.2931 841.298 1639.2931 839.0888 Z" stroke="none"/>
+        <path d="M1830.4221 619 L1818.4221 613 L1818.4221 625 Z" stroke="none"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="735.6591" xml:space="preserve" y="1014.3591" clip-path="url(#clipPath2)" stroke="none">crm:E39_Actor</text>
-      <rect x="692.2802" y="979.3122" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.edge.7">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1644.8457 619 L1819.4156 619"/>
+        <path d="M1636.8457 619 C1636.8457 616.7908 1638.6366 615 1640.8457 615 C1643.0548 615 1644.8457 616.7908 1644.8457 619 C1644.8457 621.2092 1643.0548 623 1640.8457 623 C1638.6366 623 1636.8457 621.2092 1636.8457 619 Z" stroke="none"/>
+        <path d="M1830.4156 619 L1818.4156 613 L1818.4156 625 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1674.433" width="122.3945" height="18.1328" y="609.9336" stroke="none"/>
+          <text fill="navy" x="1676.433" xml:space="preserve" y="623.5352" font-family="sans-serif" stroke="none">dcat:theme/dct:type</text>
+        </g>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="936.8717" y="844.3829" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.9">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1645.1951 718.1182 L1713.0072 718.1182 L1713.0072 636.0166 L1819.4351 636.0166"/>
+        <path d="M1637.1951 718.1182 C1637.1951 715.9091 1638.986 714.1182 1641.1951 714.1182 C1643.4042 714.1182 1645.1951 715.9091 1645.1951 718.1182 C1645.1951 720.3274 1643.4042 722.1182 1641.1951 722.1182 C1638.986 722.1182 1637.1951 720.3274 1637.1951 718.1182 Z" stroke="none"/>
+        <path d="M1830.4351 636.0166 L1818.4351 630.0166 L1818.4351 642.0166 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1678.4466" width="69.1211" height="18.1328" y="657.3295" stroke="none"/>
+          <text fill="navy" x="1680.4467" xml:space="preserve" y="670.9311" font-family="sans-serif" stroke="none">dcat:theme</text>
+        </g>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="979.4186" xml:space="preserve" y="879.4298" clip-path="url(#clipPath2)" stroke="none">frbroo:F5_Item</text>
-      <rect x="936.8717" y="844.3829" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.edge.10">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1647.2944 849.4605 L1713.0072 849.4605 L1713.0072 739.4263 L1819.4119 739.4263"/>
+        <path d="M1639.2944 849.4605 C1639.2944 847.2513 1641.0853 845.4605 1643.2944 845.4605 C1645.5035 845.4605 1647.2944 847.2513 1647.2944 849.4605 C1647.2944 851.6697 1645.5035 853.4605 1643.2944 853.4605 C1641.0853 853.4605 1639.2944 851.6697 1639.2944 849.4605 Z" stroke="none"/>
+        <path d="M1830.4119 739.4263 L1818.4119 733.4263 L1818.4119 745.4263 Z" stroke="none"/>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="936.8717" y="979.3122" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.11">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1644.832 739.4263 L1819.4329 739.4263"/>
+        <path d="M1636.832 739.4263 C1636.832 737.2172 1638.6229 735.4263 1640.832 735.4263 C1643.0411 735.4263 1644.832 737.2172 1644.832 739.4263 C1644.832 741.6355 1643.0411 743.4263 1640.832 743.4263 C1638.6229 743.4263 1636.832 741.6355 1636.832 739.4263 Z" stroke="none"/>
+        <path d="M1830.4329 739.4263 L1818.4329 733.4263 L1818.4329 745.4263 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1730.8319" width="64.334" height="18.1328" y="730.3599" stroke="none"/>
+          <text fill="navy" x="1732.8319" xml:space="preserve" y="743.9615" font-family="sans-serif" stroke="none">dct:spatial</text>
+        </g>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="943.985" xml:space="preserve" y="1014.3591" clip-path="url(#clipPath2)" stroke="none">frbroo:F3_Manifestation</text>
-      <rect x="936.8717" y="979.3122" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.edge.18">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1436.7997 876.9666 L1406.0964 876.9666 L1406.0964 983.7636"/>
+        <path d="M1444.7997 876.9666 C1444.7997 879.1758 1443.0088 880.9666 1440.7997 880.9666 C1438.5906 880.9666 1436.7997 879.1758 1436.7997 876.9666 C1436.7997 874.7574 1438.5906 872.9666 1440.7997 872.9666 C1443.0088 872.9666 1444.7997 874.7574 1444.7997 876.9666 Z" stroke="none"/>
+        <path d="M1406.0964 994.7636 L1412.0964 982.7636 L1400.0964 982.7636 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1341.7175" width="128.7578" height="18.1328" y="922.2414" stroke="none"/>
+          <text fill="navy" x="1343.7175" xml:space="preserve" y="935.843" font-family="sans-serif" stroke="none">prov:wasGeneratedBy</text>
+        </g>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="936.8717" y="1114.2414" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.19">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1308.1084 994.7636 L1308.1084 869.7673"/>
+        <path d="M1308.1084 861.7673 L1303.1084 873.7673 L1308.1084 870.7673 L1313.1084 873.7673 Z" stroke="none"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="981.7975" xml:space="preserve" y="1149.2883" clip-path="url(#clipPath2)" stroke="none">crm:E1_Entity </text>
-      <rect x="936.8717" y="1114.2414" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
+    <g id="y.edge.15">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1353.3097 1056.7875 L1353.3097 1103.228"/>
+        <path d="M1353.3097 1048.7875 C1355.5188 1048.7875 1357.3097 1050.5784 1357.3097 1052.7875 C1357.3097 1054.9966 1355.5188 1056.7875 1353.3097 1056.7875 C1351.1006 1056.7875 1349.3097 1054.9966 1349.3097 1052.7875 C1349.3097 1050.5784 1351.1006 1048.7875 1353.3097 1048.7875 Z" stroke="none"/>
+        <path d="M1353.3097 1114.228 L1359.3097 1102.228 L1347.3097 1102.228 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1290.0587" width="126.502" height="18.1328" y="1074.4413" stroke="none"/>
+          <text fill="navy" x="1292.0587" xml:space="preserve" y="1088.0428" font-family="sans-serif" stroke="none">prov:used/generated</text>
+        </g>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="927.7743" y="570.0153" clip-path="url(#clipPath2)" width="205" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.20">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1253.2958 1143.2415 L1245.4081 1143.2415 L1245.4081 599.0153 L1290.1084 599.0153"/>
+        <path d="M1298.1084 599.0153 L1286.1084 594.0153 L1289.1084 599.0153 L1286.1084 604.0153 Z" stroke="none"/>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="930.9579" xml:space="preserve" y="605.0622" clip-path="url(#clipPath2)" stroke="none">crmdig:D1_Digital_Object</text>
-      <rect x="927.7743" y="570.0153" clip-path="url(#clipPath2)" fill="none" width="205" rx="4" ry="4" height="58"/>
+    <g id="y.edge.16">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1430.4907 1056.7791 L1430.4907 1097.1958 L1636.9218 1097.1958"/>
+        <path d="M1430.4907 1048.7791 C1432.6998 1048.7791 1434.4907 1050.5699 1434.4907 1052.7791 C1434.4907 1054.9882 1432.6998 1056.7791 1430.4907 1056.7791 C1428.2816 1056.7791 1426.4907 1054.9882 1426.4907 1052.7791 C1426.4907 1050.5699 1428.2816 1048.7791 1430.4907 1048.7791 Z" stroke="none"/>
+        <path d="M1647.9218 1097.1958 L1635.9218 1091.1958 L1635.9218 1103.1958 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1463.4967" width="144.3555" height="18.1328" y="1088.1294" stroke="none"/>
+          <text fill="navy" x="1465.4967" xml:space="preserve" y="1101.731" font-family="sans-serif" stroke="none">prov:wasAssociatedWith</text>
+        </g>
+      </g>
     </g>
-    <g fill="yellow" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke="yellow">
-      <rect x="692.2802" y="844.3829" clip-path="url(#clipPath2)" width="200" rx="4" ry="4" height="58" stroke="none"/>
+    <g id="y.edge.17">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1459.8171 1023.774 L1636.877 1023.774"/>
+        <path d="M1451.8171 1023.774 C1451.8171 1021.5649 1453.608 1019.774 1455.8171 1019.774 C1458.0262 1019.774 1459.8171 1021.5649 1459.8171 1023.774 C1459.8171 1025.9832 1458.0262 1027.774 1455.8171 1027.774 C1453.608 1027.774 1451.8171 1025.9832 1451.8171 1023.774 Z" stroke="none"/>
+        <path d="M1647.877 1023.774 L1635.877 1017.774 L1635.877 1029.774 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="1504.7199" width="94.2754" height="18.1328" y="1014.7076" stroke="none"/>
+          <text fill="navy" x="1506.7198" xml:space="preserve" y="1028.3092" font-family="sans-serif" stroke="none">prov:atLocation</text>
+        </g>
+      </g>
     </g>
-    <g font-size="16px" stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-      <text x="736.7489" xml:space="preserve" y="879.4298" clip-path="url(#clipPath2)" stroke="none">crm:E53_Place</text>
-      <rect x="692.2802" y="844.3829" clip-path="url(#clipPath2)" fill="none" width="200" rx="4" ry="4" height="58"/>
-      <path fill="none" d="M1466.4734 710.4053 L1466.4734 680.124 L1326.1084 680.124" clip-path="url(#clipPath2)"/>
-      <path d="M1318.1084 680.124 L1330.1084 685.124 L1327.1084 680.124 L1330.1084 675.124 Z" stroke="none" clip-path="url(#clipPath2)"/>
+    <g id="y.edge.29">
+      <g stroke-linecap="round" transform="matrix(1,0,0,1,-652,-428)" stroke-dashoffset="2" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke-dasharray="0,4" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1246.8398 1023.774 L1229.17 1023.774 L1229.17 764.2155 L1187.9026 764.2155"/>
+        <path d="M1254.8398 1023.774 C1254.8398 1025.9832 1253.049 1027.774 1250.8398 1027.774 C1248.6307 1027.774 1246.8398 1025.9832 1246.8398 1023.774 C1246.8398 1021.5649 1248.6307 1019.774 1250.8398 1019.774 C1253.049 1019.774 1254.8398 1021.5649 1254.8398 1023.774 Z" stroke="none"/>
+        <path d="M1176.9026 764.2155 L1188.9026 770.2155 L1188.9026 758.2155 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="round" transform="matrix(0,1,-1,0,586.2364,492.644)" stroke-dashoffset="2" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke-dasharray="0,4" stroke="white" stroke-miterlimit="1.45">
+          <rect x="0" width="122.043" height="18.1328" y="0" stroke="none"/>
+        </g>
+        <g stroke-linecap="butt" transform="matrix(0,1,-1,0,586.2364,492.644)" fill="navy" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+          <text x="2" xml:space="preserve" y="13.6016" stroke="none">prov:wasInformedBy</text>
+        </g>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
-      <path fill="none" d="M1468.4193 772.4352 L1468.4193 819.8363" clip-path="url(#clipPath2)"/>
-      <path d="M1468.4193 764.4352 C1470.6284 764.4352 1472.4193 766.226 1472.4193 768.4352 C1472.4193 770.6443 1470.6284 772.4352 1468.4193 772.4352 C1466.2102 772.4352 1464.4193 770.6443 1464.4193 768.4352 C1464.4193 766.226 1466.2102 764.4352 1468.4193 764.4352 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1468.4193 830.8363 L1474.4193 818.8363 L1462.4193 818.8363 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1430.8207" y="784.3607" clip-path="url(#clipPath2)" fill="white" width="75.1973" height="18.1328" stroke="none"/>
-      <text x="1432.8207" xml:space="preserve" y="797.9623" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dcat:dataset</text>
-      <path fill="none" d="M1440.8074 859.8526 L1375.1727 859.8526 L1375.1727 599.0153 L1326.1084 599.0153" clip-path="url(#clipPath2)" stroke="black"/>
-      <path fill="black" d="M1318.1084 599.0153 L1330.1084 604.0153 L1327.1084 599.0153 L1330.1084 594.0153 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M1519.4408 706.3992 L1519.4408 659.007" clip-path="url(#clipPath2)"/>
-      <path d="M1519.4408 714.3992 C1517.2317 714.3992 1515.4408 712.6084 1515.4408 710.3992 C1515.4408 708.1901 1517.2317 706.3992 1519.4408 706.3992 C1521.6499 706.3992 1523.4408 708.1901 1523.4408 710.3992 C1523.4408 712.6084 1521.6499 714.3992 1519.4408 714.3992 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1519.4408 648.007 L1513.4408 660.007 L1525.4408 660.007 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1483.0229" y="670.1467" clip-path="url(#clipPath2)" fill="white" width="72.8359" height="18.1328" stroke="none"/>
-      <text x="1485.0228" xml:space="preserve" y="683.7483" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dcat:service</text>
-      <path fill="none" d="M1436.7892 619 L1418.1 619 L1418.1 834.4291 L1429.8187 834.4291" clip-path="url(#clipPath2)"/>
-      <path d="M1444.7892 619 C1444.7892 621.2092 1442.9983 623 1440.7892 623 C1438.5801 623 1436.7892 621.2092 1436.7892 619 C1436.7892 616.7908 1438.5801 615 1440.7892 615 C1442.9983 615 1444.7892 616.7908 1444.7892 619 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1440.8187 834.4291 L1428.8187 828.4291 L1428.8187 840.4291 Z" clip-path="url(#clipPath2)" stroke="none"/>
+    <g id="y.edge.31">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1176.8702 753.5504 L1245.1167 753.5504 L1290.1084 753.5504"/>
+        <path d="M1298.1084 753.5504 L1286.1084 748.5504 L1289.1084 753.5504 L1286.1084 758.5504 Z" stroke="none"/>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(-0,1,-1,-0,775.1664,234.6955)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
-      <rect x="0" width="113.3594" height="18.1328" y="0" clip-path="url(#clipPath3)" stroke="none"/>
-      <text x="2" y="13.6016" clip-path="url(#clipPath3)" fill="navy" font-family="sans-serif" stroke="none" xml:space="preserve">dcat:servesDataset</text>
+    <g id="y.edge.27">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M914.3621 782.9359 L914.3621 1012.531 L903.2698 1012.1477"/>
+        <path d="M914.3621 774.9359 C916.5712 774.9359 918.3621 776.7267 918.3621 778.9359 C918.3621 781.145 916.5712 782.9359 914.3621 782.9359 C912.1529 782.9359 910.3621 781.145 910.3621 778.9359 C910.3621 776.7267 912.1529 774.9359 914.3621 774.9359 Z" stroke="none"/>
+        <path d="M892.2764 1011.7678 L904.0621 1018.1786 L904.4765 1006.1858 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(-0,1,-1,-0,271.4284,402.2178)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="0" width="143.2949" height="18.1328" y="0" stroke="none"/>
+          <text fill="navy" x="2" xml:space="preserve" y="13.6016" font-family="sans-serif" stroke="none">crm:P14_carried_out_by</text>
+        </g>
+      </g>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <path fill="none" d="M1455.1666 590.002 L1455.1666 575.5 L1308.1084 575.5 L1308.1084 581.0153" clip-path="url(#clipPath2)"/>
-      <path d="M1308.1084 589.0153 L1313.1084 577.0153 L1308.1084 580.0153 L1303.1084 577.0153 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M1436.8075 846.2859 L1398.269 846.2859 L1398.269 498.5737 L1429.792 498.5737" clip-path="url(#clipPath2)" stroke="navy"/>
-      <path fill="navy" d="M1444.8075 846.2859 C1444.8075 848.4951 1443.0166 850.2859 1440.8075 850.2859 C1438.5984 850.2859 1436.8075 848.4951 1436.8075 846.2859 C1436.8075 844.0768 1438.5984 842.2859 1440.8075 842.2859 C1443.0166 842.2859 1444.8075 844.0768 1444.8075 846.2859 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="navy" d="M1440.792 498.5737 L1428.792 492.5737 L1428.792 504.5737 Z" clip-path="url(#clipPath2)" stroke="none"/>
+    <g id="y.edge.25">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1036.8717 782.9394 L1036.8717 833.3676"/>
+        <path d="M1036.8717 774.9394 C1039.0808 774.9394 1040.8717 776.7302 1040.8717 778.9394 C1040.8717 781.1486 1039.0808 782.9394 1036.8717 782.9394 C1034.6626 782.9394 1032.8717 781.1486 1032.8717 778.9394 C1032.8717 776.7302 1034.6626 774.9394 1036.8717 774.9394 Z" stroke="none"/>
+        <path d="M1036.8717 844.3676 L1042.8717 832.3676 L1030.8717 832.3676 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="977.0748" width="119.5938" height="18.1328" y="802.5871" stroke="none"/>
+          <text fill="navy" x="979.0748" xml:space="preserve" y="816.1887" font-family="sans-serif" stroke="none">crmdig:L1_digitized</text>
+        </g>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(-0,1,-1,-0,755.3355,91.2361)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
-      <rect x="0" width="100.3926" height="18.1328" y="0" clip-path="url(#clipPath4)" stroke="none"/>
-      <text x="2" y="13.6016" clip-path="url(#clipPath4)" fill="navy" font-family="sans-serif" stroke="none" xml:space="preserve">dcat:distribution</text>
+    <g id="y.edge.21">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1165.183 782.9359 L1165.183 1008.3122 L1147.8822 1008.3122"/>
+        <path d="M1165.183 774.9359 C1167.3921 774.9359 1169.183 776.7267 1169.183 778.9359 C1169.183 781.145 1167.3921 782.9359 1165.183 782.9359 C1162.9739 782.9359 1161.183 781.145 1161.183 778.9359 C1161.183 776.7267 1162.9739 774.9359 1165.183 774.9359 Z" stroke="none"/>
+        <path d="M1136.8822 1008.3122 L1148.8822 1014.3122 L1148.8822 1002.3122 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(-0,1,-1,-0,522.2494,371.4912)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="0" width="140.5938" height="18.1328" y="0" stroke="none"/>
+          <text fill="navy" x="2" xml:space="preserve" y="13.6016" font-family="sans-serif" stroke="none">crmdig:L60_documents</text>
+        </g>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
-      <path fill="none" d="M1540.8165 531.5898 L1540.8165 578.9861" clip-path="url(#clipPath2)"/>
-      <path d="M1540.8165 523.5898 C1543.0256 523.5898 1544.8165 525.3806 1544.8165 527.5898 C1544.8165 529.799 1543.0256 531.5898 1540.8165 531.5898 C1538.6074 531.5898 1536.8165 529.799 1536.8165 527.5898 C1536.8165 525.3806 1538.6074 523.5898 1540.8165 523.5898 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1540.8165 589.9861 L1546.8165 577.9861 L1534.8165 577.9861 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1485.3057" y="549.7204" clip-path="url(#clipPath2)" fill="white" width="111.0215" height="18.1328" stroke="none"/>
-      <text x="1487.3058" xml:space="preserve" y="563.322" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dcat:accessService</text>
-      <path fill="none" d="M1644.8234 757.4249 L1756.9574 757.4249 L1756.9574 859.8526 L1819.426 859.8526" clip-path="url(#clipPath2)"/>
-      <path d="M1636.8234 757.4249 C1636.8234 755.2157 1638.6143 753.4249 1640.8234 753.4249 C1643.0325 753.4249 1644.8234 755.2157 1644.8234 757.4249 C1644.8234 759.634 1643.0325 761.4249 1640.8234 761.4249 C1638.6143 761.4249 1636.8234 759.634 1636.8234 757.4249 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1830.426 859.8526 L1818.426 853.8526 L1818.426 865.8526 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M1647.277 859.8526 L1819.423 859.8526" clip-path="url(#clipPath2)"/>
-      <path d="M1639.277 859.8526 C1639.277 857.6434 1641.0679 855.8526 1643.277 855.8526 C1645.4861 855.8526 1647.277 857.6434 1647.277 859.8526 C1647.277 862.0618 1645.4861 863.8526 1643.277 863.8526 C1641.0679 863.8526 1639.277 862.0618 1639.277 859.8526 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1830.423 859.8526 L1818.423 853.8526 L1818.423 865.8526 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1671.5971" y="850.7862" clip-path="url(#clipPath2)" fill="white" width="128.0664" height="18.1328" stroke="none"/>
-      <text x="1673.597" xml:space="preserve" y="864.3878" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:creator/publisher</text>
-      <path fill="none" d="M1647.2931 839.0888 L1667.5919 839.0888 L1667.5919 619 L1819.4221 619" clip-path="url(#clipPath2)"/>
-      <path d="M1639.2931 839.0888 C1639.2931 836.8796 1641.084 835.0888 1643.2931 835.0888 C1645.5022 835.0888 1647.2931 836.8796 1647.2931 839.0888 C1647.2931 841.298 1645.5022 843.0888 1643.2931 843.0888 C1641.084 843.0888 1639.2931 841.298 1639.2931 839.0888 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1830.4221 619 L1818.4221 613 L1818.4221 625 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M1644.8457 619 L1819.4156 619" clip-path="url(#clipPath2)"/>
-      <path d="M1636.8457 619 C1636.8457 616.7908 1638.6366 615 1640.8457 615 C1643.0548 615 1644.8457 616.7908 1644.8457 619 C1644.8457 621.2092 1643.0548 623 1640.8457 623 C1638.6366 623 1636.8457 621.2092 1636.8457 619 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1830.4156 619 L1818.4156 613 L1818.4156 625 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1674.433" y="609.9336" clip-path="url(#clipPath2)" fill="white" width="122.3945" height="18.1328" stroke="none"/>
-      <text x="1676.433" xml:space="preserve" y="623.5352" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dcat:theme/dct:type</text>
-      <path fill="none" d="M1645.1951 718.1182 L1713.0072 718.1182 L1713.0072 636.0166 L1819.4351 636.0166" clip-path="url(#clipPath2)"/>
-      <path d="M1637.1951 718.1182 C1637.1951 715.9091 1638.986 714.1182 1641.1951 714.1182 C1643.4042 714.1182 1645.1951 715.9091 1645.1951 718.1182 C1645.1951 720.3274 1643.4042 722.1182 1641.1951 722.1182 C1638.986 722.1182 1637.1951 720.3274 1637.1951 718.1182 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1830.4351 636.0166 L1818.4351 630.0166 L1818.4351 642.0166 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1678.4466" y="657.3295" clip-path="url(#clipPath2)" fill="white" width="69.1211" height="18.1328" stroke="none"/>
-      <text x="1680.4467" xml:space="preserve" y="670.9311" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dcat:theme</text>
-      <path fill="none" d="M1647.2944 849.4605 L1713.0072 849.4605 L1713.0072 739.4263 L1819.4119 739.4263" clip-path="url(#clipPath2)"/>
-      <path d="M1639.2944 849.4605 C1639.2944 847.2513 1641.0853 845.4605 1643.2944 845.4605 C1645.5035 845.4605 1647.2944 847.2513 1647.2944 849.4605 C1647.2944 851.6697 1645.5035 853.4605 1643.2944 853.4605 C1641.0853 853.4605 1639.2944 851.6697 1639.2944 849.4605 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1830.4119 739.4263 L1818.4119 733.4263 L1818.4119 745.4263 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M1644.832 739.4263 L1819.4329 739.4263" clip-path="url(#clipPath2)"/>
-      <path d="M1636.832 739.4263 C1636.832 737.2172 1638.6229 735.4263 1640.832 735.4263 C1643.0411 735.4263 1644.832 737.2172 1644.832 739.4263 C1644.832 741.6355 1643.0411 743.4263 1640.832 743.4263 C1638.6229 743.4263 1636.832 741.6355 1636.832 739.4263 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1830.4329 739.4263 L1818.4329 733.4263 L1818.4329 745.4263 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1730.8319" y="730.3599" clip-path="url(#clipPath2)" fill="white" width="64.334" height="18.1328" stroke="none"/>
-      <text x="1732.8319" xml:space="preserve" y="743.9615" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">dct:spatial</text>
-      <path fill="none" d="M1436.7997 876.9666 L1406.0964 876.9666 L1406.0964 983.7636" clip-path="url(#clipPath2)"/>
-      <path d="M1444.7997 876.9666 C1444.7997 879.1758 1443.0088 880.9666 1440.7997 880.9666 C1438.5906 880.9666 1436.7997 879.1758 1436.7997 876.9666 C1436.7997 874.7574 1438.5906 872.9666 1440.7997 872.9666 C1443.0088 872.9666 1444.7997 874.7574 1444.7997 876.9666 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1406.0964 994.7636 L1412.0964 982.7636 L1400.0964 982.7636 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1341.7175" y="922.2414" clip-path="url(#clipPath2)" fill="white" width="128.7578" height="18.1328" stroke="none"/>
-      <text x="1343.7175" xml:space="preserve" y="935.843" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">prov:wasGeneratedBy</text>
-      <path fill="none" d="M1308.1084 994.7636 L1308.1084 869.7673" clip-path="url(#clipPath2)" stroke="black"/>
-      <path fill="black" d="M1308.1084 861.7673 L1303.1084 873.7673 L1308.1084 870.7673 L1313.1084 873.7673 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M1353.3097 1056.7875 L1353.3097 1103.228" clip-path="url(#clipPath2)"/>
-      <path d="M1353.3097 1048.7875 C1355.5188 1048.7875 1357.3097 1050.5784 1357.3097 1052.7875 C1357.3097 1054.9966 1355.5188 1056.7875 1353.3097 1056.7875 C1351.1006 1056.7875 1349.3097 1054.9966 1349.3097 1052.7875 C1349.3097 1050.5784 1351.1006 1048.7875 1353.3097 1048.7875 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1353.3097 1114.228 L1359.3097 1102.228 L1347.3097 1102.228 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1290.0587" y="1074.4413" clip-path="url(#clipPath2)" fill="white" width="126.502" height="18.1328" stroke="none"/>
-      <text x="1292.0587" xml:space="preserve" y="1088.0428" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">prov:used/generated</text>
-      <path fill="none" d="M1253.2958 1143.2415 L1245.4081 1143.2415 L1245.4081 599.0153 L1290.1084 599.0153" clip-path="url(#clipPath2)" stroke="black"/>
-      <path fill="black" d="M1298.1084 599.0153 L1286.1084 594.0153 L1289.1084 599.0153 L1286.1084 604.0153 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M1430.4907 1056.7791 L1430.4907 1097.1958 L1636.9218 1097.1958" clip-path="url(#clipPath2)"/>
-      <path d="M1430.4907 1048.7791 C1432.6998 1048.7791 1434.4907 1050.5699 1434.4907 1052.7791 C1434.4907 1054.9882 1432.6998 1056.7791 1430.4907 1056.7791 C1428.2816 1056.7791 1426.4907 1054.9882 1426.4907 1052.7791 C1426.4907 1050.5699 1428.2816 1048.7791 1430.4907 1048.7791 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1647.9218 1097.1958 L1635.9218 1091.1958 L1635.9218 1103.1958 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1463.4967" y="1088.1294" clip-path="url(#clipPath2)" fill="white" width="144.3555" height="18.1328" stroke="none"/>
-      <text x="1465.4967" xml:space="preserve" y="1101.731" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">prov:wasAssociatedWith</text>
-      <path fill="none" d="M1459.8171 1023.774 L1636.877 1023.774" clip-path="url(#clipPath2)"/>
-      <path d="M1451.8171 1023.774 C1451.8171 1021.5649 1453.608 1019.774 1455.8171 1019.774 C1458.0262 1019.774 1459.8171 1021.5649 1459.8171 1023.774 C1459.8171 1025.9832 1458.0262 1027.774 1455.8171 1027.774 C1453.608 1027.774 1451.8171 1025.9832 1451.8171 1023.774 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1647.877 1023.774 L1635.877 1017.774 L1635.877 1029.774 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="1504.7199" y="1014.7076" clip-path="url(#clipPath2)" fill="white" width="94.2754" height="18.1328" stroke="none"/>
-      <text x="1506.7198" xml:space="preserve" y="1028.3092" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">prov:atLocation</text>
-      <path fill="none" stroke-dasharray="0,4" d="M1246.8398 1023.774 L1229.17 1023.774 L1229.17 764.2155 L1187.9026 764.2155" stroke-dashoffset="2" clip-path="url(#clipPath2)" stroke-linecap="round"/>
-      <path stroke-dasharray="0,4" d="M1254.8398 1023.774 C1254.8398 1025.9832 1253.049 1027.774 1250.8398 1027.774 C1248.6307 1027.774 1246.8398 1025.9832 1246.8398 1023.774 C1246.8398 1021.5649 1248.6307 1019.774 1250.8398 1019.774 C1253.049 1019.774 1254.8398 1021.5649 1254.8398 1023.774 Z" stroke-dashoffset="2" clip-path="url(#clipPath2)" stroke-linecap="round" stroke="none"/>
-      <path stroke-dasharray="0,4" d="M1176.9026 764.2155 L1188.9026 770.2155 L1188.9026 758.2155 Z" stroke-dashoffset="2" clip-path="url(#clipPath2)" stroke-linecap="round" stroke="none"/>
+    <g id="y.edge.22">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1036.8717 906.4039 L1036.8717 968.2912"/>
+        <path d="M1036.8717 898.4039 C1039.0808 898.4039 1040.8717 900.1948 1040.8717 902.4039 C1040.8717 904.6131 1039.0808 906.4039 1036.8717 906.4039 C1034.6626 906.4039 1032.8717 904.6131 1032.8717 902.4039 C1032.8717 900.1948 1034.6626 898.4039 1036.8717 898.4039 Z" stroke="none"/>
+        <path d="M1036.8717 979.2912 L1042.8717 967.2912 L1030.8717 967.2912 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="943.8228" width="186.0977" height="18.1328" y="931.7812" stroke="none"/>
+          <text fill="navy" x="945.8229" xml:space="preserve" y="945.3827" font-family="sans-serif" stroke="none">frbroo:R7_is_materialization_of</text>
+        </g>
+      </g>
     </g>
-    <g stroke-linecap="round" transform="matrix(0,1,-1,0,586.2364,492.644)" stroke-dashoffset="2" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke-dasharray="0,4" stroke="white" stroke-miterlimit="1.45">
-      <rect x="0" width="122.043" height="18.1328" y="0" clip-path="url(#clipPath5)" stroke="none"/>
+    <g id="y.edge.23">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1036.8717 1041.3331 L1036.8717 1103.2205"/>
+        <path d="M1036.8717 1033.3331 C1039.0808 1033.3331 1040.8717 1035.124 1040.8717 1037.3331 C1040.8717 1039.5422 1039.0808 1041.3331 1036.8717 1041.3331 C1034.6626 1041.3331 1032.8717 1039.5422 1032.8717 1037.3331 C1032.8717 1035.124 1034.6626 1033.3331 1036.8717 1033.3331 Z" stroke="none"/>
+        <path d="M1036.8717 1114.2205 L1042.8717 1102.2205 L1030.8717 1102.2205 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="977.7105" width="118.3223" height="18.1328" y="1066.7104" stroke="none"/>
+          <text fill="navy" x="979.7106" xml:space="preserve" y="1080.312" font-family="sans-serif" stroke="none">crm:P129_is_about </text>
+        </g>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(0,1,-1,0,586.2364,492.644)" fill="navy" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
-      <text x="2" xml:space="preserve" y="13.6016" clip-path="url(#clipPath5)" stroke="none">prov:wasInformedBy</text>
+    <g id="y.edge.24">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1030.2743 716.8788 L1030.2743 695.6157 L1030.2743 639.0317"/>
+        <path d="M1030.2743 724.8788 C1028.0652 724.8788 1026.2743 723.088 1026.2743 720.8788 C1026.2743 718.6696 1028.0652 716.8788 1030.2743 716.8788 C1032.4834 716.8788 1034.2743 718.6696 1034.2743 720.8788 C1034.2743 723.088 1032.4834 724.8788 1030.2743 724.8788 Z" stroke="none"/>
+        <path d="M1030.2743 628.0317 L1024.2743 640.0317 L1036.2743 640.0317 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="950.3768" width="159.7949" height="60.5312" y="648.45" stroke="none"/>
+          <text fill="navy" x="965.1913" xml:space="preserve" y="662.0515" font-family="sans-serif" stroke="none">crmdig:L10_had_input</text>
+          <text fill="navy" x="960.996" xml:space="preserve" y="676.1843" font-family="sans-serif" stroke="none">crmdig:L11_had_output</text>
+          <text fill="navy" x="959.5634" xml:space="preserve" y="690.3171" font-family="sans-serif" stroke="none">crmdig:L20_has_created</text>
+          <text fill="navy" x="952.3768" xml:space="preserve" y="704.45" font-family="sans-serif" stroke="none">crmdig:L23_used_software</text>
+        </g>
+      </g>
     </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
-      <path fill="none" d="M1176.8702 753.5504 L1245.1167 753.5504 L1290.1084 753.5504" clip-path="url(#clipPath2)"/>
-      <path d="M1298.1084 753.5504 L1286.1084 748.5504 L1289.1084 753.5504 L1286.1084 758.5504 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M914.3621 782.9359 L914.3621 1012.531 L903.2698 1012.1477" clip-path="url(#clipPath2)" stroke="navy"/>
-      <path fill="navy" d="M914.3621 774.9359 C916.5712 774.9359 918.3621 776.7267 918.3621 778.9359 C918.3621 781.145 916.5712 782.9359 914.3621 782.9359 C912.1529 782.9359 910.3621 781.145 910.3621 778.9359 C910.3621 776.7267 912.1529 774.9359 914.3621 774.9359 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="navy" d="M892.2764 1011.7678 L904.0621 1018.1786 L904.4765 1006.1858 Z" clip-path="url(#clipPath2)" stroke="none"/>
+    <g id="y.edge.28">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M1099.0669 565.9989 L1099.0669 536.5702 L996.9059 536.5702 L996.9059 559.0043"/>
+        <path d="M1099.0669 573.9989 C1096.8578 573.9989 1095.0669 572.2081 1095.0669 569.9989 C1095.0669 567.7897 1096.8578 565.9989 1099.0669 565.9989 C1101.276 565.9989 1103.0669 567.7897 1103.0669 569.9989 C1103.0669 572.2081 1101.276 573.9989 1099.0669 573.9989 Z" stroke="none"/>
+        <path d="M996.9059 570.0043 L1002.9059 558.0043 L990.9059 558.0043 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="981.6036" width="132.7656" height="18.1328" y="527.5038" stroke="none"/>
+          <text fill="navy" x="983.6036" xml:space="preserve" y="541.1053" font-family="sans-serif" stroke="none">P106_is_composed_of</text>
+        </g>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(-0,1,-1,-0,271.4284,402.2178)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
-      <rect x="0" width="143.2949" height="18.1328" y="0" clip-path="url(#clipPath6)" stroke="none"/>
-      <text x="2" y="13.6016" clip-path="url(#clipPath6)" fill="navy" font-family="sans-serif" stroke="none" xml:space="preserve">crm:P14_carried_out_by</text>
+    <g id="y.edge.30">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-652,-428)" stroke-linecap="butt">
+        <path fill="none" d="M1132.7897 599.0153 L1290.1084 599.0153"/>
+        <path d="M1298.1084 599.0153 L1286.1084 594.0153 L1289.1084 599.0153 L1286.1084 604.0153 Z" stroke="none"/>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
-      <path fill="none" d="M1036.8717 782.9394 L1036.8717 833.3676" clip-path="url(#clipPath2)"/>
-      <path d="M1036.8717 774.9394 C1039.0808 774.9394 1040.8717 776.7302 1040.8717 778.9394 C1040.8717 781.1486 1039.0808 782.9394 1036.8717 782.9394 C1034.6626 782.9394 1032.8717 781.1486 1032.8717 778.9394 C1032.8717 776.7302 1034.6626 774.9394 1036.8717 774.9394 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1036.8717 844.3676 L1042.8717 832.3676 L1030.8717 832.3676 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="977.0748" y="802.5871" clip-path="url(#clipPath2)" fill="white" width="119.5938" height="18.1328" stroke="none"/>
-      <text x="979.0748" xml:space="preserve" y="816.1887" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">crmdig:L1_digitized</text>
-      <path fill="none" d="M1165.183 782.9359 L1165.183 1008.3122 L1147.8822 1008.3122" clip-path="url(#clipPath2)"/>
-      <path d="M1165.183 774.9359 C1167.3921 774.9359 1169.183 776.7267 1169.183 778.9359 C1169.183 781.145 1167.3921 782.9359 1165.183 782.9359 C1162.9739 782.9359 1161.183 781.145 1161.183 778.9359 C1161.183 776.7267 1162.9739 774.9359 1165.183 774.9359 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1136.8822 1008.3122 L1148.8822 1014.3122 L1148.8822 1002.3122 Z" clip-path="url(#clipPath2)" stroke="none"/>
+    <g id="y.edge.26">
+      <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
+        <path fill="none" d="M892.8693 749.924 L792.2802 749.924 L792.2802 833.3534"/>
+        <path d="M900.8693 749.924 C900.8693 752.1332 899.0784 753.924 896.8693 753.924 C894.6601 753.924 892.8693 752.1332 892.8693 749.924 C892.8693 747.7148 894.6601 745.924 896.8693 745.924 C899.0784 745.924 900.8693 747.7148 900.8693 749.924 Z" stroke="none"/>
+        <path d="M792.2802 844.3534 L798.2802 832.3534 L786.2802 832.3534 Z" stroke="none"/>
+      </g>
+      <g>
+        <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
+          <rect x="753.3688" width="130.1172" height="18.1328" y="740.8576" stroke="none"/>
+          <text fill="navy" x="755.3688" xml:space="preserve" y="754.4592" font-family="sans-serif" stroke="none">crm:P7_took_place_at</text>
+        </g>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(-0,1,-1,-0,522.2494,371.4912)" fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="white" stroke-miterlimit="1.45">
-      <rect x="0" width="140.5938" height="18.1328" y="0" clip-path="url(#clipPath7)" stroke="none"/>
-      <text x="2" y="13.6016" clip-path="url(#clipPath7)" fill="navy" font-family="sans-serif" stroke="none" xml:space="preserve">crmdig:L60_documents</text>
+    <g visibility="hidden" id="tooltip.y.node.0" pointer-events="none">
+      <g fill="rgb(255,255,204)" text-rendering="geometricPrecision" font-size="11px" shape-rendering="geometricPrecision" font-family="'Lucida Grande'" stroke="rgb(255,255,204)">
+        <rect x="0" width="54" height="18" y="0" clip-path="url(#clipPath3)" stroke="none"/>
+        <text fill="black" x="3" xml:space="preserve" y="13" clip-path="url(#clipPath3)" stroke="none">UMLNote</text>
+      </g>
     </g>
-    <g stroke-linecap="butt" transform="matrix(1,0,0,1,-652,-428)" fill="navy" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="navy" stroke-miterlimit="1.45">
-      <path fill="none" d="M1036.8717 906.4039 L1036.8717 968.2912" clip-path="url(#clipPath2)"/>
-      <path d="M1036.8717 898.4039 C1039.0808 898.4039 1040.8717 900.1948 1040.8717 902.4039 C1040.8717 904.6131 1039.0808 906.4039 1036.8717 906.4039 C1034.6626 906.4039 1032.8717 904.6131 1032.8717 902.4039 C1032.8717 900.1948 1034.6626 898.4039 1036.8717 898.4039 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1036.8717 979.2912 L1042.8717 967.2912 L1030.8717 967.2912 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="943.8228" y="931.7812" clip-path="url(#clipPath2)" fill="white" width="186.0977" height="18.1328" stroke="none"/>
-      <text x="945.8229" xml:space="preserve" y="945.3827" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">frbroo:R7_is_materialization_of</text>
-      <path fill="none" d="M1036.8717 1041.3331 L1036.8717 1103.2205" clip-path="url(#clipPath2)"/>
-      <path d="M1036.8717 1033.3331 C1039.0808 1033.3331 1040.8717 1035.124 1040.8717 1037.3331 C1040.8717 1039.5422 1039.0808 1041.3331 1036.8717 1041.3331 C1034.6626 1041.3331 1032.8717 1039.5422 1032.8717 1037.3331 C1032.8717 1035.124 1034.6626 1033.3331 1036.8717 1033.3331 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1036.8717 1114.2205 L1042.8717 1102.2205 L1030.8717 1102.2205 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="977.7105" y="1066.7104" clip-path="url(#clipPath2)" fill="white" width="118.3223" height="18.1328" stroke="none"/>
-      <text x="979.7106" xml:space="preserve" y="1080.312" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">crm:P129_is_about </text>
-      <path fill="none" d="M1030.2743 716.8788 L1030.2743 695.6157 L1030.2743 639.0317" clip-path="url(#clipPath2)"/>
-      <path d="M1030.2743 724.8788 C1028.0652 724.8788 1026.2743 723.088 1026.2743 720.8788 C1026.2743 718.6696 1028.0652 716.8788 1030.2743 716.8788 C1032.4834 716.8788 1034.2743 718.6696 1034.2743 720.8788 C1034.2743 723.088 1032.4834 724.8788 1030.2743 724.8788 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M1030.2743 628.0317 L1024.2743 640.0317 L1036.2743 640.0317 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="950.3768" y="648.45" clip-path="url(#clipPath2)" fill="white" width="159.7949" height="60.5312" stroke="none"/>
-      <text x="965.1913" xml:space="preserve" y="662.0515" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">crmdig:L10_had_input</text>
-      <text x="960.996" xml:space="preserve" y="676.1843" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">crmdig:L11_had_output</text>
-      <text x="959.5634" xml:space="preserve" y="690.3171" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">crmdig:L20_has_created</text>
-      <text x="952.3768" xml:space="preserve" y="704.45" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">crmdig:L23_used_software</text>
-      <path fill="none" d="M1099.0669 565.9989 L1099.0669 536.5702 L996.9059 536.5702 L996.9059 559.0043" clip-path="url(#clipPath2)"/>
-      <path d="M1099.0669 573.9989 C1096.8578 573.9989 1095.0669 572.2081 1095.0669 569.9989 C1095.0669 567.7897 1096.8578 565.9989 1099.0669 565.9989 C1101.276 565.9989 1103.0669 567.7897 1103.0669 569.9989 C1103.0669 572.2081 1101.276 573.9989 1099.0669 573.9989 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M996.9059 570.0043 L1002.9059 558.0043 L990.9059 558.0043 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="981.6036" y="527.5038" clip-path="url(#clipPath2)" fill="white" width="132.7656" height="18.1328" stroke="none"/>
-      <text x="983.6036" xml:space="preserve" y="541.1053" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">P106_is_composed_of</text>
-      <path fill="none" d="M1132.7897 599.0153 L1290.1084 599.0153" clip-path="url(#clipPath2)" stroke="black"/>
-      <path fill="black" d="M1298.1084 599.0153 L1286.1084 594.0153 L1289.1084 599.0153 L1286.1084 604.0153 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M892.8693 749.924 L792.2802 749.924 L792.2802 833.3534" clip-path="url(#clipPath2)"/>
-      <path d="M900.8693 749.924 C900.8693 752.1332 899.0784 753.924 896.8693 753.924 C894.6601 753.924 892.8693 752.1332 892.8693 749.924 C892.8693 747.7148 894.6601 745.924 896.8693 745.924 C899.0784 745.924 900.8693 747.7148 900.8693 749.924 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path d="M792.2802 844.3534 L798.2802 832.3534 L786.2802 832.3534 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="753.3688" y="740.8576" clip-path="url(#clipPath2)" fill="white" width="130.1172" height="18.1328" stroke="none"/>
-      <text x="755.3688" xml:space="preserve" y="754.4592" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">crm:P7_took_place_at</text>
+    <g visibility="hidden" id="tooltip.y.node.1" pointer-events="none">
+      <g fill="rgb(255,255,204)" text-rendering="geometricPrecision" font-size="11px" shape-rendering="geometricPrecision" font-family="'Lucida Grande'" stroke="rgb(255,255,204)">
+        <rect x="0" width="54" height="18" y="0" clip-path="url(#clipPath3)" stroke="none"/>
+        <text fill="black" x="3" xml:space="preserve" y="13" clip-path="url(#clipPath3)" stroke="none">UMLNote</text>
+      </g>
+    </g>
+    <g visibility="hidden" id="tooltip.y.node.2" pointer-events="none">
+      <g fill="rgb(255,255,204)" text-rendering="geometricPrecision" font-size="11px" shape-rendering="geometricPrecision" font-family="'Lucida Grande'" stroke="rgb(255,255,204)">
+        <rect x="0" width="54" height="18" y="0" clip-path="url(#clipPath3)" stroke="none"/>
+        <text fill="black" x="3" xml:space="preserve" y="13" clip-path="url(#clipPath3)" stroke="none">UMLNote</text>
+      </g>
     </g>
   </g>
 </svg>
